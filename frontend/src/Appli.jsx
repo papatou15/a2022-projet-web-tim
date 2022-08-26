@@ -1,9 +1,10 @@
 import './Appli.scss';
+import Posts from './Posts.jsx';
 
 export default function Appli() {
   return (
     <div className="Appli">
-        Gabarit de base d'une Application React
+        <Posts></Posts>
     </div>
   );
 }
