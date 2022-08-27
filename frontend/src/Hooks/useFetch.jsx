@@ -4,7 +4,10 @@ export default function useFetch(url){
     const [data, setData] = useState(null);
     useEffect(() => {
         async function loadData() {
-            const response = await fetch(url);
+            const requestOptions = {
+                method: 'GET'
+            };
+            const response = await fetch(url, requestOptions);
             if(!response.ok) {
                 // oups! something went wrong
                 return;

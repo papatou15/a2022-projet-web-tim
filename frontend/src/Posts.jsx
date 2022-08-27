@@ -1,5 +1,5 @@
 import useFetch from './Hooks/useFetch';
-import {trimDomElements} from './utils/strings-utils';
+import {TrimDOMElements} from './utils/strings-utils';
 import './Posts.scss';
 
 export default function Posts(props){
@@ -13,7 +13,7 @@ export default function Posts(props){
                 (posts != null) ?
                     (posts.length >= 1) ?
                     posts.map(
-                        post => <div key={post.id}>{trimDomElements(post.content.rendered)}</div>
+                        post => <div key={post.id}>{TrimDOMElements(post.content.rendered)}</div>
                     )
                     :
                     <div>
