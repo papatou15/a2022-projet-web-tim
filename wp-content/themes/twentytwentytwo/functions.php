@@ -10,24 +10,6 @@
  * @since Twenty Twenty-Two 1.0
  */
 
-/* Custom Post Type Start */
-
-function create_posttype()
-{
-	register_post_type(
-		'Cours',
-
-		array(
-			'labels' => array(
-				'name' => __('Cours'),
-				'singular_name' => __('Cours')
-			),
-			'public' => true,
-			'has_archive' => false,
-			'rewrite' => array('slug' => 'cours'),
-		)
-	);
-}
 if (!function_exists('twentytwentytwo_support')) :
 
 	/**

@@ -1,10 +1,10 @@
 import useFetch from './Hooks/useFetch';
-import {TrimDOMElements} from './utils/strings-utils';
 import './Classes.scss';
+import Class from './Class';
 
-export default function Classes(props){
+export default function Classes(props) {
 
-    const classes = useFetch('http://localhost:8080/projet-web-5w5/index.php/wp-json/wp/v2/cours');
+    const classes = useFetch('http://localhost/projet-web-5w5/index.php/wp-json/wp/v2/cours');
 
     console.log(classes);
     return (
@@ -12,15 +12,15 @@ export default function Classes(props){
             {
                 (classes != null) ?
                     (classes.length >= 1) ?
-                    classes.map(
-                        theClass => <div key={theClass.id}>{TrimDOMElements(theClass.content.rendered)}</div>
-                    )
+                        classes.map(
+                            theClass => <Class key={theClass.id} title={theClass.acf.titre} description={theClass.acf.description}></Class>
+                        )
+                        :
+                        <div>
+                            Aucun posts yet.
+                        </div>
                     :
-                    <div>
-                        Aucun posts yet.
-                    </div>
-                :
-                <div>Loading...</div>
+                    <div>Loading...</div>
             }
         </div>
     );
