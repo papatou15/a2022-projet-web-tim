@@ -6,7 +6,6 @@ export default function Classes(props) {
 
     const classes = useFetch('http://localhost/projet-web-5w5/index.php/wp-json/wp/v2/cours');
 
-    console.log(classes);
     return (
         <div className="Classes">
             {

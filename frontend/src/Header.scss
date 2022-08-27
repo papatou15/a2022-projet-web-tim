@@ -1,0 +1,17 @@
+.Header {
+    background-color: rgb(83, 83, 83);
+    color: white;
+
+    nav {
+        padding: 1rem;
+
+        a {
+            margin: 1rem;
+            padding: 1rem;
+        }
+
+        a:hover {
+            color: aqua;
+        }
+    }
+}

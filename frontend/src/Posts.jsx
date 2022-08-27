@@ -6,7 +6,6 @@ export default function Posts(props) {
 
     const posts = useFetch('http://localhost/projet-web-5w5/index.php/wp-json/wp/v2/posts');
 
-    console.log(posts);
     return (
         <div className="Posts">
             {
