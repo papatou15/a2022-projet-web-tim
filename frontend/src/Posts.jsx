@@ -4,7 +4,7 @@ import './Posts.scss';
 
 export default function Posts(props) {
 
-    const posts = useFetch('http://localhost/projet-web-5w5/index.php/wp-json/wp/v2/posts');
+    const posts = useFetch('http://localhost:8080/projet-web-5w5/index.php/wp-json/wp/v2/posts');
 
     return (
         <div className="Posts">

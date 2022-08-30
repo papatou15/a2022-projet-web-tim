@@ -1,0 +1,12 @@
+.Bouton {
+    border-radius: 10px;
+    background-color: rgb(34, 110, 210);
+    border: white 2px solid;
+    outline: rgb(34, 110, 210)2px solid; 
+    transition: 0.2s;
+
+    &:hover {
+        border: rgb(34, 110, 210) 0px solid;
+        transform: scale(1.01);
+    }
+}

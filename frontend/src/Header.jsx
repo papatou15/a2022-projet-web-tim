@@ -5,8 +5,20 @@ export default function Header(props) {
     return (
         <header className="Header">
             <nav>
-                <NavLink to="/">Accueil</NavLink>
-                <NavLink to="/cours">Cours</NavLink>
+                {
+                    (props.pages != null)
+                    ?
+                    props.pages.map(
+                        page => 
+                        (page.slug == 'accueil')
+                        ?
+                        <NavLink key={page.id}to={'/'}>{page.title.rendered}</NavLink>
+                        :
+                        <NavLink key={page.id} to={'/' + page.slug}>{page.title.rendered}</NavLink>
+                    )
+                    :
+                    <div></div>
+                }
             </nav>
         </header>
     );

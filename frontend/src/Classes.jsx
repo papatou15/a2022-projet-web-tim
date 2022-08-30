@@ -4,7 +4,7 @@ import Class from './Class';
 
 export default function Classes(props) {
 
-    const classes = useFetch('http://localhost/projet-web-5w5/index.php/wp-json/wp/v2/cours');
+    const classes = useFetch('http://localhost:8080/projet-web-5w5/index.php/wp-json/wp/v2/cours');
 
     return (
         <div className="Classes">
