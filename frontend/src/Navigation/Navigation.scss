@@ -1,0 +1,27 @@
+@import '../Variables.scss';
+
+.Navigation {
+    position: fixed;
+    background-color: $base-color;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        "."
+        "liens"
+        "contacts"
+    ;
+    transition: 0.5s;
+    &.open {
+        translate: 0%;
+    }
+    &.closed {
+        translate: -100%;
+    }
+    @media screen and (min-width: 728px)
+    {
+        width: 60vw;
+    }
+}

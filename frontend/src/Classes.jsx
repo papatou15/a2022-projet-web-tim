@@ -8,6 +8,7 @@ export default function Classes(props) {
 
     return (
         <div className="Classes">
+            <div></div>
             {
                 (classes != null) ?
                     (classes.length >= 1) ?

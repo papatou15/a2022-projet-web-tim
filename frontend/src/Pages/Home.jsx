@@ -1,10 +1,10 @@
 import './Home.scss';
-import Navigation from './Navigation';
+import Navigation from '../Navigation/Navigation';
 
 export default function Home(props){
     return (
         <main className="Home">
-           <Navigation/>
+            Home
         </main>
     );
 }
