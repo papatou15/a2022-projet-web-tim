@@ -9,7 +9,9 @@ export default function Navigation(props){
     return (
         <nav className={props.navOpenState ? "Navigation open" : "Navigation closed"}>
             <PageLinks toggleMenu={props.toggleMenu} navOpenState={props.navOpenState} pages={props.pages}/>
-            <Contacts/>
+            <div className="curve">
+                <Contacts/>
+            </div>
         </nav>
     );
 }

@@ -45,6 +45,7 @@ function tim_custom_logo_setup()
 add_action('after_setup_theme', 'tim_custom_logo_setup');
 
 include 'tim-api.php';
+include 'tim-admin-settings.php';
 
 if (!function_exists('twentytwentytwo_support')) :
 

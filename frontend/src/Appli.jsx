@@ -2,7 +2,7 @@ import './Appli.scss';
 
 //Hooks
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useFetch from './Hooks/useFetch';
 
 //Navigation
@@ -10,20 +10,31 @@ import Burger from './Navigation/Burger';
 import Navigation from './Navigation/Navigation';
 
 //Pages
-import Home from './Pages/Home';
-import Cours from './Pages/Cours'
-import Social from './Pages/Social';
-import Projets from './Pages/Projets';
-import Avenir from './Pages/Avenir';
-import Enseignants from './Pages/Enseignants';
+import PageAccueil from './Pages/PageAccueil';
+import PageCours from './Pages/PageCours'
+import PageSocial from './Pages/PageSocial';
+import PageProjets from './Pages/PageProjets';
+import PageAvenir from './Pages/PageAvenir';
+import PageEnseignants from './Pages/PageEnseignants';
+import Loading from './Pages/Loading';
+import useChargerPage from './Hooks/useChargerSite';
 
-export default function Appli() {
+export default function Appli() { 
 
-  const pages = useFetch('http://localhost:8080/projet-web-5w5/index.php/wp-json/wp/v2/pages');
+  // const [siteData, setSiteData] = useState([]);
 
   const [navOpenState, setNavOpenState] = useState(false);
+  // const [isLoadingState, setIsLoadingState] = useState(true);
 
-    const toggleMenu = () => {
+  // useEffect(() => {
+  //   if(siteData != null)
+  //   {
+  //     setIsLoadingState(false);
+  //   }
+  // }, [siteData]);
+
+  const pages = useFetch('https://timm184.sg-host.com/wp-json/wp/v2/pages');
+  const toggleMenu = () => {
       setNavOpenState(!navOpenState);
   };
 
@@ -31,32 +42,32 @@ export default function Appli() {
     {
       key: 'accueil',
       path: '/',
-      component: () => <Home/>
+      component: () => <PageAccueil/>
     },
     {
       key: 'cours',
       path: '/galerie-des-cours',
-      component: () => <Cours/>
+      component: () => <PageCours/>
     }, 
     {
       key: 'social',
       path: '/le-social',
-      component: () => <Social/>
+      component: () => <PageSocial/>
     },
     {
       key: 'avenir',
       path: '/avenir',
-      component: () => <Avenir/>
+      component: () => <PageAvenir/>
     },
     {
       key: 'projets',
       path: '/galerie-des-projets',
-      component: () => <Projets/>
+      component: () => <PageProjets/>
     }, 
     {
       key: 'enseignants',
       path: '/les-enseignants',
-      component: () => <Enseignants/>
+      component: () => <PageEnseignants/>
     }, 
   ];
 
@@ -75,6 +86,7 @@ export default function Appli() {
           <Route>No pages...</Route>
         }
       </Routes>
+      {/* <Loading isLoading={isLoadingState}/> */}
     </div>
   );
 }

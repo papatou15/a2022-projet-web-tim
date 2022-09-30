@@ -6,8 +6,7 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: auto;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: 
         "."
         "liens"
@@ -23,5 +22,8 @@
     @media screen and (min-width: 728px)
     {
         width: 60vw;
+    }
+    .curve {
+        grid-area: contacts;
     }
 }
