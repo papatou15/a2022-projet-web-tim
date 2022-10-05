@@ -1,0 +1,89 @@
+.PageAccueil{
+    &>section{
+        height: 100vh;
+        width: 100vw;
+        &:nth-of-type(even){
+            background-color: #b3b3b3;
+        }
+    }
+    .block1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .mainTitle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-size: 4em;
+            }
+            h3{
+                font-size: 1em;
+            }
+        }
+        .mainButtons{
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+    }
+
+    .block2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .carouselSessions{
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            justify-content: space-around;
+            .carteSessions{
+                border: 1px solid black;
+                width: 12%;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                h4{
+                    text-align: center;
+                    height: 20%;
+                    margin: auto 0 0 0;
+                }
+                .listeCours{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    height: 80%;
+                    .cours{
+                        display: flex;
+                        align-items: center;
+                        height: 20%;
+                        background-color: #E9C3AC;
+                        p{
+                            margin: 0 0 0 25px;
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+
+    .block3{
+
+    }
+
+    .block4{
+
+    }
+
+    .block5{
+
+    }
+
+    .block6{
+
+    }
+}
