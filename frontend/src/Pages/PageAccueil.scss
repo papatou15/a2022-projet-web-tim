@@ -35,36 +35,76 @@
         justify-content: center;
         align-items: center;
         overflow: hidden;
-        .carouselSessions{
+        .mainTitleCours{
+            height: 8%;
             display: flex;
-            overflow: hidden;
-            width: 100%;
-            justify-content: space-around;
-            .carteSessions{
-                border: 1px solid black;
-                width: 12%;
-                height: 300px;
+            justify-content: flex-end;
+            margin: 0 clamp(10%, 15vw, 5%) 0 0;
+            h2{
                 display: flex;
                 flex-direction: column;
-                h4{
-                    text-align: center;
-                    height: 20%;
-                    margin: auto 0 0 0;
+                font-size: 2.5em;
+                b{
+                    margin-left: 15px;
                 }
-                .listeCours{
+            }
+        }
+        .carouselSessions{
+            height: 92%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .cartes{
+                width: 150vw;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: nowrap;
+                align-items: center;
+                overflow: hidden;
+                .carteSessions{
+                    background-color: rgb(25,69,87);
+                    color: white;
+                    width: 300px;
+                    height: 500px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-around;
-                    height: 80%;
-                    .cours{
+                    justify-content: center;
+                    h4{
+                        text-align: center;
+                        height: 15%;
+                        padding: 10% 0 0 0;
+                    }
+                    .listeCours{
                         display: flex;
-                        align-items: center;
-                        height: 20%;
-                        background-color: #E9C3AC;
-                        p{
-                            margin: 0 0 0 25px;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 80%;
+                        .cours{
+                            display: flex;
+                            align-items: center;
+                            height: 20%;
+                            background-color: #E9C3AC;
+                            p{
+                                margin: 0 0 0 25px;
+                            }
                         }
-                        
+                    }
+                }
+            }
+            .navCarousel{
+                width: 200px;
+                height: 50px;
+                margin: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                .flecheCarousel{
+                    width: 50px;
+                    height: 100%;
+                    background-color: #303030;
+                    &:nth-of-type(2){
+                        border-radius: 50px;
                     }
                 }
             }
