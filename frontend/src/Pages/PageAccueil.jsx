@@ -93,6 +93,9 @@ export default function PageAccueil(props){
                 <div className="mainTitleAvenir">
                     <h2>Ton <b>AVENIR</b></h2>
                 </div>
+                <div>
+                    
+                </div>
             </section>
             <section className="block4">
 
