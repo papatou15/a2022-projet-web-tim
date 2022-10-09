@@ -1,3 +1,4 @@
+import Bouton from '../Bouton';
 import './PageAccueil.scss';
 import Bouton from '../Bouton';
 
@@ -193,7 +194,7 @@ export default function PageAccueil(props){
                 </div>
             </section>
             <section className="block6">
-
+            
             </section>
         </main>
     );

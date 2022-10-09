@@ -7,17 +7,18 @@ export default function useFetch(url){
         async function loadData() {
             const requestOptions = {
                 method: 'GET'
-            };
-            const response = await fetch(url, requestOptions);
+            }
+
+            const response = fetch(url, requestOptions);
 
             if(!response.ok) {
                 return;
-            }
             
-            const posts = await response.json();
+                
+            }   
+            const posts = response.json();
             setData(posts);
         }
-    
         loadData();
     }, [url]);
 

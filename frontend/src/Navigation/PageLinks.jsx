@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 export default function PageLinks({toggleMenu, navOpenState, pages}){
 
-    console.log(pages);
-
     return (
         <ul className="PageLinks">
             {
@@ -12,7 +10,11 @@ export default function PageLinks({toggleMenu, navOpenState, pages}){
                 ?
                 pages.map(
                     page => 
-                    <NavLink onClick={toggleMenu} key={page.id} to={'/' + page.slug}>{page.title.rendered.toUpperCase()}</NavLink>
+                    (page.slug === 'accueil') 
+                    ?
+                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/'}>{page.title.rendered.toUpperCase()}</NavLink></p>
+                    :
+                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/' + page.slug}>{page.title.rendered.toUpperCase()}</NavLink></p>
                 )
                 :
                 <div></div>
