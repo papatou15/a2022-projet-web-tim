@@ -1,11 +1,22 @@
 import './PageCours.scss';
 import ListeSessions from './ListeSessions';
+import { useContext } from 'react';
+import { DataContext } from '../Context/DataContext';
 
 export default function PageCours(props){
+
+    const siteData = useContext(DataContext);
+    console.log(siteData);
+
     return (
         <main className="PageCours">
-            <h1>Cours</h1>
-            <ListeSessions/>
+            {
+                (siteData.sessions != null) 
+                ?
+                <ListeSessions sessions={siteData.sessions}/>
+                :
+                <p>Loading</p>
+            }
         </main>
     );
 }

@@ -2,8 +2,7 @@ import './Appli.scss';
 
 //Hooks
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import useFetch from './Hooks/useFetch';
+import { useState } from 'react';
 
 //Navigation
 import Burger from './Navigation/Burger';
@@ -17,23 +16,25 @@ import PageProjets from './Pages/PageProjets';
 import PageAvenir from './Pages/PageAvenir';
 import PageEnseignants from './Pages/PageEnseignants';
 import Loading from './Pages/Loading';
-import useChargerPage from './Hooks/useChargerSite';
+import useChargerSite from './Hooks/useChargerSite';
+import { DataContext } from './Context/DataContext';
 
 export default function Appli() { 
 
-  // const [siteData, setSiteData] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const [siteData, setData]=  useState({
+      pages: [],
+      sessions: [],
+      cours: [],
+      enseignants: [],
+      logo: ""
+  });
+  
+  useChargerSite(setData, isLoaded, setIsLoaded);
 
   const [navOpenState, setNavOpenState] = useState(false);
-  // const [isLoadingState, setIsLoadingState] = useState(true);
 
-  // useEffect(() => {
-  //   if(siteData != null)
-  //   {
-  //     setIsLoadingState(false);
-  //   }
-  // }, [siteData]);
-
-  const pages = useFetch('https://timm184.sg-host.com/wp-json/wp/v2/pages');
   const toggleMenu = () => {
       setNavOpenState(!navOpenState);
   };
@@ -72,21 +73,30 @@ export default function Appli() {
   ];
 
   return (
-    <div className="Appli">
-      <Burger onClick={toggleMenu}/>
-      <Navigation navOpenState={navOpenState} toggleMenu={toggleMenu} pages={pages}/>
-      <Routes>
-        {
-          (pages != null)
+    <DataContext.Provider value={siteData}>
+      {
+          (!isLoaded) 
           ?
-          routes.map(
-            route => <Route key={route.key} path={route.path} element={<route.component/>}></Route>
-          )
+          <Loading isLoading={isLoaded}/>
           :
-          <Route>No pages...</Route>
-        }
-      </Routes>
-      {/* <Loading isLoading={isLoadingState}/> */}
-    </div>
+          <div className="Appli">
+
+            <Burger onClick={toggleMenu} logoSrc={siteData.logo}/>
+            <Navigation navOpenState={navOpenState} toggleMenu={toggleMenu} pages={siteData.pages}/>
+            <Routes>
+              {
+                (siteData.pages != null)
+                ?
+                routes.map(
+                  route => <Route key={route.key} path={route.path} element={<route.component/>}></Route>
+                )
+                :
+                <Route>No pages...</Route>
+              }
+            </Routes>
+          </div>
+      }
+      
+    </DataContext.Provider>
   );
 }

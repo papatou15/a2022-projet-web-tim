@@ -1,6 +1,6 @@
 import './UnCours.scss';
 
-export default function UnCours({titre, desc, numeroCours}){
+export default function UnCours({key, titre, desc, numeroCours}){
     return (
         <div className="unCours">
             <h2>{titre}</h2>
