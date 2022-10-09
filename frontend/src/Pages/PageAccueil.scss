@@ -1,9 +1,313 @@
-.PageAccueil {
-    section {
-        width: 100vw;
-        height: 100vh;
+.PageAccueil{
+    .titleSections{
+        height: 8%;
         display: flex;
-        align-items: center;
+        justify-content: flex-end;
+        margin: 0 clamp(10%, 15vw, 5%) 0 0;
+        h2{
+            display: flex;
+            flex-direction: column;
+            font-size: 2.5em;
+            b{
+                margin-left: 15px;
+            }
+        }
+    }
+    &>section{
+        height: 100vh;
+        width: 100vw;
+        &:nth-of-type(even){
+            background-color: #b3b3b3;
+        }
+    }
+    .block1{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        .mainTitle{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            h1{
+                font-size: 4em;
+            }
+            h3{
+                font-size: 1em;
+            }
+        }
+        .mainButtons{
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+    }
+
+    .block2{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .carouselSessions{
+            height: 92%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .cartes{
+                width: 150vw;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: nowrap;
+                align-items: center;
+                overflow: hidden;
+                .carteSessions{
+                    background-color: rgb(25,69,87);
+                    color: white;
+                    width: 300px;
+                    height: 500px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    h4{
+                        text-align: center;
+                        height: 15%;
+                        padding: 10% 0 0 0;
+                    }
+                    .listeCours{
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 80%;
+                        .cours{
+                            display: flex;
+                            align-items: center;
+                            height: 20%;
+                            background-color: #E9C3AC;
+                            p{
+                                margin: 0 0 0 25px;
+                            }
+                        }
+                    }
+                }
+            }
+            .navCarousel{
+                width: 200px;
+                height: 50px;
+                margin: 50px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                .flecheCarousel{
+                    width: 50px;
+                    height: 100%;
+                    background-color: #303030;
+                    &:nth-of-type(2){
+                        border-radius: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .block3{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .contenuAvenir{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .blockAvenir{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                height: 92vh;
+                justify-content: center;
+                align-items: center;
+                .avenirSlides{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 150px;
+                    .avenirSlidesContent{
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row;
+                        padding: 0 5% 0 5%;
+                        h3{
+                            z-index: 4;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        
+                        .avenirSlidesContent{
+                            flex-direction: row-reverse;
+                        }
+                    }
+                }
+                .Entreprise{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 65% 0, 55% 100%, 0 100%);
+                        background: linear-gradient(90deg, rgba(0,75,135,1) 0%, rgba(0,212,255,1) 52%);
+                        z-index: 2;
+                    }
+                }
+                .Universite{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+                        background-color: red;
+                        z-index: 2;
+                    }
+                }
+                .Stage{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 45% 0, 35% 100%, 0 100%);
+                        background-color: red;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .block4{
+        overflow: hidden;
+        .titleSections{
+            h2{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                width: 250px;
+                b{
+                    &:nth-of-type(2){
+                        margin-left: 12px;
+                    }
+                }
+            }
+        }
+        .carouselCartesProjets{
+            display: flex;
+            flex-direction: row;
+            width: 125vw;
+            height: 92vh;
+            justify-content: center;
+            align-items: center;
+            .carteProjet{
+                width: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                flex-wrap: nowrap;
+                align-items: center;
+                overflow: hidden;
+                border: 1px solid black;
+                img{
+                    height: 100px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .block5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .contenuSocial{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .blockSocial{
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                height: 92vh;
+                justify-content: center;
+                align-items: center;
+                .socialSlides{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    height: 150px;
+                    .socialSlidesContent{
+                        display: flex;
+                        width: 100%;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-direction: row;
+                        padding: 0 5% 0 5%;
+                        h3{
+                            z-index: 4;
+                        }
+                    }
+                    &:nth-of-type(2){
+                        
+                        .socialSlidesContent{
+                            flex-direction: row-reverse;
+                        }
+                    }
+                }
+                .Event{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 65% 0, 55% 100%, 0 100%);
+                        background: linear-gradient(90deg, rgba(0,75,135,1) 0%, rgba(0,212,255,1) 52%);
+                        z-index: 2;
+                    }
+                }
+                .Communaute{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+                        background-color: red;
+                        z-index: 2;
+                    }
+                }
+                .Maisonneuve{
+                    position: relative;
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 45% 0, 35% 100%, 0 100%);
+                        background-color: red;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    .block6{
+
+
     }
 }

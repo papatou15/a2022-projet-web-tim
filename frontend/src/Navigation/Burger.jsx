@@ -1,5 +1,6 @@
 import './Burger.scss';
 
+
 export default function Burger({onClick,logoSrc}){
 
     return (
