@@ -1,9 +1,9 @@
 import './Bouton.scss';
 
-export default function Bouton(props){
+export default function Bouton({children, href}){
     return (
-        <a className="Bouton">
-            Button
+        <a href={href} className="Bouton">
+            <p>{children}</p>
         </a>
     );
 }

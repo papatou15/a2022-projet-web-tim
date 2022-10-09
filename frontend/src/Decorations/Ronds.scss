@@ -1,0 +1,14 @@
+.Ronds {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    .rond {
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+    .rond1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
