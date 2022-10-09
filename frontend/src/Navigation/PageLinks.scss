@@ -1,3 +1,5 @@
+@import '../Variables/Layout.scss';
+
 .PageLinks {
     grid-area: liens;
     margin: 0;
@@ -6,17 +8,29 @@
     flex-flow: column-reverse;
     padding: 0;
     font-weight: bolder;
-    font-size: 2.2rem;
+    font-size: 3.5rem;
     color: white;
-        a {
-            margin: 0.25rem 1rem;
-            transition: 0.5s;
-            background: linear-gradient(to right, transparent 0%, transparent 50%, transparent 50%, transparent 100%), linear-gradient(to right, white 0%, white 50%, transparent 50%, transparent 100%);
-            background-size: 200% 10%;
-            background-position: center top, right bottom;
-            background-repeat: no-repeat;
+        p {
+            margin: 0;
+            a {
+                margin: 0.5rem 2rem;
+                transition: 0.5s;
+                background: linear-gradient(to right, transparent 0%, transparent 50%, transparent 50%, transparent 100%), linear-gradient(to right, white 0%, white 50%, transparent 50%, transparent 100%);
+                background-size: 200% 10%;
+                background-position: center top, right bottom;
+                background-repeat: no-repeat;
+            }
+            a:hover {
+                background-position: center top, left bottom;
+            }
         }
-        a:hover {
-            background-position: center top, left bottom;
+        @media screen and (min-width: $layout-tablette)
+        {
+            font-size: 4rem;
+        }
+
+        @media screen and (min-width: $layout-desktop)
+        {
+            font-size: 4.5rem;
         }
 }

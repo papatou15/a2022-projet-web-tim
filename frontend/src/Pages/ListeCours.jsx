@@ -17,7 +17,7 @@ export default function ListeCours({key, session, cours, randomOrder, limite}){
             {
                 cours.map(
                     unCours =>
-                        <UnCours key={cours.numero_du_cours} titre={unCours.titre} desc={unCours.description} numeroCours={unCours.numero_du_cours} />
+                        <UnCours key={unCours.numero_du_cours} titre={unCours.titre} desc={unCours.description} numeroCours={unCours.numero_du_cours} />
                 )
             }
         </section>

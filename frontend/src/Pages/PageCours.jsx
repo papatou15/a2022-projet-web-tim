@@ -6,7 +6,6 @@ import { DataContext } from '../Context/DataContext';
 export default function PageCours(props){
 
     const siteData = useContext(DataContext);
-    console.log(siteData);
 
     return (
         <main className="PageCours">

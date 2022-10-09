@@ -12,9 +12,9 @@ export default function PageLinks({toggleMenu, navOpenState, pages}){
                     page => 
                     (page.slug === 'accueil') 
                     ?
-                    <NavLink onClick={toggleMenu} key={page.id} to={'/'}>{page.title.rendered.toUpperCase()}</NavLink>
+                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/'}>{page.title.rendered.toUpperCase()}</NavLink></p>
                     :
-                    <NavLink onClick={toggleMenu} key={page.id} to={'/' + page.slug}>{page.title.rendered.toUpperCase()}</NavLink>
+                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/' + page.slug}>{page.title.rendered.toUpperCase()}</NavLink></p>
                 )
                 :
                 <div></div>

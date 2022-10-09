@@ -3,7 +3,6 @@ import { useEffect } from "react";
 export default function useChargerSite(setSiteData,isLoaded, setIsLoaded){
     useEffect(() => {
         if (!isLoaded){
-            console.log('load');
             Promise.all([
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/pages').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/index.php/wp-json/wp/v2/session').then(resp => resp.json()),
