@@ -1,20 +1,21 @@
 import Bouton from '../Bouton';
 import './PageAccueil.scss';
-import Bouton from '../Bouton';
 
 export default function PageAccueil(props){
     return (
         <main className="PageAccueil">
+
             <section className="block1">
                 <div className="mainTitle">
                     <h1>TIM Maisonneuve</h1>
                     <h3>Accroche</h3>
                 </div>
                 <div className="mainButtons">
-                    <Bouton/>
-                    <Bouton/>
+                    <Bouton>Voirs les cours</Bouton>
+                    <Bouton href={"www.twitch.tv"}>Inscris toi!</Bouton>
                 </div>
             </section>
+
             <section className="block2">
                 <div className="titleSections">
                     <h2>Tes <b>COURS</b></h2>
@@ -90,6 +91,7 @@ export default function PageAccueil(props){
                     <Bouton/>
                 </div>
             </section>
+
             <section className="block3">
                 <div className="titleSections">
                     <h2>Ton <b>AVENIR</b></h2>
@@ -119,8 +121,8 @@ export default function PageAccueil(props){
                         </div>
                     </div>
                 </div>
-                
             </section>
+
             <section className="block4">
                 <div className="titleSections">
                     <h2>Un <b>aperçu</b> des <b>PROJETS</b></h2>
@@ -163,6 +165,7 @@ export default function PageAccueil(props){
                     </div>
                 </div>
             </section>
+
             <section className="block5">
                 <div className="titleSections">
                     <h2>Le <b>SOCIAL</b></h2>
@@ -193,6 +196,7 @@ export default function PageAccueil(props){
                     </div>
                 </div>
             </section>
+
             <section className="block6">
             
             </section>
