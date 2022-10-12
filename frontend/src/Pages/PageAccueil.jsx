@@ -1,8 +1,16 @@
 import Bouton from '../Bouton';
+import CarteCoursSession from '../Composants/CarteCoursSession';
+import CarteProjet from '../Composants/CarteProjet';
 import './PageAccueil.scss';
+import { DataContext } from '../Context/DataContext';
+import { useContext } from 'react';
 
 export default function PageAccueil(props){
+
+    const dataAccueil = useContext(DataContext);
+    console.log(dataAccueil.projets);
     return (
+        
         <main className="PageAccueil">
 
             <section className="block1">
@@ -22,73 +30,19 @@ export default function PageAccueil(props){
                 </div>
                 <div className="carouselSessions">
                     <div className="cartes">
-                        <div className="carteSessions">
-                            <h4>Session 1</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
-                        <div className="carteSessions">
-                            <h4>Session 2</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
-                        <div className="carteSessions">
-                            <h4>Session 3</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
-                        <div className="carteSessions">
-                            <h4>Session 4</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
-                        <div className="carteSessions">
-                            <h4>Session 5</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
-                        <div className="carteSessions">
-                            <h4>Session 6</h4>
-                            <div className="listeCours">
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                                <a href="#" className="cours"><p>Cours</p></a>
-                            </div>
-                        </div>
+                        {
+                            dataAccueil.sessions.map(
+                                session => <CarteCoursSession cours={session.cours} titre={session.title.rendered}/>
+                            )
+                        }
+                        
                     </div>
                     <div className="navCarousel">
                         <div className="flecheCarousel"></div>
                         <div className="flecheCarousel"></div>
                         <div className="flecheCarousel"></div>
                     </div>
-                    <Bouton/>
+                    <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
                 </div>
             </section>
 
@@ -101,21 +55,21 @@ export default function PageAccueil(props){
                         <div className="avenirSlides Entreprise">
                             <div className="avenirSlidesContent">
                                 <h3>En <b>Entreprise</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>Voir ta future carrière</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="avenirSlides Universite">
                             <div className="avenirSlidesContent">
                                 <h3>À l'<b>Université</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>Voir tes futurs apprentissages</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="avenirSlides Stage">
                             <div className="avenirSlidesContent">
                                 <h3>En <b>Stage</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>Voir tes opportunités</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
@@ -128,41 +82,11 @@ export default function PageAccueil(props){
                     <h2>Un <b>aperçu</b> des <b>PROJETS</b></h2>
                 </div>
                 <div className="carouselCartesProjets">
-                    <div className="carteProjet">
-                        <h4 className="titreProjet">Titre Projet</h4>
-                        <img src="" alt="" className="imgProjet" />
-                        <p>Type</p>
-                        <p>Cours</p>
-                        <p>Auteurs</p>
-                    </div>
-                    <div className="carteProjet">
-                        <h4 className="titreProjet">Titre Projet</h4>
-                        <img src="" alt="" className="imgProjet" />
-                        <p>Type</p>
-                        <p>Cours</p>
-                        <p>Auteurs</p>
-                    </div>
-                    <div className="carteProjet">
-                        <h4 className="titreProjet">Titre Projet</h4>
-                        <img src="" alt="" className="imgProjet" />
-                        <p>Type</p>
-                        <p>Cours</p>
-                        <p>Auteurs</p>
-                    </div>
-                    <div className="carteProjet">
-                        <h4 className="titreProjet">Titre Projet</h4>
-                        <img src="" alt="" className="imgProjet" />
-                        <p>Type</p>
-                        <p>Cours</p>
-                        <p>Auteurs</p>
-                    </div>
-                    <div className="carteProjet">
-                        <h4 className="titreProjet">Titre Projet</h4>
-                        <img src="" alt="" className="imgProjet" />
-                        <p>Type</p>
-                        <p>Cours</p>
-                        <p>Auteurs</p>
-                    </div>
+                    {
+                        dataAccueil.projets.map(
+                            projet => <CarteProjet titre={projet.titre} />
+                        )
+                    }
                 </div>
             </section>
 
@@ -175,21 +99,21 @@ export default function PageAccueil(props){
                         <div className="socialSlides Event">
                             <div className="socialSlidesContent">
                                 <h3>Les <b>Événements</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>Voir les événements</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Communaute">
                             <div className="socialSlidesContent">
                                 <h3><b>Communauté</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>En apprendre plus</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Maisonneuve">
                             <div className="socialSlidesContent">
                                 <h3><b>Maisonneuve</b></h3>
-                                <Bouton></Bouton>
+                                <Bouton>Consulter le collège</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
