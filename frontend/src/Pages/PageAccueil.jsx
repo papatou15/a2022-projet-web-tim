@@ -84,7 +84,7 @@ export default function PageAccueil(props){
                 <div className="carouselCartesProjets">
                     {
                         dataAccueil.projets.map(
-                            projet => <CarteProjet titre={projet.titre} />
+                            projet => <CarteProjet projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images[0].guid}/>
                         )
                     }
                 </div>
