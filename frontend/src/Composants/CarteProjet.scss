@@ -1,18 +1,38 @@
 .carteProjet{
-    width: 325px;
-    height: 500px;
+    width: 400px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    overflow: hidden;
-    border: 1px solid black;
-    h4{
-        height: 10%;
+    border-radius: 50px;
+    background-color: #F69000;
+    .titreProjet{
+        width: 100%;
+        height: 100px;
+        text-align: center;
     }
     img{
         width: 100%;
         height: auto;
     }
+    .descProjet{
+        height: 50%;
+        p{
+            height: 33%;
+            margin: 0;
+            text-align: center;
+            &:first-of-type{
+
+            }
+            &:nth-of-type(2){
+
+            }
+            &:nth-of-type(3){
+
+            }
+        }
+    }
+    
 }

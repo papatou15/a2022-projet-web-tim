@@ -170,9 +170,9 @@
         .carouselCartesProjets{
             display: flex;
             flex-direction: row;
-            width: 125vw;
+            width: 100vw;
             height: 92vh;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
         }
     }
