@@ -6,12 +6,20 @@
     justify-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    border-radius: 50px;
+    border-radius: 50px 50px 0 0;
     background-color: #F69000;
     .titreProjet{
         width: 100%;
         height: 100px;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h4{
+            font-size: 2em;
+            margin: auto;
+        }
     }
     img{
         width: 100%;
@@ -19,15 +27,20 @@
     }
     .descProjet{
         height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         p{
             height: 33%;
-            margin: 0;
+            padding: 20px 5% 0 5%;
             text-align: center;
+            margin: 0;
             &:first-of-type{
-
+                font-size: 1.5em;
             }
             &:nth-of-type(2){
-
+                background-color: #d47c00;
             }
             &:nth-of-type(3){
 

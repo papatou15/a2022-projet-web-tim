@@ -10,9 +10,9 @@ export default function CarteProjet({projet, titre, type, cours, auteurs, image}
             </div>
             <img src={image} alt="" className="imgProjet"/>
             <div className="descProjet">
-                <p>{type}</p>
-                <p>{cours}</p>
-                <p>{auteurs}</p>
+                <p>Catégorie: {type}</p>
+                <p>Cours: {cours}</p>
+                <p>Fait par: {auteurs}</p>
             </div>
             
         </div>
