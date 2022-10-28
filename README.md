@@ -11,6 +11,8 @@ Guillaume Vézina
 Lucas Molina
 
 
+-----------------------
+
 
 ## Objectif du site web:
 
