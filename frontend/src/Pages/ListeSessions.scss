@@ -1,3 +1,12 @@
+@import "../Variables/Layout.scss";
 .ListeSessions {
-    
+    @media screen and (min-width: $layout-desktop) {
+        margin:0px 14rem;
+    }
+    @media screen and (min-width: $layout-tablette) {
+        margin:0px 10rem;
+    }
+    margin: 0px 1rem;
+    display: flex;
+    flex-flow: column;
 }

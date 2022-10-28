@@ -20,6 +20,7 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                     logo: data[4],
                     projets: data[5]
                 });
+                console.log(isLoaded);
                 setIsLoaded(true);
             });
         }

@@ -1,14 +1,20 @@
+import { useEffect, useState } from 'react';
+import { sortSessions } from '../utils/timapi-utils';
 import ListeCours from './ListeCours';
 import './ListeSessions.scss';
 
 export default function ListeSessions({sessions}){
 
+    const [sortedSessions, setSortedSessions] = useState([]);
+
+    useEffect(() => setSortedSessions(sortSessions(sessions)), []);
+
     return (
         <section className="ListeSessions">
             {
-                sessions.map(
+                sortedSessions.map(
                     session => 
-                        <ListeCours key={session.titre} session={session.title.rendered} cours={session.cours} randomOrder={true}/>
+                        <ListeCours key={session.titre} sessionTitre={session.title.rendered} lesCours={session.cours}/>
                 )
             }
         </section>
