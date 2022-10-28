@@ -1,3 +1,87 @@
 .PageSocial {
-    
+    .sectionSocial{
+        height: 60vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        &:first-of-type{
+            
+            .contenuEvents{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 80%;
+                height: 80%;
+                p{
+                    width: 50%;
+                }
+            }
+        }
+
+        &:nth-of-type(2){
+            background-color: #eee;
+            .contenuCommunaute{
+                display: flex;
+                flex-direction: row;
+                width: 80%;
+                justify-content: space-evenly;
+                .carteCommunaute{
+                    width: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 500px;
+                    .carteBG{
+                        width: 95%;
+                        background-color: #999;
+                        border-radius: 30px;
+                        height: 300px;
+                        text-align: center;
+                        transition: 0.2s ease-in-out;
+                        p{
+                            padding: 5px;
+                        }
+                        &:hover{
+                            transform: translateY(-25px);
+                            &+.carteTitre{
+                                transform: translateY(-50px);
+                            }
+                        }
+                    }
+                    .carteTitre{
+                        width: 100%;
+                        height: 125px;
+                        background-color: #ddd;
+                        border: 1px solid #333;
+                        text-align: center;
+                        transform: translateY(-50px);
+                        font-size: 2em;
+                        transition: 0.2s ease-in-out
+                    }
+                }
+            }
+        }
+
+        &:last-of-type{
+            .contenuMaisonneuve{
+                width: 100vw;
+                justify-content: center;
+                align-items: center;
+                display: flex;
+                flex-direction: row;
+                .svgPlaceholder{
+                    width: 50%;
+                }
+                .sideContent{
+                    width: 50%;
+                    div{
+                        width: 75%;
+                    }
+                }
+            }
+        }
+    }
 }
