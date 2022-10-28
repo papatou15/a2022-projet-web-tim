@@ -1,7 +1,10 @@
+import { useState } from 'react';
+import ExpanderButton from '../Navigation/ExpanderButton';
+import ExpanderSection from '../Navigation/ExpanderSection';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({key, session, cours, randomOrder, limite}){
+export default function ListeCours({key, sessionTitre, lesCours}){
 
     // useEffect(() => {
     //     if (randomOrder === true) {
@@ -11,15 +14,24 @@ export default function ListeCours({key, session, cours, randomOrder, limite}){
 
     // }, []);
 
+    const [expanderState, setExpanderState] = useState(true);
+
     return (
-        <section className="ListeCours">
-            <h1>{session}</h1>
-            {
-                cours.map(
-                    unCours =>
-                        <UnCours key={unCours.numero_du_cours} titre={unCours.titre} desc={unCours.description} numeroCours={unCours.numero_du_cours} />
-                )
-            }
-        </section>
+            <section className="ListeCours">
+                <div className="sessionTitre">
+                    <h1>{sessionTitre}</h1>
+                    <ExpanderButton expanderState={expanderState} setExpanderState={setExpanderState}>Expand</ExpanderButton>
+                </div>
+                <ExpanderSection expanderState={expanderState}>
+                    <div className="lesCours">
+                    {
+                        lesCours.map(
+                            unCours =>
+                                <UnCours key={unCours.ID} id={unCours.ID}/>
+                        )
+                    }
+                    </div> 
+                </ExpanderSection>
+            </section>
     );
 }
