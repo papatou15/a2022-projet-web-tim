@@ -18,10 +18,6 @@ export default function PageAccueil(props){
                     <h1>TIM Maisonneuve</h1>
                     <h3>Accroche</h3>
                 </div>
-                <div className="mainButtons">
-                    <Bouton>Voirs les cours</Bouton>
-                    <Bouton href={"www.twitch.tv"}>Inscris toi!</Bouton>
-                </div>
             </section>
 
             <section className="block2">

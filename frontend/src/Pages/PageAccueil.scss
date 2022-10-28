@@ -30,17 +30,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 50%;
+            height: 400px;
+            background-color: #eee;
             h1{
                 font-size: 4em;
             }
             h3{
                 font-size: 1em;
             }
-        }
-        .mainButtons{
-            display: flex;
-            justify-content: space-around;
-            width: 30%;
         }
     }
 
