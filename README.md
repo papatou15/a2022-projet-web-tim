@@ -3,9 +3,13 @@
 ## Membres de l'équipe:
 
 Jérome Trottier
+
 Antoine Ridard
+
 Guillaume Vézina
+
 Lucas Molina
+
 
 
 ## Objectif du site web:
