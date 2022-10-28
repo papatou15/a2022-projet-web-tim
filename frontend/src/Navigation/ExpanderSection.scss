@@ -1,0 +1,12 @@
+.ExpanderSection {
+    margin: auto;
+    transition: 0.5s;
+    &[expanderstate="true"] {
+        max-height: 2000px;
+        overflow: auto;
+    }
+    &[expanderstate="false"] {
+        max-height: 0;
+        overflow: hidden;
+    }
+}

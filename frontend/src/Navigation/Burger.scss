@@ -1,3 +1,5 @@
+@import "../Variables/Layout.scss";
+
 .Burger {
     user-select: none;
     margin: 2rem;
@@ -5,7 +7,13 @@
     z-index: 10;
     cursor: pointer;
     img {
-        width: 150px;
+        @media screen and (min-width: $layout-desktop) {
+            width: 150px;
+        }
+        @media screen and (min-width: $layout-tablette) {
+            width: 100px;
+        }
+        width: 90px;
         -webkit-filter: drop-shadow(2px 2px 2px #222);
         filter: drop-shadow(1px 1px 1px #222);
     }

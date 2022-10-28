@@ -18,11 +18,11 @@ import PageEnseignants from './Pages/PageEnseignants';
 import Loading from './Pages/Loading';
 import useChargerSite from './Hooks/useChargerSite';
 import { DataContext } from './Context/DataContext';
+import Menu from './Navigation/Menu';
 
 export default function Appli() { 
 
   const [isLoaded, setIsLoaded] = useState(false);
-
   const [siteData, setData]=  useState({
       pages: [],
       sessions: [],
@@ -33,12 +33,6 @@ export default function Appli() {
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);
-
-  const [navOpenState, setNavOpenState] = useState(false);
-
-  const toggleMenu = () => {
-      setNavOpenState(!navOpenState);
-  };
 
   const routes = [
     {
@@ -82,8 +76,7 @@ export default function Appli() {
           :
           <div className="Appli">
 
-            <Burger onClick={toggleMenu} logoSrc={siteData.logo}/>
-            <Navigation navOpenState={navOpenState} toggleMenu={toggleMenu} pages={siteData.pages}/>
+            <Menu siteData={siteData}/>
             <Routes>
               {
                 (siteData.pages != null)
