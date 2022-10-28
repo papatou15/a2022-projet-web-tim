@@ -28,7 +28,8 @@ export default function Appli() {
       sessions: [],
       cours: [],
       enseignants: [],
-      logo: ""
+      logo: "",
+      projets: []
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);

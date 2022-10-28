@@ -30,17 +30,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            width: 50%;
+            height: 400px;
+            background-color: #eee;
             h1{
                 font-size: 4em;
             }
             h3{
                 font-size: 1em;
             }
-        }
-        .mainButtons{
-            display: flex;
-            justify-content: space-around;
-            width: 30%;
         }
     }
 
@@ -55,43 +53,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            .cartes{
-                width: 150vw;
-                display: flex;
-                justify-content: space-around;
-                flex-wrap: nowrap;
-                align-items: center;
-                overflow: hidden;
-                .carteSessions{
-                    background-color: rgb(25,69,87);
-                    color: white;
-                    width: 300px;
-                    height: 500px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    h4{
-                        text-align: center;
-                        height: 15%;
-                        padding: 10% 0 0 0;
-                    }
-                    .listeCours{
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-                        height: 80%;
-                        .cours{
-                            display: flex;
-                            align-items: center;
-                            height: 20%;
-                            background-color: #E9C3AC;
-                            p{
-                                margin: 0 0 0 25px;
-                            }
-                        }
-                    }
-                }
-            }
             .navCarousel{
                 width: 200px;
                 height: 50px;
@@ -207,24 +168,10 @@
         .carouselCartesProjets{
             display: flex;
             flex-direction: row;
-            width: 125vw;
+            width: 100vw;
             height: 92vh;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
-            .carteProjet{
-                width: 200px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-                flex-wrap: nowrap;
-                align-items: center;
-                overflow: hidden;
-                border: 1px solid black;
-                img{
-                    height: 100px;
-                    width: auto;
-                }
-            }
         }
     }
 
