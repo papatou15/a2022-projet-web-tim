@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {DataContext} from '../Context/DataContext'
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
@@ -6,7 +6,7 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 import { cutString, getCoursFromID } from '../utils/timapi-utils';
 import './UnCours.scss';
 
-export default function UnCours({id}){
+export default function UnCours({id, carteOpenState, setCarteOpenState}){
 
     const siteData = useContext(DataContext);
 
@@ -14,9 +14,16 @@ export default function UnCours({id}){
 
     const [expanderState, setExpanderState] = useState(false);
 
+    useEffect(() => {
+        if (expanderState && carteOpenState !== numero_du_cours)
+        {
+            setExpanderState(false);
+        }
+    }, [carteOpenState])
+
     return (
         <div className="UnCours">
-            <ExpanderButton expanderState={expanderState} setExpanderState={setExpanderState}>
+            <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(numero_du_cours);}}>
                 <div className="carte" expanderstate={expanderState ? "true" : "false"}>
                     <div className='header'>
                         <h2>{titre}</h2>
@@ -37,8 +44,22 @@ export default function UnCours({id}){
             </ExpanderButton>
             <ExpanderSection expanderState={expanderState}>
                 <div className="cours-details" expanderstate={expanderState ? "true" : "false"}>
-                    <Carrousel images={images}/>
-                    {description}
+                    <div className="details-container">
+                        <div className="cours-carrousel">
+                        {
+                            (images) ?
+                            <Carrousel images={images}/>
+                            :
+                            <></>
+                        }
+                        </div>
+                        <div className="cours-description">
+                            <p>{description}</p>
+                        </div>
+                        <div className="cours-projets-relies">
+
+                        </div>
+                    </div>
                 </div>
             </ExpanderSection>
         </div>

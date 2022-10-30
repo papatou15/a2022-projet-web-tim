@@ -1,13 +1,9 @@
 
 import './ExpanderButton.scss';
 
-export default function ExpanderButton({children, expanderState, setExpanderState}){
-
-    const handleClick = () => { 
-        setExpanderState(!expanderState);
-    }
+export default function ExpanderButton({children, onClick}){
 
     return (
-        <a onClick={handleClick} className='ExpanderButton'>{children}</a>
+        <a onClick={onClick} className='ExpanderButton'>{children}</a>
     );
 }

@@ -71,7 +71,26 @@
             overflow: hidden;
             opacity: 0;
         }
-        
+        .details-container {
+          display: flex;
+          flex-flow: row;
+          gap: 1rem;
+          padding: 0.9rem;
+          .cours {
+            &-carrousel {
+              flex-basis: 50%;
+            }
+            &-description {
+              border: 1px black solid;
+              border-radius: 5px;
+              flex-basis: 30%;
+              height: 100%;
+            }
+            &-projets-relies {
+              flex-basis: 20%;
+            }
+          }
+        }
     }
 
     @media screen and (min-width: $layout-desktop) {

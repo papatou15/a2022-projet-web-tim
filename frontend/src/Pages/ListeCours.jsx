@@ -4,7 +4,7 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({key, sessionTitre, lesCours}){
+export default function ListeCours({key, sessionTitre, lesCours, carteOpenState, setCarteOpenState}){
 
     // useEffect(() => {
     //     if (randomOrder === true) {
@@ -20,14 +20,14 @@ export default function ListeCours({key, sessionTitre, lesCours}){
             <section className="ListeCours">
                 <div className="sessionTitre">
                     <h1>{sessionTitre}</h1>
-                    <ExpanderButton expanderState={expanderState} setExpanderState={setExpanderState}>Expand</ExpanderButton>
+                    <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>Expand</ExpanderButton>
                 </div>
                 <ExpanderSection expanderState={expanderState}>
                     <div className="lesCours">
                     {
                         lesCours.map(
                             unCours =>
-                                <UnCours key={unCours.ID} id={unCours.ID}/>
+                                <UnCours key={unCours.ID} id={unCours.ID} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
                         )
                     }
                     </div> 
