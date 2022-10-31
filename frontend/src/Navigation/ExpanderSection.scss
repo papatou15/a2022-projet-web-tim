@@ -4,9 +4,12 @@
     &[expanderstate="true"] {
         max-height: 2000px;
         overflow: auto;
+        z-index: 6;
     }
     &[expanderstate="false"] {
         max-height: 0;
         overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
     }
 }
