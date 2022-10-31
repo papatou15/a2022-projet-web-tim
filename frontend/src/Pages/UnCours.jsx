@@ -22,7 +22,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
     }, [carteOpenState])
 
     return (
-        <div className="UnCours">
+        <div className="UnCours" expanderstate={expanderState ? "true" : "false"}>
             <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(numero_du_cours);}}>
                 <div className="carte" expanderstate={expanderState ? "true" : "false"}>
                     <div className='header'>
@@ -54,6 +54,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
                         }
                         </div>
                         <div className="cours-description">
+                            <h3>Description</h3>
                             <p>{description}</p>
                         </div>
                         <div className="cours-projets-relies">
