@@ -28,7 +28,7 @@ export default function PageAccueil(props){
                     <div className="cartes">
                         {
                             dataAccueil.sessions.map(
-                                session => <CarteCoursSession cours={session.cours} titre={session.title.rendered}/>
+                                session => <CarteCoursSession key={session.id} cours={session.cours} titre={session.title.rendered}/>
                             )
                         }
                         
@@ -80,7 +80,7 @@ export default function PageAccueil(props){
                 <div className="carouselCartesProjets">
                     {
                         dataAccueil.projets.map(
-                            projet => <CarteProjet projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images[0].guid}/>
+                            projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images[0].guid}/>
                         )
                     }
                 </div>

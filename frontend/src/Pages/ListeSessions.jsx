@@ -15,7 +15,7 @@ export default function ListeSessions({sessions}){
             {
                 sortedSessions.map(
                     session => 
-                        <ListeCours key={session.titre} sessionTitre={session.title.rendered} lesCours={session.cours} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
+                        <ListeCours key={session.id} sessionTitre={session.title.rendered} lesCours={session.cours} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
                 )
             }
         </section>

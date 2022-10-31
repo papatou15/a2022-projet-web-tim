@@ -4,7 +4,7 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({key, sessionTitre, lesCours, carteOpenState, setCarteOpenState}){
+export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState}){
 
     // useEffect(() => {
     //     if (randomOrder === true) {

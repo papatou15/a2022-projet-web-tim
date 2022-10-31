@@ -1,5 +1,5 @@
 .Loading {
-    &[isLoading="true"] {
+    // &[isLoading="true"] {
       position: absolute;
       z-index: 20;
         overflow: hidden;
@@ -48,9 +48,20 @@
                   }
             }
         }
-        .ronds {
+        .Ronds {
           position: absolute;
-          right: 0;
+          right: -300px;
+          top: -300px;
+          width: 500px;
+          height: 500px;
+          &:first-child {
+            width: 750px;
+            height: 750px;
+            left: -300px;
+            bottom: -300px;
+            top: unset;
+            right: unset;
+          }
           .rond {
             position: relative;
             width: 500px;
@@ -58,13 +69,6 @@
             border-radius: 50%;
             border: 2px solid white;
           }
-          .rond:first-child {
-            width: 400px;
-            height: 400px;
-          }
-          &:first-child {
-            left: 0;
-          }
         }
-    }
+    // }
 }
