@@ -8,7 +8,7 @@ export default function CarteCoursSession({cours, titre}){
             <div className="listeCours">
                 {
                     cours.map(
-                        unCours => <a href="#" className="cours"><p>{unCours.titre}</p></a>
+                        unCours => <a key={unCours.ID} href="#" className="cours"><p>{unCours.titre} </p></a>
                     )
                 }
             </div>

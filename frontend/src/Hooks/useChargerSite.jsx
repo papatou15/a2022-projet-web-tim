@@ -4,7 +4,7 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
     useEffect(() => {
         if (!isLoaded){
             Promise.all([
-                fetch('https://timm184.sg-host.com/wp-json/wp/v2/pages').then(resp => resp.json()),
+                fetch('https://timm184.sg-host.com/wp-json/rae/v1/header-footer?header_location_id=hcms-menu-header&footer_location_id=hcms-menu-footer').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/session').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/cours?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/enseignant?per_page=100').then(resp => resp.json()),
@@ -20,7 +20,6 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                     logo: data[4],
                     projets: data[5]
                 });
-                console.log(isLoaded);
                 setIsLoaded(true);
             });
         }
