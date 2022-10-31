@@ -5,10 +5,13 @@
         // max-height: 2000px;
         overflow: visible;
         opacity: 1;
+        z-index: 6;
     }
     &[expanderstate="false"] {
         max-height: 0;
         opacity: 0;
         overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
     }
 }
