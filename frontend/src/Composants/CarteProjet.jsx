@@ -1,21 +1,28 @@
 import './CarteProjet.scss';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
 
 
-export default function CarteProjet({projet, titre, type, cours, auteurs, image}){
+export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState}){
     const [expanderState, setExpanderState] = useState(false);
+    console.log("Liens images: " + image);
 
+    useEffect(() => {
+        if (expanderState && carteOpenState !== id)
+        {
+            setExpanderState(false);
+        }
+    }, [carteOpenState])
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>
+            <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(id);}}>
                 <div className="carteProjet">
                     <div className="titreProjet">
                         <h4>{titre}</h4>
                     </div>
-                    <img src={image} alt="" className="imgProjet"/>
+                    <img src={image[0]} alt="Image du projet" className="imgProjet"/>
                     <div className="descProjet">
                         <p><b>Catégorie: </b><span>{type}</span></p>
                         <p><b>Cours: </b>{cours.map(unCours => {return(<span className="simpleCours">{unCours}</span>)})}</p>

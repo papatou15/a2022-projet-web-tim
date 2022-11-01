@@ -10,6 +10,8 @@
     align-items: center;
     margin: 35px 0;
     gap: $gap-grille-cours;
+    color: $off-white;
+    text-shadow: 0 0 4px black;
     .carteProjet{
         width: 400px;
         height: 800px;
@@ -19,8 +21,7 @@
         flex-wrap: nowrap;
         align-items: center;
         background-color: $couleur-primaire;
-        color: $off-white;
-        text-shadow: 0 0 4px black;
+        
         outline: 0px solid black;
         transition: all 0.1s ease-in-out;
         overflow: hidden;
@@ -87,7 +88,8 @@
             width: 100%;
             background-color: $couleur-primaire;
             outline: $hover-border;
-            border-radius: 20px;
+            outline-color: #ffb700;
+            border-radius: $coin-ronds;
             padding: 20px 50px;
             display: flex;
             flex-direction: row;
@@ -109,7 +111,7 @@
                     height: 100%;
                     margin: 0 25px;
                     padding: 20px;
-                    border-radius: 20px;
+                    border-radius: $coin-ronds;
                     outline: 3px dotted $couleur-secondaire;
                     span{
                         padding: 10px;
@@ -126,7 +128,7 @@
                         height: 25%;
                         width: 100%;
                         background-color: $couleur-secondaire;
-                        border-radius: 20px;
+                        border-radius: $coin-ronds;
                         margin: 20px 0;
                         display: flex;
                         justify-content: center;
