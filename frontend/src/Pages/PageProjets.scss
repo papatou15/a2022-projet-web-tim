@@ -1,11 +1,16 @@
+@import "../Variables/Couleurs.scss";
+
 .PageProjets {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $base-color;
+    min-height: 100vh;
 
     h1{
         font-size: 3em;
+        color: $off-white;
     }
 
     .filtreProjets{
@@ -22,6 +27,6 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        grid-row-gap: 35px;
+        gap: 35px;
     }
 }

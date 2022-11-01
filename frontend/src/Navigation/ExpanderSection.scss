@@ -2,7 +2,7 @@
     margin: auto;
     transition: all 0.5s ease-in-out;
     &[expanderstate="true"] {
-        // max-height: 2000px;
+        max-height: 2000px;
         overflow: visible;
         opacity: 1;
         z-index: 6;

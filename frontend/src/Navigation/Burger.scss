@@ -4,7 +4,7 @@
     user-select: none;
     margin: 2rem;
     position: fixed;
-    z-index: 10;
+    z-index: 999;
     cursor: pointer;
     img {
         @media screen and (min-width: $layout-desktop) {

@@ -9,9 +9,9 @@ export default function PageProjets(props){
     return (
         <main className="PageProjets">
             <h1>Les projets</h1>
-            <div className="filtreProjets">
+            {/* <div className="filtreProjets">
                 Filtres
-            </div>
+            </div> */}
             <div className="listeProjets">
                 {
                     dataProjets.projets.map(
