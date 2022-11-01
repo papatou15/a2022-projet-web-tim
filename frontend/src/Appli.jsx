@@ -34,62 +34,46 @@ export default function Appli() {
   
   useChargerSite(setData, isLoaded, setIsLoaded);
 
-  const routes = [
-    {
-      key: 'accueil',
-      path: '/',
-      component: () => <PageAccueil/>
-    },
-    {
-      key: 'cours',
-      path: '/galerie-des-cours',
-      component: () => <PageCours/>
-    }, 
-    {
-      key: 'social',
-      path: '/le-social',
-      component: () => <PageSocial/>
-    },
-    {
-      key: 'avenir',
-      path: '/avenir',
-      component: () => <PageAvenir/>
-    },
-    {
-      key: 'projets',
-      path: '/galerie-des-projets',
-      component: () => <PageProjets/>
-    }, 
-    {
-      key: 'enseignants',
-      path: '/les-enseignants',
-      component: () => <PageEnseignants/>
-    }, 
-  ];
+  const getPage = (page) => {
+    return pages[page.pageSlug];
+  }
+
+  const pages = {
+    "accueil" : <PageAccueil/>,
+    "galerie-des-cours" : <PageCours/>,
+    "le-social" : <PageSocial/>,
+    "avenir" : <PageAvenir/>,
+    "galerie-des-projets" : <PageProjets/>,
+    "les-enseignants" : <PageEnseignants/>
+  }
 
   return (
     <DataContext.Provider value={siteData}>
-      {
-          (!isLoaded) 
-          ?
-          <Loading isLoading={isLoaded}/>
-          :
           <div className="Appli">
-
-            <Menu siteData={siteData}/>
-            <Routes>
-              {
-                (siteData.pages != null)
-                ?
-                routes.map(
-                  route => <Route key={route.key} path={route.path} element={<route.component/>}></Route>
-                )
-                :
-                <Route>No pages...</Route>
-              }
-            </Routes>
+            <Loading isLoading={!isLoaded}/>
+            {
+              (isLoaded) ? 
+              <>
+              <Menu siteData={siteData}/>
+              <Routes>
+                {
+                  (siteData.pages.data.header.headerMenuItems != null)
+                  ?
+                  siteData.pages.data.header.headerMenuItems.map(
+                    page => {
+                      const Page = getPage(page);
+                      return <Route key={page.ID} path={'/'+page.pageSlug} element={Page}></Route>
+                    }
+                  )
+                  :
+                  <Route>No pages...</Route>
+                }
+              </Routes>
+              </>
+              : <></>
+            }
+            
           </div>
-      }
       
     </DataContext.Provider>
   );

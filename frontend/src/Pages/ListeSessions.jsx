@@ -6,6 +6,7 @@ import './ListeSessions.scss';
 export default function ListeSessions({sessions}){
 
     const [sortedSessions, setSortedSessions] = useState([]);
+    const [carteOpenState, setCarteOpenState] = useState('');
 
     useEffect(() => setSortedSessions(sortSessions(sessions)), []);
 
@@ -14,7 +15,7 @@ export default function ListeSessions({sessions}){
             {
                 sortedSessions.map(
                     session => 
-                        <ListeCours key={session.titre} sessionTitre={session.title.rendered} lesCours={session.cours}/>
+                        <ListeCours key={session.id} sessionTitre={session.title.rendered} lesCours={session.cours} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
                 )
             }
         </section>

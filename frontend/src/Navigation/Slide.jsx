@@ -1,10 +1,12 @@
 import './Slide.scss';
 
-export default function Slide({img, index}){
+export default function Slide({img, index, onClick}){
 
     return (
-        <div className="Slide">
-            <img src={img.guid}/>
-        </div>
+        <a onClick={onClick} className="Slide">
+            <div>
+                <img src={img}/>
+            </div>
+        </a>
     );
 }
