@@ -1,0 +1,41 @@
+:root {
+    --bg-color: red;
+    --pos-y: calc(50% - (30vh / 2));
+    --pos-x: calc(50% - (50vw / 2));
+}
+.CarteEnseignant {
+    
+    transition: all 0.5s ease-in-out;
+    position: relative;
+    width: 400px;
+    height: 200px;
+    .contenu {
+        border: solid red 1px;
+        background-color: orange;
+        transition: all 0.5s ease-in-out;
+        width: inherit;
+        height: inherit;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+        .enseignant {
+            &-nom {
+                margin: 1rem;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+            }
+        }
+        &.active {
+            position: absolute;
+            background-color: var(--bg-color);
+            width: 50vw;
+            height: 30vh;
+            z-index: 7;
+            top: var(--pos-y);
+            left: var(--pos-x);
+        }
+    }
+    
+}

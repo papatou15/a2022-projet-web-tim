@@ -98,7 +98,6 @@
     }
 
     @media screen and (min-width: $layout-desktop) {
-
         &:nth-of-type(3n+2) .cours-details {
           margin-left: calc(-100% - #{$gap-grille-cours});
         }

@@ -47,33 +47,33 @@ export default function Appli() {
     "les-enseignants" : <PageEnseignants/>
   }
 
-
   return (
     <DataContext.Provider value={siteData}>
-      {
-          (!isLoaded) 
-          ?
-          <Loading isLoading={!isLoaded}/>
-          :
           <div className="Appli">
-
-            <Menu siteData={siteData}/>
-            <Routes>
-              {
-                (siteData.pages.data.header.headerMenuItems != null)
-                ?
-                siteData.pages.data.header.headerMenuItems.map(
-                  page => {
-                    const Page = getPage(page);
-                    return <Route key={page.ID} path={'/'+page.pageSlug} element={Page}></Route>
-                  }
-                )
-                :
-                <Route>No pages...</Route>
-              }
-            </Routes>
+            <Loading isLoading={!isLoaded}/>
+            {
+              (isLoaded) ? 
+              <>
+              <Menu siteData={siteData}/>
+              <Routes>
+                {
+                  (siteData.pages.data.header.headerMenuItems != null)
+                  ?
+                  siteData.pages.data.header.headerMenuItems.map(
+                    page => {
+                      const Page = getPage(page);
+                      return <Route key={page.ID} path={'/'+page.pageSlug} element={Page}></Route>
+                    }
+                  )
+                  :
+                  <Route>No pages...</Route>
+                }
+              </Routes>
+              </>
+              : <></>
+            }
+            
           </div>
-      }
       
     </DataContext.Provider>
   );
