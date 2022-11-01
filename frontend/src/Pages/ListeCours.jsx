@@ -20,7 +20,14 @@ export default function ListeCours({sessionTitre, lesCours, carteOpenState, setC
             <section className="ListeCours">
                 <div className="sessionTitre">
                     <h1>{sessionTitre}</h1>
-                    <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>Expand</ExpanderButton>
+                    <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>
+                        {
+                            (expanderState) ?
+                            <p>Collapse</p>
+                            :
+                            <p>Expand</p>
+                        }
+                    </ExpanderButton>
                 </div>
                 <ExpanderSection expanderState={expanderState}>
                     <div className="lesCours">

@@ -1,3 +1,6 @@
+@import "../Variables/Couleurs.scss";
+@import "../Variables/Layout.scss";
+
 .groupeCarteProjet{
     width: 400px;
     display: flex;
@@ -5,18 +8,27 @@
     justify-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    
+    margin: 35px 0;
+    gap: $gap-grille-cours;
     .carteProjet{
         width: 400px;
-        height: 700px;
+        height: 800px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         flex-wrap: nowrap;
         align-items: center;
-        border-radius: 50px 50px 0 0;
-        background-color: #F69000;
-        margin: 35px;
+        background-color: $couleur-primaire;
+        color: $off-white;
+        text-shadow: 0 0 4px black;
+        outline: 0px solid black;
+        transition: all 0.1s ease-in-out;
+        overflow: hidden;
+        &:hover{
+            outline: $hover-border;
+            border-radius: 20px;
+            transform: scale(1.02);
+        }
         .titreProjet{
             width: 100%;
             height: 100px;
@@ -31,28 +43,36 @@
             }
         }
         img{
-            width: 100%;
-            height: auto;
+            width: auto;
+            max-height: 35%;
         }
         .descProjet{
-            height: 50%;
+            height: 60%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            width: 100%;
             p{
-                height: 33%;
-                padding: 20px 5% 0 5%;
                 text-align: center;
                 margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                span{
+                    margin: 2px;
+                }
                 &:first-of-type{
                     font-size: 1.5em;
+                    height: 25%;
                 }
                 &:nth-of-type(2){
-                    background-color: #d47c00;
+                    background-color: $couleur-secondaire;
+                    width: 100%;
+                    height: 37.5%;
                 }
                 &:nth-of-type(3){
-                    
+                    height: 37.5%;
                 }
             }
         }
@@ -61,10 +81,13 @@
     .ExpanderSection{
         width: calc(100vw - 50%);
         height: 50vh;
+        color: $off-white;
         .infoProjet{
             height: 100%;
             width: 100%;
-            background-color: #eee;
+            background-color: $couleur-primaire;
+            outline: $hover-border;
+            border-radius: 20px;
             padding: 20px 50px;
             display: flex;
             flex-direction: row;
@@ -85,22 +108,62 @@
                     width: 65%;
                     height: 100%;
                     margin: 0 25px;
-                    padding: 10px;
-                    background-color: rgb(9, 41, 128)
+                    padding: 20px;
+                    border-radius: 20px;
+                    outline: 3px dotted $couleur-secondaire;
+                    span{
+                        padding: 10px;
+                    }
                 }
                 .coursReliesProjet{
                     width: 35%;
                     text-align: center;
+                    h4{
+                        font-size: 1.2em;
+                        margin: 1em;
+                    }
                     .coursProjetLien{
                         height: 25%;
                         width: 100%;
-                        background-color: rgb(7, 99, 161);
+                        background-color: $couleur-secondaire;
+                        border-radius: 20px;
                         margin: 20px 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: all 0.15s ease-in-out;
+                        border: $hover-border-off;
+                        &:hover{
+                            border: $hover-border;
+                        }
                     }
                 }
             }
         }
     }
+
+    &[expanderstate="true"]{
+        .carteProjet{
+            outline: $hover-border;
+            border-radius: 20px;
+        }
+    }
+
+    @media screen and (min-width: $layout-desktop) {
+
+        &:nth-of-type(3n+2) .ExpanderSection {
+            margin-left: calc(-100% - #{$gap-grille-cours});
+        }
+        &:nth-of-type(3n+3) .ExpanderSection {
+            margin-left: calc(-200% - (#{$gap-grille-cours} * 2));
+        }
+        &:nth-of-type(3n+4) {
+            clear: left;
+        }
+        .ExpanderSection {
+            width: calc(300% + (#{$gap-grille-cours} * 2));
+        }  
+      }
 }
     
 

@@ -1,38 +1,40 @@
 import './CarteProjet.scss';
 import { useContext, useState } from 'react';
+import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
+
 
 export default function CarteProjet({projet, titre, type, cours, auteurs, image}){
     const [expanderState, setExpanderState] = useState(false);
 
     return(
-        <div className="groupeCarteProjet">
-            <ExpanderButton expanderState={expanderState} setExpanderState={setExpanderState}>
+        <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
+            <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>
                 <div className="carteProjet">
                     <div className="titreProjet">
                         <h4>{titre}</h4>
                     </div>
                     <img src={image} alt="" className="imgProjet"/>
                     <div className="descProjet">
-                        <p><b>Catégorie: </b>{type}</p>
-                        <p><b>Cours: </b>{cours}</p>
-                        <p><b>Fait par: </b>{auteurs}</p>
+                        <p><b>Catégorie: </b><span>{type}</span></p>
+                        <p><b>Cours: </b>{cours.map(unCours => {return(<span className="simpleCours">{unCours}</span>)})}</p>
+                        <p><b>Fait par: </b>{auteurs.map(unAuteur => {return(<span>{unAuteur}</span>)})}</p>
                     </div>
                 </div>
             </ExpanderButton>
             <ExpanderSection expanderState={expanderState}>
                 <div className="infoProjet">
                     <div className="carouselProjet">
-
+                        {/* <Carrousel images={image}></Carrousel> */}
                     </div>
                     <div className="rightSection">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe incidunt eos totam et, vel tenetur, ipsam harum necessitatibus cumque mollitia ipsa dolore veniam! Illo neque architecto consequatur! Atque, recusandae voluptatibus.</p>
+                        <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
                         <div className="coursReliesProjet">
                             <h4>Cours reliés</h4>
-                            <div className="coursProjetLien"></div>
-                            <div className="coursProjetLien"></div>
-                            <div className="coursProjetLien"></div>
+                            {
+                                cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)})
+                            }
                         </div>
                     </div>
                 </div>

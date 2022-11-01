@@ -1,4 +1,9 @@
+@import "../Variables/Couleurs.scss";
+
 $layout-tablette: 768px;
 $layout-desktop: 992px;
 
 $gap-grille-cours: 2rem;
+
+$hover-border: 8px solid $couleur-bouton-jaune;
+$hover-border-off: 0px solid $couleur-bouton-jaune;

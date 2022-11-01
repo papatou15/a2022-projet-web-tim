@@ -12,11 +12,15 @@ export default function PageAccueil(props){
     return (
         
         <main className="PageAccueil">
-
+            
             <section className="block1">
+
+                <video autoPlay muted loop id="accueilBGVideo" width="110%" height="auto">
+                    <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
+                </video>
                 <div className="mainTitle">
                     <h1>TIM Maisonneuve</h1>
-                    <h3>Accroche</h3>
+                    <h3>L’univers du web et du jeu vidéo au bout des doigts!</h3>
                 </div>
             </section>
 

@@ -9,6 +9,7 @@ export default function PageCours(props){
 
     return (
         <main className="PageCours">
+            <h1>Les cours</h1>
             {
                 (siteData.sessions != null) 
                 ?
