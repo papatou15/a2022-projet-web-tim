@@ -7,7 +7,6 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 
 export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState}){
     const [expanderState, setExpanderState] = useState(false);
-    console.log("Liens images: " + image);
 
     useEffect(() => {
         if (expanderState && carteOpenState !== id)
@@ -33,7 +32,8 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
             <ExpanderSection expanderState={expanderState}>
                 <div className="infoProjet">
                     <div className="carouselProjet">
-                        {/* <Carrousel images={image}></Carrousel> */}
+                        <Carrousel images={projet.images}></Carrousel>
+                        {console.log(image)}
                     </div>
                     <div className="rightSection">
                         <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>

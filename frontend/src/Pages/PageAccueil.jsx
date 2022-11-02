@@ -15,7 +15,7 @@ export default function PageAccueil(props){
             
             <section className="block1">
 
-                <video autoPlay muted loop id="accueilBGVideo" min-width="110%" height="auto">
+                <video autoPlay muted loop id="accueilBGVideo" min-width="120%" height="auto">
                     <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
                 </video>
                 <div className="mainTitle">
