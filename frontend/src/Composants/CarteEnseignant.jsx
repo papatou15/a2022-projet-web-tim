@@ -1,6 +1,6 @@
 import './CarteEnseignant.scss';
 
-export default function CarteEnseignant({id, prenom, nom, image, description, carteAgrandie, setCarteAgrandie, onClick}){
+export default function CarteEnseignant({id, prenom, nom, image, description, onClick}){
 
     return (
         <a onClick={onClick} className="CarteEnseignant">

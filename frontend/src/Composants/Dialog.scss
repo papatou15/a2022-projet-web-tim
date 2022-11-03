@@ -1,74 +1,40 @@
 @import "../Variables/Layout.scss";
 .Dialog {
+    transition: all 0.5s ease-in-out;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: black;
+    cursor: pointer;
     .Dialog-contenu {
+        transition: all 0.5s ease-in-out;
+        cursor: default;
+        border-radius: 5px;
         position: fixed;
         width: $width-dialog;
         height: $height-dialog;
         background-color: rgb(255, 255, 255);
+        opacity: 0;
         top: calc(100vh / 2 - #{$height-dialog} / 2);
         left: calc(100vw / 2 - #{$width-dialog} / 2);
     }
     &[active="true"]
     {
-        animation: dialogFadeIn 0.5s forwards ease-in-out;
+        background-color: rgba(0, 0, 0, 0.4);
         .Dialog-contenu {
-            animation: dialogOpen 0.5s forwards ease-in-out;
+            opacity: 1;
+            transform: scale(1);
         }
-
-        @keyframes dialogFadeIn {
-            0% {
-                background-color: rgba(255, 255, 255, 0);
-            }
-            100% {
-                background-color: rgba(0, 0, 0, 0.4);
-            }
-        }
-        
-        @keyframes dialogOpen {
-            0% {
-                opacity: 0;
-                transform: scale(0.5);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        
     }
     &[active="false"]
     {
-
-        animation: dialogFadeOut 0.5s forwards ease-in-out;
+        background-color: rgba(240, 0, 0, 0);
+        pointer-events: none;
         .Dialog-contenu {
-            animation: dialogClose 0.5s forwards ease-in-out;
-        }
-
-        @keyframes dialogFadeOut {
-            0% {
-                background-color: rgba(0, 0, 0, 0.4);
-            }
-            100% {
-                background-color: rgba(255, 255, 255, 0);
-                pointer-events: none;
-            }
-        }
-        @keyframes dialogClose {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: scale(0.5);
-                pointer-events: none;
-            }
+            opacity: 0;
+            transform: scale(0.5);
+            pointer-events: none;
         }
     }
 }

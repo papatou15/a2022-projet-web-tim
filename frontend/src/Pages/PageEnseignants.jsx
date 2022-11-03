@@ -11,16 +11,15 @@ export default function PageEnseignants(props){
     return (
         <main className="PageEnseignants">
             <ListeEnseignants carteAgrandie={carteAgrandie} setCarteAgrandie={setCarteAgrandie} setDialogOpen={setDialogOpen}/>
-            <Dialog isActive={dialogOpen ? true : false} onOutsideClick={() => {setDialogOpen(false); setCarteAgrandie(null)}}>
+            <Dialog isActive={dialogOpen ? true : false} onOutsideClick={() => {setDialogOpen(false)}}>
                 {
-                    dialogOpen ? 
+                    carteAgrandie ? 
                     <div>
                         {carteAgrandie.prenom}
                     </div>
                     : 
                     <></>
                 }
-                
             </Dialog>      
         </main>
     );
