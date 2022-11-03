@@ -14,7 +14,11 @@ export default function Menu({siteData}){
     return (
         <div className="Menu">
             <Burger onClick={toggleMenu} logoSrc={siteData.logo}/>
-            <Navigation navOpenState={navOpenState} toggleMenu={toggleMenu} pages={siteData.pages}/>
+            <Navigation navOpenState={navOpenState} 
+                        toggleMenu={toggleMenu} 
+                        pages={siteData.pages}
+                        onOutsideClick={() => setNavOpenState(false)}
+            />
         </div>
     );
 }
