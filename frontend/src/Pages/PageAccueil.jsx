@@ -4,10 +4,16 @@ import CarteProjet from '../Composants/CarteProjet';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext } from 'react';
+import { melangerTableau, randomProjet } from '../utils/array-utils';
 
 export default function PageAccueil(props){
-
     const dataAccueil = useContext(DataContext);
+
+    let sliceNumber = randomProjet(dataAccueil.projets);
+
+    console.log("Slice number " + sliceNumber);
+    console.log("Length:" + dataAccueil.projets.length);
+    
     console.log(dataAccueil.projets);
     return (
         
@@ -83,9 +89,9 @@ export default function PageAccueil(props){
                 </div>
                 <div className="carouselCartesProjets">
                     {
-                        dataAccueil.projets.map(
+                        melangerTableau(dataAccueil.projets).map(
                             projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images[0].guid}/>
-                        )
+                        ).slice(sliceNumber, sliceNumber + 3)
                     }
                 </div>
             </section>

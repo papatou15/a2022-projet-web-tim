@@ -21,7 +21,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <div className="titreProjet">
                         <h4>{titre}</h4>
                     </div>
-                    <img src={image[0]} alt="Image du projet" className="imgProjet"/>
+                    <img src={image} alt="Image du projet" className="imgProjet"/>
                     <div className="descProjet">
                         <p><b>Catégorie: </b><span>{type}</span></p>
                         <p><b>Cours: </b>{cours.map(unCours => {return(<span className="simpleCours">{unCours}</span>)})}</p>
@@ -33,7 +33,6 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                 <div className="infoProjet">
                     <div className="carouselProjet">
                         <Carrousel images={projet.images}></Carrousel>
-                        {console.log(image)}
                     </div>
                     <div className="rightSection">
                         <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
