@@ -1,0 +1,12 @@
+@import "../Variables/Layout.scss";
+
+.ListeProgrammesUni {
+    margin: 3rem;
+    display: flex;
+    flex-flow: column;
+    @media screen and (min-width: $layout-tablette) {
+        gap: 1rem;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}

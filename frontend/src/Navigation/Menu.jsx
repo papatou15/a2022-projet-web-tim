@@ -18,7 +18,7 @@ export default function Menu({siteData}){
             <Burger ref={burgerRef} onClick={toggleMenu} logoSrc={siteData.logo}/>
             <Navigation navOpenState={navOpenState} 
                         toggleMenu={toggleMenu} 
-                        pages={siteData.pages}
+                        menu={siteData.menu}
                         onOutsideClick={() => setNavOpenState(false)}
                         burgerRef={burgerRef}
             />

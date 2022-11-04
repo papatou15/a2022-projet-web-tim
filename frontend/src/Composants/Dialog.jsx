@@ -1,12 +1,12 @@
 import { useRef } from 'react';
-import useCliqueExterieurAlert from '../Hooks/useCliqueExterieurAlerte';
+import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 import './Dialog.scss';
 
 export default function Dialog({children, isActive, onOutsideClick}){
 
     const dialogRef = useRef(null);
 
-    useCliqueExterieurAlert(dialogRef, onOutsideClick);
+    useCliqueExterieur(dialogRef, onOutsideClick);
 
     return (
         <div className="Dialog" active={isActive ? "true" : "false"}>
