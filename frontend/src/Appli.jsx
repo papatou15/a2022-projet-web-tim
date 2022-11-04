@@ -42,12 +42,12 @@ export default function Appli() {
   }
 
   const pages = {
-    "accueil" : PageAccueil,
-    "galerie-des-cours" : PageCours,
-    "le-social" : PageSocial,
-    "avenir" : PageAvenir,
-    "galerie-des-projets" : PageProjets,
-    "les-enseignants" : PageEnseignants
+    "accueil" :  {component: PageAccueil, path: ""},
+    "galerie-des-cours" : {component: PageCours, path: "galerie-des-cours"},
+    "le-social" : {component: PageSocial, path: "le-social"},
+    "avenir" : {component: PageAvenir, path: "avenir"},
+    "galerie-des-projets" : {component: PageProjets, path: "galerie-des-projets"},
+    "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
   return (
@@ -65,7 +65,7 @@ export default function Appli() {
                   siteData.menu.data.header.headerMenuItems.map(
                     page => {
                       const Page = getPage(page);
-                      return <Route key={page.ID} path={'/'+page.pageSlug} element={<Page id={page.pageID}/>}></Route>
+                      return <Route key={page.ID} path={'/'+Page.path} element={<Page.component id={page.pageID}/>}></Route>
                     }
                   )
                   :
