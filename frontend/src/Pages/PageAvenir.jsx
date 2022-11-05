@@ -13,18 +13,18 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
-            <section className='emplois-stages'>
+            <div className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[0]}</SousTitre>
                 <p>{pageAvenir.paragraphes[0]}</p>
                 <SousTitre>{pageAvenir.sous_titres[1]}</SousTitre>
                 <ListeCarrieres/>
-            </section>
-            <section className='universite'>
+            </div>
+            <div className='universite section'>
                 <TitreSection>{pageAvenir.titre_sections[1]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[2]}</SousTitre>
                 <ListeProgrammesUni/>
-            </section>
+            </div>
         </main>
     );
 }

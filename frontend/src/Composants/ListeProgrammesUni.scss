@@ -1,7 +1,7 @@
 @import "../Variables/Layout.scss";
 
 .ListeProgrammesUni {
-    margin: 3rem;
+    margin: 3rem 0;
     display: flex;
     flex-flow: column;
     @media screen and (min-width: $layout-tablette) {
