@@ -1,12 +1,29 @@
+@import "./Variables/Couleurs.scss";
+@import "./Variables/Layout.scss";
+
 .Bouton {
     cursor: pointer;
     width: 150px;
-    height:50px;
-    background-color: #F69000;
-    color: white;
-    border: white 1px solid;
+    height: 50px;
+    margin: 50px;
+    padding: 5px;
+    background-color: $couleur-primaire;
+    color: $off-white;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+    outline: $hover-border-off;
+    transition: all 0.1s ease-in-out;
+    &:hover{
+        transform: scale(1.05);
+        outline: $hover-border;
+        border-radius: calc(#{$coin-ronds} - 5px);
+    }
+
+    &:active{
+        background-color: $couleur-tierce;
+        transform: scale(.95);
+        outline:$hover-border-clicked;
+    }
 }
