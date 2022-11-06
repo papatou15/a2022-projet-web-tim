@@ -267,6 +267,24 @@
 
     .block6{
         background-color: #222F43;
-
+        height: 50vh;
+        display: flex;
+        flex-direction: column;
+        .titleSections{
+            height: auto;
+        }
+        .sectionCartesRandom{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 80%;
+            .uneCarteEnseignant{
+                width: 500px;
+                height: 400px;
+                .CarteEnseignant{
+                    
+                }
+            }
+        }
     }
 }

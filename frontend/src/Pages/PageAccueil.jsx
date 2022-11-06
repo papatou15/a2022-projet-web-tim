@@ -1,14 +1,16 @@
 import Bouton from '../Bouton';
 import CarteCoursSession from '../Composants/CarteCoursSession';
 import CarteProjet from '../Composants/CarteProjet';
+import CarteEnseignant from '../Composants/CarteEnseignant';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext } from 'react';
-import { melangerTableau, randomProjet } from '../utils/array-utils';
+import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
-    let sliceNumber = randomProjet(dataAccueil.projets); //Nombre renvoyé pour le nombre de carte dans la section des projets
+    let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
+    let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
 
     console.log(dataAccueil.projets);
     return (
@@ -94,7 +96,7 @@ export default function PageAccueil(props){
                     {
                         melangerTableau(dataAccueil.projets).map(
                             projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>
-                        ).slice(sliceNumber, sliceNumber + 3)
+                        ).slice(sliceNumberProjets, sliceNumberProjets + 3)
                     }
                 </div>
             </section>
@@ -131,7 +133,17 @@ export default function PageAccueil(props){
             </section>
 
             <section className="block6">
-            
+                <div className="titleSections">
+                    <h2>Tes <b>Enseignants</b></h2>
+                </div>
+
+                <div className="sectionCartesRandom">
+                    {
+                        dataAccueil.enseignants.map(
+                            unEnseignant => <div className="uneCarteEnseignant"><CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description}/></div>
+                        ).slice(sliceNumberProfs, sliceNumberProfs + 5)
+                    }
+                </div>
             </section>
         </main>
     );
