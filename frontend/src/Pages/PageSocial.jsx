@@ -4,9 +4,9 @@ export default function PageSocial(props){
     return (
         <main className="PageSocial">
             <div className="sectionSocial">
-                <h2>ÉVÉNEMENTS</h2>
+                <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur magnam illo quo reprehenderit quaerat aut ipsam ab quos assumenda eligendi unde perspiciatis, odio ea minus sunt molestiae, culpa iusto error deleniti deserunt voluptatem autem voluptas. Necessitatibus dolorem ullam minima quaerat, excepturi ad facere quae nesciunt sequi error, quos a dolore.</p>                    
+                    <p className="descEvents">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur magnam illo quo reprehenderit quaerat aut ipsam ab quos assumenda eligendi unde perspiciatis, odio ea minus sunt molestiae.<br/><br/>Culpa iusto error deleniti deserunt voluptatem autem voluptas. Necessitatibus dolorem ullam minima quaerat, excepturi ad facere quae nesciunt sequi error, quos a dolore.</p>                    
                     <div className="sideEvents">
                         <div className="event1">
                             <img src="" alt="" />
