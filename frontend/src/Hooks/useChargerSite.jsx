@@ -13,6 +13,7 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/pages?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/emplois?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/programmesuniversita?per_page=100').then(resp => resp.json()),
+                fetch('https://timm184.sg-host.com/wp-json/wp/v2/typecours?per_page=100').then(resp => resp.json()),
     
             ]).then(data => {
                 setSiteData({
@@ -24,7 +25,8 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                     projets: data[5],
                     pages: data[6],
                     carrieres: data[7],
-                    programmes_uni: data[8]
+                    programmes_uni: data[8],
+                    type_cours: data[9],
                 });
                 setIsLoaded(true);
             });

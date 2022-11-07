@@ -4,15 +4,7 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState}){
-
-    // useEffect(() => {
-    //     if (randomOrder === true) {
-    //         console.log("MELANGER");
-    //         cours = melangerTableau(cours);
-    //     }
-
-    // }, []);
+export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState, filtreCours}){
 
     const [expanderState, setExpanderState] = useState(true);
 
@@ -32,7 +24,7 @@ export default function ListeCours({sessionTitre, lesCours, carteOpenState, setC
                 <ExpanderSection expanderState={expanderState}>
                     <div className="lesCours">
                     {
-                        lesCours.map(
+                        lesCours.filter(filtreCours).map(
                             unCours =>
                                 <UnCours key={unCours.ID} id={unCours.ID} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
                         )

@@ -33,6 +33,7 @@ export default function Appli() {
       pages: [],
       carrieres: [],
       programmes_uni: [],
+      type_cours: [],
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);
