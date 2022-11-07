@@ -1,52 +1,128 @@
+@import "../Variables/Couleurs.scss";
 @import "../Variables/Polices.scss";
 
 .PageSocial
 {
-    *
-    {
-        border: 1px solid red
-    }
+    // *
+    // {
+    //     border: 1px solid purple;
+    // }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
     .sectionSocial
     {
-        height: 60vh;
+        // border: 3px solid purple;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100vw;
+
+        & ~ div
+        {
+            // border: 5px solid black;
+            height: 100vh;
+        }
 
         &:first-of-type
         {
-            .contenuEvents
-            {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                width: 80%;
-                height: 80%;
+            width: 100%;
+            background-color: $base-color;
 
-                & > p
+            h2
+            {
+                // border: 3px solid indigo;
+                height: 15%;
+                padding: 2%;
+                padding-left: 30%;
+                color: $off-white;
+                font-size: $font-size-titre;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-end;
+
+                span
                 {
-                    width: 50%;
-                    border: 3px solid blue;
+                    padding-right: 55%;
+                }
+            }
+                
+            div.contenuEvents
+            {
+                // border: 3px solid orange;
+                width: 75vw;
+                height: 95%;
+                margin-bottom: 2%;
+                display: flex;
+                align-items: center;
+
+                p.descEvents
+                {
+                    // border: 3px solid blue;
+                    width: 60%;
+                    height: 80%;
+                    margin: 1%;
+                    display: flex;
+                    align-items: center;
+                    font-size: $font-size-desc;
+                    color: $off-white;
+                }
+
+                img
+                {
+                    // background-color: orange;
+                    width: 16vw;
+                    height: 9vh;
                 }
 
                 div.sideEvents
                 {
-                    p
+                    // border: 3px solid green;
+                    width: 40%;
+                    height: 95%;
+                    margin-right: 1%;
+                    margin-left: 1%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    & > div
                     {
-                        border: 3px solid red;
+                        // border: 1px solid red;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        p
+                        {
+                            // border: 3px solid red;
+                            text-align: center;
+                            font-size: $font-size-desc-events;
+                            color: $off-white;
+                        }
                     }
                 }
             }
-
-            border: 3px solid blue;
         }
 
+        /*
         &:nth-of-type(2)
         {
             background-color: #eee;
+
+            *
+            {
+                border: 3px solid red;
+            }
 
             .contenuCommunaute
             {
@@ -103,7 +179,9 @@
                 }
             }
         }
+        */
 
+        /*
         &:last-of-type
         {
             .contenuMaisonneuve
@@ -146,5 +224,6 @@
                 }
             }
         }
+        */
     }
 }
