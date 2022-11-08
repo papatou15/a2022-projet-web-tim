@@ -3,17 +3,35 @@
 .Burger {
     user-select: none;
     margin: 2rem;
-    position: fixed;
-    z-index: 998;
+    z-index: 999;
     cursor: pointer;
-    img {
-        @media screen and (min-width: $layout-desktop) {
-            width: 150px;
+    display: flex;
+    flex-flow: column;
+    gap: 0.25rem;
+    &[isopen="true"] {
+        .bar:nth-child(1) {
+            rotate: 45deg;
+            translate: 0% 150%;
+            scale: 1.2;
         }
-        @media screen and (min-width: $layout-tablette) {
-            width: 100px;
+        .bar:nth-child(2) {
+            opacity: 0;
         }
-        width: 90px;
+        .bar:nth-child(3) {
+            rotate: -45deg;
+            translate: 0% -150%;
+            scale: 1.2;
+        }
+    }
+    &[isopen="false"] {
+        
+    }
+    .bar {
+        transition: all 0.2s ease-in-out;
+        pointer-events: none;
+        width: 2rem;
+        height: 0.5rem;
+        background-color: white;
         -webkit-filter: drop-shadow(2px 2px 2px #222);
         filter: drop-shadow(1px 1px 1px #222);
     }

@@ -17,6 +17,7 @@
         background-color: $base-color;
         padding: 1.5rem 0.5rem 1.5rem 0.5rem;
         p {
+            margin: 0;
             font-size: 1rem;
             transition: all 0.5s ease-in-out;
             position: absolute;
@@ -47,6 +48,7 @@
         
     }
     .filter-options {
+        margin: 0;
         pointer-events: none;
         position: absolute;
         z-index: 1;

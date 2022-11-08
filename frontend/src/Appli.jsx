@@ -4,10 +4,6 @@ import './Appli.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
-//Navigation
-import Burger from './Navigation/Burger';
-import Navigation from './Navigation/Navigation';
-
 //Pages
 import PageAccueil from './Pages/PageAccueil';
 import PageCours from './Pages/PageCours'
@@ -34,6 +30,7 @@ export default function Appli() {
       carrieres: [],
       programmes_uni: [],
       type_cours: [],
+      reseaux_sociaux: [],
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);

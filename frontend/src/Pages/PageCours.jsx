@@ -12,7 +12,7 @@ export default function PageCours(props){
     return (
         <main className="PageCours">
             <h1>Les cours</h1>
-            <Filtre itemFiltre={itemFiltre} setItemFiltre={setItemFiltre} options={type_cours} placeholder={"Filtrer les cours"}/>
+            <Filtre filtre={itemFiltre} setFiltre={setItemFiltre} options={type_cours} placeholder={"Filtrer les cours"}/>
             {
                 (sessions != null) 
                 ?
