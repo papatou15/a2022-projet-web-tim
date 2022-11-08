@@ -3,11 +3,6 @@
 
 .PageSocial
 {
-    // *
-    // {
-    //     border: 1px solid purple;
-    // }
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,7 +10,7 @@
 
     .sectionSocial
     {
-        // border: 3px solid purple;
+        width: 100%;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -24,37 +19,38 @@
 
         & ~ div
         {
-            // border: 5px solid black;
             height: 100vh;
         }
 
+        h2
+        {
+            height: 15%;
+            padding: 2%;
+            color: $off-white;
+            font-size: $font-size-titre;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+
         &:first-of-type
         {
-            width: 100%;
             background-color: $base-color;
-
+    
             h2
             {
-                // border: 3px solid indigo;
-                height: 15%;
-                padding: 2%;
                 padding-left: 30%;
-                color: $off-white;
-                font-size: $font-size-titre;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-end;
 
                 span
                 {
                     padding-right: 55%;
                 }
             }
-                
+
             div.contenuEvents
             {
-                // border: 3px solid orange;
                 width: 75vw;
                 height: 95%;
                 margin-bottom: 2%;
@@ -63,26 +59,23 @@
 
                 p.descEvents
                 {
-                    // border: 3px solid blue;
                     width: 60%;
                     height: 80%;
                     margin: 1%;
                     display: flex;
                     align-items: center;
-                    font-size: $font-size-desc;
+                    font-size: $font-size-desc-social-events;
                     color: $off-white;
                 }
 
                 img
                 {
-                    // background-color: orange;
                     width: 16vw;
                     height: 9vh;
                 }
 
                 div.sideEvents
                 {
-                    // border: 3px solid green;
                     width: 40%;
                     height: 95%;
                     margin-right: 1%;
@@ -94,7 +87,6 @@
 
                     & > div
                     {
-                        // border: 1px solid red;
                         width: 100%;
                         height: 100%;
                         display: flex;
@@ -104,9 +96,8 @@
 
                         p
                         {
-                            // border: 3px solid red;
                             text-align: center;
-                            font-size: $font-size-desc-events;
+                            font-size: $font-size-desc-social-side-events;
                             color: $off-white;
                         }
                     }
@@ -114,51 +105,61 @@
             }
         }
 
-        /*
+
         &:nth-of-type(2)
         {
-            background-color: #eee;
+            background-color: $couleur-primaire;
 
-            *
+            h2
             {
-                border: 3px solid red;
+                padding-right: 45%;
             }
 
             .contenuCommunaute
             {
                 display: flex;
-                flex-direction: row;
-                width: 80%;
                 justify-content: space-evenly;
+                align-items: center;
+                width: 90%;
+                height: 70%;
+                padding: 2%;
+                margin-bottom: 2%;
 
                 .carteCommunaute
                 {
-                    width: 300px;
+                    // width: 300px;
+                    width: 100%;
+                    height: 100%;
+                    margin: 1%;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
+                    justify-content: end;
                     align-items: center;
-                    height: 500px;
 
                     .carteBG
                     {
                         width: 95%;
-                        background-color: #999;
+                        height: 100%;
                         border-radius: 30px;
-                        height: 300px;
+                        background-color: $base-color;
+                        display: flex;
+                        align-items: flex-end;
                         text-align: center;
                         transition: 0.2s ease-in-out;
 
                         p
                         {
-                            padding: 5px;
+                            font-size: $font-size-desc-social-communaute;
+                            color: $couleur-quinaire;
+                            padding: 5%;
+                            margin-bottom: 10vh;
                         }
 
                         &:hover
                         {
-                            transform: translateY(-25px);
+                            transform: translateY(-3vh);
 
-                            &+.carteTitre
+                            & + .carteTitre
                             {
                                 transform: translateY(-50px);
                             }
@@ -168,62 +169,83 @@
                     .carteTitre
                     {
                         width: 100%;
-                        height: 125px;
-                        background-color: #ddd;
-                        border: 1px solid #333;
-                        text-align: center;
+                        height: 30%;
                         transform: translateY(-50px);
-                        font-size: 2em;
                         transition: 0.2s ease-in-out;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        background-color: $couleur-bouton-jaune;
+                        font-size: $font-size-desc-social-maisonneuve-titre;
                     }
                 }
             }
         }
-        */
 
-        /*
+
         &:last-of-type
         {
+            background-color: $base-color;
+
+            h2
+            {
+                padding-left: 45%;
+            }
+
             .contenuMaisonneuve
             {
-                width: 100vw;
+                width: 80%;
+                height: 70%;
                 justify-content: center;
                 align-items: center;
                 display: flex;
                 flex-direction: row;
-                width: 80%;
+                color: $couleur-quinaire;
 
                 .svgPlaceholder
                 {
-                    width: 50%;
+                    width: 25%;
+                    height: 75%;
+                    margin: 0 2.5%;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid white;
                 }
                 
                 .sideContent
                 {
                     width: 50%;
+                    height: 90%;
+                    margin: 2.5%;
+                    margin-left: 20%;
                     display: flex;
                     flex-direction: column;
-                    // border: 3px solid green;
+                    justify-content: center;
 
                     div
                     {
                         display: flex;
                         flex-direction: column;
                         align-items: flex-end;
+                        margin: 0 5%;
 
                         & > p
                         {
-                            font-size: $font-size-p;
+                            font-size: $font-size-desc-social-maisonneuve;
+                            // padding: 5%;
                         }
 
                         button
                         {
                             width: 5rem;
+                            margin-right: 15%;
                         }
                     }
                 }
             }
         }
-        */
     }
 }
