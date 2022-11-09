@@ -1,12 +1,15 @@
 @import "../Variables/Couleurs.scss";
 
 .cartes{
-    width: 100vw;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow: hidden;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    gap: 2rem;
+    &::-webkit-scrollbar {
+        display: none;
+      }
     .carteSessions{
         background-color: $couleur-tierce;
         color: white;
@@ -15,6 +18,8 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        display: inline-block;
+
         h3{
             text-align: center;
             height: 15%;

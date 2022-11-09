@@ -13,15 +13,14 @@
     color: $off-white;
     text-shadow: 0 0 4px black;
     .carteProjet{
-        width: 400px;
-        height: 800px;
+        width: clamp(200px, 50vw, 400px);
+        height: clamp(400px, 50vw, 800px);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         flex-wrap: nowrap;
         align-items: center;
         background-color: $couleur-primaire;
-        
         outline: 0px solid black;
         transition: all 0.1s ease-in-out;
         overflow: hidden;

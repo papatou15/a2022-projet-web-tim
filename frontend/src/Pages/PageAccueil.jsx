@@ -45,7 +45,6 @@ export default function PageAccueil(props){
                     <div className="navCarousel">
                         <div className="flecheCarousel"></div>
                         <div className="flecheCarousel"></div>
-                        <div className="flecheCarousel"></div>
                     </div>
                     <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
                 </div>
@@ -136,14 +135,17 @@ export default function PageAccueil(props){
                 <div className="titleSections">
                     <h2>Tes <b>Enseignants</b></h2>
                 </div>
-
-                <div className="sectionCartesRandom">
-                    {
-                        dataAccueil.enseignants.map(
-                            unEnseignant => <div className="uneCarteEnseignant"><CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description}/></div>
-                        ).slice(sliceNumberProfs, sliceNumberProfs + 5)
-                    }
+                <div className="contenuProfs">
+                    <div className="sectionCartesRandom">
+                        {
+                            dataAccueil.enseignants.map(
+                                unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 65)}/>
+                            ).slice(sliceNumberProfs, sliceNumberProfs + 5)
+                        }
+                    </div>
+                    <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>
+                
             </section>
         </main>
     );
