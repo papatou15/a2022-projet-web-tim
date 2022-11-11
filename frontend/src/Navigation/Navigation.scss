@@ -2,13 +2,18 @@
 @import '../Variables/Layout.scss';
 
 .Navigation {
-    z-index: 998;
     position: fixed;
+    z-index: 997;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
+    cursor: pointer;
     transition: all 0.5s ease-in-out;
 
     nav {
+        z-index: inherit;
+        cursor: default;
         overflow: hidden;
         position: relative;
         background-color: $base-color;
@@ -36,6 +41,11 @@
         }
         .curve {
             grid-area: contacts;
+            position: relative;
+            background: url(../svg/wave2.svg), linear-gradient(to bottom, transparent 70%, $couleur-bouton-jaune 70%);
+            background-position: 0% 0px, right bottom;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .Ronds { 
             position: absolute;
@@ -51,7 +61,7 @@
         background-color: rgba($color: #000000, $alpha: 0.8);
         visibility: visible;
         nav {
-            translate: 0%;
+            transform: translateX(0%);
             box-shadow: 0px 10px 50px 0px rgba($color: #000000, $alpha: 1);
         }
         
@@ -61,7 +71,7 @@
         background-color: rgba($color: #000000, $alpha: 0);
         visibility: hidden;
         nav {
-            translate: -100%;
+            transform: translateX(-100%);
             box-shadow: 0px 10px 50px 10px rgba($color: #000000, $alpha: 0);
         }
     } 

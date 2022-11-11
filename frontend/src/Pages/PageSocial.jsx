@@ -1,6 +1,11 @@
+import { useContext } from 'react';
+import { DataContext } from '../Context/DataContext';
 import './PageSocial.scss';
 
 export default function PageSocial(props){
+
+    const siteData = useContext(DataContext);
+
     return (
         <main className="PageSocial">
             <div className="sectionSocial">

@@ -1,0 +1,11 @@
+@import "../Variables/Layout.scss";
+
+.ListeCarrieres {
+    margin-top: 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    @media screen and (min-width: $layout-desktop) {
+        margin: 2rem 5rem;
+    }
+}
