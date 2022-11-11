@@ -1,7 +1,8 @@
 import './Menu.scss';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import {Burger} from './Burger';
 import Navigation from './Navigation';
+import BoutonAccueil from './BoutonAccueil';
 
 export default function Menu({siteData}){
 
@@ -15,7 +16,8 @@ export default function Menu({siteData}){
 
     return (
         <div className="Menu">
-            <Burger ref={burgerRef} onClick={toggleMenu} logoSrc={siteData.logo}/>
+            <BoutonAccueil logo={siteData.logo}/>
+            <Burger ref={burgerRef} onClick={toggleMenu} navOpenState={navOpenState}/>
             <Navigation navOpenState={navOpenState} 
                         toggleMenu={toggleMenu} 
                         menu={siteData.menu}
