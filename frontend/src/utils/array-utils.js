@@ -13,8 +13,8 @@ export function melangerTableau(tableau) {
     return tableau;
 }
 
-export function randomProjet(tableau){
-    let minimumNumber = tableau.length - 3;
+export function randomArraySlice(tableau, exclusion){
+    let minimumNumber = tableau.length - exclusion;
     let randomNumber = 0;
 
     randomNumber = Math.floor(Math.random() * minimumNumber);

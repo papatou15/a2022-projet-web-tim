@@ -1,18 +1,25 @@
+@import "../Variables/Couleurs.scss";
+
 .cartes{
-    width: 100vw;
     display: flex;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    align-items: center;
-    overflow: hidden;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+    gap: 2rem;
+    &::-webkit-scrollbar {
+        display: none;
+      }
     .carteSessions{
-        background-color: rgb(25,69,87);
+        background-color: $couleur-tierce;
         color: white;
         width: 300px;
         height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        display: inline-block;
+
         h3{
             text-align: center;
             height: 15%;
@@ -35,7 +42,7 @@
                     background-size: 200% 2px;
                     background-position: center top, right bottom;
                     background-repeat: no-repeat;
-                    transition: 0.5s ease-in-out;
+                    transition: 0.2s ease-in-out;
                     &:hover{
                         background-position: center top, left bottom;
                     }
