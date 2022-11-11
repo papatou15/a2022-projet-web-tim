@@ -6,6 +6,7 @@ import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext } from 'react';
 import { melangerTableau, randomArraySlice } from '../utils/array-utils';
+import { scrollButtons } from '../utils/scrollButtons';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
@@ -94,7 +95,7 @@ export default function PageAccueil(props){
                 <div className="carouselCartesProjets">
                     {
                         melangerTableau(dataAccueil.projets).map(
-                            projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>
+                            projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>
                         ).slice(sliceNumberProjets, sliceNumberProjets + 3)
                     }
                 </div>
@@ -109,21 +110,21 @@ export default function PageAccueil(props){
                         <div className="socialSlides Event">
                             <div className="socialSlidesContent">
                                 <h3>Les <b>Événements</b></h3>
-                                <Bouton>Voir les événements</Bouton>
+                                <Bouton href={"le-social"}>Voir les événements</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Communaute">
                             <div className="socialSlidesContent">
                                 <h3><b>Communauté</b></h3>
-                                <Bouton>En apprendre plus</Bouton>
+                                <Bouton href={"le-social"}>En apprendre plus</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Maisonneuve">
                             <div className="socialSlidesContent">
                                 <h3><b>Maisonneuve</b></h3>
-                                <Bouton>Consulter le collège</Bouton>
+                                <Bouton href={"le-social"}>Consulter le collège</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
@@ -136,12 +137,16 @@ export default function PageAccueil(props){
                     <h2>Tes <b>Enseignants</b></h2>
                 </div>
                 <div className="contenuProfs">
-                    <div className="sectionCartesRandom">
+                    <div className="sectionCartesRandom" id="scrollCartes">
                         {
                             dataAccueil.enseignants.map(
                                 unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 65)}/>
-                            ).slice(sliceNumberProfs, sliceNumberProfs + 5)
+                            )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
                         }
+                    </div>
+                    <div className="boutonsCarousel">
+                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", 50)}></div>
+                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", -50)}></div>
                     </div>
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>
