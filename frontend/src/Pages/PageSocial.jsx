@@ -9,6 +9,14 @@ export default function PageSocial(props){
     return (
         <main className="PageSocial">
             <div className="sectionSocial">
+                {/* propriété Viewbox */}
+                <svg id="vague1">
+                    <path d="M0,210.5c92.65-42.08,234.69-90.01,402-74,212.92,20.37,243.57,122.93,466,163,227.67,41.01,299.62-47.69,594-46,199.1,1.14,360.27,81.82,459,114l-1-367.5H.5L0,210.5Z"/>
+                </svg>
+                 {/* Propriété viewbox */}
+                <svg id="vague2">
+                    <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
+                </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
                     <p className="descEvents">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur magnam illo quo reprehenderit quaerat aut ipsam ab quos assumenda eligendi unde perspiciatis, odio ea minus sunt molestiae.<br/><br/>Culpa iusto error deleniti deserunt voluptatem autem voluptas. Necessitatibus dolorem ullam minima quaerat, excepturi ad facere quae nesciunt sequi error, quos a dolore.</p>                    
