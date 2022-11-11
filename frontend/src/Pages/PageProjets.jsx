@@ -33,7 +33,7 @@ export default function PageProjets(props){
             <div className="listeProjets">
                 {
                     projets.filter(filtrerProjets).map(
-                        projet => <CarteProjet key={projet.id} projet={projet} id={projet.id} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
+                        projet => <CarteProjet key={projet.id} projet={projet} id={projet.id} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
                     )
                 }
             </div>
