@@ -4,10 +4,6 @@ import './Appli.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 
-//Navigation
-import Burger from './Navigation/Burger';
-import Navigation from './Navigation/Navigation';
-
 //Pages
 import PageAccueil from './Pages/PageAccueil';
 import PageCours from './Pages/PageCours'
@@ -24,12 +20,17 @@ export default function Appli() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [siteData, setData]=  useState({
-      pages: [],
+      menu: [],
       sessions: [],
       cours: [],
       enseignants: [],
       logo: "",
-      projets: []
+      projets: [],
+      pages: [],
+      carrieres: [],
+      programmes_uni: [],
+      type_cours: [],
+      reseaux_sociaux: [],
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);
@@ -39,12 +40,12 @@ export default function Appli() {
   }
 
   const pages = {
-    "accueil" : <PageAccueil/>,
-    "galerie-des-cours" : <PageCours/>,
-    "le-social" : <PageSocial/>,
-    "avenir" : <PageAvenir/>,
-    "galerie-des-projets" : <PageProjets/>,
-    "les-enseignants" : <PageEnseignants/>
+    "accueil" :  {component: PageAccueil, path: ""},
+    "galerie-des-cours" : {component: PageCours, path: "galerie-des-cours"},
+    "le-social" : {component: PageSocial, path: "le-social"},
+    "avenir" : {component: PageAvenir, path: "avenir"},
+    "galerie-des-projets" : {component: PageProjets, path: "galerie-des-projets"},
+    "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
   return (
@@ -57,12 +58,12 @@ export default function Appli() {
               <Menu siteData={siteData}/>
               <Routes>
                 {
-                  (siteData.pages.data.header.headerMenuItems != null)
+                  (siteData.menu.data.header.headerMenuItems != null)
                   ?
-                  siteData.pages.data.header.headerMenuItems.map(
+                  siteData.menu.data.header.headerMenuItems.map(
                     page => {
                       const Page = getPage(page);
-                      return <Route key={page.ID} path={'/'+page.pageSlug} element={Page}></Route>
+                      return <Route key={page.ID} path={'/'+Page.path} element={<Page.component id={page.pageID}/>}></Route>
                     }
                   )
                   :

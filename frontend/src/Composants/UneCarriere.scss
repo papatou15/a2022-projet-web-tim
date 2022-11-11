@@ -1,0 +1,28 @@
+@import "../Variables/Layout.scss";
+
+.UneCarriere {
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    width: 80%;
+    .nom-emploi {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+    .nom-emploi + p {
+        margin: 0.5rem 0 1rem 1.5rem;
+        font-weight: 100;
+    }
+    @media screen and (min-width: $layout-tablette) {
+        width: 50%;
+    }
+    @media screen and (min-width: $layout-desktop) {
+        justify-content: center;
+        align-items: center;
+        .nom-emploi + p {
+            margin: 0.5rem 0 1rem 0rem;
+            font-weight: 100;
+        }
+    }
+}

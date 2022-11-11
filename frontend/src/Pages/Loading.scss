@@ -1,7 +1,7 @@
 @import "../Variables/Couleurs.scss";
 .Loading {
     position: fixed;
-    z-index: 20;
+    z-index: 999;
     overflow: hidden;
     background-color: black;
     height: 100vh;

@@ -1,0 +1,10 @@
+@import "../Variables/Couleurs.scss";
+.FiltreOption {
+    cursor: pointer;
+    list-style-type: none;
+    padding: 0.5rem;
+    background-color: $couleur-primaire;
+    &:hover {
+        background-color: $couleur-secondaire;
+    }
+}
