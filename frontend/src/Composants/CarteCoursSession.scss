@@ -5,8 +5,12 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     overflow-x: scroll;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     gap: 2rem;
+    width: 100%;
+    white-space: nowrap;
+    scroll-behavior: smooth;
     &::-webkit-scrollbar {
         display: none;
       }
@@ -19,7 +23,7 @@
         flex-direction: column;
         justify-content: center;
         display: inline-block;
-
+        transition: all 0.3s ease-in-out;
         h3{
             text-align: center;
             height: 15%;
