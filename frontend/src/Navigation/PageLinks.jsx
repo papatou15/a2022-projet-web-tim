@@ -1,24 +1,23 @@
 import './PageLinks.scss';
 import { NavLink } from 'react-router-dom';
 
-export default function PageLinks({toggleMenu, navOpenState, pages}){
+export default function PageLinks({toggleMenu, menu}){
 
     return (
         <ul className="PageLinks">
             {
-                (pages != null)
+                (menu != null)
                 ?
-                pages.map(
+                menu.data.header.headerMenuItems.map(
                     page => 
-                    (page.slug === 'accueil') 
-                    ?
-                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/'}>{page.title.rendered.toUpperCase()}</NavLink></p>
-                    :
-                    <p><NavLink onClick={toggleMenu} key={page.id} to={'/' + page.slug}>{page.title.rendered.toUpperCase()}</NavLink></p>
-                )
+                        (page.pageSlug === "accueil") ?
+                        <p key={page.ID}><NavLink  onClick={toggleMenu} to={'/'}>{page.title.toUpperCase()}</NavLink></p>
+                        :
+                        <p key={page.ID}><NavLink  onClick={toggleMenu} to={'/' + page.pageSlug}>{page.title.toUpperCase()}</NavLink></p>
+                )   
                 :
                 <div></div>
-            }
+            } 
         </ul>
     );
 }

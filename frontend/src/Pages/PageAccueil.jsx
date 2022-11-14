@@ -1,27 +1,35 @@
 import Bouton from '../Bouton';
 import CarteCoursSession from '../Composants/CarteCoursSession';
 import CarteProjet from '../Composants/CarteProjet';
+import CarteEnseignant from '../Composants/CarteEnseignant';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext } from 'react';
+import { melangerTableau, randomArraySlice } from '../utils/array-utils';
+import { scrollButtons } from '../utils/scrollButtons';
+import { sortSessions } from '../utils/timapi-utils';
+import { TrimDOMElements } from '../utils/strings-utils';
 
 export default function PageAccueil(props){
-
     const dataAccueil = useContext(DataContext);
+    let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
+    let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
+
     console.log(dataAccueil.projets);
     return (
         
         <main className="PageAccueil">
-
+            
             <section className="block1">
+
+                <video autoPlay muted loop id="accueilBGVideo" min-width="110%" height="auto">
+                    <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
+                </video>
                 <div className="mainTitle">
                     <h1>TIM Maisonneuve</h1>
-                    <h3>Accroche</h3>
+                    <h3>L’univers du web et du jeu vidéo au bout des doigts!</h3>
                 </div>
-                <div className="mainButtons">
-                    <Bouton>Voirs les cours</Bouton>
-                    <Bouton href={"www.twitch.tv"}>Inscris toi!</Bouton>
-                </div>
+                {/* <div className="clipPath"></div> */}
             </section>
 
             <section className="block2">
@@ -29,18 +37,17 @@ export default function PageAccueil(props){
                     <h2>Tes <b>COURS</b></h2>
                 </div>
                 <div className="carouselSessions">
-                    <div className="cartes">
+                    <div className="cartes" id='wrapperCartesSessions'>
                         {
-                            dataAccueil.sessions.map(
-                                session => <CarteCoursSession cours={session.cours} titre={session.title.rendered}/>
+                            sortSessions(dataAccueil.sessions).map(
+                                session => <CarteCoursSession key={session.id} cours={session.cours} titre={session.title.rendered}/>
                             )
                         }
                         
                     </div>
                     <div className="navCarousel">
-                        <div className="flecheCarousel"></div>
-                        <div className="flecheCarousel"></div>
-                        <div className="flecheCarousel"></div>
+                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", -300)}></div>
+                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", 300)}></div>
                     </div>
                     <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
                 </div>
@@ -51,30 +58,36 @@ export default function PageAccueil(props){
                     <h2>Ton <b>AVENIR</b></h2>
                 </div>
                 <div className="contenuAvenir">
-                    <div className="blockAvenir">
-                        <div className="avenirSlides Entreprise">
-                            <div className="avenirSlidesContent">
-                                <h3>En <b>Entreprise</b></h3>
-                                <Bouton>Voir ta future carrière</Bouton>
+                    <div className="blockCartes">
+                        <div className="carteAvenir">
+                            <div className="carteBGAvenir">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
                             </div>
-                            <div className="clipPath"></div>
+                            <div className="carteTitre">
+                                <p><b>En <br />Entreprise</b></p>
+                            </div>
                         </div>
-                        <div className="avenirSlides Universite">
-                            <div className="avenirSlidesContent">
-                                <h3>À l'<b>Université</b></h3>
-                                <Bouton>Voir tes futurs apprentissages</Bouton>
+                        <div className="carteAvenir">
+                            <div className="carteBGAvenir">
+                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur velit et necessitatibus, similique temporibus id fuga saepe quas provident repellat porro nihil nemo. Fuga quam ipsum consequatur? Debitis laboriosam, sequi quaerat error vel nemo ullam quia aliquam sed natus totam veritatis iure at quis quibusdam. Neque quos consequuntur pariatur praesentium!</p>
                             </div>
-                            <div className="clipPath"></div>
+                            <div className="carteTitre">
+                                <p><b>À l'université</b></p>
+                            </div>
                         </div>
-                        <div className="avenirSlides Stage">
-                            <div className="avenirSlidesContent">
-                                <h3>En <b>Stage</b></h3>
-                                <Bouton>Voir tes opportunités</Bouton>
+                        <div className="carteAvenir">
+                            <div className="carteBGAvenir">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, reiciendis excepturi molestias in repellat rem, itaque doloremque iure placeat hic nostrum ad? Necessitatibus minus alias voluptate asperiores autem quae quis consequuntur mollitia sequi vero.</p>
                             </div>
-                            <div className="clipPath"></div>
+                            <div className="carteTitre">
+                                <p><b>En stage</b></p>
+                            </div>
                         </div>
                     </div>
+                    
+                    <Bouton href={"avenir"}>En savoir plus</Bouton>
                 </div>
+                
             </section>
 
             <section className="block4">
@@ -83,9 +96,9 @@ export default function PageAccueil(props){
                 </div>
                 <div className="carouselCartesProjets">
                     {
-                        dataAccueil.projets.map(
-                            projet => <CarteProjet projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies.map( cours_lies => cours_lies.titre )} auteurs={projet.auteurs} image={projet.images[0].guid}/>
-                        )
+                        melangerTableau(dataAccueil.projets).map(
+                            projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>
+                        ).slice(sliceNumberProjets, sliceNumberProjets + 3)
                     }
                 </div>
             </section>
@@ -99,21 +112,21 @@ export default function PageAccueil(props){
                         <div className="socialSlides Event">
                             <div className="socialSlidesContent">
                                 <h3>Les <b>Événements</b></h3>
-                                <Bouton>Voir les événements</Bouton>
+                                <Bouton href={"le-social"}>Voir les événements</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Communaute">
                             <div className="socialSlidesContent">
                                 <h3><b>Communauté</b></h3>
-                                <Bouton>En apprendre plus</Bouton>
+                                <Bouton href={"le-social"}>En apprendre plus</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Maisonneuve">
                             <div className="socialSlidesContent">
                                 <h3><b>Maisonneuve</b></h3>
-                                <Bouton>Consulter le collège</Bouton>
+                                <Bouton href={"le-social"}>Consulter le collège</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
@@ -122,7 +135,24 @@ export default function PageAccueil(props){
             </section>
 
             <section className="block6">
-            
+                <div className="titleSections">
+                    <h2>Tes <b>Enseignants</b></h2>
+                </div>
+                <div className="contenuProfs">
+                    <div className="sectionCartesRandom" id="scrollCartes">
+                        {
+                            dataAccueil.enseignants.map(
+                                unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
+                            )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
+                        }
+                    </div>
+                    <div className="boutonsCarousel">
+                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", -50)}></div>
+                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", 50)}></div>
+                    </div>
+                    <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
+                </div>
+                
             </section>
         </main>
     );

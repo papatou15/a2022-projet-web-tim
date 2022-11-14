@@ -1,3 +1,21 @@
-.Avenir {
-    
+@import "../Variables/Couleurs.scss";
+@import "../Variables/Layout.scss";
+.PageAvenir {
+    color: white;
+    .section {
+        margin: 0;
+        padding: 5rem 3rem;
+        @media screen and (min-width: $layout-tablette) {
+            
+        }
+        @media screen and (min-width: $layout-desktop) {
+            padding: 5rem clamp(3rem, 5vw, 40rem);
+        }
+    }
+    .emplois-stages {
+        background-color: $base-color;
+    }
+    .universite {
+        background-color: $couleur-primaire;
+    }
 }

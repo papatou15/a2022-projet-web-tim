@@ -1,0 +1,38 @@
+.Carrousel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    .images-totales {
+        height: 100%;
+        flex-basis: 20%;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        .Slide  {
+            margin: 10px;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .image-courrante {
+        height: 100%;
+        flex-basis: 90%;
+        .Slide {
+            height: 100%;
+            div {
+                height: 100%;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            
+        }
+    } 
+}
