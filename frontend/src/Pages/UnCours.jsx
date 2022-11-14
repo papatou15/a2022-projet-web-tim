@@ -37,7 +37,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
                         <div/>
                     }  
                     </div>
-                    <div>
+                    <div className='description'>
                         <p>{cutString(description, 200)}</p>
                     </div>
                 </div>

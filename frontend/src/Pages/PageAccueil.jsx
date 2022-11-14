@@ -7,6 +7,8 @@ import { DataContext } from '../Context/DataContext';
 import { useContext } from 'react';
 import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
+import { sortSessions } from '../utils/timapi-utils';
+import { TrimDOMElements } from '../utils/strings-utils';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
@@ -35,17 +37,17 @@ export default function PageAccueil(props){
                     <h2>Tes <b>COURS</b></h2>
                 </div>
                 <div className="carouselSessions">
-                    <div className="cartes">
+                    <div className="cartes" id='wrapperCartesSessions'>
                         {
-                            dataAccueil.sessions.map(
+                            sortSessions(dataAccueil.sessions).map(
                                 session => <CarteCoursSession key={session.id} cours={session.cours} titre={session.title.rendered}/>
                             )
                         }
                         
                     </div>
                     <div className="navCarousel">
-                        <div className="flecheCarousel"></div>
-                        <div className="flecheCarousel"></div>
+                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", -300)}></div>
+                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", 300)}></div>
                     </div>
                     <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
                 </div>
@@ -140,13 +142,13 @@ export default function PageAccueil(props){
                     <div className="sectionCartesRandom" id="scrollCartes">
                         {
                             dataAccueil.enseignants.map(
-                                unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 65)}/>
+                                unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
                             )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
                         }
                     </div>
                     <div className="boutonsCarousel">
-                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", 50)}></div>
-                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", -50)}></div>
+                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", -50)}></div>
+                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", 50)}></div>
                     </div>
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>

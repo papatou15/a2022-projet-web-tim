@@ -1,3 +1,10 @@
 export function scrollButtons(element,  value){
-    document.getElementById(element).scrollLeft += value;
+    let docElement = document.getElementById(element);
+    let newPos = docElement.scrollLeft += value;
+    docElement.scroll({
+        left: newPos,
+        behavior: "smooth"
+    });
+
+    console.log("SCrollLeft: " + docElement.scrollLeft)
 }

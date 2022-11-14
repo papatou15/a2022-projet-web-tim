@@ -1,3 +1,12 @@
+@import "../Variables/Couleurs.scss";
+
 .ExpanderButton {
     cursor: pointer;
+
+    & > p
+    {
+        color: $off-white;
+        border: 1px solid $off-white;
+        padding: 0.25em;
+    }
 }
