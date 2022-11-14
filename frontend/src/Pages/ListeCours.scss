@@ -1,21 +1,25 @@
 @import "../Variables/Layout.scss";
 
-.ListeCours {
-    .sessionTitre {
+.ListeCours
+{
+    .sessionTitre
+    {
         display: flex;
         flex-flow: row;
         align-items: center;
-        .fleche {
+        
+        .fleche
+        {
             width: 10px;
             height: 10px;
             background-color: black;
         }
     }
 
-        .lesCours {
-            gap: $gap-grille-cours;
-            display: flex;
-            flex-flow: row wrap;
-        }
-    
+    .lesCours
+    {
+        gap: $gap-grille-cours;
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
