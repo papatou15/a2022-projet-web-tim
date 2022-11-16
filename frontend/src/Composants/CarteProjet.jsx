@@ -1,8 +1,9 @@
 import './CarteProjet.scss';
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
+import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
 
 export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState}){
@@ -14,6 +15,12 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
             setExpanderState(false);
         }
     }, [carteOpenState])
+
+    const infoRef = useRef(null);
+    const carteProjetRef = useRef(null)
+
+    useCliqueExterieur(infoRef, () => {setExpanderState(false);}, carteProjetRef);
+
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
             <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(id);}}>
@@ -31,7 +38,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                 </div>
             </ExpanderButton>
             <ExpanderSection expanderState={expanderState}>
-                <div className="infoProjet">
+                <div className="infoProjet" ref={infoRef}>
                     <div className="carouselProjet">
                         <Carrousel images={projet.images}></Carrousel>
                     </div>
@@ -44,6 +51,11 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                             }
                         </div>
                     </div>
+                </div>
+                <div className="fermerSection" onClick={() => setExpanderState(false)}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
                 </div>
             </ExpanderSection>
         </div>

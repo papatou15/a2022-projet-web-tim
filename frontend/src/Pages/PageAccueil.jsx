@@ -4,7 +4,7 @@ import CarteProjet from '../Composants/CarteProjet';
 import CarteEnseignant from '../Composants/CarteEnseignant';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
 import { sortSessions } from '../utils/timapi-utils';
@@ -14,8 +14,9 @@ export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
-
     console.log(dataAccueil.projets);
+
+    
     return (
         
         <main className="PageAccueil">
@@ -43,7 +44,6 @@ export default function PageAccueil(props){
                                 session => <CarteCoursSession key={session.id} cours={session.cours} titre={session.title.rendered}/>
                             )
                         }
-                        
                     </div>
                     <div className="navCarousel">
                         <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", -300)}></div>
