@@ -3,7 +3,7 @@ import './CarteCoursSession.scss';
 export default function CarteCoursSession({cours, titre}){
 
     return(
-        <div className="carteSessions">
+        <div className="carteSessions" id="carteSessions">
             <h3>{titre}</h3>
             <div className="listeCours">
                 {

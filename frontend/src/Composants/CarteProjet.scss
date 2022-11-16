@@ -37,6 +37,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            padding: 10px;
             h4{
                 font-size: 2em;
                 margin: auto;
@@ -79,21 +80,27 @@
     }
     
     .ExpanderSection{
-        width: calc(100vw - 50%);
-        height: 50vh;
+        width: 85vw;
+        height: 37vh;
         color: $off-white;
+        position: fixed;
+        bottom: 0;
+        left: 5vw;
+        margin: 50px;
         .infoProjet{
             height: 100%;
             width: 100%;
-            background-color: $couleur-primaire;
-            outline: $hover-border;
-            outline-color: #ffb700;
+            background-color: $couleur-primaire alpha(1);
+            border: $hover-border;
+            border-color: #ffb700;
             border-radius: $coin-ronds;
             padding: 20px 50px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(60px);
+            box-shadow: 0 0 100px 20px rgb(32, 32, 32);
             .carouselProjet{
                 width: 50%;
                 height: 100%;
@@ -140,6 +147,55 @@
                 }
             }
         }
+        .fermerSection{
+            
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            margin: 20px;
+            top: 0;
+            right: 0;
+            display: flex;
+            flex-flow: column;
+            &:hover{
+                cursor: pointer;
+                .bar:nth-child(1) {
+                    outline: $hover-border;
+                    outline-width: 3px;
+                    transform: scale(1.1);
+                }
+                .bar:nth-child(3) {
+                    outline: $hover-border;
+                    outline-width: 3px;
+                    transform: scale(1.1);
+                }
+                
+            }
+            .bar {
+                transition: outline 0.1s ease-in-out;
+                pointer-events: none;
+                width: 100%;
+                height: 33%;
+                background-color: white;
+                filter: drop-shadow(0 0 1px #222);
+                outline: $hover-border-off;
+            }
+            .bar:nth-child(1) {
+                rotate: 45deg;
+                translate: 0% 100%;
+                border-radius: 5px;
+            }
+            .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .bar:nth-child(3) {
+                rotate: -45deg;
+                translate: 0% -100%;
+                border-radius: 5px;
+            }
+            
+        }
+
     }
 
     &[expanderstate="true"]{
@@ -148,23 +204,4 @@
             border-radius: 20px;
         }
     }
-
-    @media screen and (min-width: $layout-desktop) {
-
-        &:nth-of-type(3n+2) .ExpanderSection {
-            margin-left: calc(-100% - #{$gap-grille-cours});
-        }
-        &:nth-of-type(3n+3) .ExpanderSection {
-            margin-left: calc(-200% - (#{$gap-grille-cours} * 2));
-        }
-        &:nth-of-type(3n+4) {
-            clear: left;
-        }
-        .ExpanderSection {
-            width: calc(300% + (#{$gap-grille-cours} * 2));
-        }  
-      }
 }
-    
-
-
