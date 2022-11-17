@@ -2,12 +2,13 @@
 
 .Burger {
     user-select: none;
-    margin: 2rem;
+    margin: 2rem 2.5rem;
     z-index: 999;
     cursor: pointer;
     display: flex;
     flex-flow: column;
     gap: 0.25rem;
+    pointer-events: all;
     &[isopen="true"] {
         .bar:nth-child(1) {
             rotate: 45deg;

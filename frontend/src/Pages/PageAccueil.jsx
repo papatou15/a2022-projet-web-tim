@@ -147,8 +147,8 @@ export default function PageAccueil(props){
                         }
                     </div>
                     <div className="boutonsCarousel">
-                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", -50)}></div>
-                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", 50)}></div>
+                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", -430)}></div>
+                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", 430)}></div>
                     </div>
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>

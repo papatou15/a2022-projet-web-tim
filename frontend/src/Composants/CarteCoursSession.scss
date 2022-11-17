@@ -16,7 +16,7 @@
     }
 
     &::-webkit-scrollbar {
-        display: none;
+        display: none !important;
       }
     .carteSessions{
         background-color: $couleur-tierce;

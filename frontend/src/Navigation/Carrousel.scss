@@ -12,10 +12,15 @@
         justify-content: space-around;
         .Slide  {
             margin: 10px;
-            img {
+            height: 20%;
+            overflow: hidden;
+            div{
                 height: 100%;
-                width: 100%;
-                object-fit: cover;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
         }
     }
@@ -28,7 +33,7 @@
                 height: 100%;
                 img {
                     height: 100%;
-                    width: 100%;
+                    width: auto;
                     object-fit: cover;
                 }
             }
