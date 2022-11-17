@@ -3,6 +3,7 @@
 .BoutonAccueil {
     margin: 2rem;
     z-index: 999;
+    pointer-events: all;
     img {
         @media screen and (min-width: $layout-desktop) {
             width: 150px;

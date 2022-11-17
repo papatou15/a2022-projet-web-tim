@@ -28,7 +28,10 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <div className="titreProjet">
                         <h4>{titre}</h4>
                     </div>
-                    <img src={image[0]} alt="Image du projet" className="imgProjet"/>
+                    <div className="containerImgProjet">
+                        <div className="bgImage" style={{backgroundImage: "url(" + image[0] + ")"}}></div>
+                        <img src={image[0]} alt="Image du projet" className="imgProjet"/>
+                    </div>
                     <div className="descProjet">
                         <p><b>Catégorie: </b><span>{type}</span></p>
                         {console.log("Cours : " + cours)}
