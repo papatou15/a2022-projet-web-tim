@@ -33,11 +33,13 @@
         {
             &:first-of-type > .TitreSection
             {
+                margin-left: 50%;
                 text-align: right;
             }
 
             &:last-of-type > .TitreSection
             {
+                margin-right: 50%;
                 text-align: left;
             }
 
