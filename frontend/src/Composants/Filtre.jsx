@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState,useRef } from 'react';
 import './Filtre.scss';
+import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 import FiltreOption from './FiltreOption';
 
 export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'}){
 
     const [filtreItemsOpen, setFiltreItemsOpen] = useState(false);
     const [hasFilteredItems, setHasFilteredItems] = useState(false);
+
+    const filtreRef = useRef(null);
+
+    useCliqueExterieur(filtreRef, () => setFiltreItemsOpen(false));
 
     useEffect(() => {
         if (filtre.length > 0) {
@@ -43,8 +48,8 @@ export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'
     }
 
     return (
-        <div className="Filtre">
-            <div className={`select ${hasFilteredItems ? 'filtered' : ''}`}>
+        <div ref={filtreRef} className="Filtre">
+            <div  className={`select ${hasFilteredItems ? 'filtered' : ''}`}>
                 <p>{placeholder}</p>
                 <div className="filtered-items">
                     {
@@ -53,7 +58,9 @@ export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'
                         )
                     }
                 </div>
-                <div onClick={toggleItems} className="arrow"></div>
+                <div onClick={toggleItems} className={"arrow-container"}>
+                    <div className={`arrow ${filtreItemsOpen ? 'opened' : 'closed'}`}></div> 
+                </div>
             </div>
             <ul className={`filter-options ${filtreItemsOpen ? 'open' : ''}`}>
                 {

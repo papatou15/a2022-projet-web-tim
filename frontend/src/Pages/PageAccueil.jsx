@@ -97,7 +97,7 @@ export default function PageAccueil(props){
                 <div className="carouselCartesProjets">
                     {
                         melangerTableau(dataAccueil.projets).map(
-                            projet => <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>
+                            projet => {console.log(projet);return <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].type_cours} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>}
                         ).slice(sliceNumberProjets, sliceNumberProjets + 3)
                     }
                 </div>

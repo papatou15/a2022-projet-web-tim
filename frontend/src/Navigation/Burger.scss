@@ -1,6 +1,7 @@
 @import "../Variables/Layout.scss";
 
 .Burger {
+    pointer-events: all;
     user-select: none;
     margin: 2rem 2.5rem;
     z-index: 999;

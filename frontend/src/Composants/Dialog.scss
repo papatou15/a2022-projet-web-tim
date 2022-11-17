@@ -3,7 +3,7 @@
     display: none;
     @media screen and (min-width: $layout-tablette) {
         display: block;
-        transition: all 0.5s ease-in-out;
+        transition: background-color 0.5s ease-in-out;
         position: fixed;
         top: 0;
         left: 0;
@@ -11,7 +11,7 @@
         height: 100vh;
         cursor: pointer;
         .Dialog-contenu {
-            transition: all 0.5s ease-in-out;
+            transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
             cursor: default;
             border-radius: 5px;
             position: fixed;
@@ -27,7 +27,7 @@
             background-color: rgba(0, 0, 0, 0.4);
             .Dialog-contenu {
                 opacity: 1;
-                transform: scale(1);
+                scale: 1;
             }
         }
         &[active="false"]
@@ -36,7 +36,7 @@
             pointer-events: none;
             .Dialog-contenu {
                 opacity: 0;
-                transform: scale(0.5);
+                scale: 0.5;
                 pointer-events: none;
             }
         }
