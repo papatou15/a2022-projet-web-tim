@@ -2,7 +2,8 @@
 @import "../Variables/Layout.scss";
 
 
-.CarteProgrammeUni {
+.CarteProgrammeUni
+{
     padding: 1rem;
     border-top: 1px solid black;
     box-sizing: border-box;
@@ -12,36 +13,50 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
-    @media screen and (min-width: $layout-tablette) {
+
+    @media screen and (min-width: $layout-tablette)
+    {
         width: 250px;
         flex-flow: column;
         align-items: center;
         padding: 0;
         aspect-ratio: 1/1;
     }
-    .image {
+
+    .image
+    {
         display: none;
-        @media screen and (min-width: $layout-tablette) {
+    
+        @media screen and (min-width: $layout-tablette)
+        {
             display: block ;
             width: 100%;
             height: calc(100% - 20%);
-            img {
+        
+            img
+            {
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
+                background-color: $off-white;
             }
         }
     }
-    .type-etude {
+
+    .type-etude
+    {
         flex-basis: 1;
         color: black;
-        p {
+        font-weight: bold;
+        font-size: 1.5rem;
+    
+        p
+        {
             margin: 0;
         }
-        font-size: 1.5rem;
-        font-weight: bold;
 
-        @media screen and (min-width: $layout-tablette) {
+        @media screen and (min-width: $layout-tablette)
+        {
             color: white;
             text-shadow: 2px 2px 5px black;
             margin: 1rem;
@@ -50,33 +65,46 @@
             left: 0;
         }
     }
-    .icone {
+
+    .icone
+    {
         flex-basis: 1;
         width: 50px;
         height: 50px;
-        img {
+    
+        img
+        {
             object-fit: cover;
             width: 100%;
             height: 100%;
         }
-        @media screen and (min-width: $layout-tablette) {
+        
+        @media screen and (min-width: $layout-tablette)
+        {
             margin: 1rem;
             position: absolute;
             top: 0;
             right: 0;
         }
     }
-    .nom {
+
+    .nom
+    {
         color: black;
-        p {
-            margin: 0;
-        }
         text-align: center;
         font-weight: bold;
         flex-basis: 2;
         font-size: 1.5rem;
-        @media screen and (min-width: $layout-tablette) {
-            p {
+        
+        p
+        {
+            margin: 0;
+        }
+        
+        @media screen and (min-width: $layout-tablette)
+        {
+            p
+            {
                 margin: 1rem;
             }
         }

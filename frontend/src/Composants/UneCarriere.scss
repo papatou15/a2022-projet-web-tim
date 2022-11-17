@@ -1,15 +1,28 @@
 @import "../Variables/Layout.scss";
 
-.UneCarriere {
+.UneCarriere
+{
+    // border: 1px solid red;
     display: flex;
     flex-flow: column;
-    min-width: 300px;
-    width: 80%;
-    .nom-emploi {
+    justify-content: space-between;
+    padding: 0.5rem;
+    width: 40%;
+
+    &:nth-child(even)
+    {
+        position: relative;
+        float: right;
+    }
+    
+    .nom-emploi
+    {
         margin: 0;
         font-size: 1.1rem;
         font-weight: 600;
+        text-align: start;
     }
+
     .nom-emploi + a {
         margin: 0.5rem 0 1rem 1.5rem;
         font-weight: 100;
@@ -22,8 +35,11 @@
             background-position: center top, left bottom;
         }
     }
-    @media screen and (min-width: $layout-tablette) {
-        width: 50%;
+
+    @media screen and (min-width: $layout-tablette)
+    {
+        max-width: 50%;
+        // margin: 0 2.5%;
     }
     @media screen and (min-width: $layout-desktop) {
         justify-content: center;
