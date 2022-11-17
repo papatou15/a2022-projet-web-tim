@@ -18,4 +18,11 @@
     .universite {
         background-color: $couleur-primaire;
     }
+    .texte-stage {
+        @media screen and (min-width: $layout-desktop) {
+            margin: 1rem auto;
+            width: 70vw;
+            max-width: 1000px;
+        }
+    }
 }

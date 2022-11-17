@@ -13,7 +13,7 @@ export default function ListeProgrammesUni(props){
         <div className="ListeProgrammesUni">
             {
                 programmes_uni.map(programme => 
-                    <CarteProgrammeUni key={programme.id} icone={programme.icone} image={programme.image} nom={programme.nom} typeEtude={programme.sorte_detude}/>  
+                    <CarteProgrammeUni key={programme.id} icone={programme.icone} image={programme.image} nom={programme.nom} typeEtude={programme.sorte_detude} lien={programme.lien}/>  
                 )
             }
         </div>

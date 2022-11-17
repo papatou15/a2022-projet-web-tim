@@ -10,7 +10,7 @@
         font-size: 1.1rem;
         font-weight: 600;
     }
-    .nom-emploi + a {
+    .nom-emploi + p > a {
         margin: 0.5rem 0 1rem 1.5rem;
         font-weight: 100;
         transition: background-position 0.2s ease-in-out;
@@ -28,8 +28,5 @@
     @media screen and (min-width: $layout-desktop) {
         justify-content: center;
         align-items: center;
-        .nom-emploi + a {
-            margin: 0.5rem 0 1rem 0rem;
-        }
     }
 }

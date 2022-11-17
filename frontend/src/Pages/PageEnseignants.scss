@@ -1,10 +1,16 @@
 @import "../Variables/Couleurs.scss";
+@import "../Variables/Layout.scss";
 
 .PageEnseignants {
+    min-height: 100vh;
+    background-color: $base-color;
 
-    background-color: $couleur-sixte;
-
+    .titre-conteneur {
+        color: white;
+        border-bottom: 1px solid white;
+    }
     .Dialog {
+        
         .Dialog-contenu {
             background-color: $couleur-secondaire;
             display: flex;
@@ -12,8 +18,8 @@
             .dialog-enseignants {
                 width: 100%;
                 display: flex;
-                flex-flow: row;
-                justify-content: space-around;
+                flex-flow: column;
+                justify-content: center;
                 align-items: center;
                 position: relative;
                 .curve {
@@ -72,6 +78,14 @@
                     .enseignant-cours {
 
                     }
+                }
+            }
+        }
+        @media screen and (min-width: $layout-desktop) {
+            .Dialog-contenu {
+                .dialog-enseignants {
+                    flex-flow: row;
+                    justify-content: space-around;
                 }
             }
         }
