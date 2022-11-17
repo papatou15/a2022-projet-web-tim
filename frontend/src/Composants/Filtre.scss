@@ -8,6 +8,7 @@
     align-items: center;
     flex-flow: column;
     .select {
+        z-index: 2;
         border-radius: 5px;
         position: relative;
         display: flex;
@@ -39,7 +40,6 @@
                 cursor: pointer;
                 color: black;
                 font-size: 0.8rem;
-                border: 1px solid $couleur-quaternaire;
                 background-color: $couleur-sixte;
                 padding: 0.3rem;
                 border-radius: 5px;
@@ -48,27 +48,46 @@
         
     }
     .filter-options {
-        margin: 0;
+        overflow: hidden;
+        background-color: $couleur-primaire;
+        border-radius: 5px;
+        transition: all 0.5s ease;
+        margin: 1rem;
         pointer-events: none;
         position: absolute;
         z-index: 1;
-        transition: all 0.5s ease-in-out;
-        top: 100%;
+        width: 200px;
         opacity: 0;
+        padding: 0;
+        top: 0;
         &.open {
             pointer-events: all;
             opacity: 1;
-            width: 200px;
-            height: 100%;
-            padding: 0;
+            top: 100%;
         }
-        width: 200px;
-        height: 0;
     }
-    .arrow {
+    .arrow-container {
+        transition: background-color 0.1s ease-in-out;
         cursor: pointer;
-        width: 20px;
-        height: 20px;
-        background-color: black;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 43px;
+        height: 35px;
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .arrow {
+            transition: rotate 0.5s ease-out;
+            clip-path: polygon(50% 10%, 0 80%, 100% 80%);
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            &.opened {
+                rotate: 180deg;
+            }
+        }
     }
+    
 }
