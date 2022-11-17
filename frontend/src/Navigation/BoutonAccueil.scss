@@ -1,6 +1,7 @@
 @import "../Variables/Layout.scss";
 
 .BoutonAccueil {
+    pointer-events: all;
     margin: 2rem;
     z-index: 999;
     pointer-events: all;

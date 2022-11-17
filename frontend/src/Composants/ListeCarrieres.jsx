@@ -11,7 +11,7 @@ export default function ListeCarrieres(props){
         <div className="ListeCarrieres">
             {
                 carrieres.map(carriere => 
-                    <UneCarriere key={carriere.id} nom={carriere.nom} sorte={carriere.sorte}/>  
+                    <UneCarriere key={carriere.id} nom={carriere.nom} sorte={carriere.sorte} lien={carriere.lien}/>  
                 )
             }
         </div>
