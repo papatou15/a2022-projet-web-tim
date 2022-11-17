@@ -7,13 +7,11 @@ export default function Contacts(props){
 
     const {reseaux_sociaux} = useContext(DataContext);
 
-    console.log(reseaux_sociaux);
-
     return (
         <div className="Contacts">
             {
                 reseaux_sociaux.map(reseau => 
-                    <ReseauSocial icone={reseau.icone.guid} lien={reseau.lien}/>
+                    <ReseauSocial key={reseau.id} icone={reseau.icone.guid} lien={reseau.lien}/>
                 )
             }
         </div>

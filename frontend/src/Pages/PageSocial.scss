@@ -4,10 +4,39 @@
 
 .PageSocial
 {
+    *
+    {
+        border: 3px solid red;
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+
+    #vague1
+    {
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100vh;
+        fill: #248ea6;
+        position: absolute;
+        border: 5px solid green;
+    }
+
+    #vague2
+    {
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        height: 340px;
+        fill: #248ea6;
+        position: absolute;
+        border: 5px solid green;
+    }
 
     .sectionSocial
     {
@@ -28,7 +57,7 @@
             height: 15%;
             padding: 2%;
             color: $off-white;
-            font-size: $font-size-titre;
+            font-size: $font-size-social-titre;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -40,11 +69,12 @@
         &:first-of-type
         {
             background-color: $base-color;
-    
+            
             h2
             {
                 width: 80%;
                 padding: 0;
+                z-index: 3;
 
                 span
                 {
@@ -60,6 +90,8 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                z-index: 3;
+
 
                 p.descEvents
                 {
@@ -71,7 +103,7 @@
                     display: flex;
                     text-align: center;
                     align-items: center;
-                    font-size: $font-size-desc-social-events;
+                    font-size: $font-size-social-events;
                     color: $off-white;
                 }
 
@@ -112,7 +144,7 @@
                         {
                             padding: 1%;
                             text-align: center;
-                            font-size: $font-size-desc-social-side-events;
+                            font-size: $font-size-social-side-events;
                             color: $off-white;
                         }
                     }
@@ -170,7 +202,7 @@
 
                         p
                         {
-                            font-size: $font-size-desc-social-communaute;
+                            font-size: $font-size-social-communaute;
                             color: $off-white;
                             padding: 5%;
                             margin-bottom: 10vh;
@@ -186,15 +218,15 @@
                     .carteTitre
                     {
                         width: 100%;
-                        height: 30%;
-                        z-index: 1;
+                        height: 35%;
+                        z-index: 3;
                         transition: 0.2s ease-in-out;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         text-align: center;
                         background-color: $couleur-quinaire;
-                        font-size: $font-size-desc-social-communaute-titre;
+                        font-size: $font-size-social-communaute-titre;
                     }
                 }
             }
@@ -205,6 +237,7 @@
         &:last-of-type
         {
             background-color: $base-color;
+            position: relative;
 
             h2
             {
@@ -213,6 +246,7 @@
 
             .contenuMaisonneuve
             {
+                z-index: 3;
                 width: 90%;
                 height: 70%;
                 justify-content: center;
@@ -257,7 +291,7 @@
 
                         & > p
                         {
-                            font-size: $font-size-desc-social-maisonneuve;
+                            font-size: $font-size-social-maisonneuve;
                             padding: 0 2.5%;
                             height: 100%;
                             display: flex;

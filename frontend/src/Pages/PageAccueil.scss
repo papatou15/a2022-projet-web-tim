@@ -282,12 +282,13 @@
                 flex-flow: row nowrap;
                 transition: all 0.5s ease-in-out;
                 justify-content: flex-start;
-                gap: 2rem;
+                gap: 30px;
                 height: 700px;
                 padding: 20px;
                 overflow-x: scroll;
                 overflow-y: hidden;
                 -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
                 &::-webkit-scrollbar {
                     display: none;
                   }

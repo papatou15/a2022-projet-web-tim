@@ -1,3 +1,6 @@
+@import "../Variables/Couleurs.scss";
+@import "../Variables/Layout.scss";
+
 .Carrousel {
     width: 100%;
     height: 100%;
@@ -9,27 +12,49 @@
         flex-basis: 20%;
         display: flex;
         flex-flow: column;
-        justify-content: space-around;
+        justify-content: flex-start;
+        overflow-y: scroll;
+        pointer-events: all;
+        margin: 0 20px 0 0;
+        &::-webkit-scrollbar{
+            display: none;
+        }
         .Slide  {
             margin: 10px;
-            img {
+            height: 20%;
+            overflow: hidden;
+            border-radius: 10px;
+            border: $hover-border-off;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+                border: $hover-border;
+                cursor: pointer;
+            }
+            div{
                 height: 100%;
-                width: 100%;
-                object-fit: cover;
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
             }
         }
     }
     .image-courrante {
         height: 100%;
         flex-basis: 90%;
+        overflow: hidden;
         .Slide {
             height: 100%;
             div {
                 height: 100%;
+                display: flex;
+                justify-content: center;
                 img {
                     height: 100%;
-                    width: 100%;
+                    width: auto;
                     object-fit: cover;
+                    border-radius: 10px;
                 }
             }
             
