@@ -15,6 +15,7 @@ import Loading from './Pages/Loading';
 import useChargerSite from './Hooks/useChargerSite';
 import { DataContext } from './Context/DataContext';
 import Menu from './Navigation/Menu';
+import Footer from './Composants/Footer';
 
 export default function Appli() { 
 
@@ -73,7 +74,7 @@ export default function Appli() {
               </>
               : <></>
             }
-            
+            <Footer menu={siteData.menu}></Footer>
           </div>
       
     </DataContext.Provider>

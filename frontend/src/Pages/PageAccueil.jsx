@@ -9,6 +9,7 @@ import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
 import { sortSessions } from '../utils/timapi-utils';
 import { TrimDOMElements } from '../utils/strings-utils';
+import Footer from '../Composants/Footer';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
