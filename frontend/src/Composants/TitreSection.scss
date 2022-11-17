@@ -1,10 +1,17 @@
-.TitreSection
-{
+@import "../Variables/Layout.scss";
+
+.TitreSection {
     margin: 0;
-    width: 90%;
-    padding: 1rem;
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
     text-align: center;
-    text-decoration: underline;
-    // background-color: blue;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .titre-conteneur {
+        border-bottom: 1px solid black;
+    }
+    @media screen and (min-width: $layout-tablette) {
+        font-size: 2.25rem;
+    }
 }

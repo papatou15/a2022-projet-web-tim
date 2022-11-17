@@ -2,7 +2,8 @@ import './PageProjets.scss';
 import CarteProjet from '../Composants/CarteProjet';
 import Filtre from '../Composants/Filtre';
 import { DataContext } from '../Context/DataContext';
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef } from 'react';
+import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
 export default function PageProjets(props){
     const {projets, type_cours} = useContext(DataContext);
@@ -18,12 +19,6 @@ export default function PageProjets(props){
             }
         }).includes(true);
         return contientFiltre;
-    }
-
-    const filtrersdfjkl = (session) => {
-        if (filtre.length === 0) return true;
-        // const coursFiltre = session.cours.filter(filtrerCours);
-        // if (coursFiltre.length > 0) return true;
     }
 
     return (
