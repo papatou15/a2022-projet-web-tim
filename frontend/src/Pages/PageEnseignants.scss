@@ -4,11 +4,42 @@
 .PageEnseignants {
     min-height: 100vh;
     background-color: $base-color;
-
-    .titre-conteneur {
-        color: white;
-        border-bottom: 1px solid white;
+    > .curve {
+        position: absolute;
+        background-color: $couleur-primaire;
+        width: 200vw;
+        height: 30%;
+        transform: rotateY(180deg);
+        clip-path: polygon(100% 0%, 0% 0% , 0% 75.00%, 1% 74.97%, 2% 74.88%, 3% 74.72%, 4% 74.50%, 5% 74.22%, 6% 73.88%, 7% 73.48%, 8% 73.03%, 9% 72.51%, 10% 71.94%, 11% 71.31%, 12% 70.63%, 13% 69.90%, 14% 69.12%, 15% 68.29%, 16% 67.42%, 17% 66.50%, 18% 65.54%, 19% 64.54%, 20% 63.51%, 21% 62.44%, 22% 61.34%, 23% 60.21%, 24% 59.06%, 25% 57.88%, 26% 56.69%, 27% 55.48%, 28% 54.25%, 29% 53.01%, 30% 51.77%, 31% 50.52%, 32% 49.27%, 33% 48.02%, 34% 46.78%, 35% 45.54%, 36% 44.32%, 37% 43.11%, 38% 41.92%, 39% 40.75%, 40% 39.60%, 41% 38.47%, 42% 37.38%, 43% 36.32%, 44% 35.29%, 45% 34.30%, 46% 33.34%, 47% 32.43%, 48% 31.57%, 49% 30.74%, 50% 29.97%, 51% 29.25%, 52% 28.58%, 53% 27.96%, 54% 27.40%, 55% 26.89%, 56% 26.44%, 57% 26.06%, 58% 25.73%, 59% 25.46%, 60% 25.25%, 61% 25.10%, 62% 25.02%, 63% 25.00%, 64% 25.04%, 65% 25.15%, 66% 25.31%, 67% 25.54%, 68% 25.83%, 69% 26.18%, 70% 26.59%, 71% 27.06%, 72% 27.58%, 73% 28.16%, 74% 28.80%, 75% 29.49%, 76% 30.23%, 77% 31.02%, 78% 31.85%, 79% 32.73%, 80% 33.66%, 81% 34.62%, 82% 35.63%, 83% 36.67%, 84% 37.74%, 85% 38.85%, 86% 39.98%, 87% 41.14%, 88% 42.32%, 89% 43.52%, 90% 44.73%, 91% 45.96%, 92% 47.20%, 93% 48.44%, 94% 49.69%, 95% 50.94%, 96% 52.19%, 97% 53.43%, 98% 54.66%, 99% 55.88%, 100% 57.09%);
+        @media screen and (min-width: $layout-tablette) {
+            width: 100vw;
+        }
     }
+    .vague2 {
+        position: absolute;
+        fill: #248ea6;
+        bottom: 0;
+        height: 340px;
+
+    }
+   
+    .TitreSection {
+        height: 300px;
+        justify-content: center;
+        margin-right: 0;
+        .titre-conteneur {
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        @media screen and (min-width: $layout-tablette) {
+            justify-content: right;
+        }
+        @media screen and (min-width: $layout-desktop) {
+            justify-content: right;
+            margin-right: clamp(0%, 5vw, 20%);
+        }
+    }
+    
     .Dialog {
         
         .Dialog-contenu {

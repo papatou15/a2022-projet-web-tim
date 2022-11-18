@@ -1,6 +1,6 @@
 import './PageCours.scss';
 import ListeSessions from './ListeSessions';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { DataContext } from '../Context/DataContext';
 import Filtre from '../Composants/Filtre';
 

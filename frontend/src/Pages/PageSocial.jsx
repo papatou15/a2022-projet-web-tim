@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { DataContext } from '../Context/DataContext';
 import './PageSocial.scss';
 
@@ -6,9 +7,28 @@ export default function PageSocial(props){
 
     const siteData = useContext(DataContext);
 
+    const location = useLocation();
+
+    const evenementsRef = useRef(null);
+    const maisonneuveRef = useRef(null);
+    const communauteRef = useRef(null);
+
+    const sectionsReferences = {
+        '#evenements' : evenementsRef,
+        '#maisonneuve' : maisonneuveRef,
+        '#communaute' : communauteRef
+    }
+
+    useEffect(() => {
+        if (location.hash) {
+            const currentSection = sectionsReferences[location.hash];
+            currentSection.current.scrollIntoView();
+        }
+    }, [])
+
     return (
         <main className="PageSocial">
-            <div className="sectionSocial">
+            <div ref={evenementsRef} className="sectionSocial" id='evenements'>
                 {/* propriété Viewbox */}
                 {/* preserveAspectRatio="none" */}
                 <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
@@ -33,7 +53,7 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <div className="sectionSocial">
+            <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
                 <div className="contenuCommunaute">
                     <div className="carteCommunaute">
@@ -63,7 +83,7 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <div className="sectionSocial">
+            <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>
                 <div className="contenuMaisonneuve">
                     <div className="svgPlaceholder">svg</div>
