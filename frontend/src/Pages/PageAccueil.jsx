@@ -13,6 +13,7 @@ import Footer from '../Composants/Footer';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
+
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
     console.log(dataAccueil.projets);
@@ -153,8 +154,8 @@ export default function PageAccueil(props){
                     </div>
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>
-                
             </section>
+            <Footer menu={dataAccueil.menu}></Footer>
         </main>
     );
 }

@@ -11,9 +11,9 @@ export default function PageLinks({toggleMenu, menu}){
                 menu.data.header.headerMenuItems.map(
                     page => 
                         (page.pageSlug === "accueil") ?
-                        <p key={page.ID}><NavLink  onClick={toggleMenu} to={'/'}>{page.title.toUpperCase()}</NavLink></p>
+                        <p key={page.ID}><NavLink  onClick={toggleMenu ? toggleMenu : null} to={'/'}>{page.title.toUpperCase()}</NavLink></p>
                         :
-                        <p key={page.ID}><NavLink  onClick={toggleMenu} to={'/' + page.pageSlug}>{page.title.toUpperCase()}</NavLink></p>
+                        <p key={page.ID}><NavLink  onClick={toggleMenu ? toggleMenu : null} to={'/' + page.pageSlug}>{page.title.toUpperCase()}</NavLink></p>
                 )   
                 :
                 <div></div>

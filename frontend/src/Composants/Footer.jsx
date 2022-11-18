@@ -10,12 +10,16 @@ export default function Footer({menu}){
             <div className="footerContent">
                 <div className="footerLeft">
                     <ul>
-                        <PageLinks menu={menu}/>
+                        <PageLinks menu={menu} />
+                        {/* <li>{menu}</li> */}
                     </ul>
                 </div>
                 <div className="separationLine"></div>
                 <div className="footerRight">
-
+                    <div className="socialMedia">
+                        <h4>Suivez-nous!</h4>
+                        <Contacts></Contacts>
+                    </div>
                 </div>
             </div>
         </footer>

@@ -74,9 +74,7 @@ export default function Appli() {
               </>
               : <></>
             }
-            <Footer menu={siteData.menu}></Footer>
           </div>
-      
     </DataContext.Provider>
   );
 }

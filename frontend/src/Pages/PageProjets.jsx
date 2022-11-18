@@ -4,8 +4,10 @@ import Filtre from '../Composants/Filtre';
 import { DataContext } from '../Context/DataContext';
 import { useContext, useState, useRef } from 'react';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
+import Footer from '../Composants/Footer';
 
 export default function PageProjets(props){
+    const data = useContext(DataContext);
     const {projets, type_cours} = useContext(DataContext);
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
@@ -32,6 +34,7 @@ export default function PageProjets(props){
                     )
                 }
             </div>
+            <Footer menu={data.menu}></Footer>
         </main>
     );
 }
