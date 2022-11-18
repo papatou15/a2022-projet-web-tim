@@ -1,21 +1,84 @@
 @import "../Variables/Couleurs.scss";
 @import "../Variables/Layout.scss";
-.PageAvenir {
+
+.PageAvenir
+{
     color: white;
-    .section {
+
+    .section
+    {
         margin: 0;
         padding: 5rem 3rem;
-        @media screen and (min-width: $layout-tablette) {
-            
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .paragraphes
+        {
+            // background-color: red;
+            padding: 1rem;
+            width: 80%;
+
+            p
+            {
+                line-height: 1.5rem;
+                margin: 0;
+                padding: 0.5rem 0;
+                opacity: 0.75;
+            }
         }
-        @media screen and (min-width: $layout-desktop) {
+
+        @media screen and (min-width: $layout-tablette)
+        {
+            &:first-of-type > .TitreSection
+            {
+                margin-left: 50%;
+                text-align: right;
+            }
+
+            &:last-of-type > .TitreSection
+            {
+                margin-right: 50%;
+                text-align: left;
+            }
+
+            & > .SousTitre
+            {
+                text-align: left;
+            }
+
+            &:last-of-type > .SousTitre
+            {
+                text-align: right;
+            }
+        }
+
+        @media screen and (min-width: $layout-desktop)
+        {
             padding: 5rem clamp(3rem, 5vw, 40rem);
+            padding-bottom: 1rem;
         }
     }
-    .emplois-stages {
+
+    .emplois-stages
+    {
         background-color: $base-color;
     }
-    .universite {
+    
+    .universite
+    {
         background-color: $couleur-primaire;
+        position: relative;
+
+        #vague3
+        {
+            z-index: 2;
+            fill: $base-color;
+            position: absolute;
+            top: 0;
+            height: 15%;
+            width: 100%;
+        }
     }
 }

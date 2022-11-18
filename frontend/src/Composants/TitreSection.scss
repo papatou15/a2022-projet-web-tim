@@ -1,17 +1,23 @@
 @import "../Variables/Layout.scss";
+@import "../Variables/Polices.scss";
 
-.TitreSection {
+.TitreSection
+{
     margin: 0;
-    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    font-size: $font-size-titre-page;
     text-align: center;
     height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    .titre-conteneur {
-        border-bottom: 1px solid black;
+
+    .titre-conteneur
+    {
+        border-bottom: 1px solid white;
     }
-    @media screen and (min-width: $layout-tablette) {
-        font-size: 2.25rem;
+
+    @media screen and (min-width: $layout-tablette)
+    {
+        font-size: $font-size-titre-page;
     }
 }

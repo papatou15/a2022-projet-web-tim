@@ -1,35 +1,67 @@
 @import "../Variables/Layout.scss";
 
-.UneCarriere {
+.UneCarriere
+{
+    // border: 1px solid red;
     display: flex;
     flex-flow: column;
-    min-width: 300px;
-    width: 80%;
-    .nom-emploi {
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    width: 45%;
+
+    &:nth-child(even)
+    {
+        position: relative;
+        float: right;
+    }
+    
+    .nom-emploi
+    {
         margin: 0;
         font-size: 1.1rem;
         font-weight: 600;
+        text-align: center;
     }
-    .nom-emploi + a {
-        margin: 0.5rem 0 1rem 1.5rem;
+
+    .nom-emploi + a
+    {
+        display: flex;
+        width: 62px;
+        margin: 0.5rem 0 1rem 0rem;
         font-weight: 100;
         transition: background-position 0.2s ease-in-out;
         background: linear-gradient(to right, transparent 0%, transparent 50%, transparent 50%, transparent 100%), linear-gradient(to right, white 0%, white 50%, transparent 50%, transparent 100%);
         background-size: 200% 5%;
         background-position: center top, right bottom;
         background-repeat: no-repeat;
-        &:hover {
+
+        &:hover
+        {
             background-position: center top, left bottom;
         }
     }
-    @media screen and (min-width: $layout-tablette) {
-        width: 50%;
+
+    @media screen and (min-width: $layout-tablette)
+    {
+        align-items: flex-start;
+        max-width: 50%;
+        // margin: 0 2.5%;
+
+        .nom-emploi
+        {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: start;
+        }
     }
-    @media screen and (min-width: $layout-desktop) {
-        justify-content: center;
-        align-items: center;
-        .nom-emploi + a {
-            margin: 0.5rem 0 1rem 0rem;
+
+    @media screen and (min-width: $layout-desktop)
+    {
+        .nom-emploi + a
+        {
+            margin: 0.5rem 0 1rem 1rem;
         }
     }
 }
