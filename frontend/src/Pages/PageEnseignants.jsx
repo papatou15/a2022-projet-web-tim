@@ -12,7 +12,6 @@ export default function PageEnseignants({id}){
     const {pages} = useContext(DataContext);
     const pageEnseignant = pages.filter((page) => page.id === id)[0];
 
-    console.log(pageEnseignant);
 
     const [dialogOpen, setDialogOpen] = useState(false);
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
@@ -24,10 +23,15 @@ export default function PageEnseignants({id}){
     const setDetailsOpen = (isOpen) => {
         setDialogOpen(isOpen);
         setCarteGlissanteOpen(isOpen);
+        console.log(carteAgrandie);
     }
 
     return (
         <main className="PageEnseignants">
+            <div className="curve"></div>
+            <svg className="vague2">
+                    <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
+            </svg>
             <TitreSection>{pageEnseignant.titre_sections[0]}</TitreSection>
             <ListeEnseignants carteAgrandie={carteAgrandie} setCarteAgrandie={setCarteAgrandie} setDetailsOpen={setDetailsOpen}/>
             <Dialog isActive={dialogOpen} onOutsideClick={() => {setDetailsOpen(false)}} exceptionRef={carteGlissanteRef}>
