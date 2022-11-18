@@ -4,20 +4,18 @@
 .TitreSection
 {
     margin: 0;
-    font-size: $font-size-titre-page;
+    padding: 0 8.5rem;
+    font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
     height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    .titre-conteneur
-    {
+    .titre-conteneur {
+        z-index: 1;
         border-bottom: 1px solid white;
     }
-
-    @media screen and (min-width: $layout-tablette)
-    {
-        font-size: $font-size-titre-page;
+    @media screen and (min-width: $layout-tablette) {
+        font-size: 2.5rem;
     }
 }

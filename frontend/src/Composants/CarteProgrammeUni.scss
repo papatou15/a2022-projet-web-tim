@@ -13,14 +13,27 @@
     flex-flow: row;
     justify-content: space-around;
     align-items: center;
+    min-height: 80px;
+    @media screen and (min-width: $layout-tablette) {
 
-    @media screen and (min-width: $layout-tablette)
-    {
         width: 250px;
         flex-flow: column;
         align-items: center;
         padding: 0;
         aspect-ratio: 1/1;
+        min-height: unset;
+    }
+    .type-icone-container {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 100%;
+        align-items: center;
+        padding: 1rem;
+        @media screen and (min-width: $layout-tablette) {
+            top: 0;
+            width: 100%;
+        }
     }
 
     .image
@@ -31,10 +44,9 @@
         {
             display: block ;
             width: 100%;
-            height: calc(100% - 20%);
-        
-            img
-            {
+            height: 200px;
+            img {
+
                 object-fit: cover;
                 width: 100%;
                 height: 100%;
@@ -54,20 +66,19 @@
         {
             margin: 0;
         }
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        font-weight: bold;
 
         @media screen and (min-width: $layout-tablette)
         {
             color: white;
             text-shadow: 2px 2px 5px black;
-            margin: 1rem;
-            position: absolute;
-            top: 0;
-            left: 0;
         }
     }
 
-    .icone
-    {
+    .icone {
+        -webkit-filter: drop-shadow(1px 1px 0px white);
+
         flex-basis: 1;
         width: 50px;
         height: 50px;
@@ -78,6 +89,7 @@
             width: 100%;
             height: 100%;
         }
+
         
         @media screen and (min-width: $layout-tablette)
         {
@@ -94,18 +106,17 @@
         text-align: center;
         font-weight: bold;
         flex-basis: 2;
-        font-size: 1.5rem;
-        
-        p
-        {
-            margin: 0;
-        }
-        
-        @media screen and (min-width: $layout-tablette)
-        {
-            p
-            {
+        font-size: 1rem;
+        width: 50%;
+        @media screen and (min-width: $layout-tablette) {
+            height: 75px;
+            display: flex;
+            align-items: center;
+            width: unset;
+            p {
+
                 margin: 1rem;
+                font-size: 1rem;
             }
         }
     }
