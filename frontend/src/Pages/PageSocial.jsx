@@ -11,9 +11,11 @@ export default function PageSocial(props){
             <div className="sectionSocial">
                 {/* propriété Viewbox */}
                 {/* preserveAspectRatio="none" */}
-                <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
+                {/* <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
                     <path d="M0,210.5c92.65-42.08,234.69-90.01,402-74,212.92,20.37,243.57,122.93,466,163,227.67,41.01,299.62-47.69,594-46,199.1,1.14,360.27,81.82,459,114l-1-367.5H.5L0,210.5Z"/>
-                </svg>
+                </svg> */}
+                <div id="vague1">
+                </div>
                 <svg id="vague2">
                     <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
                 </svg>
