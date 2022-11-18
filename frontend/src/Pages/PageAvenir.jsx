@@ -16,10 +16,7 @@ export default function PageAvenir({id}){
             <div className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[0]}</SousTitre>
-                <div className='paragraphes'>
-                    <p>{pageAvenir.paragraphes[0]}</p>
-                    <p>{pageAvenir.paragraphes[0]}</p>
-                </div>
+                <p className='texte-stage'>{pageAvenir.paragraphes[0]}</p>
                 <SousTitre>{pageAvenir.sous_titres[1]}</SousTitre>
                 <ListeCarrieres/>
             </div>

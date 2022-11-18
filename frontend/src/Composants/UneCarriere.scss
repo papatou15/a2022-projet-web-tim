@@ -23,12 +23,8 @@
         font-weight: 600;
         text-align: center;
     }
-
-    .nom-emploi + a
-    {
-        display: flex;
-        width: 62px;
-        margin: 0.5rem 0 1rem 0rem;
+    .nom-emploi + p > a {
+        margin: 0.5rem 0 1rem 1.5rem;
         font-weight: 100;
         transition: background-position 0.2s ease-in-out;
         background: linear-gradient(to right, transparent 0%, transparent 50%, transparent 50%, transparent 100%), linear-gradient(to right, white 0%, white 50%, transparent 50%, transparent 100%);
@@ -56,12 +52,8 @@
             text-align: start;
         }
     }
-
-    @media screen and (min-width: $layout-desktop)
-    {
-        .nom-emploi + a
-        {
-            margin: 0.5rem 0 1rem 1rem;
-        }
+    @media screen and (min-width: $layout-desktop) {
+        justify-content: center;
+        align-items: center;
     }
 }
