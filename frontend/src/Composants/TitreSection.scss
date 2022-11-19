@@ -1,6 +1,8 @@
 @import "../Variables/Layout.scss";
+@import "../Variables/Polices.scss";
 
-.TitreSection {
+.TitreSection
+{
     margin: 0;
     padding: 0 8.5rem;
     font-size: clamp(2rem, 5vw, 2.5rem);

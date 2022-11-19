@@ -10,9 +10,25 @@ import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
 import { sortSessions } from '../utils/timapi-utils';
 import { TrimDOMElements } from '../utils/strings-utils';
+import Footer from '../Composants/Footer';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
+    window.addEventListener('scroll', function() {
+        let hauteurVp = window.innerHeight;
+        let scrollVertical = window.document.documentElement.scrollTop;
+
+        console.log("hauteur: " + hauteurVp);
+        console.log("scroll: " + scrollVertical);
+        if(scrollVertical && scrollVertical > hauteurVp) {
+            console.log('Afficher footer ');
+        }
+        else {
+            console.log('Cacher footer ');
+
+        }
+    })
+
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
     console.log(dataAccueil.projets);
@@ -62,7 +78,7 @@ export default function PageAccueil(props){
                     <div className="blockCartes" id='carouselCartesAvenir'>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                                <p>Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En <br />Entreprise</b></p>
@@ -70,7 +86,7 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur velit et necessitatibus, similique temporibus id fuga saepe quas provident repellat porro nihil nemo. Fuga quam ipsum consequatur? Debitis laboriosam, sequi quaerat error vel nemo ullam quia aliquam sed natus totam veritatis iure at quis quibusdam. Neque quos consequuntur pariatur praesentium!</p>
+                                <p>Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>À l'université</b></p>
@@ -78,7 +94,7 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, reiciendis excepturi molestias in repellat rem, itaque doloremque iure placeat hic nostrum ad? Necessitatibus minus alias voluptate asperiores autem quae quis consequuntur mollitia sequi vero.</p>
+                                <p>Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En stage</b></p>
@@ -165,7 +181,6 @@ export default function PageAccueil(props){
                     />
                     <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
                 </div>
-                
             </section>
         </main>
     );

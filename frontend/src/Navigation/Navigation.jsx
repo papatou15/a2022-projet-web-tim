@@ -16,7 +16,7 @@ export default function Navigation({burgerRef, toggleMenu, navOpenState, menu, o
     return (
         <div className={navOpenState ? "Navigation open" : "Navigation closed"}>
             <nav ref={navigationRef}>
-
+                {console.log(menu.data.header)}
                 <PageLinks toggleMenu={toggleMenu} navOpenState={navOpenState} menu={menu}/>
                 <div className="curve">
                     <Contacts/>
