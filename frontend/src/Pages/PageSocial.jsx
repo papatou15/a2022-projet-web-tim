@@ -60,7 +60,7 @@ export default function PageSocial(props){
                 <div className="contenuCommunaute">
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p></p>
                         </div>
                         <div className="carteTitre">
                             <p>Comité</p>
@@ -68,7 +68,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p>Un groupe disponible pour aider les étudiants du TIM pendant leur parcour collègiens</p>
                         </div>
                         <div className="carteTitre">
                             <p>Centre d'aide</p>
@@ -76,7 +76,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p>Nous avons aussi un serveur Discord entre les étudiants pour s'entraider durant nos sessions ainsi que faire connaissance</p>
                         </div>
                         <div className="carteTitre">
                             <p>Discord</p>

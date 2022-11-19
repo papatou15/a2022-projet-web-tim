@@ -62,7 +62,7 @@ export default function PageAccueil(props){
                     <div className="blockCartes">
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                                <p>Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En <br />Entreprise</b></p>
@@ -70,7 +70,7 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur velit et necessitatibus, similique temporibus id fuga saepe quas provident repellat porro nihil nemo. Fuga quam ipsum consequatur? Debitis laboriosam, sequi quaerat error vel nemo ullam quia aliquam sed natus totam veritatis iure at quis quibusdam. Neque quos consequuntur pariatur praesentium!</p>
+                                <p>Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>À l'université</b></p>
@@ -78,7 +78,7 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, reiciendis excepturi molestias in repellat rem, itaque doloremque iure placeat hic nostrum ad? Necessitatibus minus alias voluptate asperiores autem quae quis consequuntur mollitia sequi vero.</p>
+                                <p>Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En stage</b></p>

@@ -16,7 +16,7 @@
         cursor: default;
         overflow: hidden;
         position: relative;
-        background-color: $base-color;
+        background-color: $couleur-quaternaire;
         height: 100vh;
         width: 100vw;
         display: grid;
@@ -42,7 +42,7 @@
         .curve {
             grid-area: contacts;
             position: relative;
-            background: url(../svg/wave2.svg), linear-gradient(to bottom, transparent 70%, $couleur-bouton-jaune 70%);
+            background: url(../svg/wave2.svg), linear-gradient(to bottom, transparent 70%, $couleur-bouton-bleu 70%);
             background-position: 0% 0px, right bottom;
             background-repeat: no-repeat;
             background-size: cover;
