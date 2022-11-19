@@ -1,4 +1,5 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import { DataContext } from '../Context/DataContext';
 import './PageSocial.scss';
 
@@ -6,14 +7,35 @@ export default function PageSocial(props){
 
     const siteData = useContext(DataContext);
 
+    const location = useLocation();
+
+    const evenementsRef = useRef(null);
+    const maisonneuveRef = useRef(null);
+    const communauteRef = useRef(null);
+
+    const sectionsReferences = {
+        '#evenements' : evenementsRef,
+        '#maisonneuve' : maisonneuveRef,
+        '#communaute' : communauteRef
+    }
+
+    useEffect(() => {
+        if (location.hash) {
+            const currentSection = sectionsReferences[location.hash];
+            currentSection.current.scrollIntoView();
+        }
+    }, [])
+
     return (
         <main className="PageSocial">
-            <div className="sectionSocial">
+            <div ref={evenementsRef} className="sectionSocial" id='evenements'>
                 {/* propriété Viewbox */}
                 {/* preserveAspectRatio="none" */}
-                <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
+                {/* <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
                     <path d="M0,210.5c92.65-42.08,234.69-90.01,402-74,212.92,20.37,243.57,122.93,466,163,227.67,41.01,299.62-47.69,594-46,199.1,1.14,360.27,81.82,459,114l-1-367.5H.5L0,210.5Z"/>
-                </svg>
+                </svg> */}
+                <div id="vague1">
+                </div>
                 <svg id="vague2">
                     <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
                 </svg>
@@ -33,7 +55,7 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <div className="sectionSocial">
+            <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
                 <div className="contenuCommunaute">
                     <div className="carteCommunaute">
@@ -63,7 +85,7 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <div className="sectionSocial">
+            <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>
                 <div className="contenuMaisonneuve">
                     <div className="svgPlaceholder">svg</div>

@@ -1,18 +1,19 @@
 @import "../Variables/Layout.scss";
 
 .ListeEnseignants {
-
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(5, 300px);
     overflow: scroll;
-    margin: 0 2rem 0 2rem;
     scrollbar-width: none;
+    margin: auto 2rem;
     @media screen and (min-width: $layout-tablette) {
+        height: 100%;
         display: flex;
         flex-flow: row wrap;
         transition: all 0.5s ease-in-out;
         justify-content: center;
+        align-items: center;
         gap: 2rem;
     }
 

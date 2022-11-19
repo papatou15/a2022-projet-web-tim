@@ -2,6 +2,7 @@ import Bouton from '../Bouton';
 import CarteCoursSession from '../Composants/CarteCoursSession';
 import CarteProjet from '../Composants/CarteProjet';
 import CarteEnseignant from '../Composants/CarteEnseignant';
+import FlechesCarousel from '../Composants/FlechesCarousel';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext, useRef } from 'react';
@@ -61,10 +62,10 @@ export default function PageAccueil(props){
                             )
                         }
                     </div>
-                    <div className="navCarousel">
-                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", -300)}></div>
-                        <div className="flecheCarousel" onClick={() => scrollButtons("wrapperCartesSessions", 300)}></div>
-                    </div>
+                    <FlechesCarousel
+                        onClickLeft={() => scrollButtons("wrapperCartesSessions", -300)}
+                        onClickRight={() => scrollButtons("wrapperCartesSessions", 300)}
+                    />
                     <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
                 </div>
             </section>
@@ -128,21 +129,21 @@ export default function PageAccueil(props){
                         <div className="socialSlides Event">
                             <div className="socialSlidesContent">
                                 <h3>Les <b>Événements</b></h3>
-                                <Bouton href={"le-social"}>Voir les événements</Bouton>
+                                <Bouton href={"le-social#evenements"}>Voir les événements</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Communaute">
                             <div className="socialSlidesContent">
                                 <h3><b>Communauté</b></h3>
-                                <Bouton href={"le-social"}>En apprendre plus</Bouton>
+                                <Bouton href={"le-social#communaute"}>En apprendre plus</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
                         <div className="socialSlides Maisonneuve">
                             <div className="socialSlidesContent">
                                 <h3><b>Maisonneuve</b></h3>
-                                <Bouton href={"le-social"}>Consulter le collège</Bouton>
+                                <Bouton href={"le-social#maisonneuve"}>Consulter le collège</Bouton>
                             </div>
                             <div className="clipPath"></div>
                         </div>
@@ -162,10 +163,10 @@ export default function PageAccueil(props){
                             )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
                         }
                     </div>
-                    <div className="boutonsCarousel">
-                        <div className="boutonGauche" onClick={() => scrollButtons("scrollCartes", -430)}></div>
-                        <div className="boutonDroite" onClick={() => scrollButtons("scrollCartes", 430)}></div>
-                    </div>
+                    <FlechesCarousel
+                        onClickLeft={() => scrollButtons("scrollCartes", -430)}
+                        onClickRight={() => scrollButtons("scrollCartes", 430)}
+                    />
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>
             </section>
