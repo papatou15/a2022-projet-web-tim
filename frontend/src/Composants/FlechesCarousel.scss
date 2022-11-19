@@ -1,8 +1,13 @@
+@import "../Variables/Layout.scss";
+
 .FlechesCarousel {
     margin: 1rem;
     display: flex;
     justify-content: center;
     gap: 3rem;
+    @media screen and (min-width: $layout-gigaScreen) {
+        display: none;
+    }
     .flecheCarousel {
         transition: background-color 0.2s ease-out;
         cursor: pointer;

@@ -23,7 +23,7 @@
             margin: 10px;
             height: 20%;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 5px;
             border: $hover-border-off;
             transition: all 0.2s ease-in-out;
             &:hover{
@@ -54,7 +54,7 @@
                     height: 100%;
                     width: auto;
                     object-fit: cover;
-                    border-radius: 10px;
+                    border-radius: 5px;
                 }
             }
             

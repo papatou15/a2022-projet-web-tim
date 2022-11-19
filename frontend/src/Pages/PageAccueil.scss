@@ -22,13 +22,13 @@
     
     &>section{
         min-height: 70vh;
-        padding: 2rem;
+        padding: 2rem 0;
         width: 100vw;
         &:nth-of-type(4){
             height: auto;
         }
     }
-    > section:nth-of-type(odd) {
+    > .block:nth-of-type(odd) {
         .titleSections {
             margin: 0 0 0 clamp(10%, 15vw, 5%);
             justify-content: flex-start;
@@ -37,6 +37,8 @@
     
     
     .block1{
+        position: relative;
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,14 +70,20 @@
             }
         }
 
-        .zzclipPath{ // Test de clip path pour les formes entre les sections
-            width: 100%;
+        .clipPath{
+            z-index: -1;
+            
+            width: 150%;
             height: 150px;
             background-color: $couleur-secondaire;
             position: absolute;
-            bottom: -150px;
+            bottom: -3rem;
             left: 0;
-            clip-path: ellipse(50% 50% at 50% 100%)
+            clip-path: ellipse(50% 100% at 35% 100%);
+            @media screen and (min-width: $layout-tablette) {
+                width: 110%;
+                clip-path: ellipse(50% 100% at 45% 100%);
+            }
         }
     }
 
@@ -105,6 +113,11 @@
                     cursor: pointer;
                 }
             }
+            .Bouton {
+                @media screen and (min-width: $layout-gigaScreen) {
+                    margin: 2rem;
+                }
+            }
         }
     }
 
@@ -118,22 +131,51 @@
             justify-content: center;
             align-items: center;
             .blockCartes{
+                margin: 2rem 2rem;
                 display: flex;
-                flex-flow: column wrap;
+                flex-flow: row nowrap;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                -webkit-overflow-scrolling: touch;
                 gap: 2rem;
-                width: 80%;
-                align-items: center;
-                justify-content: space-evenly;
-                margin: 2rem;
-                @media screen and (min-width: $layout-desktop) {
-                    flex-flow: row wrap;
+                width: 100vw;
+                scroll-behavior: smooth;
+                padding: 0 2rem;
+                justify-content: flex-start;
+                @media screen and (min-width: $layout-tablette) {
+                    justify-content: flex-start;
+                    max-width: 1000px;
                 }
+                @media screen and (min-width: $layout-desktop) {
+                    max-width: unset;
+                    justify-content: center;
+                }
+                @media screen and (min-width: $layout-gigaScreen) {
+                    justify-content: center;
+                }
+
+                &::-webkit-scrollbar {
+                    display: none !important;
+                }
+                
                 .carteAvenir{
-                    width: 300px;
+                    min-width: 80vw;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
+                    
+                    @media screen and (min-width: $layout-tablette) {
+                        justify-content: flex-start;
+                        min-width: 50%;
+                    }
+                    @media screen and (min-width: $layout-desktop) {
+                        min-width: 30%;
+                    }
+                    @media screen and (min-width: $layout-gigaScreen) {
+                        min-width: 400px;
+                        width: 400px;
+                    }
                     .carteBGAvenir{
                         width: 95%;
                         background-color: $couleur-quinaire;
@@ -167,11 +209,53 @@
                         font-family: Roboto, sans-serif;
                     }
                 }
+                
             }
-            
+            .FlechesCarousel {
+                @media screen and (min-width: $layout-desktop) {
+                    display: none;
+                }
+            }
+            .Bouton {
+                @media screen and (min-width: $layout-gigaScreen) {
+                    margin: 2rem;
+                }
+            }
         }
     }
-
+    > .transition {
+        width: 100vw;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+        .curve {
+            z-index: 1;
+            position: absolute;
+            width:150%;
+            height: 100%;
+            translate: 0px -2px;
+            @media screen and (min-width: $layout-tablette) {
+                width: 100%;
+            }
+        }
+    }
+     > .transition:nth-of-type(1) {
+        min-height: 200px;
+        background-color: $couleur-tierce;
+        .curve {
+            background-color: $couleur-secondaire;
+            clip-path: polygon(100% 0%, 0% 0% , 0% 65.00%, 1% 64.93%, 2% 64.73%, 3% 64.39%, 4% 63.92%, 5% 63.33%, 6% 62.62%, 7% 61.79%, 8% 60.85%, 9% 59.82%, 10% 58.70%, 11% 57.49%, 12% 56.22%, 13% 54.90%, 14% 53.53%, 15% 52.13%, 16% 50.70%, 17% 49.28%, 18% 47.86%, 19% 46.45%, 20% 45.08%, 21% 43.76%, 22% 42.49%, 23% 41.29%, 24% 40.17%, 25% 39.13%, 26% 38.20%, 27% 37.37%, 28% 36.66%, 29% 36.07%, 30% 35.60%, 31% 35.27%, 32% 35.07%, 33% 35.00%, 34% 35.07%, 35% 35.27%, 36% 35.61%, 37% 36.08%, 38% 36.68%, 39% 37.39%, 40% 38.22%, 41% 39.16%, 42% 40.20%, 43% 41.32%, 44% 42.52%, 45% 43.79%, 46% 45.12%, 47% 46.49%, 48% 47.89%, 49% 49.31%, 50% 50.74%, 51% 52.16%, 52% 53.57%, 53% 54.93%, 54% 56.26%, 55% 57.53%, 56% 58.73%, 57% 59.85%, 58% 60.88%, 59% 61.81%, 60% 62.64%, 61% 63.35%, 62% 63.94%, 63% 64.40%, 64% 64.74%, 65% 64.94%, 66% 65.00%, 67% 64.93%, 68% 64.72%, 69% 64.38%, 70% 63.91%, 71% 63.31%, 72% 62.60%, 73% 61.76%, 74% 60.83%, 75% 59.79%, 76% 58.67%, 77% 57.46%, 78% 56.19%, 79% 54.86%, 80% 53.49%, 81% 52.09%, 82% 50.67%, 83% 49.24%, 84% 47.82%, 85% 46.42%, 86% 45.05%, 87% 43.72%, 88% 42.46%, 89% 41.26%, 90% 40.14%, 91% 39.11%, 92% 38.18%, 93% 37.35%, 94% 36.64%, 95% 36.05%, 96% 35.59%, 97% 35.26%, 98% 35.06%, 99% 35.00%, 100% 35.07%);
+        }
+    }
+    > .transition:nth-of-type(2) {
+        min-height: 200px;
+        background-color: $couleur-quaternaire;
+        .curve {
+            background-color: $couleur-tierce;
+            rotate: y 180deg;
+            clip-path: polygon(100% 0%, 0% 0% , 0% 65.00%, 1% 64.93%, 2% 64.73%, 3% 64.39%, 4% 63.92%, 5% 63.33%, 6% 62.62%, 7% 61.79%, 8% 60.85%, 9% 59.82%, 10% 58.70%, 11% 57.49%, 12% 56.22%, 13% 54.90%, 14% 53.53%, 15% 52.13%, 16% 50.70%, 17% 49.28%, 18% 47.86%, 19% 46.45%, 20% 45.08%, 21% 43.76%, 22% 42.49%, 23% 41.29%, 24% 40.17%, 25% 39.13%, 26% 38.20%, 27% 37.37%, 28% 36.66%, 29% 36.07%, 30% 35.60%, 31% 35.27%, 32% 35.07%, 33% 35.00%, 34% 35.07%, 35% 35.27%, 36% 35.61%, 37% 36.08%, 38% 36.68%, 39% 37.39%, 40% 38.22%, 41% 39.16%, 42% 40.20%, 43% 41.32%, 44% 42.52%, 45% 43.79%, 46% 45.12%, 47% 46.49%, 48% 47.89%, 49% 49.31%, 50% 50.74%, 51% 52.16%, 52% 53.57%, 53% 54.93%, 54% 56.26%, 55% 57.53%, 56% 58.73%, 57% 59.85%, 58% 60.88%, 59% 61.81%, 60% 62.64%, 61% 63.35%, 62% 63.94%, 63% 64.40%, 64% 64.74%, 65% 64.94%, 66% 65.00%, 67% 64.93%, 68% 64.72%, 69% 64.38%, 70% 63.91%, 71% 63.31%, 72% 62.60%, 73% 61.76%, 74% 60.83%, 75% 59.79%, 76% 58.67%, 77% 57.46%, 78% 56.19%, 79% 54.86%, 80% 53.49%, 81% 52.09%, 82% 50.67%, 83% 49.24%, 84% 47.82%, 85% 46.42%, 86% 45.05%, 87% 43.72%, 88% 42.46%, 89% 41.26%, 90% 40.14%, 91% 39.11%, 92% 38.18%, 93% 37.35%, 94% 36.64%, 95% 36.05%, 96% 35.59%, 97% 35.26%, 98% 35.06%, 99% 35.00%, 100% 35.07%);
+        }
+    }
     .block4{
         overflow: hidden;
         background-color: $couleur-tierce;
@@ -190,11 +274,25 @@
         }
         .carouselCartesProjets{
             display: flex;
-            flex-direction: row;
+            flex-flow: row nowrap;
+            justify-content: center;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            gap: 2rem;
             width: 100vw;
-            height: 80vh;
-            justify-content: space-around;
-            align-items: center;
+            scroll-behavior: smooth;
+            padding: 0 20px;
+            @media screen and (max-width: 1958px) {
+                    justify-content: flex-start;
+            }
+
+            &::-webkit-scrollbar {
+                display: none !important;
+            }
+        }
+        .Bouton {
+            margin: 0 auto;
         }
     }
 
