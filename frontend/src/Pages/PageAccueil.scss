@@ -3,7 +3,7 @@
 
 .PageAccueil{
     overflow: hidden;
-    
+    position: relative;
     .titleSections{
         height: 8%;
         display: flex;
@@ -47,7 +47,7 @@
             position: fixed;
             top: -50;
             left: -50;
-            z-index: -9999;
+            z-index: -20;
             filter: blur(10px);
         }
         .mainTitle{
