@@ -7,6 +7,7 @@
     grid-template-columns: repeat(5, 300px);
     overflow: scroll;
     margin: 0 2rem 0 2rem;
+    scrollbar-width: none;
     @media screen and (min-width: $layout-tablette) {
         display: flex;
         flex-flow: row wrap;

@@ -17,6 +17,8 @@ import { DataContext } from './Context/DataContext';
 import Menu from './Navigation/Menu';
 import Footer from './Composants/Footer';
 
+import { checkURLHorL } from './utils/checkURL';
+
 export default function Appli() { 
 
   const [isLoaded, setIsLoaded] = useState(false);
@@ -64,13 +66,14 @@ export default function Appli() {
                   siteData.menu.data.header.headerMenuItems.map(
                     page => {
                       const Page = getPage(page);
-                      return <Route key={page.ID} path={'/'+Page.path} element={<Page.component id={page.pageID}/>}></Route>
+                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/>}></Route>
                     }
                   )
                   :
                   <Route>No pages...</Route>
                 }
               </Routes>
+              <Footer menu={siteData.menu}></Footer>
               </>
               : <></>
             }

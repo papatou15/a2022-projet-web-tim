@@ -9,10 +9,8 @@ export default function Footer({menu}){
         <footer>
             <div className="footerContent">
                 <div className="footerLeft">
-                    <ul>
-                        <PageLinks menu={menu} />
-                        {/* <li>{menu}</li> */}
-                    </ul>
+                    <h4>Navigation</h4>
+                    <PageLinks menu={menu} />
                 </div>
                 <div className="separationLine"></div>
                 <div className="footerRight">

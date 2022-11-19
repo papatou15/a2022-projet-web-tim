@@ -2,34 +2,38 @@
 @import '../Variables/Layout.scss';
 
 footer{
-    min-height: 40vh;
+    height: 475px;
     width: 100%;
-    z-index: -2;
-    background-color: black;
+    z-index: -5;
+    background-color: $base-color;
     color: $off-white;
+    position: relative;
+    
     .footerContent {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
-        width: 80%;
-        height: 100%;
-        margin: auto;
-        padding: 5% 0 2% 0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        z-index: -10;
         .footerLeft{
             h4{
-                margin: 0;
-                font-size: 1.2rem;
+                margin: 7px;
+                font-size: 2rem;
             }
             width: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            height: 400px;
 
             .PageLinks{
                 p{
-                    font-size: 3rem;
+                    font-size: 1.35rem;
+                    margin: 10px;
+                    text-transform: lowercase;
                 }
             }
         }
@@ -41,6 +45,33 @@ footer{
         }
         .footerRight{
             width: 50%;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            height: 400px;
+            .socialMedia{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                h4{
+                    margin: 7px;
+                    font-size: 2rem;
+                }
+                .Contacts{
+                    position: initial;
+                    flex-direction: column;
+                    margin-top: 12px;
+                    .ReseauSocial{
+                        
+                        a{
+                            img{
+                                filter: invert(100%);
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

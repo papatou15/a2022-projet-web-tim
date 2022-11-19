@@ -13,6 +13,20 @@ import Footer from '../Composants/Footer';
 
 export default function PageAccueil(props){
     const dataAccueil = useContext(DataContext);
+    window.addEventListener('scroll', function() {
+        let hauteurVp = window.innerHeight;
+        let scrollVertical = window.document.documentElement.scrollTop;
+
+        console.log("hauteur: " + hauteurVp);
+        console.log("scroll: " + scrollVertical);
+        if(scrollVertical && scrollVertical > hauteurVp) {
+            console.log('Afficher footer ');
+        }
+        else {
+            console.log('Cacher footer ');
+
+        }
+    })
 
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
@@ -99,7 +113,7 @@ export default function PageAccueil(props){
                 <div className="carouselCartesProjets">
                     {
                         melangerTableau(dataAccueil.projets).map(
-                            projet => {console.log(projet);return <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].type_cours} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>}
+                            projet => {return <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].type_cours} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>}
                         ).slice(sliceNumberProjets, sliceNumberProjets + 3)
                     }
                 </div>
@@ -155,7 +169,6 @@ export default function PageAccueil(props){
                     <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
                 </div>
             </section>
-            <Footer menu={dataAccueil.menu}></Footer>
         </main>
     );
 }

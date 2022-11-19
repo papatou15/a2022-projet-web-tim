@@ -34,7 +34,6 @@ export default function PageProjets(props){
                     )
                 }
             </div>
-            <Footer menu={data.menu}></Footer>
         </main>
     );
 }
