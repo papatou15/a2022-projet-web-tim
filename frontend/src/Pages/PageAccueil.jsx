@@ -182,6 +182,10 @@ export default function PageAccueil(props){
                     <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
                 </div>
             </section>
+            <div className="transition">
+                <div className="curve"></div>
+                <div className="background"></div>
+            </div>
         </main>
     );
 }

@@ -256,6 +256,32 @@
             clip-path: polygon(100% 0%, 0% 0% , 0% 65.00%, 1% 64.93%, 2% 64.73%, 3% 64.39%, 4% 63.92%, 5% 63.33%, 6% 62.62%, 7% 61.79%, 8% 60.85%, 9% 59.82%, 10% 58.70%, 11% 57.49%, 12% 56.22%, 13% 54.90%, 14% 53.53%, 15% 52.13%, 16% 50.70%, 17% 49.28%, 18% 47.86%, 19% 46.45%, 20% 45.08%, 21% 43.76%, 22% 42.49%, 23% 41.29%, 24% 40.17%, 25% 39.13%, 26% 38.20%, 27% 37.37%, 28% 36.66%, 29% 36.07%, 30% 35.60%, 31% 35.27%, 32% 35.07%, 33% 35.00%, 34% 35.07%, 35% 35.27%, 36% 35.61%, 37% 36.08%, 38% 36.68%, 39% 37.39%, 40% 38.22%, 41% 39.16%, 42% 40.20%, 43% 41.32%, 44% 42.52%, 45% 43.79%, 46% 45.12%, 47% 46.49%, 48% 47.89%, 49% 49.31%, 50% 50.74%, 51% 52.16%, 52% 53.57%, 53% 54.93%, 54% 56.26%, 55% 57.53%, 56% 58.73%, 57% 59.85%, 58% 60.88%, 59% 61.81%, 60% 62.64%, 61% 63.35%, 62% 63.94%, 63% 64.40%, 64% 64.74%, 65% 64.94%, 66% 65.00%, 67% 64.93%, 68% 64.72%, 69% 64.38%, 70% 63.91%, 71% 63.31%, 72% 62.60%, 73% 61.76%, 74% 60.83%, 75% 59.79%, 76% 58.67%, 77% 57.46%, 78% 56.19%, 79% 54.86%, 80% 53.49%, 81% 52.09%, 82% 50.67%, 83% 49.24%, 84% 47.82%, 85% 46.42%, 86% 45.05%, 87% 43.72%, 88% 42.46%, 89% 41.26%, 90% 40.14%, 91% 39.11%, 92% 38.18%, 93% 37.35%, 94% 36.64%, 95% 36.05%, 96% 35.59%, 97% 35.26%, 98% 35.06%, 99% 35.00%, 100% 35.07%);
         }
     }
+    > .transition:nth-of-type(3) {
+
+        min-height: 200px;
+        background-color: transparent;
+        .curve {
+            z-index: 1;
+            width: 150%;
+            height: 150px;
+            background-color: $couleur-quaternaire;
+            position: absolute;
+            top: 0rem;
+            left: 0;
+            clip-path: ellipse(50% 100% at 35% 0%);
+            @media screen and (min-width: $layout-tablette) {
+                width: 110%;
+                clip-path: ellipse(50% 100% at 45% 0%);
+            }
+        }
+        .background {
+            position: absolute;
+            z-index: -10;
+            height: 100%;
+            width: 100%;
+            background-color: $base-color;
+        }
+    }
     .block4{
         overflow: hidden;
         background-color: $couleur-tierce;
@@ -379,7 +405,6 @@
 
     .block6{
         background-color: #222F43;
-        height: 1250px;
         display: flex;
         flex-direction: column;
         .titleSections{
@@ -408,25 +433,10 @@
                     display: inline-block;
                 }
             }
-
-            .boutonsCarousel{
-                height: 50px;
-                width: 120px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                margin: 50px auto;
-                .boutonGauche{
-                    width: 50px;
-                    height: 50px;
-                    background-color: #eee;
+            .FlechesCarousel {
+                @media screen and (min-width: $layout-gigaScreen) {
+                    display: flex;
                 }
-                .boutonDroite{
-                    width: 50px;
-                    height: 50px;
-                    background-color: #eee;
-                }
-                
             }
             .Bouton {
                 margin: 0 auto;
