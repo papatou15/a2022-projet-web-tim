@@ -10,42 +10,24 @@
     align-items: center;
     margin: 35px 0;
     gap: $gap-grille-cours;
-    color: $off-white;
-    text-shadow: 0 0 4px black;
+    color: black;
     .carteProjet{
-        width: clamp(200px, 50vw, 400px);
-        height: clamp(400px, 50vw, 800px);
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        align-items: center;
-        background-color: $couleur-primaire;
-        outline: 0px solid black;
-        transition: all 0.1s ease-in-out;
+        transition: transform 0.2s ease-out;
+        z-index: 2;
+        border-radius: $coin-ronds;
+        position: relative;
         overflow: hidden;
+        width: 400px;
+        height: 450px;
+        background-color: $couleur-quinaire;
         &:hover{
-            outline: $hover-border;
-            border-radius: 20px;
             transform: scale(1.02);
-        }
-        .titreProjet{
-            width: 100%;
-            height: 100px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-            h4{
-                font-size: 2em;
-                margin: auto;
-            }
+            box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.228);
         }
         .containerImgProjet{
             width: 100%;
-            max-height: 30%;
+            max-height: 60%;
+            height: 300px;
             overflow: hidden;
             position: relative;
             display: flex;
@@ -63,7 +45,7 @@
                 height: 100%;
                 z-index: 1;
             }
-            img{
+            img {
                 width: auto;
                 height: 100%;
                 z-index: 2;
@@ -71,35 +53,49 @@
                 box-shadow: 0 0 50px 20px rgb(48, 48, 48);
             }
         }
-        .descProjet{
-            height: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            p{
-                text-align: center;
-                margin: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                span{
-                    margin: 2px;
-                }
-                &:first-of-type{
-                    font-size: 1.5em;
-                    height: 25%;
-                }
-                &:nth-of-type(2){
-                    background-color: $couleur-secondaire;
-                    width: 100%;
-                    height: 37.5%;
-                }
-                &:nth-of-type(3){
-                    height: 37.5%;
+        .titreProjet {
+            position: relative;
+            z-index: 5;
+            h4 {
+                margin: 0.5rem;
+                font-size: 1.5rem;
+            }
+        }
+        .descProjet {
+            position: relative;
+            p {
+                position: relative;
+                z-index: 4;
+                margin: 0.5rem;
+                b {
+                    font-weight: 300;
                 }
             }
+        }
+        .auteur {
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+            right: left;
+            margin: 0.5rem;
+        }
+        .curve1 {
+            z-index: 1;
+            position: absolute;
+            width:200%;
+            height: 100%;
+            background-color: $couleur-primaire;
+            transform: rotateY(180deg) translateX(30%);
+            clip-path: polygon(100% 0%, 0% 0% , 0% 95.00%, 1% 94.98%, 2% 94.90%, 3% 94.78%, 4% 94.60%, 5% 94.38%, 6% 94.11%, 7% 93.79%, 8% 93.42%, 9% 93.01%, 10% 92.55%, 11% 92.05%, 12% 91.51%, 13% 90.92%, 14% 90.30%, 15% 89.63%, 16% 88.93%, 17% 88.20%, 18% 87.43%, 19% 86.63%, 20% 85.81%, 21% 84.95%, 22% 84.07%, 23% 83.17%, 24% 82.25%, 25% 81.31%, 26% 80.35%, 27% 79.38%, 28% 78.40%, 29% 77.41%, 30% 76.41%, 31% 75.42%, 32% 74.42%, 33% 73.42%, 34% 72.42%, 35% 71.44%, 36% 70.46%, 37% 69.49%, 38% 68.53%, 39% 67.60%, 40% 66.68%, 41% 65.78%, 42% 64.90%, 43% 64.05%, 44% 63.23%, 45% 62.44%, 46% 61.67%, 47% 60.95%, 48% 60.25%, 49% 59.60%, 50% 58.98%, 51% 58.40%, 52% 57.86%, 53% 57.37%, 54% 56.92%, 55% 56.51%, 56% 56.16%, 57% 55.84%, 58% 55.58%, 59% 55.37%, 60% 55.20%, 61% 55.08%, 62% 55.02%, 63% 55.00%, 64% 55.03%, 65% 55.12%, 66% 55.25%, 67% 55.43%, 68% 55.66%, 69% 55.94%, 70% 56.27%, 71% 56.64%, 72% 57.06%, 73% 57.53%, 74% 58.04%, 75% 58.59%, 76% 59.18%, 77% 59.81%, 78% 60.48%, 79% 61.19%, 80% 61.93%, 81% 62.70%, 82% 63.50%, 83% 64.34%, 84% 65.19%, 85% 66.08%, 86% 66.98%, 87% 67.91%, 88% 68.85%, 89% 69.81%, 90% 70.78%, 91% 71.77%, 92% 72.76%, 93% 73.75%, 94% 74.75%, 95% 75.75%, 96% 76.75%, 97% 77.74%, 98% 78.73%, 99% 79.71%, 100% 80.67%);
+        }
+        .curve2 {
+            z-index: 1;
+            position: absolute;
+            width:180%;
+            height: 100%;
+            background-color: $couleur-primaire;
+            transform: rotateZ(220deg) translateY(-80%) translateX(10%);
+            clip-path: polygon(100% 0%, 0% 0% , 0% 95.00%, 1% 94.98%, 2% 94.90%, 3% 94.78%, 4% 94.60%, 5% 94.38%, 6% 94.11%, 7% 93.79%, 8% 93.42%, 9% 93.01%, 10% 92.55%, 11% 92.05%, 12% 91.51%, 13% 90.92%, 14% 90.30%, 15% 89.63%, 16% 88.93%, 17% 88.20%, 18% 87.43%, 19% 86.63%, 20% 85.81%, 21% 84.95%, 22% 84.07%, 23% 83.17%, 24% 82.25%, 25% 81.31%, 26% 80.35%, 27% 79.38%, 28% 78.40%, 29% 77.41%, 30% 76.41%, 31% 75.42%, 32% 74.42%, 33% 73.42%, 34% 72.42%, 35% 71.44%, 36% 70.46%, 37% 69.49%, 38% 68.53%, 39% 67.60%, 40% 66.68%, 41% 65.78%, 42% 64.90%, 43% 64.05%, 44% 63.23%, 45% 62.44%, 46% 61.67%, 47% 60.95%, 48% 60.25%, 49% 59.60%, 50% 58.98%, 51% 58.40%, 52% 57.86%, 53% 57.37%, 54% 56.92%, 55% 56.51%, 56% 56.16%, 57% 55.84%, 58% 55.58%, 59% 55.37%, 60% 55.20%, 61% 55.08%, 62% 55.02%, 63% 55.00%, 64% 55.03%, 65% 55.12%, 66% 55.25%, 67% 55.43%, 68% 55.66%, 69% 55.94%, 70% 56.27%, 71% 56.64%, 72% 57.06%, 73% 57.53%, 74% 58.04%, 75% 58.59%, 76% 59.18%, 77% 59.81%, 78% 60.48%, 79% 61.19%, 80% 61.93%, 81% 62.70%, 82% 63.50%, 83% 64.34%, 84% 65.19%, 85% 66.08%, 86% 66.98%, 87% 67.91%, 88% 68.85%, 89% 69.81%, 90% 70.78%, 91% 71.77%, 92% 72.76%, 93% 73.75%, 94% 74.75%, 95% 75.75%, 96% 76.75%, 97% 77.74%, 98% 78.73%, 99% 79.71%, 100% 80.67%);
         }
     }
     
@@ -154,8 +150,9 @@
                         margin: 1em;
                     }
                     .coursProjetLien{
-                        height: 25%;
+                        height: 30%;
                         width: 100%;
+                        padding: 0.5rem;
                         background-color: $couleur-secondaire;
                         border-radius: $coin-ronds;
                         margin: 20px 0;
@@ -225,7 +222,7 @@
     &[expanderstate="true"]{
         .carteProjet{
             outline: $hover-border;
-            border-radius: 20px;
+            border-radius: 5px;
         }
     }
 }

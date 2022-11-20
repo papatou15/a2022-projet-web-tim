@@ -2,6 +2,7 @@
 
 $layout-tablette: 768px;
 $layout-desktop: 992px;
+$layout-gigaScreen: 1980px; 
 
 $gap-grille-cours: 2rem;
 $coin-ronds: 5px;
@@ -10,7 +11,7 @@ $coin-ronds: 5px;
 $width-dialog: 70vw;
 $height-dialog: 60vh;
 
-$hover-border: 5px solid $couleur-bouton-jaune;
+$hover-border: 3.5px solid $couleur-bouton-jaune;
 $hover-border-clicked: 3px solid $couleur-bouton-jaune;
 
 $hover-border-off: 0px solid $couleur-bouton-jaune;

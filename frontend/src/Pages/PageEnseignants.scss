@@ -2,8 +2,12 @@
 @import "../Variables/Layout.scss";
 
 .PageEnseignants {
+    position: relative;
     min-height: 100vh;
     background-color: $base-color;
+    z-index: 0;
+    padding: 0 0 2rem 0;
+    overflow: hidden;
     > .curve {
         position: absolute;
         background-color: $couleur-primaire;
@@ -18,9 +22,9 @@
     .vague2 {
         position: absolute;
         fill: #248ea6;
-        bottom: 0;
+        bottom: -4px;
         height: 340px;
-
+        z-index: -1;
     }
    
     .TitreSection {
