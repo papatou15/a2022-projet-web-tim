@@ -25,19 +25,20 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
             <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(id);}}>
                 <div className="carteProjet">
-                    <div className="titreProjet">
-                        <h4>{titre}</h4>
-                    </div>
+                    <div className="curve1"></div>
+                    <div className="curve2"></div>
                     <div className="containerImgProjet">
                         <div className="bgImage" style={{backgroundImage: "url(" + image[0] + ")"}}></div>
                         <img src={image[0]} alt="Image du projet" className="imgProjet"/>
                     </div>
-                    <div className="descProjet">
-                        <p><b>Catégorie: </b><span>{type}</span></p>
-                        {console.log("Cours : " + cours)}
-                        <p><b>Cours: </b>{cours != "Personnel" ? cours.map(unCours => {return(<span className="simpleCours">{unCours}</span>)}) : "Personnel"}</p>
-                        <p><b>Fait par: </b>{auteurs.map(unAuteur => {return(<span>{unAuteur}</span>)})}</p>
+                    <div className="titreProjet">
+                        <h4>{titre}</h4>
                     </div>
+                    <div className="descProjet">
+                        <p className='type-projet'><b>Type - </b><span>{type}</span></p>
+                        <p className='cours'><b>Cours - </b>{cours != "Personnel" ? cours.map(unCours => {return(<span className="simpleCours">{unCours}</span>)}) : "N/A"}</p>
+                    </div>
+                    <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span>{unAuteur}</span>)})}</p>
                 </div>
             </ExpanderButton>
             <ExpanderSection expanderState={expanderState}>
