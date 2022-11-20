@@ -1,5 +1,6 @@
 @import "../Variables/Couleurs.scss";
 @import "../Variables/Layout.scss";
+@import "../Variables/Formes.scss";
 
 .PageAvenir
 {
@@ -73,12 +74,18 @@
 
         #vague3
         {
-            z-index: 2;
-            fill: $base-color;
-            position: absolute;
             top: 0;
-            height: 15%;
-            width: 100%;
+            width: 300vw;
+            height: 20%;
+            position: absolute;
+            clip-path: $vague1-social-mobile;
+            background-color: $couleur-primaire;
+            // z-index: 2;
+            // fill: $base-color;
+            // position: absolute;
+            // top: 0;
+            // height: 15%;
+            // width: 100%;
         }
     }
     .texte-stage {
