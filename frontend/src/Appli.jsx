@@ -18,6 +18,7 @@ import Menu from './Navigation/Menu';
 import Footer from './Composants/Footer';
 
 import { checkURLHorL } from './utils/checkURL';
+import PageCustom from './Pages/PageCustom';
 
 export default function Appli() { 
 
@@ -39,6 +40,9 @@ export default function Appli() {
   useChargerSite(setData, isLoaded, setIsLoaded);
 
   const getPage = (page) => {
+    if (!pages[page.pageSlug]) {
+      return {component: PageCustom, path: page.pageSlug};
+    }
     return pages[page.pageSlug];
   }
 
@@ -65,7 +69,9 @@ export default function Appli() {
                   ?
                   siteData.menu.data.header.headerMenuItems.map(
                     page => {
+                      
                       const Page = getPage(page);
+                      console.log(Page);
                       return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/>}></Route>
                     }
                   )

@@ -14,8 +14,6 @@ export default function PageAvenir({id}){
     const {pages} = useContext(DataContext);
     const pageAvenir = pages.filter((page) => page.id === id)[0];
 
-    console.log(Couleurs);
-
     return (
         <main className="PageAvenir">
             <section className='emplois-stages section'>
