@@ -1,5 +1,12 @@
 @import 'Variables/Polices.scss';
+@import 'Variables/Couleurs.scss';
 
 .Appli {
     font-family: $base-typo-family;
+
+    main[class="PageSocial"]      + footer,
+    main[class="PageEnseignants"] + footer
+    {
+        background-color: $couleur-primaire;
+    }
 }
