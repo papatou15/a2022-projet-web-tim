@@ -6,7 +6,7 @@ import UneCarriere from './UneCarriere';
 export default function ListeCarrieres(props){
 
     const {carrieres} = useContext(DataContext);
-    console.log(carrieres);
+    
     return (
         <div className="ListeCarrieres">
             {

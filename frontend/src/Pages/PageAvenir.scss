@@ -4,8 +4,8 @@
 
 .PageAvenir
 {
+    overflow: hidden;
     color: white;
-
     .section
     {
         margin: 0;
@@ -71,7 +71,11 @@
     {
         background-color: $couleur-primaire;
         position: relative;
-
+        padding: 1rem 3rem;
+        @media screen and (min-width: $layout-desktop)
+        {
+            padding: 1rem clamp(3rem, 5vw, 40rem);
+        }
         #vague3
         {
             top: 0;
