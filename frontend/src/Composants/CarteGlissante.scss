@@ -17,7 +17,7 @@
     &[open="false"] {
         transform: translate(100%);
     }
-    @media screen and (min-width: $layout-tablette) {
+    @media screen and (min-width: $layout-desktop) {
         display: none;
     }
     button {

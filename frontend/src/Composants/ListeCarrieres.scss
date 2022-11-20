@@ -5,7 +5,8 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    @media screen and (min-width: $layout-desktop) {
+    @media screen and (min-width: $layout-desktop)
+    {
         margin: 2rem auto;
         width: 70vw;
         max-width: 1000px;

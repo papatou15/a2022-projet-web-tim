@@ -5,8 +5,28 @@
     gap: 2rem;
     grid-template-columns: repeat(5, 300px);
     overflow: scroll;
+    overflow-y: hidden;
     scrollbar-width: none;
     margin: auto 2rem;
+    z-index: 2;
+    padding: 1rem 0;
+
+    &::-webkit-scrollbar
+    {
+        width: 20px;
+    }
+    
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: white;
+        border-radius: 7.5px;
+    }
+
+    &::-webkit-scrollbar-corner
+    {
+        display: none;
+    }
+
     @media screen and (min-width: $layout-tablette) {
         height: 100%;
         display: flex;
