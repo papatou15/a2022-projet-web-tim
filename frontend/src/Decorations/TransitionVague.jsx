@@ -8,12 +8,18 @@ export default function TransitionVague({couleurBackgroundTransition,
                                         rotationX=0,
                                         isSimple=false,
                                         isTransparent=false,
-                                        couleurBackground
+                                        couleurBackground,
+                                        position='relative',
+                                        top=null,
+                                        bottom=null,
                                         }){
 
     const styleTransition = {
         minHeight: minHeight,
-        backgroundColor: couleurBackgroundTransition
+        backgroundColor: couleurBackgroundTransition,
+        position: position,
+        top: top,
+        bottom: bottom,
     }
 
     const styleCurve = {

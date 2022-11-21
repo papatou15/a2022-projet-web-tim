@@ -7,8 +7,9 @@
   z-index: 0;
   display: flex;
   flex-flow: column;
-  width: 300px;
-  // transition: all 0.2s ease-in-out;
+  min-width: 300px;
+  max-width: 300px;
+  transition: all 0.2s ease-in-out;
   color: $off-white;
   text-shadow: 0 0 4px black;
   //media queries for stacking cards

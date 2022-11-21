@@ -57,25 +57,18 @@ export default function Appli() {
     "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
-  // const ref = useRef();
-  // const isVisible = useIsOnScreen(ref);
-
+  // Visibilité du footer
   const footerViewState = useState(false);
-
-  // useEffect(() => {
-  //     setFooterView(isVisible);
-  // });
-  // console.log(footerView);
 
   return (
     <DataContext.Provider value={siteData}>
-          <div className="Appli">
-            <Loading isLoading={!isLoaded}/>
-            {
-              (isLoaded) ? 
-              <>
-              <Menu siteData={siteData}/>
-              <Routes>
+      <div className="Appli">
+        <Loading isLoading={!isLoaded}/>
+        {
+          (isLoaded) ? 
+          <>
+          <Menu siteData={siteData}/>
+          <Routes>
                 {
                   (siteData.menu.data.header.headerMenuItems != null)
                   ?
@@ -89,12 +82,12 @@ export default function Appli() {
                   :
                   <Route>No pages...</Route>
                 }
-              </Routes>
-              <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
-              </>
-              : <></>
-            }
-          </div>
+          </Routes>
+          <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
+          </>
+          : <></>
+        }
+      </div>
     </DataContext.Provider>
   );
 }

@@ -4,6 +4,9 @@ import { useContext, useEffect, useRef, useState } from 'react';
 import { CarteGlissante } from '../Composants/CarteGlissante';
 import { DataContext } from '../Context/DataContext';
 import Filtre from '../Composants/Filtre';
+import Couleurs from '../Variables/Couleurs.scss'
+import Formes from '../Variables/Formes.scss'
+import TransitionVague from '../Decorations/TransitionVague';
 import { getCoursFromID } from '../utils/timapi-utils';
 import Carrousel from '../Navigation/Carrousel';
 
@@ -28,6 +31,14 @@ export default function PageCours(props){
 
     return (
         <main className="PageCours">
+            <TransitionVague couleurBackground={Couleurs.baseColor} 
+                             couleurCourbe={Couleurs.couleurPrimaire}  
+                             minHeight={'250px'} 
+                             clipPath={Formes.vagueCours} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
             <h1>Les cours</h1>
             <Filtre filtre={itemFiltre} setFiltre={setItemFiltre} options={type_cours} placeholder={"Filtrer les cours"}/>
             {
@@ -43,6 +54,19 @@ export default function PageCours(props){
                 :
                 <p>Loading</p>
             }
+
+
+            <TransitionVague couleurBackground={Couleurs.couleurQuaternaire} 
+                             couleurCourbe={Couleurs.baseColor}  
+                             minHeight={'100px'} 
+                             clipPath={Formes.vagueSimpleMobile} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={2}
+                             isTransparent={true}
+                             position={'relative'}
+                             top={'48px'}/>     
+
             <CarteGlissante ref={carteGlissanteRef} isOpen={carteGlissanteOpen} onCloseButtonClicked={() => {setDetailsOpen(false)}}>
                 {
                     carteAgrandie ?
@@ -71,6 +95,7 @@ export default function PageCours(props){
                     <></>
                 }
             </CarteGlissante> 
+
         </main>
     );
 }

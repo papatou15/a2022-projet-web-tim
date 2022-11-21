@@ -6,7 +6,7 @@
 {
     overflow: hidden;
     color: white;
-
+    z-index: 1;
     .section
     {
         margin: 0;
@@ -19,6 +19,8 @@
         &:first-of-type > .TitreSection > .titre-conteneur
         {
             width: clamp(16rem, 42vw, 20rem);
+            position: relative;
+            top: 3rem;
         }
 
         .paragraphes
@@ -40,13 +42,13 @@
         {
             &:first-of-type > .TitreSection
             {
-                left: 25%;
+                left: 20%;
                 text-align: right;
             }
 
             &:last-of-type > .TitreSection
             {
-                margin-right: 50%;
+                right: 25%;
                 text-align: left;
             }
 
