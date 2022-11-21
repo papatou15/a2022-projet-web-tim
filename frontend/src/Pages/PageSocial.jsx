@@ -36,7 +36,7 @@ export default function PageSocial(props){
                 </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
-                    <p className="descEvents">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Pariatur magnam illo quo reprehenderit quaerat aut ipsam ab quos assumenda eligendi unde perspiciatis, odio ea minus sunt molestiae.<br/><br/>Culpa iusto error deleniti deserunt voluptatem autem voluptas. Necessitatibus dolorem ullam minima quaerat, excepturi ad facere quae nesciunt sequi error, quos a dolore.</p>                    
+                    <p className="descEvents">Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.<br/><br/>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
                     <div className="sideEvents">
                         <div className="event1">
                             <img src="" alt="" />
@@ -55,7 +55,7 @@ export default function PageSocial(props){
                 <div className="contenuCommunaute js-flickity" data-flickity-options='{ "wrapAround": true }'>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p></p>
+                            <p>Au TIM, nous avons aussi un comité étudiants qui se charge de préparer les évènements qui seront seulement pour les étudiants du TIM. Vous pouvez tous vous y joindre, peu importe vorte année.</p>
                         </div>
                         <div className="carteTitre">
                             <p>Comité</p>
@@ -63,7 +63,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Un groupe disponible pour aider les étudiants du TIM pendant leur parcour collègiens</p>
+                            <p>Un groupe disponible pour aider les étudiants du TIM pendant leur parcour collégiens.</p>
                         </div>
                         <div className="carteTitre">
                             <p>Centre d'aide</p>
@@ -71,7 +71,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Nous avons aussi un serveur Discord entre les étudiants pour s'entraider durant nos sessions ainsi que faire connaissance</p>
+                            <p>Nous avons aussi un serveur Discord entre les étudiants pour s'entraider durant nos sessions ainsi que faire connaissance.</p>
                         </div>
                         <div className="carteTitre">
                             <p>Discord</p>
@@ -86,12 +86,10 @@ export default function PageSocial(props){
                     <div className="svgPlaceholder">svg</div>
                     <div className="sideContent">
                         <div className="content1">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores <a>nihil.</a></p>
-                            <button>Suite</button>
+                            <p>Voici la page web du site du collège de Maisonneuve. Cliquez <a href="https://www.cmaisonneuve.qc.ca/">ici</a>.</p>
                         </div>
                         <div className="content2">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores nihil.</p>
-                            <button>Suite</button>
+                            <p>Voici la page web de la technique d'intégration en multimédia sur la page de Maisonneuve. Cliquez <a href="https://fc.cmaisonneuve.qc.ca/formations/integration-multimedia/#information-generale-1-tab">ici</a>.</p>
                         </div>
                     </div>
                 </div>
