@@ -2,12 +2,6 @@
 
 .PageCours
 {
-    *
-    {
-        margin: 0;
-        // border: 1px solid red;
-    }
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,7 +14,6 @@
     {
         font-size: 3em;
         margin: 0.6em;
-        // padding: 0.25em;
         color: $off-white;
     }
 }

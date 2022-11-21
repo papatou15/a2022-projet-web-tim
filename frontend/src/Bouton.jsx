@@ -5,7 +5,6 @@ export default function Bouton({children, href}){
     return (
         <a className="Bouton">
             <NavLink to={href}>{<p>{children}</p>}</NavLink>
-            
         </a>
     );
 }
