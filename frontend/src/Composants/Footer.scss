@@ -4,11 +4,10 @@
 footer{
     height: 475px;
     width: 100%;
-    z-index: -5;
     background-color: $base-color;
     color: $off-white;
     position: relative;
-    
+    overflow: hidden;
     .footerContent {
         display: flex;
         flex-flow: row nowrap;
@@ -17,7 +16,6 @@ footer{
         width: 100%;
         position: fixed;
         bottom: 0;
-        z-index: -10;
         .footerLeft{
             h4{
                 margin: 7px;

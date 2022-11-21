@@ -57,45 +57,37 @@ export default function Appli() {
     "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
-  // const ref = useRef();
-  // const isVisible = useIsOnScreen(ref);
-
+  // Visibilité du footer
   const footerViewState = useState(false);
-
-  // useEffect(() => {
-  //     setFooterView(isVisible);
-  // });
-  // console.log(footerView);
 
   return (
     <DataContext.Provider value={siteData}>
-          <div className="Appli">
-            <Loading isLoading={!isLoaded}/>
+      <div className="Appli">
+        <Loading isLoading={!isLoaded}/>
+        {
+          (isLoaded) ? 
+          <>
+          <Menu siteData={siteData}/>
+          <Routes>
             {
-              (isLoaded) ? 
-              <>
-              <Menu siteData={siteData}/>
-              <Routes>
-                {
-                  (siteData.menu.data.header.headerMenuItems != null)
-                  ?
-                  siteData.menu.data.header.headerMenuItems.map(
-                    page => {
-                      
-                      const Page = getPage(page);
-                      console.log(Page.component);
-                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
-                    }
-                  )
-                  :
-                  <Route>No pages...</Route>
+              (siteData.menu.data.header.headerMenuItems != null)
+              ?
+              siteData.menu.data.header.headerMenuItems.map(
+                page => {
+                  
+                  const Page = getPage(page);
+                  return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
                 }
-              </Routes>
-              <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
-              </>
-              : <></>
+              )
+              :
+              <Route>No pages...</Route>
             }
-          </div>
+          </Routes>
+          <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
+          </>
+          : <></>
+        }
+      </div>
     </DataContext.Provider>
   );
 }
