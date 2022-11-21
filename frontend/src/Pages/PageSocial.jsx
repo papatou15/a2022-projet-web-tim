@@ -36,7 +36,8 @@ export default function PageSocial(props){
                 </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
-                    <p className="descEvents">Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.<br/><br/>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
+                    <p className="descEvents">Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.<br/>
+                    <br/>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
                     <div className="sideEvents">
                         <div className="event1">
                             <img src="" alt="" />

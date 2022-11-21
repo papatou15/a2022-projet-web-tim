@@ -98,7 +98,8 @@
                     display: flex;
                     text-align: center;
                     align-items: center;
-                    font-size: $font-size-social-events;
+                    //font-size: $font-size-social-events;
+                    font-size: 1.5rem;
                     color: $off-white;
                 }
 
@@ -141,7 +142,8 @@
                         & > p
                         {
                             text-align: center;
-                            font-size: $font-size-social-side-events;
+                            //font-size: $font-size-social-side-events;
+                            font-size: 1.5rem;
                             color: $off-white;
                             margin-top: 0.5rem;
                             display: none;
@@ -290,17 +292,11 @@
                         & > p
                         {
                             font-size: $font-size-social-maisonneuve;
+                            font-size: 1.5rem;
                             padding: 0 2.5%;
                             height: 100%;
                             display: block;
                             align-items: center;
-                        }
-
-                        button
-                        {
-                            width: 5rem;
-                            margin-right: 15%;
-                            display: none;
                         }
                     }
                 }
