@@ -16,13 +16,14 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
-            <TransitionVague couleurBackgroundTransition={Couleurs.baseColor} 
+                             <TransitionVague couleurBackground={Couleurs.couleurSecondaire} 
                              couleurCourbe={Couleurs.couleurPrimaire}  
                              minHeight={'300px'} 
                              clipPath={Formes.vagueAvenir} 
-                             isSimple={false}
+                             isSimple={true}
                              rotationX={0}
-                             transitionY={0}
+                             transitionY={-2}
+                             isTransparent={true}
                              position={"absolute"}/>
             <section className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
@@ -31,11 +32,11 @@ export default function PageAvenir({id}){
                 <SousTitre>{pageAvenir.sous_titres[1]}</SousTitre>
                 <ListeCarrieres/>
             </section>
-            <TransitionVague couleurBackgroundTransition={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurPrimaire}  
+            <TransitionVague couleurBackgroundTransition={Couleurs.couleurSecondaire} 
+                             couleurCourbe={Couleurs.couleurTierce}  
                              minHeight={'100px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
-                             isSimple={true}
+                             clipPath={Formes.vagueAccueil} 
+                             isSimple={false}
                              rotationX={180}
                              transitionY={-2}
                              position={"relative"}/>
@@ -45,7 +46,7 @@ export default function PageAvenir({id}){
                 <ListeProgrammesUni/>
             </section>
             <TransitionVague couleurBackground={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurPrimaire}  
+                             couleurCourbe={Couleurs.couleurTierce}  
                              minHeight={'100px'} 
                              clipPath={Formes.vagueSimpleMobile} 
                              isSimple={true}

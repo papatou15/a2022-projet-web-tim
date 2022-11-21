@@ -16,12 +16,12 @@
         flex-direction: column;
         align-items: center;
 
-        &:first-of-type > .TitreSection > .titre-conteneur
-        {
-            width: clamp(16rem, 42vw, 20rem);
-            position: relative;
-            top: 3rem;
-        }
+        // &:first-of-type > .TitreSection > .titre-conteneur
+        // {
+        //     width: clamp(16rem, 42vw, 20rem);
+        //     position: relative;
+        //     top: 3rem;
+        // }
 
         .paragraphes
         {
@@ -72,17 +72,23 @@
 
     .emplois-stages
     {
-        background-color: $base-color;
+        background-color: $couleur-secondaire;
+        .SousTitre {
+            z-index: 3;
+        }
+        .texte-stage {
+            z-index: 3;
+        }
     }
     
     .universite
     {
-        background-color: $couleur-primaire;
+        background-color: $couleur-tierce;
         position: relative;
         padding: 1rem 3rem;
         @media screen and (min-width: $layout-desktop)
         {
-            padding: 1rem clamp(3rem, 5vw, 40rem);
+            padding: 1rem clamp(3rem, 5vw, 40rem) 3rem clamp(3rem, 5vw, 40rem);
         }
         #vague3
         {
