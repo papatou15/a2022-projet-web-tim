@@ -4,6 +4,15 @@
 .Appli {
     font-family: $base-typo-family;
 
+
+    // Footer des pages Cours et Projets
+    main[class="PageCours"]       + footer,
+    main[class="PageProjets"]     + footer
+    {
+        background-color: $couleur-quaternaire;
+    }
+
+    // Footer des pages Social et Enseignants
     main[class="PageSocial"]      + footer,
     main[class="PageEnseignants"] + footer
     {

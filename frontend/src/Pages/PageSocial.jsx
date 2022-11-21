@@ -52,7 +52,7 @@ export default function PageSocial(props){
 
             <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
-                <div className="contenuCommunaute">
+                <div className="contenuCommunaute js-flickity" data-flickity-options='{ "wrapAround": true }'>
                     <div className="carteCommunaute">
                         <div className="carteBG">
                             <p>Au TIM, nous avons aussi un comité étudiants qui se charge de préparer les évènements qui seront seulement pour les étudiants du TIM. Vous pouvez tous vous y joindre, peu importe vorte année.</p>

@@ -1,13 +1,8 @@
 @import "../Variables/Couleurs.scss";
+@import "../Variables/Formes.scss";
 
 .PageCours
 {
-    *
-    {
-        margin: 0;
-        // border: 1px solid red;
-    }
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,11 +11,20 @@
     height: 100%;
     padding-bottom: 3em;
 
+    #vague1
+    {
+        top: 0;
+        width: 300vw;
+        height: 20%;
+        position: absolute;
+        clip-path: $vague1-social-mobile;
+        background-color: $couleur-primaire;
+    }
+
     h1
     {
         font-size: 3em;
         margin: 0.6em;
-        // padding: 0.25em;
         color: $off-white;
     }
 }
