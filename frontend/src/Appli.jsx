@@ -70,13 +70,22 @@ export default function Appli() {
           <Menu siteData={siteData}/>
           <Routes>
             {
-              (siteData.menu.data.header.headerMenuItems != null)
-              ?
-              siteData.menu.data.header.headerMenuItems.map(
-                page => {
-                  
-                  const Page = getPage(page);
-                  return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+              (isLoaded) ? 
+              <>
+              <Menu siteData={siteData}/>
+              <Routes>
+                {
+                  (siteData.menu.data.header.headerMenuItems != null)
+                  ?
+                  siteData.menu.data.header.headerMenuItems.map(
+                    page => {
+                      
+                      const Page = getPage(page);
+                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+                    }
+                  )
+                  :
+                  <Route>No pages...</Route>
                 }
               )
               :

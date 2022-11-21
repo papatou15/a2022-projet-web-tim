@@ -3,7 +3,7 @@ import { sortSessions } from '../utils/timapi-utils';
 import ListeCours from './ListeCours';
 import './ListeSessions.scss';
 
-export default function ListeSessions({sessions, filtre}){
+export default function ListeSessions({sessions, filtre, carteAgrandie, setCarteAgrandie, detailCoursOpen, setDetailsOpen}){
 
     const [sortedSessions, setSortedSessions] = useState([]);
     const [carteOpenState, setCarteOpenState] = useState('');
@@ -32,7 +32,17 @@ export default function ListeSessions({sessions, filtre}){
             {
                 sortedSessions.filter(filtrerSessions).map(
                     session => 
-                        <ListeCours key={session.id} sessionTitre={session.title.rendered} filtreCours={filtrerCours} lesCours={session.cours} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
+                        <ListeCours key={session.id} 
+                                    sessionTitre={session.title.rendered} 
+                                    filtreCours={filtrerCours} 
+                                    lesCours={session.cours} 
+                                    carteOpenState={carteOpenState} 
+                                    setCarteOpenState={setCarteOpenState} 
+                                    carteAgrandie={carteAgrandie} 
+                                    setCarteAgrandie={setCarteAgrandie} 
+                                    detailCoursOpen={detailCoursOpen}
+                                    setDetailsOpen={setDetailsOpen}
+                        />
                 )
             }
         </section>
