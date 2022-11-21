@@ -24,7 +24,6 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
     useCliqueExterieur(infoRef, () => {setExpanderState(false);}, carteProjetRef);
 
     const curLocation = useLocation();
-    console.log("Pathname: " + curLocation.pathname)
     
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>

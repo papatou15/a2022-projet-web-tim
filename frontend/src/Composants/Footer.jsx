@@ -8,7 +8,7 @@ import {useIsOnScreen} from '../Hooks/useIsOnScreen.jsx';
 export default function Footer({menu}){
     
     return(
-        <footer>
+        <footer id="footer">
             <div className="footerContent">
                 <div className="footerLeft">
                     <h4>Navigation</h4>

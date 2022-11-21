@@ -5,47 +5,36 @@ import CarteEnseignant from '../Composants/CarteEnseignant';
 import FlechesCarousel from '../Composants/FlechesCarousel';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState, useEffect } from 'react';
 import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
 import { sortSessions } from '../utils/timapi-utils';
-import { TrimDOMElements } from '../utils/strings-utils';
 import useIsOnScreen from '../Hooks/useIsOnScreen';
 import Footer from '../Composants/Footer';
 
-export default function PageAccueil(props){
-    const dataAccueil = useContext(DataContext);
-    // window.addEventListener('scroll', function() {
-    //     let hauteurVp = window.innerHeight;
-    //     let scrollVertical = window.document.documentElement.scrollTop;
+export default function PageAccueil(/*{id, ref}*/ props){
 
-    //     if(scrollVertical && scrollVertical > hauteurVp) {
-    //         console.log('Afficher footer ');
-    //     }
-    //     else {
-    //         console.log('Cacher footer ');
-    //    if(scrollVertical && scrollVertical > hauteurVp) {
-    //         console.log('Afficher footer ');
-    //    }
-    //    else {
-    //
-    //     }
-    // })
+    // Permet d'utiliser les données retournée par le REST API de Wordpress
+    const dataAccueil = useContext(DataContext);
 
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
 
-    // Observer qui active ou désactive le footer dépendament de la visibilité de la vidéo
+    // Observateur qui active ou désactive le footer dépendament de la visibilité de la vidéo
+    
     const ref = useRef();
     const isVisible = useIsOnScreen(ref);
+
+    const [footerView, setFooterView] = useState();
+
+    useEffect(() => {
+        setFooterView(isVisible);
+    });
+    console.log(footerView);
     
     return (
-        
         <main className="PageAccueil">
-            
-
             <section className="block1" ref={ref}>
-                {isVisible ? console.log("Visible") : console.log("Invisible")}
                 <video autoPlay muted loop id="accueilBGVideo" min-width="110%" height="auto">
                     <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
                 </video>
