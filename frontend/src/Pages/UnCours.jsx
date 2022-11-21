@@ -5,6 +5,7 @@ import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
 import { cutString, getCoursFromID } from '../utils/timapi-utils';
 import './UnCours.scss';
+import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
 export default function UnCours({id, carteOpenState, setCarteOpenState}){
 
@@ -44,23 +45,26 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
             </ExpanderButton>
             <ExpanderSection expanderState={expanderState}>
                 <div className="cours-details" expanderstate={expanderState ? "true" : "false"}>
-                    <div className="details-container">
-                        <div className="cours-carrousel">
-                        {
-                            (images) ?
-                            <Carrousel images={images}/>
-                            :
-                            <></>
-                        }
-                        </div>
-                        <div className="cours-description">
-                            <h3>Description</h3>
-                            <p>{description}</p>
-                        </div>
-                        <div className="cours-projets-relies">
-
-                        </div>
+                    <div className="cours-carrousel">
+                    {
+                        (images) ?
+                        <Carrousel images={images}/>
+                        :
+                        <></>
+                    }
                     </div>
+                    <div className="cours-description">
+                        <h3>Description</h3>
+                        <p>{description}</p>
+                    </div>
+                    <div className="cours-projets-relies">
+
+                    </div>
+                </div>
+                <div className="fermerSection" onClick={() => setExpanderState(false)}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
                 </div>
             </ExpanderSection>
         </div>

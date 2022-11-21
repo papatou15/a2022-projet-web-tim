@@ -5,6 +5,8 @@ import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
+import { NavLink, useLocation } from 'react-router-dom';
+
 
 export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState}){
     const [expanderState, setExpanderState] = useState(false);
@@ -21,9 +23,12 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
 
     useCliqueExterieur(infoRef, () => {setExpanderState(false);}, carteProjetRef);
 
+    const curLocation = useLocation();
+    console.log("Pathname: " + curLocation.pathname)
+    
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(id);}}>
+            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets") ? setExpanderState(!expanderState) : setExpanderState(false); setCarteOpenState(id);}}>
                 <div className="carteProjet">
                     <div className="curve1"></div>
                     <div className="curve2"></div>
@@ -41,27 +46,37 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span>{unAuteur}</span>)})}</p>
                 </div>
             </ExpanderButton>
-            <ExpanderSection expanderState={expanderState}>
-                <div className="infoProjet" ref={infoRef}>
-                    <div className="carouselProjet">
-                        <Carrousel images={projet.images}></Carrousel>
-                    </div>
-                    <div className="rightSection">
-                        <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
-                        <div className="coursReliesProjet">
-                            <h4>Cours reliés</h4>
-                            {
-                                cours != "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
-                            }
+            
+            {
+                // Vérifie si le browser est dans la page des projets.
+                // Affiche la section d'information si oui, sinon renvoie vers la page de projet.
+                (curLocation.pathname === "/galerie-des-projets") ?
+
+                <ExpanderSection expanderState={expanderState}>
+                    <div className="infoProjet" ref={infoRef}>
+                        <div className="carouselProjet">
+                            <Carrousel images={projet.images}></Carrousel>
+                        </div>
+                        <div className="rightSection">
+                            <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
+                            <div className="coursReliesProjet">
+                                <h4>Cours reliés</h4>
+                                {
+                                    cours != "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="fermerSection" onClick={() => setExpanderState(false)}>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                </div>
-            </ExpanderSection>
+                    <div className="fermerSection" onClick={() => setExpanderState(false)}>
+                        <div className="bar"></div>
+                        <div className="bar"></div>
+                        <div className="bar"></div>
+                    </div>
+                </ExpanderSection>
+                :
+                <></>
+            }
+            
         </div>
     );
 }

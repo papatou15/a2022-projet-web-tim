@@ -2,6 +2,8 @@ import './Footer.scss';
 import { DataContext } from '../Context/DataContext';
 import PageLinks from '../Navigation/PageLinks';
 import Contacts from '../Navigation/Contacts';
+import { useRef } from 'react';
+import {useIsOnScreen} from '../Hooks/useIsOnScreen.jsx';
 
 export default function Footer({menu}){
     
