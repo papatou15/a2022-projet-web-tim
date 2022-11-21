@@ -3,6 +3,7 @@
 
 .PageCours
 {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,7 +12,9 @@
     min-height: 100vh;
     padding-bottom: 3em;
     z-index: 1;
-
+    h1 {
+        z-index: 3;
+    }
     #vague1
     {
         top: 0;
