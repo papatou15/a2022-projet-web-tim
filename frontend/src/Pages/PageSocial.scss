@@ -13,6 +13,11 @@
     z-index: 1;
     overflow: hidden;
 
+    *
+    {
+        border: 1px solid red
+    }
+
     #vague1
     {
         top: 0;
@@ -76,6 +81,7 @@
             {
                 width: 90%;
                 height: 95%;
+                margin: 10%;
                 margin-bottom: 2%;
                 display: flex;
                 flex-direction: column;
@@ -83,14 +89,15 @@
                 z-index: 3;
 
 
-                p.descEvents
+                .descEvents
                 {
-                    width: 90%;
+                    width: 100%;
                     height: 95%;
                     margin: 1%;
                     padding: 1%;
                     line-height: 150%;
                     display: flex;
+                    flex-direction: column;
                     text-align: center;
                     align-items: center;
                     font-size: $font-size-social-events;
@@ -99,7 +106,7 @@
 
                 div.sideEvents
                 {
-                    width: 90%;
+                    width: 100%;
                     height: 95%;
                     padding: 1%;
                     margin-left: 1%;
@@ -114,7 +121,7 @@
                     {
                         width: 100%;
                         height: 100%;
-                        margin: 0.25rem;
+                        margin: 0.5rem;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
@@ -128,6 +135,7 @@
                             background-position-y: center;
                             max-width: 400px;
                             max-height: 200px;
+                            min-height: 200px;
                             background-color: #999999;
                             // width: clamp(8rem 2vw 16rem);
                             // height: clamp(4.5rem 2vh 9rem);
@@ -139,7 +147,6 @@
                             font-size: $font-size-social-side-events;
                             color: $off-white;
                             margin-top: 0.5rem;
-                            display: none;
                         }
                     }
                 }
@@ -148,10 +155,9 @@
 
 
         // Section Communauté
-        &:nth-of-type(2)
+        &#communaute
         {
             background-color: $couleur-primaire;
-            
             h2
             {
                 width: 90%;
@@ -266,6 +272,7 @@
                 {
                     width: 50%;
                     height: 90%;
+                    min-height: 500px;
                     margin: 0 2.5%;
                     font-size: 1.5rem;
                     display: flex;

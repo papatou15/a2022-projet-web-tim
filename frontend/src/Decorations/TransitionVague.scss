@@ -1,9 +1,8 @@
 @import "../Variables/Layout";
 
 .TransitionVague {
-    width: 100vw;
+    width: 100%;
     padding: 0;
-    position: relative;
     overflow: hidden;
     .curve {
         z-index: 1;
@@ -18,7 +17,6 @@
     }
     .background {
         position: absolute;
-        z-index: -20;
         height: 100%;
         width: 100%;
         background-color: $base-color;
