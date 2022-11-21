@@ -12,7 +12,7 @@ import { sortSessions } from '../utils/timapi-utils';
 import useIsOnScreen from '../Hooks/useIsOnScreen';
 import Footer from '../Composants/Footer';
 
-export default function PageAccueil(/*{id, ref}*/ props){
+export default function PageAccueil({id, footerViewState}){
 
     // Permet d'utiliser les données retournée par le REST API de Wordpress
     const dataAccueil = useContext(DataContext);
@@ -25,17 +25,16 @@ export default function PageAccueil(/*{id, ref}*/ props){
     const ref = useRef();
     const isVisible = useIsOnScreen(ref);
 
-    const [footerView, setFooterView] = useState();
+    const [footerView, setFooterView] = footerViewState;
 
     useEffect(() => {
         setFooterView(isVisible);
     });
-    console.log(footerView);
     
     return (
         <main className="PageAccueil">
             <section className="block1" ref={ref}>
-                <video autoPlay muted loop id="accueilBGVideo" min-width="110%" height="auto">
+                <video autoPlay muted loop id="accueilBGVideo" min-width="2560px" height="auto">
                     <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
                 </video>
                 <div className="mainTitle">

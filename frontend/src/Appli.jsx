@@ -60,12 +60,13 @@ export default function Appli() {
   // const ref = useRef();
   // const isVisible = useIsOnScreen(ref);
 
-  // const [footerView, setFooterView] = useState();
+  const footerViewState = useState(false);
 
   // useEffect(() => {
   //     setFooterView(isVisible);
   // });
   // console.log(footerView);
+
   return (
     <DataContext.Provider value={siteData}>
           <div className="Appli">
@@ -83,14 +84,14 @@ export default function Appli() {
                       
                       const Page = getPage(page);
                       console.log(Page.component);
-                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
                     }
                   )
                   :
                   <Route>No pages...</Route>
                 }
               </Routes>
-              <Footer menu={siteData.menu}></Footer>
+              <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
               </>
               : <></>
             }
