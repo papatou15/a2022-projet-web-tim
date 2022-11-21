@@ -83,7 +83,6 @@ export default function Appli() {
                     page => {
                       
                       const Page = getPage(page);
-                      console.log(Page.component);
                       return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
                     }
                   )

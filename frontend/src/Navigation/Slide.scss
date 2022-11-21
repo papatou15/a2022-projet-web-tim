@@ -1,0 +1,20 @@
+.Slide {
+    div {
+        
+    }
+    &[islarge="false"] {
+        div {
+            width: 100%;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        
+    }
+    &[islarge="true"] {
+        div {
+            background-size: cover;
+            background-position: 50% 50%;
+        }
+        
+    }
+}
