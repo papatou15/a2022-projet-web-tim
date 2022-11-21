@@ -7,13 +7,16 @@
     padding: 0 8.5rem;
     font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
-    height: 120px;
+    height: 150px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+
     .titre-conteneur {
         z-index: 1;
         border-bottom: 1px solid white;
+        color: white;
     }
     @media screen and (min-width: $layout-tablette) {
         font-size: 2.5rem;

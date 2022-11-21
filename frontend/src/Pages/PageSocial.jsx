@@ -52,7 +52,7 @@ export default function PageSocial(props){
 
             <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
-                <div className="contenuCommunaute">
+                <div className="contenuCommunaute js-flickity" data-flickity-options='{ "wrapAround": true }'>
                     <div className="carteCommunaute">
                         <div className="carteBG">
                             <p></p>
@@ -86,7 +86,7 @@ export default function PageSocial(props){
                     <div className="svgPlaceholder">svg</div>
                     <div className="sideContent">
                         <div className="content1">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores nihil.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores <a>nihil.</a></p>
                             <button>Suite</button>
                         </div>
                         <div className="content2">

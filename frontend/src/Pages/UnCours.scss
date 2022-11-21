@@ -8,7 +8,7 @@
   display: flex;
   flex-flow: column;
   width: 100%;
-  tion: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   color: $off-white;
   text-shadow: 0 0 4px black;
   //media queries for stacking cards
@@ -25,7 +25,7 @@
   
   .carte
   {
-    tion: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     display: flex;
     flex-flow: column;
     justify-content: space-between;

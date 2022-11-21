@@ -6,6 +6,7 @@
 {
     overflow: hidden;
     color: white;
+
     .section
     {
         margin: 0;
@@ -14,6 +15,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        &:first-of-type > .TitreSection > .titre-conteneur
+        {
+            width: clamp(16rem, 42vw, 20rem);
+        }
 
         .paragraphes
         {
@@ -34,7 +40,7 @@
         {
             &:first-of-type > .TitreSection
             {
-                margin-left: 50%;
+                left: 25%;
                 text-align: right;
             }
 

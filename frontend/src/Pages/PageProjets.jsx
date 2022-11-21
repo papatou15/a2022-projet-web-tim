@@ -3,6 +3,7 @@ import CarteProjet from '../Composants/CarteProjet';
 import Filtre from '../Composants/Filtre';
 import { DataContext } from '../Context/DataContext';
 import { useContext, useState, useRef } from 'react';
+import TitreSection from '../Composants/Sections/TitreSection';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 import Footer from '../Composants/Footer';
 
@@ -25,7 +26,7 @@ export default function PageProjets(props){
 
     return (
         <main className="PageProjets">
-            <h1>Les projets</h1>
+            <TitreSection>Les projets</TitreSection>
             <Filtre filtre={filtre} setFiltre={setFiltre} options={type_cours} placeholder={"Filtrer les projets"}/>
             <div className="listeProjets">
                 {
