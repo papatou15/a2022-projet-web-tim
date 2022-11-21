@@ -29,11 +29,6 @@ export default function PageSocial(props){
     return (
         <main className="PageSocial">
             <div ref={evenementsRef} className="sectionSocial" id='evenements'>
-                {/* propriété Viewbox */}
-                {/* preserveAspectRatio="none" */}
-                {/* <svg id="vague1" viewBox='100 100 100 100' preserveAspectRatio="xMinYMid meet">
-                    <path d="M0,210.5c92.65-42.08,234.69-90.01,402-74,212.92,20.37,243.57,122.93,466,163,227.67,41.01,299.62-47.69,594-46,199.1,1.14,360.27,81.82,459,114l-1-367.5H.5L0,210.5Z"/>
-                </svg> */}
                 <div id="vague1">
                 </div>
                 <svg id="vague2">
@@ -57,10 +52,10 @@ export default function PageSocial(props){
 
             <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
-                <div className="contenuCommunaute">
+                <div className="contenuCommunaute js-flickity" data-flickity-options='{ "wrapAround": true }'>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p></p>
                         </div>
                         <div className="carteTitre">
                             <p>Comité</p>
@@ -68,7 +63,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p>Un groupe disponible pour aider les étudiants du TIM pendant leur parcour collègiens</p>
                         </div>
                         <div className="carteTitre">
                             <p>Centre d'aide</p>
@@ -76,7 +71,7 @@ export default function PageSocial(props){
                     </div>
                     <div className="carteCommunaute">
                         <div className="carteBG">
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                            <p>Nous avons aussi un serveur Discord entre les étudiants pour s'entraider durant nos sessions ainsi que faire connaissance</p>
                         </div>
                         <div className="carteTitre">
                             <p>Discord</p>
@@ -91,7 +86,7 @@ export default function PageSocial(props){
                     <div className="svgPlaceholder">svg</div>
                     <div className="sideContent">
                         <div className="content1">
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores nihil.</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eligendi nam dolor obcaecati porro. Voluptatem odio exercitationem eum atque maiores <a>nihil.</a></p>
                             <button>Suite</button>
                         </div>
                         <div className="content2">

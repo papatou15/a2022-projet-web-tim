@@ -1,0 +1,33 @@
+@import "../Variables/Layout";
+
+.TransitionVague {
+    width: 100vw;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    .curve {
+        z-index: 1;
+        position: absolute;
+        width:150%;
+        height: 100%;
+        translate: 0px -2px;
+        @media screen and (min-width: $layout-tablette) {
+            width: 100%;
+        }
+        
+    }
+    .background {
+        position: absolute;
+        z-index: -20;
+        height: 100%;
+        width: 100%;
+        background-color: $base-color;
+    }
+    &[issimple="true"] {
+        .curve {
+            @media screen and (min-width: $layout-tablette) {
+                width: 140%;
+            }
+        }
+    }
+}

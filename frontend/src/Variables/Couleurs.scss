@@ -10,3 +10,21 @@ $couleur-sixte: #B7cBd1;
 
 $couleur-bouton-bleu: #52C1DA;
 $couleur-bouton-jaune: #FFB800;
+
+$transarent: transparent;
+
+:export {
+    baseColor: $base-color;
+    offWhite: $off-white;
+    transparent: $transarent;
+
+    couleurPrimaire: $couleur-primaire;
+    couleurSecondaire: $couleur-secondaire;
+    couleurTierce: $couleur-tierce;
+    couleurQuaternaire: $couleur-quaternaire;
+    couleurQuinaire: $couleur-quinaire;
+    couleurSixte: $couleur-sixte;
+
+    couleurBoutonBleu: $couleur-bouton-bleu;
+    couleurBoutonJaune: $couleur-bouton-jaune;
+}

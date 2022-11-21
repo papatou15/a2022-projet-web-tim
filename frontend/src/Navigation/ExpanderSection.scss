@@ -1,4 +1,5 @@
 .ExpanderSection {
+    width: 100%;
     margin: auto;
     transition: all 0.5s ease-in-out;
     &[expanderstate="true"] {
@@ -13,5 +14,10 @@
         overflow: hidden;
         pointer-events: none;
         z-index: 0;
+    }
+
+    .details-container
+    {
+        width: 100%;
     }
 }

@@ -7,8 +7,6 @@ export default function ListeProgrammesUni(props){
 
     const {programmes_uni} = useContext(DataContext);
 
-    console.log(programmes_uni);
-
     return (
         <div className="ListeProgrammesUni">
             {

@@ -1,8 +1,10 @@
 @import "../Variables/Couleurs.scss";
 @import "../Variables/Layout.scss";
+@import "../Variables/Formes.scss";
 
 .PageAvenir
 {
+    overflow: hidden;
     color: white;
 
     .section
@@ -13,6 +15,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        &:first-of-type > .TitreSection > .titre-conteneur
+        {
+            width: clamp(16rem, 42vw, 20rem);
+        }
 
         .paragraphes
         {
@@ -33,7 +40,7 @@
         {
             &:first-of-type > .TitreSection
             {
-                margin-left: 50%;
+                left: 25%;
                 text-align: right;
             }
 
@@ -70,15 +77,25 @@
     {
         background-color: $couleur-primaire;
         position: relative;
-
+        padding: 1rem 3rem;
+        @media screen and (min-width: $layout-desktop)
+        {
+            padding: 1rem clamp(3rem, 5vw, 40rem);
+        }
         #vague3
         {
-            z-index: 2;
-            fill: $base-color;
-            position: absolute;
             top: 0;
-            height: 15%;
-            width: 100%;
+            width: 300vw;
+            height: 20%;
+            position: absolute;
+            clip-path: $vague1-social-mobile;
+            background-color: $couleur-primaire;
+            // z-index: 2;
+            // fill: $base-color;
+            // position: absolute;
+            // top: 0;
+            // height: 15%;
+            // width: 100%;
         }
     }
     .texte-stage {

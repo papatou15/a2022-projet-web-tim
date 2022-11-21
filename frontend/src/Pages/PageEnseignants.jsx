@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/DataContext';
 import { useRef, useState } from 'react';
 import {CarteGlissante} from '../Composants/CarteGlissante';
-import TitreSection from '../Composants/TitreSection';
+import TitreSection from '../Composants/Sections/TitreSection';
 import Dialog from '../Composants/Dialog';
 import ListeEnseignants from '../Composants/ListeEnseignants';
 import './PageEnseignants.scss';

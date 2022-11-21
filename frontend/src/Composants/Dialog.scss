@@ -1,7 +1,7 @@
 @import "../Variables/Layout.scss";
 .Dialog {
     display: none;
-    @media screen and (min-width: $layout-tablette) {
+    @media screen and (min-width: $layout-desktop) {
         display: block;
         transition: background-color 0.5s ease-in-out;
         position: fixed;

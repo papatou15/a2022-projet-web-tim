@@ -24,13 +24,16 @@ export default function PageAccueil(props){
     //     }
     //     else {
     //         console.log('Cacher footer ');
-
+    //    if(scrollVertical && scrollVertical > hauteurVp) {
+    //         console.log('Afficher footer ');
+    //    }
+    //    else {
+    //
     //     }
     // })
 
     let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
     let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
-    console.log(dataAccueil.projets);
 
     // Observer qui active ou désactive le footer dépendament de la visibilité de la vidéo
     const ref = useRef();
@@ -40,6 +43,7 @@ export default function PageAccueil(props){
         
         <main className="PageAccueil">
             
+
             <section className="block1" ref={ref}>
                 {isVisible ? console.log("Visible") : console.log("Invisible")}
                 <video autoPlay muted loop id="accueilBGVideo" min-width="110%" height="auto">
@@ -49,10 +53,10 @@ export default function PageAccueil(props){
                     <h1>TIM Maisonneuve</h1>
                     <h3>L’univers du web et du jeu vidéo au bout des doigts!</h3>
                 </div>
-                {/* <div className="clipPath"></div> */}
+                <div className="clipPath"></div>
             </section>
 
-            <section className="block2">
+            <section className="block2 block">
                 <div className="titleSections">
                     <h2>Tes <b>COURS</b></h2>
                 </div>
@@ -72,15 +76,15 @@ export default function PageAccueil(props){
                 </div>
             </section>
 
-            <section className="block3">
+            <section className="block3 block">
                 <div className="titleSections">
                     <h2>Ton <b>AVENIR</b></h2>
                 </div>
                 <div className="contenuAvenir">
-                    <div className="blockCartes">
+                    <div className="blockCartes" id='carouselCartesAvenir'>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga adipisci expedita eveniet libero, beatae accusantium, eaque quidem excepturi voluptates id suscipit, ullam sit veritatis architecto!</p>
+                                <p>Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En <br />Entreprise</b></p>
@@ -88,7 +92,7 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur velit et necessitatibus, similique temporibus id fuga saepe quas provident repellat porro nihil nemo. Fuga quam ipsum consequatur? Debitis laboriosam, sequi quaerat error vel nemo ullam quia aliquam sed natus totam veritatis iure at quis quibusdam. Neque quos consequuntur pariatur praesentium!</p>
+                                <p>Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>À l'université</b></p>
@@ -96,33 +100,43 @@ export default function PageAccueil(props){
                         </div>
                         <div className="carteAvenir">
                             <div className="carteBGAvenir">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae, reiciendis excepturi molestias in repellat rem, itaque doloremque iure placeat hic nostrum ad? Necessitatibus minus alias voluptate asperiores autem quae quis consequuntur mollitia sequi vero.</p>
+                                <p>Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia</p>
                             </div>
                             <div className="carteTitre">
                                 <p><b>En stage</b></p>
                             </div>
                         </div>
                     </div>
-                    
+                    <FlechesCarousel
+                        onClickLeft={() => scrollButtons("carouselCartesAvenir", -400)}
+                        onClickRight={() => scrollButtons("carouselCartesAvenir", 400)}
+                    />
                     <Bouton href={"avenir"}>En savoir plus</Bouton>
                 </div>
                 
             </section>
-
-            <section className="block4">
+            <div className="transition">
+                <div className="curve"></div>
+            </div>
+            <section className="block4 block">
                 <div className="titleSections">
                     <h2>Un <b>aperçu</b> des <b>PROJETS</b></h2>
                 </div>
-                <div className="carouselCartesProjets">
+                <div className="carouselCartesProjets" id='cartesProjets'>
                     {
                         melangerTableau(dataAccueil.projets).map(
                             projet => {return <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].type_cours} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>}
-                        ).slice(sliceNumberProjets, sliceNumberProjets + 3)
+                        ).slice(sliceNumberProjets, sliceNumberProjets + 4)
                     }
                 </div>
+                <FlechesCarousel
+                        onClickLeft={() => scrollButtons("cartesProjets", -400)}
+                        onClickRight={() => scrollButtons("cartesProjets", 400)}
+                />
+                <Bouton href={"galerie-des-projets"}>En voir plus!</Bouton>
             </section>
 
-            <section className="block5">
+            <section className="block5 block">
                 <div className="titleSections">
                     <h2>Le <b>SOCIAL</b></h2>
                 </div>
@@ -152,8 +166,10 @@ export default function PageAccueil(props){
                     </div>
                 </div>
             </section>
-
-            <section className="block6">
+            <div className="transition">
+                <div className="curve"></div>
+            </div>
+            <section className="block6 block">
                 <div className="titleSections">
                     <h2>Tes <b>Enseignants</b></h2>
                 </div>
@@ -169,9 +185,13 @@ export default function PageAccueil(props){
                         onClickLeft={() => scrollButtons("scrollCartes", -430)}
                         onClickRight={() => scrollButtons("scrollCartes", 430)}
                     />
-                    <Bouton href={"les-enseignants"}>Voir tout les profs</Bouton>
+                    <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
                 </div>
             </section>
+            <div className="transition">
+                <div className="curve"></div>
+                <div className="background"></div>
+            </div>
         </main>
     );
 }
