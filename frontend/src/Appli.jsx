@@ -35,6 +35,7 @@ export default function Appli() {
       programmes_uni: [],
       type_cours: [],
       reseaux_sociaux: [],
+      genre_sections: []
   });
   
   useChargerSite(setData, isLoaded, setIsLoaded);
@@ -71,7 +72,7 @@ export default function Appli() {
                     page => {
                       
                       const Page = getPage(page);
-                      console.log(Page);
+                      console.log(Page.component);
                       return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/>}></Route>
                     }
                   )

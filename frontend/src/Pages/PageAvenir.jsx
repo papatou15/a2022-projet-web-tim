@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/DataContext';
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
-import TitreSection from '../Composants/TitreSection';
+import TitreSection from '../Composants/Sections/TitreSection';
 import './PageAvenir.scss';
 import SousTitre from '../Composants/SousTitre';
 import ListeCarrieres from '../Composants/ListeCarrieres';
