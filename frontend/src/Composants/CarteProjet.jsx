@@ -8,8 +8,18 @@ import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 import { NavLink, useLocation } from 'react-router-dom';
 
 
-export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState}){
+export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState, setDetailsOpen, detailCoursOpen, setCarteAgrandie}){
     const [expanderState, setExpanderState] = useState(false);
+
+    const toggleDetails = () => {
+        setDetailsOpen(!expanderState);
+        setExpanderState(!expanderState);
+    }
+
+    const closeDetails =() => {
+        setExpanderState(false);
+        setDetailsOpen(false);
+    }
 
     useEffect(() => {
         if (expanderState && carteOpenState !== id)
@@ -21,13 +31,13 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
     const infoRef = useRef(null);
     const carteProjetRef = useRef(null)
 
-    useCliqueExterieur(infoRef, () => {setExpanderState(false);}, carteProjetRef);
+    //useCliqueExterieur(infoRef, () => {setExpanderState(false); setDetailsOpen(false)}, carteProjetRef);
 
     const curLocation = useLocation();
     
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets") ? setExpanderState(!expanderState) : setExpanderState(false); setCarteOpenState(id);}}>
+            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets") ? toggleDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
                 <div className="carteProjet">
                     <div className="curve1"></div>
                     <div className="curve2"></div>
@@ -52,7 +62,8 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                 (curLocation.pathname === "/galerie-des-projets") ?
 
                 <ExpanderSection expanderState={expanderState}>
-                    <div className="infoProjet" ref={infoRef}>
+                    <div ref={infoRef} className="conteneur" expanderstate={expanderState ? "true" : "false"}>
+                    <div className="infoProjet"  >
                         <div className="carouselProjet">
                             <Carrousel images={projet.images}></Carrousel>
                         </div>
@@ -66,11 +77,13 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                             </div>
                         </div>
                     </div>
-                    <div className="fermerSection" onClick={() => setExpanderState(false)}>
+                    <div className="fermerSection" onClick={() => {closeDetails()}}>
                         <div className="bar"></div>
                         <div className="bar"></div>
                         <div className="bar"></div>
                     </div>
+                    </div>
+                    
                 </ExpanderSection>
                 :
                 <></>

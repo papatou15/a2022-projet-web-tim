@@ -5,6 +5,8 @@ import { DataContext } from '../Context/DataContext';
 import { useContext, useState, useRef } from 'react';
 import TitreSection from '../Composants/Sections/TitreSection';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
+import Carrousel from '../Navigation/Carrousel';
+import { CarteGlissante } from '../Composants/CarteGlissante';
 import Footer from '../Composants/Footer';
 
 export default function PageProjets(props){
@@ -12,6 +14,19 @@ export default function PageProjets(props){
     const {projets, type_cours} = useContext(DataContext);
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
+
+    const [carteAgrandie, setCarteAgrandie] = useState(null);
+
+    const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
+    const [detailCoursOpen, setDetailCoursOpen] = useState(false);
+
+    const carteGlissanteRef= useRef(null);
+
+    const setDetailsOpen = (isOpen) => {
+        setDetailCoursOpen(isOpen);
+        setCarteGlissanteOpen(isOpen);
+    }
+
 
     const filtrerProjets = (projet) => {
         if (filtre.length === 0) return true;
@@ -24,6 +39,8 @@ export default function PageProjets(props){
         return contientFiltre;
     }
 
+    console.log(carteAgrandie);
+
     return (
         <main className="PageProjets">
             <TitreSection>Les projets</TitreSection>
@@ -31,10 +48,51 @@ export default function PageProjets(props){
             <div className="listeProjets">
                 {
                     projets.filter(filtrerProjets).map(
-                        projet => <CarteProjet key={projet.id} projet={projet} id={projet.id} titre={projet.titre} type={projet.type_du_projet[0].post_title} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
+                        projet => <CarteProjet key={projet.id} 
+                        projet={projet} id={projet.id} 
+                        titre={projet.titre} 
+                        type={projet.type_du_projet[0].post_title} 
+                        cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} 
+                        auteurs={projet.auteurs}
+                        image={projet.images.map( images => images.guid)} 
+                        carteOpenState={carteOpenState} 
+                        setCarteOpenState={setCarteOpenState}
+                        setDetailsOpen={setDetailsOpen}
+                        detailCoursOpen={detailCoursOpen}
+                        setCarteAgrandie={setCarteAgrandie}
+                        />
                     )
                 }
             </div>
+            <CarteGlissante ref={carteGlissanteRef} isOpen={carteGlissanteOpen} onCloseButtonClicked={() => {setDetailsOpen(false)}}>
+                {
+                    carteAgrandie ?
+                    <div className='carte-glissante-projet'>
+                        <div className='curve'></div>
+                        <div className="projet-carrousel">
+                        {
+                            (carteAgrandie.projet.images) ?
+                            <Carrousel images={carteAgrandie.projet.images}/>
+                            :
+                            <></>
+                        }
+                        </div>
+                        <div className="projet-nom">
+                            <h2>{carteAgrandie.titre}</h2>
+                        </div>
+                        <div className="projet-description">
+                            <h3>Description</h3>
+                            <p>{carteAgrandie.projet.description}</p>
+                        </div>
+                        <div className="projet-auteur">
+                            <h3>Auteur</h3>
+                            <p>{carteAgrandie.auteurs}</p>
+                        </div>
+                    </div>
+                    :
+                    <></>
+                }
+            </CarteGlissante> 
         </main>
     );
 }

@@ -17,7 +17,7 @@ export default function Carrousel({images}){
             }
             </div>
             <div className='image-courrante'>
-                <Slide img={images[imageChosen].guid} index={imageChosen}/>
+                <Slide img={images[imageChosen].guid} index={imageChosen} isLarge={true}/>
             </div>
             
         </div>

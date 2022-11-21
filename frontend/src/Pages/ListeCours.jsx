@@ -4,8 +4,7 @@ import ExpanderSection from '../Navigation/ExpanderSection';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState, filtreCours}){
-
+export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState, filtreCours, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen}){
     const [expanderState, setExpanderState] = useState(true);
 
     return (
@@ -26,7 +25,14 @@ export default function ListeCours({sessionTitre, lesCours, carteOpenState, setC
                     {
                         lesCours.filter(filtreCours).map(
                             unCours =>
-                                <UnCours key={unCours.ID} id={unCours.ID} carteOpenState={carteOpenState} setCarteOpenState={setCarteOpenState}/>
+                                <UnCours key={unCours.ID} 
+                                id={unCours.ID} 
+                                carteOpenState={carteOpenState} 
+                                setCarteOpenState={setCarteOpenState} 
+                                carteAgrandie={carteAgrandie} 
+                                setCarteAgrandie={setCarteAgrandie} 
+                                detailCoursOpen={detailCoursOpen}
+                                setDetailsOpen={setDetailsOpen}/>
                         )
                     }
                     </div> 
