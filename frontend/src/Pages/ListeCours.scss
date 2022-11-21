@@ -22,6 +22,10 @@
     {
         gap: $gap-grille-cours;
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
+        overflow-x: scroll;
+        &::-webkit-scrollbar{
+            display: none
+        }
     }
 }

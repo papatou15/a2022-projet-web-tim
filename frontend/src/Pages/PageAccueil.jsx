@@ -9,8 +9,10 @@ import { useContext, useRef, useState, useEffect } from 'react';
 import { melangerTableau, randomArraySlice } from '../utils/array-utils';
 import { scrollButtons } from '../utils/scrollButtons';
 import { sortSessions } from '../utils/timapi-utils';
+
+// Hooks
+import useOnResize from "../Hooks/useOnResize";
 import useIsOnScreen from '../Hooks/useIsOnScreen';
-import Footer from '../Composants/Footer';
 
 export default function PageAccueil({id, footerViewState}){
 
@@ -31,10 +33,12 @@ export default function PageAccueil({id, footerViewState}){
         setFooterView(isVisible);
     });
     
+    const showVideo = (isVisible) ? "visible" : "hidden";
+
     return (
         <main className="PageAccueil">
-            <section className="block1" ref={ref}>
-                <video autoPlay muted loop id="accueilBGVideo" min-width="2560px" height="auto">
+            <section className="block1" ref={ref} style={{visibility: showVideo}}>
+                <video autoPlay muted loop id="accueilBGVideo" min-width="2560px" height="auto" object-fit="contain">
                     <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
                 </video>
                 <div className="mainTitle">
