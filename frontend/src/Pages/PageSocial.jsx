@@ -2,6 +2,9 @@ import { useContext, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { DataContext } from '../Context/DataContext';
 import './PageSocial.scss';
+import Couleurs from '../Variables/Couleurs.scss'
+import Formes from '../Variables/Formes.scss'
+import TransitionVague from '../Decorations/TransitionVague';
 
 export default function PageSocial(props){
 
@@ -36,7 +39,10 @@ export default function PageSocial(props){
                 </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
-                    <p className="descEvents">Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.<br/><br/>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
+                    <div className="descEvents">
+                        <p>Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.</p>                    
+                        <p>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
+                    </div>
                     <div className="sideEvents">
                         <div className="event1">
                             <img src="" alt="" />
@@ -50,9 +56,18 @@ export default function PageSocial(props){
                 </div>
             </div>
 
+            <TransitionVague couleurBackground={Couleurs.couleurPrimaire} 
+                             couleurCourbe={Couleurs.baseColor}  
+                             minHeight={'250px'} 
+                             clipPath={Formes.vagueCours} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
+
             <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
-                <div className="contenuCommunaute js-flickity" data-flickity-options='{ "wrapAround": true }'>
+                <div className="contenuCommunaute">
                     <div className="carteCommunaute">
                         <div className="carteBG">
                             <p>Au TIM, nous avons aussi un comité étudiants qui se charge de préparer les évènements qui seront seulement pour les étudiants du TIM. Vous pouvez tous vous y joindre, peu importe vorte année.</p>

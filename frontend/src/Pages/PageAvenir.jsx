@@ -16,6 +16,14 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
+            <TransitionVague couleurBackgroundTransition={Couleurs.baseColor} 
+                             couleurCourbe={Couleurs.couleurPrimaire}  
+                             minHeight={'300px'} 
+                             clipPath={Formes.vagueAvenir} 
+                             isSimple={false}
+                             rotationX={0}
+                             transitionY={0}
+                             position={"absolute"}/>
             <section className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[0]}</SousTitre>
@@ -29,7 +37,8 @@ export default function PageAvenir({id}){
                              clipPath={Formes.vagueSimpleMobile} 
                              isSimple={true}
                              rotationX={180}
-                             transitionY={-2}/>
+                             transitionY={-2}
+                             position={"relative"}/>
             <section className='universite section'>
                 <TitreSection>{pageAvenir.titre_sections[1]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[2]}</SousTitre>
