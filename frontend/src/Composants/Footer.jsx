@@ -5,10 +5,11 @@ import Contacts from '../Navigation/Contacts';
 import { useRef } from 'react';
 import {useIsOnScreen} from '../Hooks/useIsOnScreen.jsx';
 
-export default function Footer({menu}){
-    
+export default function Footer({menu, footerView}){
+    console.log("footerView Footer: " + footerView);
+    const footerDisplay = (footerView) ? "none" : "block";
     return(
-        <footer>
+        <footer id="footer" style={{display: footerDisplay}}>
             <div className="footerContent">
                 <div className="footerLeft">
                     <h4>Navigation</h4>
