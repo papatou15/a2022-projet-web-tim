@@ -2,7 +2,7 @@ import './Appli.scss';
 
 //Hooks
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 //Pages
 import PageAccueil from './Pages/PageAccueil';
@@ -18,6 +18,7 @@ import Menu from './Navigation/Menu';
 import Footer from './Composants/Footer';
 
 import { checkURLHorL } from './utils/checkURL';
+import useIsOnScreen from './Hooks/useIsOnScreen';
 import PageCustom from './Pages/PageCustom';
 
 export default function Appli() { 
@@ -56,6 +57,16 @@ export default function Appli() {
     "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
+  // const ref = useRef();
+  // const isVisible = useIsOnScreen(ref);
+
+  const footerViewState = useState(false);
+
+  // useEffect(() => {
+  //     setFooterView(isVisible);
+  // });
+  // console.log(footerView);
+
   return (
     <DataContext.Provider value={siteData}>
           <div className="Appli">
@@ -73,14 +84,14 @@ export default function Appli() {
                       
                       const Page = getPage(page);
                       console.log(Page.component);
-                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/>}></Route>
+                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
                     }
                   )
                   :
                   <Route>No pages...</Route>
                 }
               </Routes>
-              <Footer menu={siteData.menu}></Footer>
+              <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
               </>
               : <></>
             }
