@@ -69,11 +69,6 @@ export default function Appli() {
           <>
           <Menu siteData={siteData}/>
           <Routes>
-            {
-              (isLoaded) ? 
-              <>
-              <Menu siteData={siteData}/>
-              <Routes>
                 {
                   (siteData.menu.data.header.headerMenuItems != null)
                   ?
@@ -87,10 +82,6 @@ export default function Appli() {
                   :
                   <Route>No pages...</Route>
                 }
-              )
-              :
-              <Route>No pages...</Route>
-            }
           </Routes>
           <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
           </>
