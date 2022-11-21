@@ -1,9 +1,11 @@
+@import "../Variables/Couleurs.scss";
+
 .Ronds {
     position: fixed;
     width: 100px;
     height: 100px;
     .rond {
-        border: 1px solid #52C1DA;
+        border: 1px solid $couleur-primaire;
         border-radius: 50%;
     }
     .rond1 {

@@ -23,7 +23,6 @@ export default function PageEnseignants({id}){
     const setDetailsOpen = (isOpen) => {
         setDialogOpen(isOpen);
         setCarteGlissanteOpen(isOpen);
-        console.log(carteAgrandie);
     }
 
     return (

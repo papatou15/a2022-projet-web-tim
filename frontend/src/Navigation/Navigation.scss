@@ -1,5 +1,6 @@
 @import '../Variables/Couleurs.scss';
 @import '../Variables/Layout.scss';
+@import '../Variables/Formes.scss';
 
 .Navigation {
     position: fixed;
@@ -42,10 +43,11 @@
         .curve {
             grid-area: contacts;
             position: relative;
-            background: url(../svg/wave2.svg), linear-gradient(to bottom, transparent 70%, $couleur-bouton-bleu 70%);
-            background-position: 0% -25px, right bottom;
-            background-repeat: no-repeat;
-            background-size: cover;
+            z-index: -10;
+            background-color: $couleur-primaire;
+            clip-path: $vagueAccueil;
+            transform: rotateX(180deg);
+            width: 200%;
         }
         .Ronds { 
             position: absolute;

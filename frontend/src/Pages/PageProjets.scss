@@ -9,7 +9,7 @@
     background-color: $base-color;
     min-height: 100vh;
     position: relative;
-    padding-right: 75px;
+    // padding-right: 75px;
     z-index: 1;
     h1{
         font-size: 3em;
@@ -31,5 +31,60 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         gap: 35px;
+    }
+    .CarteGlissante {
+        background-color: $couleur-secondaire;
+        color: $couleur-secondaire;
+        button {
+            border: 1px solid $couleur-secondaire;
+            color: $couleur-secondaire;
+            background-color: $couleur-quinaire;
+        }
+        .carte-glissante-projet {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            .curve {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: $couleur-quinaire;
+                clip-path: ellipse(70% 60% at 45% 55%);
+                z-index: -1;
+            }
+            .projet-carrousel {
+                padding: 2rem 2rem 1rem 2rem;
+                .image-courrante {
+                    .Slide {
+                        div {
+                            width: 100%;
+                            height: 500px;
+                        }
+                    }
+                }
+            } 
+            .projet-nom {
+                font-size: 2rem;
+                margin: 0rem 2rem;
+                h2 {
+                    margin: 0;
+                }
+            }
+            .projet-description {
+                margin: 0rem 2rem;
+            }
+            .projet-auteur {
+                h3 {
+                    margin: 0;
+                }
+                p {
+                    margin: 0;
+                }
+                margin: 0rem 2rem;
+            }
+            .projet-projets-relies {
+
+            }
+        }
     }
 }

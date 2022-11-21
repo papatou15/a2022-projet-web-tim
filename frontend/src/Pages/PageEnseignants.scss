@@ -5,7 +5,7 @@
     position: relative;
     min-height: 100vh;
     background-color: $base-color;
-    z-index: 0;
+    z-index: 1;
     padding: 0 0 2rem 0;
     overflow: hidden;
     > .curve {

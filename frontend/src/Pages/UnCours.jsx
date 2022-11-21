@@ -7,13 +7,23 @@ import { cutString, getCoursFromID } from '../utils/timapi-utils';
 import './UnCours.scss';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
-export default function UnCours({id, carteOpenState, setCarteOpenState}){
+export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen}){
 
     const siteData = useContext(DataContext);
 
     const {titre, description, images, numero_du_cours} = getCoursFromID(siteData.cours, id);
 
     const [expanderState, setExpanderState] = useState(false);
+
+    const toggleDetails = () => {
+        setDetailsOpen(!expanderState);
+        setExpanderState(!expanderState);
+    }
+
+    const closeDetails = () => {
+        setDetailsOpen(false);
+        setExpanderState(false);
+    }
 
     useEffect(() => {
         if (expanderState && carteOpenState !== numero_du_cours)
@@ -24,7 +34,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
 
     return (
         <div className="UnCours" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {setExpanderState(!expanderState); setCarteOpenState(numero_du_cours);}}>
+            <ExpanderButton onClick={() => {toggleDetails(); setCarteOpenState(numero_du_cours); setCarteAgrandie({titre, description, images, numero_du_cours})}}>
                 <div className="carte" expanderstate={expanderState ? "true" : "false"}>
                     <div className='header'>
                         <h2>{titre}</h2>
@@ -61,7 +71,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState}){
 
                     </div>
                 </div>
-                <div className="fermerSection" onClick={() => setExpanderState(false)}>
+                <div className="fermerSection" onClick={() => {closeDetails()}}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
