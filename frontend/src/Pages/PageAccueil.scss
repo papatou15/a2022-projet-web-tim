@@ -4,6 +4,7 @@
 .PageAccueil{
     overflow: hidden;
     position: relative;
+    z-index: 1;
     .titleSections{
         height: 8%;
         display: flex;

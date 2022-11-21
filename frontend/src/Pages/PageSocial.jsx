@@ -1,10 +1,14 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { DataContext } from '../Context/DataContext';
+import { scrollButtons } from '../utils/scrollButtons';
 import './PageSocial.scss';
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
 import TransitionVague from '../Decorations/TransitionVague';
+
+import FlechesCarousel from '../Composants/FlechesCarousel';
+import useOnResize from '../Hooks/useOnResize';
 
 export default function PageSocial(props){
 
@@ -28,6 +32,11 @@ export default function PageSocial(props){
             currentSection.current.scrollIntoView();
         }
     }, [])
+
+
+    // Permet de changer dynamiquement la distance à scroll sur les cartes de social
+    const carteCommunaute = useRef(null);
+    const widthCarte = useOnResize(carteCommunaute);
 
     return (
         <main className="PageSocial">
@@ -67,12 +76,13 @@ export default function PageSocial(props){
 
             <div ref={communauteRef} className="sectionSocial" id='communaute'>
                 <h2>COMMUNAUTÉ</h2>
-                <div className="contenuCommunaute">
-                    <div className="carteCommunaute">
+
+                <div className="contenuCommunaute" id="wrapperCartesCommunaute" >
+                    <div className="carteCommunaute" ref={carteCommunaute}>
                         <div className="carteBG">
                             <p>Au TIM, nous avons aussi un comité étudiants qui se charge de préparer les évènements qui seront seulement pour les étudiants du TIM. Vous pouvez tous vous y joindre, peu importe vorte année.</p>
                         </div>
-                        <div className="carteTitre">
+                        <div className="carteTitre" >
                             <p>Comité</p>
                         </div>
                     </div>
@@ -93,6 +103,10 @@ export default function PageSocial(props){
                         </div>
                     </div>
                 </div>
+                <FlechesCarousel 
+                    onClickLeft={() => scrollButtons("wrapperCartesCommunaute", -widthCarte)}         
+                    onClickRight={() => scrollButtons("wrapperCartesCommunaute", widthCarte)}
+                />
             </div>
 
             <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>

@@ -2,7 +2,7 @@
 @import "../Variables/Couleurs.scss";
 
 .CarteGlissante {
-    z-index: 3;
+    z-index: 30;
     transition: transform 0.5s ease-in-out;
     position: fixed;
     top: 0;
