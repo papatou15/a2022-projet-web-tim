@@ -119,7 +119,8 @@ export default function PageSocial(props){
             <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>
                 <div className="contenuMaisonneuve">
-                    <div className="svgPlaceholder">svg</div>
+                    
+                    <img src="https://cdn.discordapp.com/attachments/1012793479648251914/1044344188952641557/persofinal-balloon.png" alt="alternatetext"></img>
                     <div className="sideContent">
                         <div className="content1">
                             <p>Voici la page web du site du collège de Maisonneuve. Cliquez <b><a href="https://www.cmaisonneuve.qc.ca/">ici</a></b>.</p>

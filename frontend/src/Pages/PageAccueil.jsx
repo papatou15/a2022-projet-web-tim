@@ -107,12 +107,18 @@ export default function PageAccueil({id, footerViewState}){
                         onClickRight={() => scrollButtons("carouselCartesAvenir", 400)}
                     />
                     <Bouton href={"avenir"}>En savoir plus</Bouton>
-                </div>
-                
+                </div> 
             </section>
+
+            <div className='contenantPerso1'>
+                        <img className='Perso1' src="https://cdn.discordapp.com/attachments/1012793479648251914/1044364574515802253/persofinal-corde.png" alt="alternatetext"></img>
+                    </div>
+            
             <div className="transition">
-                <div className="curve"></div>
+                <div className="curve">
+                </div>
             </div>
+        
             <section className="block4 block">
                 <div className="titleSections">
                     <h2>Un <b>aperçu</b> des <b>PROJETS</b></h2>
@@ -183,7 +189,7 @@ export default function PageAccueil({id, footerViewState}){
                     <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
                 </div>
             </section>
-            <TransitionVague couleurBackground={Couleurs.baseColor} 
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
                              couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 
                              clipPath={Formes.vagueSimpleMobile} 
