@@ -8,6 +8,22 @@ export default function ListeSessions({sessions, filtre, carteAgrandie, setCarte
     const [sortedSessions, setSortedSessions] = useState([]);
     const [carteOpenState, setCarteOpenState] = useState('');
 
+    const [isFilterPossible, setIsFilterPossible] = useState(true);
+
+    useEffect(() => {
+        if (sortedSessions.length === 0) {
+            setIsFilterPossible(true);
+            return;
+        }
+        if (sortedSessions.filter(filtrerSessions).length === 0) {
+            setIsFilterPossible(false);
+        }
+        else {
+            console.log('test2');
+            setIsFilterPossible(true);
+        }
+    }, [filtre]);
+
     useEffect(() => setSortedSessions(sortSessions(sessions)), []);
 
     const filtrerCours = (cours) => {
@@ -30,6 +46,7 @@ export default function ListeSessions({sessions, filtre, carteAgrandie, setCarte
     return (
         <section className="ListeSessions">
             {
+                isFilterPossible ? 
                 sortedSessions.filter(filtrerSessions).map(
                     session => 
                         <ListeCours key={session.id}
@@ -45,6 +62,8 @@ export default function ListeSessions({sessions, filtre, carteAgrandie, setCarte
                                     setDetailsOpen={setDetailsOpen}
                         />
                 )
+                :
+                <div className='filtre-impossible'><p>Aucun cours ne correspond à ce filtre :|</p></div>
             }
         </section>
     );
