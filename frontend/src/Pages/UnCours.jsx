@@ -63,6 +63,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
                     }
                     </div>
                     <div className="cours-description">
+                        <h3>{titre}</h3>
                         <h3>Description</h3>
                         <p>{description}</p>
                     </div>

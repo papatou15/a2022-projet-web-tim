@@ -52,7 +52,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                         <p className='type-projet'><b>Type - </b><span>{type}</span></p>
                         <p className='cours'><b>Cours - </b>{cours != "Personnel" ? cours.map(unCours => {return(<span key={unCours.ID} className="simpleCours">{unCours}</span>)}) : "N/A"}</p>
                     </div>
-                    <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span>{unAuteur}</span>)})}</p>
+                    <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span key={unAuteur}>{unAuteur}</span>)})}</p>
                 </div>
             </ExpanderButton>
             

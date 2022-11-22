@@ -3,6 +3,9 @@ import CarteCoursSession from '../Composants/CarteCoursSession';
 import CarteProjet from '../Composants/CarteProjet';
 import CarteEnseignant from '../Composants/CarteEnseignant';
 import FlechesCarousel from '../Composants/FlechesCarousel';
+import Couleurs from '../Variables/Couleurs.scss'
+import Formes from '../Variables/Formes.scss'
+import TransitionVague from '../Decorations/TransitionVague';
 import './PageAccueil.scss';
 import { DataContext } from '../Context/DataContext';
 import { useContext, useRef, useState, useEffect } from 'react';
@@ -180,10 +183,14 @@ export default function PageAccueil({id, footerViewState}){
                     <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
                 </div>
             </section>
-            <div className="transition">
-                <div className="curve"></div>
-                <div className="background"></div>
-            </div>
+            <TransitionVague couleurBackground={Couleurs.baseColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
+                             minHeight={'100px'} 
+                             clipPath={Formes.vagueSimpleMobile} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
         </main>
     );
 }

@@ -43,9 +43,6 @@ export default function PageSocial(props){
             <div ref={evenementsRef} className="sectionSocial" id='evenements'>
                 <div id="vague1">
                 </div>
-                <svg id="vague2">
-                    <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
-                </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
                     <div className="descEvents">
@@ -65,8 +62,8 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <TransitionVague couleurBackground={Couleurs.couleurPrimaire} 
-                             couleurCourbe={Couleurs.baseColor}  
+            <TransitionVague couleurBackground={Couleurs.couleurTierce}
+                             couleurCourbe={Couleurs.couleurSecondaire}  
                              minHeight={'250px'} 
                              clipPath={Formes.vagueCours} 
                              isSimple={true}
@@ -109,20 +106,37 @@ export default function PageSocial(props){
                 />
             </div>
 
+            <TransitionVague couleurBackground={Couleurs.couleurTierce} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
+                             minHeight={'250px'}
+                             clipPath={Formes.vagueAccueil} 
+                             isSimple={true}
+                             rotationX={180}
+                             transitionY={-2}
+                             isTransparent={true}/>
+
             <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>
                 <div className="contenuMaisonneuve">
                     <div className="svgPlaceholder">svg</div>
                     <div className="sideContent">
                         <div className="content1">
-                            <p>Voici la page web du site du collège de Maisonneuve. Cliquez <a href="https://www.cmaisonneuve.qc.ca/">ici</a>.</p>
+                            <p>Voici la page web du site du collège de Maisonneuve. Cliquez <b><a href="https://www.cmaisonneuve.qc.ca/">ici</a></b>.</p>
                         </div>
                         <div className="content2">
-                            <p>Voici la page web de la technique d'intégration en multimédia sur la page de Maisonneuve. Cliquez <a href="https://fc.cmaisonneuve.qc.ca/formations/integration-multimedia/#information-generale-1-tab">ici</a>.</p>
+                            <p>Voici la page web de la technique d'intégration en multimédia sur la page de Maisonneuve. Cliquez <b><a href="https://fc.cmaisonneuve.qc.ca/formations/integration-multimedia/#information-generale-1-tab">ici</a></b>.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
+                             minHeight={'100px'} 
+                             clipPath={Formes.vagueSimpleMobile} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
         </main>
     );
 }
