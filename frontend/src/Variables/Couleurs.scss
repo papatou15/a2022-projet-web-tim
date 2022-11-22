@@ -1,10 +1,11 @@
 $base-color: #144659;
+$footer-color: #222F43;
 $off-white: rgb(235, 235, 235);
 
 $couleur-primaire: #248ea6;
 $couleur-secondaire: #1C5F78;
 $couleur-tierce: #354B5F;
-$couleur-quaternaire: #222F43;
+$couleur-quaternaire: #144659;
 $couleur-quinaire: #CBDEE2;
 $couleur-sixte: #B7cBd1;
 
@@ -15,6 +16,7 @@ $transarent: transparent;
 
 :export {
     baseColor: $base-color;
+    footerColor: $footer-color;
     offWhite: $off-white;
     transparent: $transarent;
 

@@ -58,16 +58,16 @@ export default function PageCours(props){
             }
 
 
-            <TransitionVague couleurBackground={Couleurs.couleurQuaternaire} 
-                             couleurCourbe={Couleurs.baseColor}  
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
+                             clipPath={Formes.vagueSimpleMobile}
                              isSimple={true}
                              rotationX={0}
                              transitionY={2}
                              isTransparent={true}
                              position={'relative'}
-                             top={'48px'}/>     
+                             top={'48px'}/>
 
             <CarteGlissante ref={carteGlissanteRef} isOpen={carteGlissanteOpen} onCloseButtonClicked={() => {setDetailsOpen(false)}}>
                 {

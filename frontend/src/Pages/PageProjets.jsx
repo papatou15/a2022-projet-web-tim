@@ -77,8 +77,8 @@ export default function PageProjets(props){
                     )
                 }
             </div>
-            <TransitionVague couleurBackground={Couleurs.couleurQuaternaire} 
-                             couleurCourbe={Couleurs.baseColor}  
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 
                              clipPath={Formes.vagueSimpleMobile} 
                              isSimple={true}
