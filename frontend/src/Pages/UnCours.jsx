@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState, useRef } from 'react';
 import {DataContext} from '../Context/DataContext'
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
@@ -7,7 +7,7 @@ import { cutString, getCoursFromID } from '../utils/timapi-utils';
 import './UnCours.scss';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
-export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen}){
+export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen, refCarte}){
 
     const siteData = useContext(DataContext);
 
@@ -33,7 +33,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
     }, [carteOpenState])
 
     return (
-        <div className="UnCours" expanderstate={expanderState ? "true" : "false"}>
+        <div className="UnCours" expanderstate={expanderState ? "true" : "false"} ref={refCarte}>
             <ExpanderButton onClick={() => {toggleDetails(); setCarteOpenState(numero_du_cours); setCarteAgrandie({titre, description, images, numero_du_cours})}}>
                 <div className="carte" expanderstate={expanderState ? "true" : "false"}>
                     <div className='header'>
