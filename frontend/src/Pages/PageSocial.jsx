@@ -65,8 +65,8 @@ export default function PageSocial(props){
                 </div>
             </div>
 
-            <TransitionVague couleurBackground={Couleurs.couleurPrimaire} 
-                             couleurCourbe={Couleurs.baseColor}  
+            <TransitionVague couleurBackground={Couleurs.couleurTierce}
+                             couleurCourbe={Couleurs.couleurSecondaire}  
                              minHeight={'250px'} 
                              clipPath={Formes.vagueCours} 
                              isSimple={true}
@@ -108,6 +108,15 @@ export default function PageSocial(props){
                     onClickRight={() => scrollButtons("wrapperCartesCommunaute", widthCarte)}
                 />
             </div>
+
+            <TransitionVague couleurBackground={Couleurs.couleurQuatenaire} 
+                             couleurCourbe={Couleurs.couleurTierce}  
+                             minHeight={'250px'}
+                             clipPath={Formes.vagueSocial} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
 
             <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>

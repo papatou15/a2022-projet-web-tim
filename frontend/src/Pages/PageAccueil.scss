@@ -278,7 +278,8 @@
             z-index: -10;
             height: 100%;
             width: 100%;
-            background-color: $base-color;
+            background-color: $footer-color;
+            // background-color: red;
         }
     }
     .block4{
@@ -403,7 +404,7 @@
     }
 
     .block6{
-        background-color: #222F43;
+        background-color: $couleur-quaternaire;
         display: flex;
         flex-direction: column;
         .titleSections{

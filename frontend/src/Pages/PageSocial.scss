@@ -13,11 +13,6 @@
     z-index: 1;
     overflow: hidden;
 
-    *
-    {
-        border: 1px solid red
-    }
-
     #vague1
     {
         top: 0;
@@ -34,7 +29,7 @@
         bottom: -1.75px;
         z-index: 2;
         height: 340px;
-        fill: #248ea6;
+        fill: $footer-color;
         position: absolute;
     }
 
@@ -63,7 +58,7 @@
         // Section Évènements
         &:first-of-type
         {
-            background-color: $base-color;
+            background-color: $couleur-secondaire;
             
             h2
             {
@@ -157,7 +152,8 @@
         // Section Communauté
         &#communaute
         {
-            background-color: $couleur-primaire;
+            background-color: $couleur-tierce;
+
             h2
             {
                 width: 90%;
@@ -249,7 +245,7 @@
         // Section Maisonneuve
         &:last-of-type
         {
-            background-color: $base-color;
+            background-color: $couleur-quaternaire;
             position: relative;
 
             h2
@@ -266,7 +262,6 @@
                 align-items: center;
                 display: flex;
                 flex-direction: column;
-                color: $couleur-quinaire;
 
                 .svgPlaceholder
                 {
@@ -280,6 +275,7 @@
                     align-items: center;
                     border: 1px solid white;
                     background-color: #999999;
+                    color: white;
                 }
                 
                 .sideContent
@@ -307,6 +303,7 @@
                             height: 100%;
                             display: block;
                             align-items: center;
+                            color: $off-white;
                         }
 
                         button
