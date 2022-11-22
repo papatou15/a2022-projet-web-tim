@@ -5,4 +5,6 @@ export function scrollButtons(element, value){
         left: newPos,
         behavior: "smooth"
     });
+
+    console.log(element, value);
 }

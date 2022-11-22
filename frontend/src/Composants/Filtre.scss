@@ -16,7 +16,7 @@
         align-items: center;
         justify-content: space-between;
         width: 200px;
-        background-color: $couleur-quaternaire;
+        background-color: $couleur-secondaire;
         padding: 1.5rem 0.5rem 1.5rem 0.5rem;
         p {
             margin: 0;
@@ -51,7 +51,7 @@
     }
     .filter-options {
         overflow: hidden;
-        background-color: $couleur-primaire;
+        background-color: $couleur-secondaire;
         border-radius: 5px;
         transition: all 0.5s ease;
         margin: 1rem;

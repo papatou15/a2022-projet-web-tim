@@ -23,10 +23,17 @@
         gap: $gap-grille-cours;
         display: flex;
         flex-flow: row nowrap;
+        align-items: center;
+        padding: 0 50px;
+        height: 600px;
         overflow-x: scroll;
-        
+        scroll-behavior: smooth;
         &::-webkit-scrollbar{
             display: none
         }
+    }
+
+    .FlechesCarousel {
+        display: flex;
     }
 }

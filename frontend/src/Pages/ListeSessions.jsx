@@ -32,7 +32,8 @@ export default function ListeSessions({sessions, filtre, carteAgrandie, setCarte
             {
                 sortedSessions.filter(filtrerSessions).map(
                     session => 
-                        <ListeCours key={session.id} 
+                        <ListeCours key={session.id}
+                                    id={session.id}
                                     sessionTitre={session.title.rendered} 
                                     filtreCours={filtrerCours} 
                                     lesCours={session.cours} 

@@ -16,7 +16,7 @@
   
   .carte
   {
-    // transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -158,7 +158,7 @@
       }
     }
     .fermerSection{
-            
+      z-index: 2;
       width: 50px;
       height: 50px;
       position: absolute;
