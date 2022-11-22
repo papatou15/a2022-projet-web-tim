@@ -16,13 +16,15 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
-            <TransitionVague couleurBackgroundTransition={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurPrimaire}  
+                             <TransitionVague
+                             couleurBackgroundTransition={Couleurs.couleurPrimaire} 
+                             couleurCourbe={Couleurs.couleurSecondaire}  
                              minHeight={'300px'} 
-                             clipPath={Formes.vagueAvenir} 
-                             isSimple={false}
-                             rotationX={0}
-                             transitionY={0}
+                             clipPath={Formes.vagueSimpleMobile} 
+                             isSimple={true}
+                             rotationX={180}
+                             transitionY={-50}
+                             isTransparent={false}
                              position={"absolute"}/>
             <section className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
@@ -31,11 +33,11 @@ export default function PageAvenir({id}){
                 <SousTitre>{pageAvenir.sous_titres[1]}</SousTitre>
                 <ListeCarrieres/>
             </section>
-            <TransitionVague couleurBackgroundTransition={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurPrimaire}  
-                             minHeight={'100px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
-                             isSimple={true}
+            <TransitionVague couleurBackgroundTransition={Couleurs.couleurSecondaire} 
+                             couleurCourbe={Couleurs.couleurTierce}  
+                             minHeight={'200px'} 
+                             clipPath={Formes.vagueAccueil} 
+                             isSimple={false}
                              rotationX={180}
                              transitionY={-2}
                              position={"relative"}/>
@@ -45,7 +47,7 @@ export default function PageAvenir({id}){
                 <ListeProgrammesUni/>
             </section>
             <TransitionVague couleurBackground={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurPrimaire}  
+                             couleurCourbe={Couleurs.couleurTierce}  
                              minHeight={'100px'} 
                              clipPath={Formes.vagueSimpleMobile} 
                              isSimple={true}

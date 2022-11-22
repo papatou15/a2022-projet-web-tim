@@ -13,11 +13,6 @@
     z-index: 1;
     overflow: hidden;
 
-    *
-    {
-        border: 1px solid red
-    }
-
     #vague1
     {
         top: 0;
@@ -34,7 +29,7 @@
         bottom: -1.75px;
         z-index: 2;
         height: 340px;
-        fill: #248ea6;
+        fill: $footer-color;
         position: absolute;
     }
 
@@ -63,7 +58,7 @@
         // Section Évènements
         &:first-of-type
         {
-            background-color: $base-color;
+            background-color: $couleur-secondaire;
             
             h2
             {
@@ -159,7 +154,8 @@
         // Section Communauté
         &#communaute
         {
-            background-color: $couleur-primaire;
+            background-color: $couleur-tierce;
+
             h2
             {
                 width: 90%;
@@ -172,7 +168,7 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 1000px;
+                max-height: 1000px;
                 padding: 1%;
                 padding-bottom: 5%;
                 overflow-x: scroll;
@@ -187,9 +183,9 @@
 
                 .carteCommunaute
                 {
-                    min-width: clamp(400px, 30%, 500px);
-                    max-width: clamp(400px, 30%, 500px);
-                    height: 800px;
+                    min-width: clamp(350px, 30%, 450px);
+                    max-width: clamp(350px, 30%, 450px);
+                    height: clamp(500px, 70vw, 600px);
                     margin: 1%;
                     display: flex;
                     flex-direction: column;
@@ -249,9 +245,9 @@
 
 
         // Section Maisonneuve
-        &:last-of-type
+        &#maisonneuve
         {
-            background-color: $base-color;
+            background-color: $couleur-quaternaire;
             position: relative;
 
             h2
@@ -268,7 +264,6 @@
                 align-items: center;
                 display: flex;
                 flex-direction: column;
-                color: $couleur-quinaire;
 
                 .svgPlaceholder
                 {
@@ -282,6 +277,7 @@
                     align-items: center;
                     border: 1px solid white;
                     background-color: #999999;
+                    color: white;
                 }
                 
                 .sideContent
@@ -310,6 +306,8 @@
                             height: 100%;
                             display: block;
                             align-items: center;
+                            color: $off-white;
+                            text-align: center;
                         }
                     }
                 }

@@ -27,8 +27,6 @@ export default function PageCours(props){
         setCarteGlissanteOpen(isOpen);
     }
 
-    console.log(carteAgrandie);
-
     return (
         <main className="PageCours">
             <TransitionVague couleurBackground={Couleurs.baseColor} 
@@ -38,7 +36,9 @@ export default function PageCours(props){
                              isSimple={true}
                              rotationX={0}
                              transitionY={-2}
-                             isTransparent={true}/>
+                             isTransparent={true}
+                             position={"absolute"}
+                             top={0}/>
             <h1>Les cours</h1>
             <Filtre filtre={itemFiltre} setFiltre={setItemFiltre} options={type_cours} placeholder={"Filtrer les cours"}/>
             {
@@ -56,16 +56,16 @@ export default function PageCours(props){
             }
 
 
-            <TransitionVague couleurBackground={Couleurs.couleurQuaternaire} 
-                             couleurCourbe={Couleurs.baseColor}  
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
+                             clipPath={Formes.vagueSimpleMobile}
                              isSimple={true}
                              rotationX={0}
                              transitionY={2}
                              isTransparent={true}
                              position={'relative'}
-                             top={'48px'}/>     
+                             top={'48px'}/>
 
             <CarteGlissante ref={carteGlissanteRef} isOpen={carteGlissanteOpen} onCloseButtonClicked={() => {setDetailsOpen(false)}}>
                 {

@@ -3,15 +3,17 @@
 
 .PageCours
 {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: $base-color;
-    height: 100%;
     padding-bottom: 3em;
     z-index: 1;
-
+    h1:first-of-type {
+        margin-top: 5rem;
+    }
     #vague1
     {
         top: 0;
@@ -24,6 +26,7 @@
 
     h1
     {
+        z-index: 3;
         font-size: 3em;
         margin: 0.6em;
         color: $off-white;
@@ -34,6 +37,7 @@
         button {
             border: 1px solid $couleur-quinaire;
             color: $couleur-quinaire;
+            background-color: $couleur-secondaire;
         }
         .carte-glissante-cours {
             position: relative;

@@ -16,7 +16,7 @@
   
   .carte
   {
-    // transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease-in-out;
     display: flex;
     flex-flow: column;
     justify-content: space-between;
@@ -96,6 +96,7 @@
     bottom: 0;
     left: 5vw;
     margin: 50px;
+    z-index: 1;
     @media screen and (min-width: $layout-desktop) {
       display: block;
     }
@@ -103,7 +104,7 @@
     {
       height: 100%;
       width: 100%;
-      background-color: $couleur-primaire alpha(1);
+      background-color: #248ea680;
       border: $hover-border;
       border-color: #ffb700;
       border-radius: $coin-ronds;
@@ -122,23 +123,32 @@
           width: 50%;
           height: 100%;
         }
-
+        
         &-description
         {
+          overflow: auto;
+          h3:first-of-type {
+            font-size: 2rem;
+            padding: 0 1rem 1rem 1rem;
+
+          }
+          h3 {
+            margin: 0;
+            padding: 0rem 1rem;
+          }
           width: 65%;
-                    height: 100%;
-                    margin: 0 25px;
-                    padding: 20px;
-                    border-radius: $coin-ronds;
-                    outline: 3px dotted $couleur-quinaire;
+          height: 100%;
+          margin: 0 25px;
+          padding: 20px;
+          border-radius: $coin-ronds;
+          outline: 3px dotted $couleur-quinaire;
 
           p
           {
             max-height: calc(50vh - 5rem);
-            overflow: auto;
-            margin-top: 1em;
-            padding: 1em;
+            padding: 0rem 1rem;
             height: 90%;
+            margin: 0;
           }
         }
 
@@ -149,7 +159,7 @@
       }
     }
     .fermerSection{
-            
+      z-index: 2;
       width: 50px;
       height: 50px;
       position: absolute;

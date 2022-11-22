@@ -1,12 +1,19 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
+import FlechesCarousel from '../Composants/FlechesCarousel';
+import {scrollButtons} from '../utils/scrollButtons';
+import useOnResize from '../Hooks/useOnResize';
 import './ListeCours.scss';
 import UnCours from './UnCours';
 
-export default function ListeCours({sessionTitre, lesCours, carteOpenState, setCarteOpenState, filtreCours, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen}){
+export default function ListeCours({id, sessionTitre, lesCours, carteOpenState, setCarteOpenState, filtreCours, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen}){
     const [expanderState, setExpanderState] = useState(true);
 
+    const carteCours = useRef(null);
+    const widthCarte = useOnResize(carteCours);
+
+    const idDynamique = ("wrapperCours" + id);
     return (
             <section className="ListeCours">
                 <div className="sessionTitre">
@@ -21,7 +28,7 @@ export default function ListeCours({sessionTitre, lesCours, carteOpenState, setC
                     </ExpanderButton>
                 </div>
                 <ExpanderSection expanderState={expanderState}>
-                    <div className="lesCours">
+                    <div className="lesCours" id={idDynamique}>
                     {
                         lesCours.filter(filtreCours).map(
                             unCours =>
@@ -32,11 +39,18 @@ export default function ListeCours({sessionTitre, lesCours, carteOpenState, setC
                                 carteAgrandie={carteAgrandie} 
                                 setCarteAgrandie={setCarteAgrandie} 
                                 detailCoursOpen={detailCoursOpen}
-                                setDetailsOpen={setDetailsOpen}/>
+                                setDetailsOpen={setDetailsOpen}
+                                refCarte={carteCours}/>
+                                
                         )
                     }
                     </div> 
+                    <FlechesCarousel 
+                        onClickLeft={() => scrollButtons(idDynamique, -widthCarte)}
+                        onClickRight={() => scrollButtons(idDynamique, widthCarte)}
+                    />
                 </ExpanderSection>
+                
             </section>
     );
 }
