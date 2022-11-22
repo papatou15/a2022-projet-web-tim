@@ -2,7 +2,7 @@ import './PageProjets.scss';
 import CarteProjet from '../Composants/CarteProjet';
 import Filtre from '../Composants/Filtre';
 import { DataContext } from '../Context/DataContext';
-import { useContext, useState, useRef } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import TitreSection from '../Composants/Sections/TitreSection';
 import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 import Carrousel from '../Navigation/Carrousel';
@@ -30,6 +30,17 @@ export default function PageProjets(props){
         setCarteGlissanteOpen(isOpen);
     }
 
+    const [isFilterPossible, setIsFilterPossible] = useState(false);
+
+    useEffect(() => {
+        if (projets.filter(filtrerProjets).length === 0) {
+            setIsFilterPossible(true);
+        }
+        else {
+            setIsFilterPossible(false);
+        }
+    }, [filtre]);
+
 
     const filtrerProjets = (projet) => {
         if (filtre.length === 0) return true;
@@ -41,8 +52,6 @@ export default function PageProjets(props){
         }).includes(true);
         return contientFiltre;
     }
-
-    console.log(carteAgrandie);
 
     return (
         <main className="PageProjets">
@@ -58,7 +67,9 @@ export default function PageProjets(props){
                              top={0}/>
             <TitreSection>Les projets</TitreSection>
             <Filtre filtre={filtre} setFiltre={setFiltre} options={type_cours} placeholder={"Filtrer les projets"}/>
-            <div className="listeProjets">
+            {
+                !isFilterPossible ?
+                <div className="listeProjets">
                 {
                     projets.filter(filtrerProjets).map(
                         projet => <CarteProjet key={projet.id} 
@@ -77,6 +88,10 @@ export default function PageProjets(props){
                     )
                 }
             </div>
+            :
+            <div className='filtre-impossible'><p>Aucun projets ne répond à ce critère :|</p></div>
+            }
+            
             <TransitionVague couleurBackground={Couleurs.footerColor} 
                              couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 

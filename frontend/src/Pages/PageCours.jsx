@@ -27,8 +27,6 @@ export default function PageCours(props){
         setCarteGlissanteOpen(isOpen);
     }
 
-    console.log(carteAgrandie);
-
     return (
         <main className="PageCours">
             <TransitionVague couleurBackground={Couleurs.baseColor} 
