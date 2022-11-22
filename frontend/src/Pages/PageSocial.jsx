@@ -43,9 +43,6 @@ export default function PageSocial(props){
             <div ref={evenementsRef} className="sectionSocial" id='evenements'>
                 <div id="vague1">
                 </div>
-                <svg id="vague2">
-                    <path d="M0,0C8.34,9.67,89.38,340,330,340H0V0Z"/>
-                </svg>
                 <h2><span>Les</span>ÉVÉNEMENTS</h2>
                 <div className="contenuEvents">
                     <div className="descEvents">
@@ -109,12 +106,12 @@ export default function PageSocial(props){
                 />
             </div>
 
-            <TransitionVague couleurBackground={Couleurs.couleurQuatenaire} 
-                             couleurCourbe={Couleurs.couleurTierce}  
+            <TransitionVague couleurBackground={Couleurs.couleurTierce} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'250px'}
-                             clipPath={Formes.vagueSocial} 
+                             clipPath={Formes.vagueAccueil} 
                              isSimple={true}
-                             rotationX={0}
+                             rotationX={180}
                              transitionY={-2}
                              isTransparent={true}/>
 
@@ -132,6 +129,14 @@ export default function PageSocial(props){
                     </div>
                 </div>
             </div>
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
+                             minHeight={'100px'} 
+                             clipPath={Formes.vagueSimpleMobile} 
+                             isSimple={true}
+                             rotationX={0}
+                             transitionY={-2}
+                             isTransparent={true}/>
         </main>
     );
 }
