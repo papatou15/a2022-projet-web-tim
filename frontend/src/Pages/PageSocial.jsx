@@ -124,10 +124,10 @@ export default function PageSocial(props){
                     <div className="svgPlaceholder">svg</div>
                     <div className="sideContent">
                         <div className="content1">
-                            <p>Voici la page web du site du collège de Maisonneuve. Cliquez <a href="https://www.cmaisonneuve.qc.ca/">ici</a>.</p>
+                            <p>Voici la page web du site du collège de Maisonneuve. Cliquez <b><a href="https://www.cmaisonneuve.qc.ca/">ici</a></b>.</p>
                         </div>
                         <div className="content2">
-                            <p>Voici la page web de la technique d'intégration en multimédia sur la page de Maisonneuve. Cliquez <a href="https://fc.cmaisonneuve.qc.ca/formations/integration-multimedia/#information-generale-1-tab">ici</a>.</p>
+                            <p>Voici la page web de la technique d'intégration en multimédia sur la page de Maisonneuve. Cliquez <b><a href="https://fc.cmaisonneuve.qc.ca/formations/integration-multimedia/#information-generale-1-tab">ici</a></b>.</p>
                         </div>
                     </div>
                 </div>
