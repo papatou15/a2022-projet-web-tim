@@ -38,7 +38,9 @@ export default function PageCours(props){
                              isSimple={true}
                              rotationX={0}
                              transitionY={-2}
-                             isTransparent={true}/>
+                             isTransparent={true}
+                             position={"absolute"}
+                             top={0}/>
             <h1>Les cours</h1>
             <Filtre filtre={itemFiltre} setFiltre={setItemFiltre} options={type_cours} placeholder={"Filtrer les cours"}/>
             {
