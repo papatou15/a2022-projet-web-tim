@@ -243,7 +243,7 @@
 
 
         // Section Maisonneuve
-        &:last-of-type
+        &#maisonneuve
         {
             background-color: $couleur-quaternaire;
             position: relative;
@@ -304,6 +304,7 @@
                             display: block;
                             align-items: center;
                             color: $off-white;
+                            text-align: center;
                         }
 
                         button
