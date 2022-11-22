@@ -62,11 +62,20 @@
             background-color: rgba(36, 142, 166, 0.253);
             backdrop-filter: blur(50px);
             box-shadow: 0 0 8rem 1rem rgba(0, 0, 0, .5); 
+            color: white;
             h1{
-                font-size: 4em;
+                font-size: clamp(10px, 4rem, 50px);
+                text-shadow: 0 0 10em 10em black;
+                @media screen and (max-width: $layout-tablette){
+                    font-size: 2.5em;
+                }
             }
             h3{
                 font-size: 1.2em;
+
+                @media screen and (max-width: $layout-tablette){
+                    font-size: 1em;
+                }
             }
         }
 
@@ -312,6 +321,10 @@
                     justify-content: flex-start;
             }
 
+            @media screen and (max-width: 500px) {
+                padding: 0;
+            }
+
             &::-webkit-scrollbar {
                 display: none !important;
             }
@@ -400,6 +413,24 @@
                 }
             }
         }
+
+        @media screen and (max-width: 700px) {
+            .contenuSocial{
+                .blockSocial{
+                    width: 100%;
+                    .socialSlides{
+                        width: 100%;
+                        .clipPath{
+                            display: none;
+                        }
+
+                        &:nth-of-type(2){
+                            background-color: $off-white;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .block6{
@@ -419,7 +450,7 @@
                 transition: all 0.5s ease-in-out;
                 justify-content: flex-start;
                 gap: 30px;
-                height: 700px;
+                height: 600px;
                 padding: 20px;
                 overflow-x: scroll;
                 overflow-y: hidden;
@@ -430,6 +461,10 @@
                   }
                 .CarteEnseignant{
                     display: inline-block;
+                }
+
+                @media screen and (max-width:700px) {
+                    height: 400px;
                 }
             }
             .FlechesCarousel {

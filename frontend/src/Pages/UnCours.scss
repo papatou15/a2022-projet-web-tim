@@ -96,6 +96,7 @@
     bottom: 0;
     left: 5vw;
     margin: 50px;
+    z-index: 1;
     @media screen and (min-width: $layout-desktop) {
       display: block;
     }
@@ -103,7 +104,7 @@
     {
       height: 100%;
       width: 100%;
-      background-color: $couleur-primaire alpha(1);
+      background-color: #248ea680;
       border: $hover-border;
       border-color: #ffb700;
       border-radius: $coin-ronds;
@@ -126,11 +127,11 @@
         &-description
         {
           width: 65%;
-                    height: 100%;
-                    margin: 0 25px;
-                    padding: 20px;
-                    border-radius: $coin-ronds;
-                    outline: 3px dotted $couleur-quinaire;
+          height: 100%;
+          margin: 0 25px;
+          padding: 20px;
+          border-radius: $coin-ronds;
+          outline: 3px dotted $couleur-quinaire;
 
           p
           {

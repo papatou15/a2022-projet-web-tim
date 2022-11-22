@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState, useRef } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import {DataContext} from '../Context/DataContext'
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
 import { cutString, getCoursFromID } from '../utils/timapi-utils';
 import './UnCours.scss';
-import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
 export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgrandie, setCarteAgrandie, setDetailsOpen, detailCoursOpen, refCarte}){
 
