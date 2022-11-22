@@ -38,8 +38,8 @@ export default function PageAccueil({id, footerViewState}){
     return (
         <main className="PageAccueil">
             <section className="block1" ref={ref} style={{visibility: showVideo}}>
-                <video autoPlay muted loop id="accueilBGVideo" min-width="2560px" height="auto" object-fit="contain">
-                    <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/video.mp4" type="video/mp4"/>
+                <video autoPlay muted loop id="accueilBGVideo" min-width="100%" height="auto" object-fit="contain">
+                    <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/VideoCegepFinal.mp4" type="video/mp4"/>
                 </video>
                 <div className="mainTitle">
                     <h1>TIM Maisonneuve</h1>
