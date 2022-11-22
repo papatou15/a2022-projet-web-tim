@@ -37,7 +37,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
     
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets") ? toggleDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
+            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets" || curLocation.pathname === "/frontend/galerie-des-projets") ? toggleDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
                 <div className="carteProjet">
                     <div className="curve1"></div>
                     <div className="curve2"></div>
@@ -55,11 +55,11 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span key={unAuteur}>{unAuteur}</span>)})}</p>
                 </div>
             </ExpanderButton>
-            
+            {console.log("Current location: " + curLocation.pathname)}
             {
                 // Vérifie si le browser est dans la page des projets.
                 // Affiche la section d'information si oui, sinon renvoie vers la page de projet.
-                (curLocation.pathname === "/galerie-des-projets") ?
+                (curLocation.pathname === "/galerie-des-projets" || curLocation.pathname === "/frontend/galerie-des-projets") ?
 
                 <ExpanderSection expanderState={expanderState}>
                     <div ref={infoRef} className="conteneur" expanderstate={expanderState ? "true" : "false"}>
@@ -86,7 +86,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     
                 </ExpanderSection>
                 :
-                <></>
+                <ExpanderSection />
             }
             
         </div>
