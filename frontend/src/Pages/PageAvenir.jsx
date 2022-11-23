@@ -46,7 +46,7 @@ export default function PageAvenir({id}){
                 <SousTitre>{pageAvenir.sous_titres[2]}</SousTitre>
                 <ListeProgrammesUni/>
             </section>
-            <TransitionVague couleurBackground={Couleurs.baseColor} 
+            <TransitionVague couleurBackground={Couleurs.footerColor} 
                              couleurCourbe={Couleurs.couleurTierce}  
                              minHeight={'100px'} 
                              clipPath={Formes.vagueSimpleMobile} 

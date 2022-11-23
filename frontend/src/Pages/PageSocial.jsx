@@ -49,6 +49,7 @@ export default function PageSocial(props){
                         <p>Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières.</p>                    
                         <p>Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo.</p>                    
                     </div>
+
                     <div className="sideEvents">
                         <div className="event1">
                             <img src="" alt="" />
@@ -118,7 +119,8 @@ export default function PageSocial(props){
             <div ref={maisonneuveRef} className="sectionSocial" id='maisonneuve'>
                 <h2>MAISONNEUVE</h2>
                 <div className="contenuMaisonneuve">
-                    <div className="svgPlaceholder">svg</div>
+                    
+                    <img src="https://cdn.discordapp.com/attachments/1012793479648251914/1044344188952641557/persofinal-balloon.png" alt="alternatetext"></img>
                     <div className="sideContent">
                         <div className="content1">
                             <p>Voici la page web du site du collège de Maisonneuve. Cliquez <b><a href="https://www.cmaisonneuve.qc.ca/">ici</a></b>.</p>
