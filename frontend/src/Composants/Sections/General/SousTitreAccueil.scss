@@ -1,0 +1,15 @@
+@import "../../../Variables/Couleurs.scss";
+
+.SousTitreAccueil {
+    height: 8%;
+    display: flex;
+    justify-content: flex-end;
+    h2{
+        display: flex;
+        flex-direction: column;
+        font-size: 2.5em;
+        b{
+            margin-left: 15px;
+        }
+    }
+}

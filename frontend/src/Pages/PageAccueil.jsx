@@ -1,194 +1,111 @@
-import Bouton from '../Bouton';
-import CarteCoursSession from '../Composants/CarteCoursSession';
-import CarteProjet from '../Composants/CarteProjet';
-import CarteEnseignant from '../Composants/CarteEnseignant';
-import FlechesCarousel from '../Composants/FlechesCarousel';
+import './PageAccueil.scss';
+
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
+
 import TransitionVague from '../Decorations/TransitionVague';
-import './PageAccueil.scss';
-import { DataContext } from '../Context/DataContext';
-import { useContext, useRef, useState, useEffect } from 'react';
-import { melangerTableau, randomArraySlice } from '../utils/array-utils';
-import { scrollButtons } from '../utils/scrollButtons';
-import { sortSessions } from '../utils/timapi-utils';
+import SectionCoursAccueil from '../Composants/Sections/Accueil/SectionCoursAccueil';
+import HeaderAccueil from '../Composants/Sections/Accueil/HeaderAccueil';
+import SousTitreAccueil from '../Composants/Sections/General/SousTitreAccueil';
+import AvenirAccueil from '../Composants/Sections/Accueil/AvenirAccueil';
+import ProjetsAccueil from '../Composants/Sections/Accueil/ProjetsAccueil';
+import SocialAccueil from '../Composants/Sections/Accueil/SocialAccueil';
+import EnseignantsAccueil from '../Composants/Sections/Accueil/EnseignantsAccueil';
 
-// Hooks
-import useOnResize from "../Hooks/useOnResize";
-import useIsOnScreen from '../Hooks/useIsOnScreen';
-
-export default function PageAccueil({id, footerViewState}){
-
-    // Permet d'utiliser les données retournée par le REST API de Wordpress
-    const dataAccueil = useContext(DataContext);
-
-    let sliceNumberProjets = randomArraySlice(dataAccueil.projets, 3); //Nombre renvoyé pour le nombre de carte dans la section des projets
-    let sliceNumberProfs = randomArraySlice(dataAccueil.enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
-
-    // Observateur qui active ou désactive le footer dépendament de la visibilité de la vidéo
-    
-    const ref = useRef();
-    const isVisible = useIsOnScreen(ref);
-
-    const [footerView, setFooterView] = footerViewState;
-
-    useEffect(() => {
-        setFooterView(isVisible);
-    });
-    
-    const showVideo = (isVisible) ? "visible" : "hidden";
+export default function PageAccueil({id}){ 
 
     return (
         <main className="PageAccueil">
-            <section className="block1" ref={ref} style={{visibility: showVideo}}>
-                <video autoPlay muted loop id="accueilBGVideo" min-width="100%" height="auto" object-fit="contain">
-                    <source src="http://timm184.sg-host.com/wp-content/uploads/2022/11/VideoCegepFinal.mp4" type="video/mp4"/>
-                </video>
-                <div className="mainTitle">
-                    <h1>TIM Maisonneuve</h1>
-                    <h3>L’univers du web et du jeu vidéo au bout des doigts!</h3>
-                </div>
-                <div className="clipPath"></div>
-            </section>
+            <HeaderAccueil 
+                titre={'TIM Maisonneuve'} 
+                slogan={'L’univers du web et du jeu vidéo au bout des doigts!'}
+                videoSource={'http://timm184.sg-host.com/wp-content/uploads/2022/11/VideoCegepFinal.mp4'} 
+                couleurBanniere={'rgba(36, 142, 166, 0.253)'}
+                couleurCourbe={Couleurs.couleurSecondaire}
+            />
+            <SousTitreAccueil 
+                premierMot={'Tes'} 
+                secondMot={'COURS'} 
+                backgroundColor={Couleurs.couleurSecondaire} 
+                couleurTexte={'white'}
+                estSurLaGauche={false}
+            />
+            <SectionCoursAccueil 
+                backgroundColor={Couleurs.couleurSecondaire} 
+                boutonTexte={'En savoir plus'}
+            />
+            <SousTitreAccueil 
+                premierMot={'Ton'} 
+                secondMot={'AVENIR'} 
+                backgroundColor={Couleurs.couleurSecondaire} 
+                couleurTexte={'white'}
+                estSurLaGauche={true}
+            />
+            <AvenirAccueil
+                carte1Titre={'En Entreprise'} 
+                carte1Texte={'Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia'}
 
-            <section className="block2 block">
-                <div className="titleSections">
-                    <h2>Tes <b>COURS</b></h2>
-                </div>
-                <div className="carouselSessions">
-                    <div className="cartes" id='wrapperCartesSessions'>
-                        {
-                            sortSessions(dataAccueil.sessions).map(
-                                session => <CarteCoursSession key={session.id} cours={session.cours} titre={session.title.rendered}/>
-                            )
-                        }
-                    </div>
-                    <FlechesCarousel
-                        onClickLeft={() => scrollButtons("wrapperCartesSessions", -300)}
-                        onClickRight={() => scrollButtons("wrapperCartesSessions", 300)}
-                    />
-                    <Bouton href={"galerie-des-cours"}>En savoir plus</Bouton>
-                </div>
-            </section>
+                carte2Titre={"À l'univerité"}  
+                carte2Texte={'Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia'}
 
-            <section className="block3 block">
-                <div className="titleSections">
-                    <h2>Ton <b>AVENIR</b></h2>
-                </div>
-                <div className="contenuAvenir">
-                    <div className="blockCartes" id='carouselCartesAvenir'>
-                        <div className="carteAvenir">
-                            <div className="carteBGAvenir">
-                                <p>Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia</p>
-                            </div>
-                            <div className="carteTitre">
-                                <p><b>En <br />Entreprise</b></p>
-                            </div>
-                        </div>
-                        <div className="carteAvenir">
-                            <div className="carteBGAvenir">
-                                <p>Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia</p>
-                            </div>
-                            <div className="carteTitre">
-                                <p><b>À l'université</b></p>
-                            </div>
-                        </div>
-                        <div className="carteAvenir">
-                            <div className="carteBGAvenir">
-                                <p>Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia</p>
-                            </div>
-                            <div className="carteTitre">
-                                <p><b>En stage</b></p>
-                            </div>
-                        </div>
-                    </div>
-                    <FlechesCarousel
-                        onClickLeft={() => scrollButtons("carouselCartesAvenir", -400)}
-                        onClickRight={() => scrollButtons("carouselCartesAvenir", 400)}
-                    />
-                    <Bouton href={"avenir"}>En savoir plus</Bouton>
-                </div> 
-            </section>
+                carte3Titre={'En stage'}  
+                carte3Texte={'Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia'}
 
-            <div className='contenantPerso1'>
-                        <img className='Perso1' src="https://cdn.discordapp.com/attachments/1012793479648251914/1044364574515802253/persofinal-corde.png" alt="alternatetext"></img>
-                    </div>
-            
-            <div className="transition">
-                <div className="curve">
-                </div>
-            </div>
-        
-            <section className="block4 block">
-                <div className="titleSections">
-                    <h2>Un <b>aperçu</b> des <b>PROJETS</b></h2>
-                </div>
-                <div className="carouselCartesProjets" id='cartesProjets'>
-                    {
-                        melangerTableau(dataAccueil.projets).map(
-                            projet => {return <CarteProjet key={projet.id} projet={projet} titre={projet.titre} type={projet.type_du_projet[0].type_cours} cours={projet.cours_lies ? projet.cours_lies.map( cours_lies => cours_lies.titre ) : "Personnel"} auteurs={projet.auteurs} image={projet.images.map( images => images.guid)}/>}
-                        ).slice(sliceNumberProjets, sliceNumberProjets + 4)
-                    }
-                </div>
-                <FlechesCarousel
-                        onClickLeft={() => scrollButtons("cartesProjets", -400)}
-                        onClickRight={() => scrollButtons("cartesProjets", 400)}
-                />
-                <Bouton href={"galerie-des-projets"}>En voir plus!</Bouton>
-            </section>
+                boutonTexte={'En savoir plus'}
+            />
+            <TransitionVague couleurBackgroundTransition={Couleurs.couleurTierce} 
+                             couleurCourbe={Couleurs.couleurSecondaire}  
+                             minHeight={'200px'} 
+                             clipPath={Formes.vagueAccueil} 
+                             isSimple={false}
+                             rotationX={0}
+                             transitionY={-2}
+                             position={"relative"}
+            />
+            <SousTitreAccueil
+                premierMot={'Ton aperçu'}
+                secondMot={'des PROJETS'}
+                couleurTexte={'white'}
+                backgroundColor={Couleurs.couleurTierce} 
+            />
+            <ProjetsAccueil
+                boutonTexte={'En voir plus!'}
+            />
+            <SousTitreAccueil
+                premierMot={'Ta vie'}
+                secondMot={'ÉTUDIANTE'}
+                couleurTexte={'white'}
+                backgroundColor={Couleurs.couleurTierce} 
+                estSurLaGauche={true}
+            />
+            <SocialAccueil
+                titre1={'Les Événements'}
+                boutonTexte1={'Voir les événements'}
+                titre2={'Communauté'}
+                boutonTexte2={'En apprendre plus'}
 
-            <section className="block5 block">
-                <div className="titleSections">
-                    <h2>Le <b>SOCIAL</b></h2>
-                </div>
-                <div className="contenuSocial">
-                    <div className="blockSocial">
-                        <div className="socialSlides Event">
-                            <div className="socialSlidesContent">
-                                <h3>Les <b>Événements</b></h3>
-                                <Bouton href={"le-social#evenements"}>Voir les événements</Bouton>
-                            </div>
-                            <div className="clipPath"></div>
-                        </div>
-                        <div className="socialSlides Communaute">
-                            <div className="socialSlidesContent">
-                                <h3><b>Communauté</b></h3>
-                                <Bouton href={"le-social#communaute"}>En apprendre plus</Bouton>
-                            </div>
-                            <div className="clipPath"></div>
-                        </div>
-                        <div className="socialSlides Maisonneuve">
-                            <div className="socialSlidesContent">
-                                <h3><b>Maisonneuve</b></h3>
-                                <Bouton href={"le-social#maisonneuve"}>Consulter le collège</Bouton>
-                            </div>
-                            <div className="clipPath"></div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div className="transition">
-                <div className="curve"></div>
-            </div>
-            <section className="block6 block">
-                <div className="titleSections">
-                    <h2>Tes <b>Enseignants</b></h2>
-                </div>
-                <div className="contenuProfs">
-                    <div className="sectionCartesRandom" id="scrollCartes">
-                        {
-                            dataAccueil.enseignants.map(
-                                unEnseignant => <CarteEnseignant key={unEnseignant.id} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
-                            )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
-                        }
-                    </div>
-                    <FlechesCarousel
-                        onClickLeft={() => scrollButtons("scrollCartes", -430)}
-                        onClickRight={() => scrollButtons("scrollCartes", 430)}
-                    />
-                    <Bouton href={"les-enseignants"}>Voir tous les profs</Bouton>
-                </div>
-            </section>
+                titre3={'Maisonneuve'}
+                boutonTexte3={'Consulter le collège'}
+            />
+            <TransitionVague couleurBackgroundTransition={Couleurs.couleurTierce} 
+                             couleurCourbe={Couleurs.couleurQuaternaire}  
+                             minHeight={'200px'} 
+                             clipPath={Formes.vagueAccueil} 
+                             isSimple={false}
+                             rotationX={180}
+                             transitionY={-2}
+                             position={"relative"}
+            />
+            <SousTitreAccueil
+                premierMot={'Tes'}
+                secondMot={'ENSEIGNANTS'}
+                couleurTexte={'white'}
+                backgroundColor={Couleurs.couleurQuaternaire} 
+                estSurLaGauche={false}
+            />
+            <EnseignantsAccueil
+                boutonTexte={'Voir tous les profs'}
+            />
             <TransitionVague couleurBackground={Couleurs.footerColor} 
                              couleurCourbe={Couleurs.couleurQuaternaire}  
                              minHeight={'100px'} 

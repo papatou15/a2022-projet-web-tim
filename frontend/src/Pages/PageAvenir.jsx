@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/DataContext';
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
-import TitreSection from '../Composants/Sections/TitreSection';
+import TitreSection from '../Composants/Sections/General/TitreSection';
 import './PageAvenir.scss';
 import SousTitre from '../Composants/SousTitre';
 import ListeCarrieres from '../Composants/ListeCarrieres';
@@ -16,16 +16,17 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
-                             <TransitionVague
-                             couleurBackgroundTransition={Couleurs.couleurPrimaire} 
-                             couleurCourbe={Couleurs.couleurSecondaire}  
-                             minHeight={'300px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
-                             isSimple={true}
-                             rotationX={180}
-                             transitionY={-50}
-                             isTransparent={false}
-                             position={"absolute"}/>
+            <TransitionVague
+                couleurBackgroundTransition={Couleurs.couleurPrimaire} 
+                couleurCourbe={Couleurs.couleurSecondaire}  
+                minHeight={'300px'} 
+                clipPath={Formes.vagueSimpleMobile} 
+                isSimple={true}
+                rotationX={180}
+                transitionY={-50}
+                isTransparent={false}
+                position={"absolute"}
+            />
             <section className='emplois-stages section'>
                 <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
                 <SousTitre>{pageAvenir.sous_titres[0]}</SousTitre>

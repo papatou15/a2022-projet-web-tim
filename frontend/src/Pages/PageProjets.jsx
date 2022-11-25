@@ -3,11 +3,9 @@ import CarteProjet from '../Composants/CarteProjet';
 import Filtre from '../Composants/Filtre';
 import { DataContext } from '../Context/DataContext';
 import { useContext, useState, useRef, useEffect } from 'react';
-import TitreSection from '../Composants/Sections/TitreSection';
-import useCliqueExterieur from '../Hooks/useCliqueExterieur';
+import TitreSection from '../Composants/Sections/General/TitreSection';
 import Carrousel from '../Navigation/Carrousel';
 import { CarteGlissante } from '../Composants/CarteGlissante';
-import Footer from '../Composants/Footer';
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
 import TransitionVague from '../Decorations/TransitionVague';
