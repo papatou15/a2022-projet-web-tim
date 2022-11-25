@@ -81,7 +81,6 @@ export default function PageAccueil({id}){
             <SocialAccueil
                 titre1={'Les Événements'}
                 boutonTexte1={'Voir les événements'}
-
                 titre2={'Communauté'}
                 boutonTexte2={'En apprendre plus'}
 

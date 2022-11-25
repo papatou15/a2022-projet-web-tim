@@ -45,11 +45,12 @@ export default function ListeCours({id, sessionTitre, lesCours, carteOpenState, 
                         )
                     }
                     </div> 
+                    <FlechesCarousel 
+                        onClickLeft={() => scrollButtons(idDynamique, -widthCarte)}
+                        onClickRight={() => scrollButtons(idDynamique, widthCarte)}
+                    />
                 </ExpanderSection>
-                <FlechesCarousel 
-                    onClickLeft={() => scrollButtons(idDynamique, -widthCarte)}
-                    onClickRight={() => scrollButtons(idDynamique, widthCarte)}
-                />
+                
             </section>
     );
 }
