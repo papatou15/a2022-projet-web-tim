@@ -1,3 +1,17 @@
+@import "../../../Variables/Layout.scss";
+
 .TexteSection {
-    
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 0 2rem;
+    p {
+        margin: 0;
+    }
+    @media screen and (min-width: $layout-desktop) {
+        padding: 0rem 1rem;
+        margin: 0 auto;
+        // width: 70vw;
+        max-width: 1000px;
+    }
 }

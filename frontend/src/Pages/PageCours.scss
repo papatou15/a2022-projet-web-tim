@@ -3,75 +3,7 @@
 
 .PageCours
 {
+    overflow: hidden;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: $base-color;
-    padding-bottom: 3em;
     z-index: 1;
-    h1:first-of-type {
-        margin-top: 5rem;
-    }
-    #vague1
-    {
-        top: 0;
-        width: 300vw;
-        height: 20%;
-        position: absolute;
-        clip-path: $vague1-social-mobile;
-        background-color: $couleur-primaire;
-    }
-
-    h1
-    {
-        z-index: 3;
-        font-size: 3em;
-        margin: 0.6em;
-        color: $off-white;
-    }
-    .CarteGlissante {
-        background-color: $couleur-quinaire;
-        color: $off-white;
-        button {
-            border: 1px solid $couleur-quinaire;
-            color: $couleur-quinaire;
-            background-color: $couleur-secondaire;
-        }
-        .carte-glissante-cours {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            .curve {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background-color: $couleur-secondaire;
-                clip-path: ellipse(70% 60% at 45% 55%);
-                z-index: -1;
-            }
-            .cours-carrousel {
-                padding: 2rem 2rem 1rem 2rem;
-                .image-courrante {
-                    .Slide {
-                        div {
-                            width: 100%;
-                            height: 500px;
-                        }
-                    }
-                }
-            }
-            .cours-description {
-                margin: 0rem 2rem;
-            }
-            .cours-nom {
-                font-size: 2rem;
-                margin: 0rem 2rem;
-                h2 {
-                    margin: 0;
-                }
-            }
-        }
-    }
 }
