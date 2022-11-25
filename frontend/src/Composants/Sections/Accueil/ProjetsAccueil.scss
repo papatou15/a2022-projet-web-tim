@@ -1,0 +1,41 @@
+@import "../../../Variables/Couleurs.scss";
+
+.ProjetsAccueil {
+    overflow: hidden;
+    background-color: $couleur-tierce;
+    .titleSections{
+        h2{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 250px;
+            b{
+                &:nth-of-type(2){
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+    .carouselCartesProjets{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        gap: 2rem;
+        width: 100vw;
+        scroll-behavior: smooth;
+        padding: 0 20px;
+        @media screen and (max-width: 1958px) {
+                justify-content: flex-start;
+        }
+
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+    }
+    .Bouton {
+        margin: 0 auto 1rem auto;
+    }
+}

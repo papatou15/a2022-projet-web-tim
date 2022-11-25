@@ -1,0 +1,43 @@
+@import "../../../Variables/Couleurs";
+@import "../../../Variables/Layout";
+
+.EnseignantsAccueil {
+    background-color: $couleur-quaternaire;
+    display: flex;
+    flex-direction: column;
+    .titleSections{
+        height: auto;
+    }
+    .contenuProfs{
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        .sectionCartesRandom{
+            display: flex;
+            flex-flow: row nowrap;
+            transition: all 0.5s ease-in-out;
+            justify-content: flex-start;
+            gap: 30px;
+            height: 500px;
+            padding: 0 20px;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            &::-webkit-scrollbar {
+                display: none;
+                }
+            .CarteEnseignant{
+                display: inline-block;
+            }
+        }
+        .FlechesCarousel {
+            @media screen and (min-width: $layout-gigaScreen) {
+                display: flex;
+            }
+        }
+        .Bouton {
+            margin: 0 auto;
+        }
+    }
+}
