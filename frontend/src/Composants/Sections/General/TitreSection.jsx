@@ -1,9 +1,10 @@
 import './TitreSection.scss';
 
-export default function TitreSection({children, backgroundColor="white"}){
+export default function TitreSection({children, backgroundColor="white", color="black"}){
 
     const styleCustom = {
-        backgroundColor: backgroundColor
+        backgroundColor: backgroundColor,
+        color: color
     }
 
     return (
