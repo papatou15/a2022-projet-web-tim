@@ -17,7 +17,7 @@ export default function ListeCours({id, sessionTitre, lesCours, carteOpenState, 
     return (
             <section className="ListeCours">
                 <div className="sessionTitre">
-                    <h1>{sessionTitre}</h1>
+                    <h2>{sessionTitre}</h2>
                     <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>
                         {
                             (expanderState) ?

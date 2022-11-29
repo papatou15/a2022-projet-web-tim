@@ -1,0 +1,34 @@
+@import "../../../Variables/Layout.scss";
+
+.SectionCoursAccueil {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    .carouselSessions{
+        width: 100vw;
+        height: 92%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .navCarousel{
+            width: 200px;
+            height: 50px;
+            margin: 50px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            .flecheCarousel{
+                width: 50px;
+                height: 100%;
+                background-color: #303030;
+                cursor: pointer;
+            }
+        }
+        .Bouton {
+            @media screen and (min-width: $layout-gigaScreen) {
+                margin: 2rem;
+            }
+        }
+    }
+}

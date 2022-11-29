@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import TitreSection from '../Composants/Sections/TitreSection';
-import TexteSection from '../Composants/Sections/TexteSection';
-import SousTitreSection from '../Composants/Sections/SousTitreSection';
-import VagueSection from '../Composants/Sections/VagueSection';
+import TitreSection from '../Composants/Sections/General/TitreSection';
+import TexteSection from '../Composants/Sections/General/TexteSection';
+import SousTitreSection from '../Composants/Sections/General/SousTitreSection';
+import VagueSection from '../Composants/Sections/General/VagueSection';
 import { DataContext } from '../Context/DataContext';
 import './Section.scss';
 
@@ -34,8 +34,8 @@ export default function Section({section}){
     const typesSections = {
         "sectionTitre": <TitreSection>{section.titre}</TitreSection>,
         "sectionTexte": <TexteSection/>,
-        "sectionSousTitre" : <SousTitreSection/>,
-        "sectionVagues" : <VagueSection/>,
+        "sectionSousTitre": <SousTitreSection/>,
+        "sectionVagues": <VagueSection/>,
     }
 
     return (

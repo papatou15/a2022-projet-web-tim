@@ -1,0 +1,31 @@
+@import "../../../Variables/Layout.scss";
+.ListeCarrieresContainer {
+    padding: 0;
+    @media screen and (min-width: $layout-tablette)
+    {
+        padding: 2rem auto;
+    }
+
+    .ListeCarrieres {
+        
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        padding-left: 4rem;
+        @media screen and (min-width: $layout-tablette)
+        {
+            flex-flow: row wrap;
+            padding: 2rem 0;
+            margin: auto;
+            width: 70vw;
+            max-width: 1000px;
+        }
+        @media screen and (min-width: $layout-desktop)
+        {
+            padding: 2rem 0;
+            margin: auto;
+            width: 70vw;
+            max-width: 1000px;
+        }
+    }
+}

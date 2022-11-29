@@ -20,6 +20,7 @@ import Footer from './Composants/Footer';
 import { checkURLHorL } from './utils/checkURL';
 import useIsOnScreen from './Hooks/useIsOnScreen';
 import PageCustom from './Pages/PageCustom';
+import { FooterContext } from './Context/FooterContext';
 
 export default function Appli() { 
 
@@ -61,33 +62,35 @@ export default function Appli() {
   const footerViewState = useState(false);
 
   return (
-    <DataContext.Provider value={siteData}>
-      <div className="Appli">
-        <Loading isLoading={!isLoaded}/>
-        {
-          (isLoaded) ? 
-          <>
-          <Menu siteData={siteData}/>
-          <Routes>
-                {
-                  (siteData.menu.data.header.headerMenuItems != null)
-                  ?
-                  siteData.menu.data.header.headerMenuItems.map(
-                    page => {
-                      
-                      const Page = getPage(page);
-                      return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID} footerViewState={footerViewState} /*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
-                    }
-                  )
-                  :
-                  <Route>No pages...</Route>
-                }
-          </Routes>
-          <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
-          </>
-          : <></>
-        }
-      </div>
-    </DataContext.Provider>
+    <FooterContext.Provider value={footerViewState}>
+      <DataContext.Provider value={siteData}>
+        <div className="Appli">
+          <Loading isLoading={!isLoaded}/>
+          {
+            (isLoaded) ? 
+            <>
+            <Menu siteData={siteData}/>
+            <Routes>
+                  {
+                    (siteData.menu.data.header.headerMenuItems != null)
+                    ?
+                    siteData.menu.data.header.headerMenuItems.map(
+                      page => {
+                        
+                        const Page = getPage(page);
+                        return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+                      }
+                    )
+                    :
+                    <Route>No pages...</Route>
+                  }
+            </Routes>
+            <Footer menu={siteData.menu} footerView={footerViewState[0]}></Footer>
+            </>
+            : <></>
+          }
+        </div>
+      </DataContext.Provider>
+    </FooterContext.Provider>
   );
 }

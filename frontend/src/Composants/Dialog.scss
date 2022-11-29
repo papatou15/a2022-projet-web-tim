@@ -1,5 +1,6 @@
 @import "../Variables/Layout.scss";
 .Dialog {
+    z-index: 999;
     display: none;
     @media screen and (min-width: $layout-desktop) {
         display: block;

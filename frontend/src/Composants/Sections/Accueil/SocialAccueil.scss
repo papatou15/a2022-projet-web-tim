@@ -1,0 +1,82 @@
+@import "../../../Variables/Couleurs.scss";
+
+.SocialAccueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: $couleur-tierce;
+    .contenuSocial{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .blockSocial{
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            .socialSlides{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 90%;
+                height: 120px;
+                background-color: $couleur-quinaire;
+                .socialSlidesContent{
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 0 5% 0 5%;
+                    h3{
+                        z-index: 4;
+                        font-size: 1.2em;
+                    }
+                }
+                &:nth-of-type(2){
+                    
+                    .socialSlidesContent{
+                        flex-direction: row-reverse;
+                    }
+                }
+            }
+            .Event{
+                position: relative;
+                .clipPath{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    clip-path: polygon(0 0, 65% 0, 55% 100%, 0 100%);
+                    background: $off-white;
+                    z-index: 2;
+                }
+            }
+            .Communaute{
+                position: relative;
+                .clipPath{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+                    background: $off-white;
+                    z-index: 2;
+                }
+            }
+            .Maisonneuve{
+                position: relative;
+                .clipPath{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    clip-path: polygon(0 0, 45% 0, 35% 100%, 0 100%);
+                    background: $off-white;
+                    z-index: 2;
+                }
+            }
+        }
+    }
+}

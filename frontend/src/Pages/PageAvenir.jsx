@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { DataContext } from '../Context/DataContext';
 import Couleurs from '../Variables/Couleurs.scss'
 import Formes from '../Variables/Formes.scss'
-import TitreSection from '../Composants/Sections/TitreSection';
+import TitreSection from '../Composants/Sections/General/TitreSection';
 import './PageAvenir.scss';
-import SousTitre from '../Composants/SousTitre';
-import ListeCarrieres from '../Composants/ListeCarrieres';
-import ListeProgrammesUni from '../Composants/ListeProgrammesUni';
+import ListeCarrieres from '../Composants/Sections/Avenir/ListeCarrieres';
+import ListeProgrammesUni from '../Composants/Sections/Avenir/ListeProgrammesUni';
 import TransitionVague from '../Decorations/TransitionVague';
+import TexteSection from '../Composants/Sections/General/TexteSection';
+import SousTitreSection from '../Composants/Sections/General/SousTitreSection';
 
 export default function PageAvenir({id}){
 
@@ -16,44 +17,81 @@ export default function PageAvenir({id}){
 
     return (
         <main className="PageAvenir">
-                             <TransitionVague
-                             couleurBackgroundTransition={Couleurs.couleurPrimaire} 
-                             couleurCourbe={Couleurs.couleurSecondaire}  
-                             minHeight={'300px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
-                             isSimple={true}
-                             rotationX={180}
-                             transitionY={-50}
-                             isTransparent={false}
-                             position={"absolute"}/>
-            <section className='emplois-stages section'>
-                <TitreSection>{pageAvenir.titre_sections[0]}</TitreSection>
-                <SousTitre>{pageAvenir.sous_titres[0]}</SousTitre>
-                <p className='texte-stage'>{pageAvenir.paragraphes[0]}</p>
-                <SousTitre>{pageAvenir.sous_titres[1]}</SousTitre>
-                <ListeCarrieres/>
-            </section>
-            <TransitionVague couleurBackgroundTransition={Couleurs.couleurSecondaire} 
-                             couleurCourbe={Couleurs.couleurTierce}  
-                             minHeight={'200px'} 
-                             clipPath={Formes.vagueAccueil} 
-                             isSimple={false}
-                             rotationX={180}
-                             transitionY={-2}
-                             position={"relative"}/>
-            <section className='universite section'>
-                <TitreSection>{pageAvenir.titre_sections[1]}</TitreSection>
-                <SousTitre>{pageAvenir.sous_titres[2]}</SousTitre>
-                <ListeProgrammesUni/>
-            </section>
-            <TransitionVague couleurBackground={Couleurs.baseColor} 
-                             couleurCourbe={Couleurs.couleurTierce}  
-                             minHeight={'100px'} 
-                             clipPath={Formes.vagueSimpleMobile} 
-                             isSimple={true}
-                             rotationX={0}
-                             transitionY={-2}
-                             isTransparent={true}/>
+            <TransitionVague
+                couleurBackgroundTransition={Couleurs.couleurPrimaire} 
+                couleurCourbe={Couleurs.couleurSecondaire}  
+                minHeight={'300px'} 
+                clipPath={Formes.vagueSimpleMobile} 
+                isSimple={true}
+                rotationX={180}
+                transitionY={-50}
+                isTransparent={false}
+                position={"absolute"}
+            />
+            <TitreSection backgroundColor={Couleurs.couleurPrimaire}>
+                {pageAvenir.titre_sections[0]}
+            </TitreSection>
+
+            <SousTitreSection 
+                color='white' 
+                backgroundColor={Couleurs.couleurSecondaire}
+            >
+                    {pageAvenir.sous_titres[0]}
+            </SousTitreSection>
+
+            <TexteSection 
+                color='white' 
+                backgroundColor={Couleurs.couleurSecondaire}
+            >
+                    {pageAvenir.paragraphes[0]}
+            </TexteSection>
+
+            <SousTitreSection 
+                color='white' 
+                backgroundColor={Couleurs.couleurSecondaire}
+            >
+                    {pageAvenir.sous_titres[1]}
+            </SousTitreSection>
+
+            <ListeCarrieres 
+                backgroundColor={Couleurs.couleurSecondaire}
+                color={'white'}
+            />
+
+            <TransitionVague 
+                couleurBackgroundTransition={Couleurs.couleurSecondaire} 
+                couleurCourbe={Couleurs.couleurTierce}  
+                minHeight={'200px'} 
+                clipPath={Formes.vagueAccueil} 
+                isSimple={false}
+                rotationX={180}
+                transitionY={-2}
+                position={"relative"}
+            />
+
+            <TitreSection backgroundColor={Couleurs.couleurTierce}>
+                {pageAvenir.titre_sections[1]}
+            </TitreSection>
+
+            <SousTitreSection
+                color='white'
+                backgroundColor={Couleurs.couleurTierce}
+            >
+                    {pageAvenir.sous_titres[2]}
+            </SousTitreSection>
+
+            <ListeProgrammesUni backgroundColor={Couleurs.couleurTierce}/>
+            
+            <TransitionVague 
+                couleurBackground={Couleurs.footerColor} 
+                couleurCourbe={Couleurs.couleurTierce}  
+                minHeight={'100px'} 
+                clipPath={Formes.vagueSimpleMobile} 
+                isSimple={true}
+                rotationX={0}
+                transitionY={-2}
+                isTransparent={true}
+            />
         </main>
     );
 }
