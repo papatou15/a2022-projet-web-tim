@@ -28,13 +28,15 @@ export default function PageAvenir({id}){
                 isTransparent={false}
                 position={"absolute"}
             />
-            <TitreSection backgroundColor={Couleurs.couleurPrimaire}>
+            <TitreSection backgroundColor={Couleurs.couleurPrimaire}
+                          paddingTop="75px">
                 {pageAvenir.titre_sections[0]}
             </TitreSection>
 
             <SousTitreSection 
-                color='white' 
+                color='white'
                 backgroundColor={Couleurs.couleurSecondaire}
+                textAlign='left'
             >
                     {pageAvenir.sous_titres[0]}
             </SousTitreSection>

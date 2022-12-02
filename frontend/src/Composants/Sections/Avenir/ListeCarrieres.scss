@@ -12,6 +12,7 @@
         flex-flow: column wrap;
         justify-content: center;
         padding-left: 4rem;
+        
         @media screen and (min-width: $layout-tablette)
         {
             flex-flow: row wrap;
