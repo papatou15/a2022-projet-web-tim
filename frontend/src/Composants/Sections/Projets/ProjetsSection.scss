@@ -1,4 +1,5 @@
 @import "../../../Variables/Couleurs.scss";
+@import "../../../Variables/Layout.scss";
 
 .ProjetsSection {
     display: flex;
@@ -85,6 +86,121 @@
             }
             .projet-projets-relies {
 
+            }
+        }
+    }
+
+    .Dialog{
+        color: $off-white;
+        text-shadow: 0 0 25px black;
+        .Dialog-contenu{
+            background-color: $couleur-primaire;
+            height: 75%;
+            .infoProjet{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h2{
+                    font-size: 2em;
+                }
+                p{
+                    margin: 0;
+                }
+                .upperSection{
+                    height: 60%;
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    padding: 10px;
+                    .Carrousel{
+                        width: 675px;
+                        height: 100%;
+                    }
+
+                    .auteursProjets{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        width: 30%;
+                        height: 100%;
+                        b{
+                            margin: 10px 0;
+                            font-size: 1.5em;
+                        }
+                        .unAuteur{
+                            height: 50px;
+                            width: 150px;
+                            padding: 0.5rem;
+                            background-color: $couleur-secondaire;
+                            border-radius: $coin-ronds;
+                            margin: 10px 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: all 0.15s ease-in-out;
+                            border: $hover-border-off;
+                            &:hover{
+                                border: $hover-border;
+                            }
+                        }
+                    }
+                }
+
+                .sectionInfos{
+                    display: flex;
+                    text-align: center;
+                    align-items: center;
+                    height: 40%;
+                    width: 100%;
+                    color: $off-white;
+                    p{
+                        width: 50%;
+                        height: 60%;
+                        margin: 0 25px;
+                        padding: 10px;
+                        border-radius: $coin-ronds;
+                        outline: 3px dotted $couleur-secondaire;
+                        span{
+                            padding: 10px;
+                        }
+                    }
+                    .coursReliesProjet{
+                        width: 50%;
+                        height: 75%;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        h4{
+                            font-size: 1.2em;
+                            margin: 0.5em;
+                        }
+                        .coursProjetLien{
+                            height: 50px;
+                            width: 150px;
+                            padding: 0.5rem;
+                            background-color: $couleur-secondaire;
+                            border-radius: $coin-ronds;
+                            margin: 10px 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            transition: all 0.15s ease-in-out;
+                            border: $hover-border-off;
+                            &:hover{
+                                border: $hover-border;
+                            }
+                        }
+                        .listeCoursRelies{
+                            display: flex;
+                            flex-flow: row wrap;
+                            justify-content: center;
+                        }
+                    }
+                }
             }
         }
     }

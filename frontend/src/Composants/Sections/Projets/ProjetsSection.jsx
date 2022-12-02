@@ -6,6 +6,8 @@ import { useState, useEffect, useRef, useContext } from 'react';
 import { DataContext } from '../../../Context/DataContext';
 import Carrousel from '../../../Navigation/Carrousel';
 import { CarteGlissante } from '../../CarteGlissante';
+import Dialog from '../../Dialog';
+import { NavLink } from 'react-router-dom';
 
 export default function ProjetsSection({backgroundColor="white"}){
 
@@ -15,6 +17,8 @@ export default function ProjetsSection({backgroundColor="white"}){
 
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 
+    const [dialogOpen, setDialogOpen] = useState(null);
+
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
     const [detailCoursOpen, setDetailCoursOpen] = useState(false);
 
@@ -23,6 +27,7 @@ export default function ProjetsSection({backgroundColor="white"}){
     const setDetailsOpen = (isOpen) => {
         setDetailCoursOpen(isOpen);
         setCarteGlissanteOpen(isOpen);
+        setDialogOpen(isOpen);
     }
 
     const [isFilterPossible, setIsFilterPossible] = useState(false);
@@ -108,6 +113,44 @@ export default function ProjetsSection({backgroundColor="white"}){
                     <></>
                 }
             </CarteGlissante> 
+            {console.log(carteAgrandie)}
+            <Dialog isActive={dialogOpen} onOutsideClick={() => setDialogOpen(false)} exceptionRef={carteGlissanteRef}>
+                {
+                    carteAgrandie ?
+                    
+                    <div className="infoProjet">
+                        <h2>{carteAgrandie.titre}</h2>
+                        {/* <p><b>Fait par: </b>{carteAgrandie.auteurs}</p> */}
+                        <div className="upperSection">
+                            
+                            {
+                                (carteAgrandie.projet.images) ?
+                                <Carrousel images={carteAgrandie.projet.images}/>
+                                :
+                                <></>
+                            }
+                            <div className='auteursProjets'>
+                                <b>Fait par: </b>
+                                {carteAgrandie.auteurs.map(unAuteur => {return(<NavLink to="" className="unAuteur">{unAuteur}</NavLink>)})}
+                            </div>
+                        </div>
+                        <div className="sectionInfos">
+                            <p><b>Description du projet:</b><br /><br /><span>{carteAgrandie.projet.description}</span></p>
+                            <div className="coursReliesProjet">
+                                <h4>Cours reliés</h4>
+                                <div className='listeCoursRelies'>
+                                    {
+                                        carteAgrandie.cours != "Personnel" ? carteAgrandie.cours.map(unCours => {return(<NavLink to="../galerie-des-cours" className="coursProjetLien">{unCours}</NavLink>)}) : "Personnel"
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    :
+                    <></>
+                }
+                
+            </Dialog>
         </div>
     );
 }

@@ -63,25 +63,25 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
 
                 <ExpanderSection expanderState={expanderState}>
                     <div ref={infoRef} className="conteneur" expanderstate={expanderState ? "true" : "false"}>
-                    <div className="infoProjet"  >
-                        <div className="carouselProjet">
-                            <Carrousel images={projet.images}></Carrousel>
-                        </div>
-                        <div className="rightSection">
-                            <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
-                            <div className="coursReliesProjet">
-                                <h4>Cours reliés</h4>
-                                {
-                                    cours != "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
-                                }
+                        <div className="infoProjet"  >
+                            <div className="carouselProjet">
+                                <Carrousel images={projet.images}></Carrousel>
+                            </div>
+                            <div className="rightSection">
+                                <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
+                                <div className="coursReliesProjet">
+                                    <h4>Cours reliés</h4>
+                                    {
+                                        cours != "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="fermerSection" onClick={() => {closeDetails()}}>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                    </div>
+                        <div className="fermerSection" onClick={() => {closeDetails()}}>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                        </div>
                     </div>
                     
                 </ExpanderSection>
