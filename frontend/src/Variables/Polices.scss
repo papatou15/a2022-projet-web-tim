@@ -1,6 +1,10 @@
 $base-typo-family: 'Inter', Arial , sans-serif;
 
+// Page Accueil
+$font-size-accueil-titre:           clamp(3rem, 4vw, 5rem);
+$font-size-accueil-sousTitre:       clamp(1.25rem, 3vw, 1.5rem);
 
+// Titres généraux
 $font-size-titre-page:              clamp(2.25rem, 4vw, 4rem);
 
 // Page Cours
