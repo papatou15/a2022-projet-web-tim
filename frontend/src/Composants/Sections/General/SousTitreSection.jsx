@@ -1,10 +1,12 @@
 import './SousTitreSection.scss';
 
-export default function SousTitreSection({children, backgroundColor="white", color="black"}){
+export default function SousTitreSection({children, backgroundColor="white", color="black", textAlign, width}){
 
     const styleCustom = {
         backgroundColor: backgroundColor,
-        color: color
+        color: color,
+        textAlign: textAlign,
+        width: width,
     }
 
     return (

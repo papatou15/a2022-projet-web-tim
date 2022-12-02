@@ -49,7 +49,7 @@ export default function PageAccueil({id}){
                 carte2Texte={'Tu peux voir quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia ici'}
 
                 carte3Titre={'En stage'}  
-                carte3Texte={'Nous te présentons aussi des possiblitées de stage à la fin de ton parcour en Intégration Multimédia'}
+                carte3Texte={'Nous te présentons aussi des possiblitées de stage à la fin de ton parcours en Intégration Multimédia'}
 
                 boutonTexte={'En savoir plus'}
             />

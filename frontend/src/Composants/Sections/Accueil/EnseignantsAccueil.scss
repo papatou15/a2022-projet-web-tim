@@ -32,12 +32,14 @@
             }
         }
         .FlechesCarousel {
-            @media screen and (min-width: $layout-gigaScreen) {
-                display: flex;
+            @media screen and (min-width: $layout-desktop) {
+                // display: flex;
+                display: none;
             }
         }
         .Bouton {
             margin: 0 auto;
+            margin-bottom: 0.5rem;
         }
     }
 }

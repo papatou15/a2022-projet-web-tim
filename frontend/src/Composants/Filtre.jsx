@@ -49,7 +49,7 @@ export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'
 
     return (
         <div ref={filtreRef} className="Filtre">
-            <div  className={`select ${hasFilteredItems ? 'filtered' : ''}`}>
+            <div onClick={toggleItems} className={`select ${hasFilteredItems ? 'filtered' : ''}`}>
                 <p>{placeholder}</p>
                 <div className="filtered-items">
                     {
@@ -58,7 +58,7 @@ export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'
                         )
                     }
                 </div>
-                <div onClick={toggleItems} className={"arrow-container"}>
+                <div className={"arrow-container"}>
                     <div className={`arrow ${filtreItemsOpen ? 'opened' : 'closed'}`}></div> 
                 </div>
             </div>

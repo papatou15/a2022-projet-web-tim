@@ -116,6 +116,11 @@
       backdrop-filter: blur(60px);
       box-shadow: 0 0 100px 20px rgb(32, 32, 32);
 
+      *
+      {
+        border: 1px solid red;
+
+      }
       .cours
       {
         &-carrousel
@@ -127,6 +132,7 @@
         &-description
         {
           overflow: auto;
+          
           h3:first-of-type {
             font-size: 2rem;
             padding: 0 1rem 1rem 1rem;
@@ -134,7 +140,7 @@
           }
           h3 {
             margin: 0;
-            padding: 0rem 1rem;
+            padding: 0.5rem 1rem;
           }
           width: 65%;
           height: 100%;
@@ -143,11 +149,12 @@
           border-radius: $coin-ronds;
           outline: 3px dotted $couleur-quinaire;
 
+
           p
           {
-            max-height: calc(50vh - 5rem);
+            // max-height: calc(50vh - 5rem);
             padding: 0rem 1rem;
-            height: 90%;
+            // height: 90%;
             margin: 0;
           }
         }
@@ -158,6 +165,12 @@
         }
       }
     }
+
+    .cours-projets-relies
+    {
+      display: none;
+    }
+
     .fermerSection{
       z-index: 2;
       width: 50px;
