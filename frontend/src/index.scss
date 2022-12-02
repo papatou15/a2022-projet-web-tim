@@ -1,3 +1,5 @@
+@import './Variables/Couleurs.scss';
+
 html {
   box-sizing: border-box;
   width: 100vw;
@@ -22,4 +24,24 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Roboto', sans-serif;
+}
+
+
+// Barre de navigation //
+
+::-webkit-scrollbar
+{
+    width: 15px;
+}
+
+::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+    background-color: $couleur-scrollbar-track;
+}
+
+::-webkit-scrollbar-thumb
+{
+    border-radius: 10px;
+    background-color: $couleur-scrollbar-thumb;
 }

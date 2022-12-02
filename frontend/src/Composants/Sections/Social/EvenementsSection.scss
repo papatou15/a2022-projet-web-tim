@@ -3,11 +3,17 @@
 .EvenementsSection {
     background-color: $couleur-secondaire;
 
+    & > div
+    {
+        display: flex;
+        justify-content: center;
+    }
+
     div.contenuEvents
     {
-        width: 90%;
+        width: 95%;
         height: 95%;
-        margin: 0 10%;
+        margin: 0 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -16,7 +22,7 @@
 
         .descEvents
         {
-            width: 100%;
+            width: 75%;
             height: 95%;
             margin: 1%;
             padding: 1%;
