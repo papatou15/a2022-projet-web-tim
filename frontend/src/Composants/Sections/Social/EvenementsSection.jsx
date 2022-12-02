@@ -1,6 +1,6 @@
 import './EvenementsSection.scss';
 
-export default function EvenementsSection({texte1, texte2, img1="", img2="", alt1, alt2}){
+export default function EvenementsSection({texte1, texte2, img1="https://cmaisonneuveqcca.sharepoint.com/:i:/r/sites/5MB-TechnomergentesCRATION/Documents%20partages/OASIS%20IMMERSION/Oasis-Recharger-banniere-1080x675-1.jpeg?csf=1&web=1&e=rGKsia", img2="", alt1, alt2}){
     return (
         <div className="EvenementsSection">
             <div className="sectionSocial" id='evenements'>
