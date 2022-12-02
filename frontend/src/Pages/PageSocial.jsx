@@ -49,8 +49,8 @@ export default function PageSocial(props){
                 texte1={"Dans le cadre de la technique d'intégration en multimédia, nous fesons aussi des sorties en classe dans certain cours. Par exemple, dans le cours de Technologie Émergente, il y a une sortie nommé OASIS Immersion qui permet aux étudiants de voir des spectacles de lumières."}   
                 texte2={"Un autre événement dans lequel le TIM de Maisonneuve participe est le Game Jam. Un évènement hors du collège dans lequelle des groupes étudiants de plusieurs collèges participe à une compétition de création d'un jeu vidéo."}
                 
-                // img1={}
-                // img2={}
+                img1={"https://cmaisonneuveqcca.sharepoint.com/sites/5MB-TechnomergentesCRATION/Documents%20partages/OASIS%20IMMERSION/Oasis-Recharger-banniere-1080x675-1.jpeg"}
+                img2={"http://shawinigan.info/media/2020/interco-jv-valleyfield/interco-jv-valleyfield.jpg"}
 
                 alt1={"Sorties"}
                 alt2={"GameJams"}
