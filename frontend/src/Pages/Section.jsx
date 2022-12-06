@@ -130,8 +130,8 @@ export default function Section({section}){
                                                     backgroundColor={section.couleur_background_avenir_programmes_uni}
                                                 />,
         "sectionCours": <CoursSection
-                            couleurTitreSession={section.couleur_background_cours}
-                            backgroundColor={section.couleur_titre_session}
+                            couleurTitreSession={section.couleur_titre_session}
+                            backgroundColor={section.couleur_background_cours}
                         />,
         "sectionEnseignants": <EnseignantsSection
                                     backgroundColor={section.couleur_background_enseignants}
