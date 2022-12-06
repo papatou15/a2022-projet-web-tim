@@ -62,7 +62,8 @@ export default function Appli() {
                       page => {
                         
                         const Page = getPage(page);
-                        return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+                        const PageComponent = Page.component;
+                        return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<PageComponent id={page.pageID}/>}></Route>
                       }
                     )
                     :

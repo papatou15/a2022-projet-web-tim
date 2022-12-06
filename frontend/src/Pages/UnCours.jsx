@@ -29,7 +29,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
         {
             setExpanderState(false);
         }
-    }, [carteOpenState])
+    }, [carteOpenState, expanderState, numero_du_cours])
 
     return (
         <div className="UnCours" expanderstate={expanderState ? "true" : "false"} ref={refCarte}>
@@ -42,7 +42,7 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
                     <div className='image-container'>
                     {
                         (images) ? 
-                        <img src={images[0].guid}/>
+                        <img src={images[0].guid} alt={titre}/>
                         :
                         <div/>
                     }  

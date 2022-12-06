@@ -46,7 +46,7 @@ export default function Section({section}){
     useEffect(() => {
         const slugSection = getGenreSectionSlug();
         setSectionComponent(() => getSection(slugSection));
-    }, [])
+    })
 
     const getGenreSectionSlug = () => {
         const sectionTypeID = section.genre_section;
