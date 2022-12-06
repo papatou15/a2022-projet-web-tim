@@ -2,7 +2,9 @@
 @import "../../../Variables/Layout.scss";
 
 .EnseignantsSection {
-    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    min-height: 90vh;
     .Dialog { 
         .Dialog-contenu {
             background-color: $couleur-secondaire;
