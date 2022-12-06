@@ -1,4 +1,6 @@
 @import "../Variables/Layout.scss";
+@import "../Variables/Couleurs.scss";
+
 
 .ListeEnseignants {
     display: grid;
@@ -18,8 +20,15 @@
     
     &::-webkit-scrollbar-thumb
     {
-        background-color: white;
+        background-color: $couleur-scrollbar-thumb;
         border-radius: 7.5px;
+    }
+
+    &::-webkit-scrollbar-track
+    {
+        background-color: $couleur-scrollbar-track;
+        // visibility: hidden;
+        border-radius: 10px;
     }
 
     &::-webkit-scrollbar-corner
@@ -35,6 +44,10 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-    }
 
+        &::-webkit-scrollbar
+        {
+            display: none;
+        }
+    }
 }

@@ -19,7 +19,13 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        background-color: $base-color;
+    }
+    &[issimple="1"] {
+        .curve {
+            @media screen and (min-width: $layout-tablette) {
+                width: 140%;
+            }
+        }
     }
     &[issimple="true"] {
         .curve {

@@ -46,10 +46,10 @@ export default function PageAccueil({id}){
                 carte1Texte={'Voici quelques exemples de choix de carrière possible avec un diplôme en Intégration Multimédia'}
 
                 carte2Titre={"À l'univerité"}  
-                carte2Texte={'Voici quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia'}
+                carte2Texte={'Tu peux voir quelques programmes Universitaire accessibles à la fin de ton parcour en Intégration Multimédia ici'}
 
                 carte3Titre={'En stage'}  
-                carte3Texte={'Voici quelques possiblitées de stage à la fin de ton parcour en Intégration Multimédia'}
+                carte3Texte={'Nous te présentons aussi des possiblitées de stage à la fin de ton parcours en Intégration Multimédia'}
 
                 boutonTexte={'En savoir plus'}
             />

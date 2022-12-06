@@ -16,7 +16,7 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/typecours?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/reseausocial?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/wp-json/wp/v2/svg').then(resp => resp.json()),
-                fetch('https://timm184.sg-host.com/wp-json/wp/v2/genresections').then(resp => resp.json()),
+                fetch('https://timm184.sg-host.com/wp-json/wp/v2/genresections?per_page=100').then(resp => resp.json()),
     
             ]).then(data => {
                 setSiteData({

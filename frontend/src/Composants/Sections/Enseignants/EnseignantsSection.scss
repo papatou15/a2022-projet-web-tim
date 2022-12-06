@@ -2,6 +2,8 @@
 @import "../../../Variables/Layout.scss";
 
 .EnseignantsSection {
+    display: flex;
+    align-items: center;
     min-height: 90vh;
     .Dialog { 
         .Dialog-contenu {

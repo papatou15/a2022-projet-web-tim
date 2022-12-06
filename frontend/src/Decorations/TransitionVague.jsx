@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import './TransitionVague.scss';
 
 export default function TransitionVague({couleurBackgroundTransition, 
@@ -14,15 +15,27 @@ export default function TransitionVague({couleurBackgroundTransition,
                                         bottom=null,
                                         }){
 
+
+    const [transparent, setTransparent] = useState(false);
     const styleTransition = {
         minHeight: minHeight,
+        maxHeight: minHeight,
         backgroundColor: couleurBackgroundTransition,
         position: position,
         top: top,
         bottom: bottom,
     }
+    useEffect(() => {
+        console.log(isTransparent);
+        if (isTransparent === "1") {
+            setTransparent(true);
+        } else if (isTransparent === true) {
+            setTransparent(true);
+        }
+    }, [])
 
     const styleCurve = {
+        maxHeight: minHeight,
         clipPath: clipPath,
         backgroundColor: couleurCourbe,
         transform: `rotateX(${rotationX}deg) translateY(${transitionY}px)`,
@@ -33,10 +46,10 @@ export default function TransitionVague({couleurBackgroundTransition,
     }
 
     return (
-        <div style={styleTransition} className="TransitionVague" issimple={`${isSimple}`}>
+        <div style={styleTransition} className="TransitionVague" issimple={`${isSimple}`} istranparent={`${isTransparent}`}>
             <div style={styleCurve} className="curve"></div>
             {
-                isTransparent ?
+                transparent ?
                 <div style={styleBackground} className="background"></div>
                 :
                 <></>
