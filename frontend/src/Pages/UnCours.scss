@@ -12,10 +12,10 @@
   transition: all 0.2s ease-in-out;
   color: $off-white;
   text-shadow: 0 0 4px black;
-  //media queries for stacking cards
   
   .carte
   {
+    border-radius: $coin-ronds;
     transition: all 0.15s ease-in-out;
     display: flex;
     flex-flow: column;
@@ -80,8 +80,8 @@
 
     &:hover
     {
-      outline: $hover-border;
-      border-radius: 20px;
+      // outline: $hover-border;
+      // border-radius: 20px;
       transform: scale(1.02);
     }
   }
