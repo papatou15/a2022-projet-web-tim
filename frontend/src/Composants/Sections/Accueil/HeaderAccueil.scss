@@ -1,5 +1,6 @@
 @import "../../../Variables/Couleurs.scss";
 @import "../../../Variables/Layout.scss";
+@import "../../../Variables/Polices.scss";
 
 .HeaderAccueil {
     position: relative;
@@ -25,13 +26,19 @@
         height: 400px;
         backdrop-filter: blur(50px);
         box-shadow: 0 0 8rem 1rem rgba(0, 0, 0, .5); 
+        text-align: center;
         h1{
-            font-size: 4em;
+            font-size: $font-size-accueil-titre;
+            text-shadow: 0px 0px 5px #ffffff;
         }
         h3{
-            font-size: 1.2em;
+            font-size: $font-size-accueil-sousTitre;
+            // text-shadow: 0px 0px 1px #ffffff;
+            width: 75%;
         }
+        
     }
+    
 
     .clipPath{
         z-index: -1;

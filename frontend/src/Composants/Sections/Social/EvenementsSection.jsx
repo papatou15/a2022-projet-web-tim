@@ -1,6 +1,6 @@
 import './EvenementsSection.scss';
 
-export default function EvenementsSection({texte1, texte2, img1="", img2="", alt1, alt2}){
+export default function EvenementsSection({texte1, texte2, img1, img2, alt1, alt2}){
     return (
         <div className="EvenementsSection">
             <div className="sectionSocial" id='evenements'>

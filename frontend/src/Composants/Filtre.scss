@@ -9,6 +9,7 @@
     flex-flow: column;
     z-index: 20;
     .select {
+        margin-top: 1rem;
         z-index: 2;
         border-radius: 5px;
         position: relative;
@@ -18,6 +19,15 @@
         width: 200px;
         background-color: $couleur-secondaire;
         padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+
+        transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover
+        {
+            background-color: $footer-color;
+        }
+
         p {
             margin: 0;
             font-size: 1rem;
@@ -26,6 +36,8 @@
             top: calc(50% - 1rem / 2);
         }
         &.filtered {
+            background-color: $footer-color;
+
             p {
                 font-size: 1rem;
                 top: -25px;
@@ -66,10 +78,14 @@
             pointer-events: all;
             opacity: 1;
             top: 100%;
+
+            &:hover
+            {
+                background-color: $footer-color;
+            }
         }
     }
     .arrow-container {
-        transition: background-color 0.1s ease-in-out;
         cursor: pointer;
         border-radius: 50%;
         display: flex;

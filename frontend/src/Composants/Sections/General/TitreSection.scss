@@ -4,7 +4,7 @@
 .TitreSection
 {
     margin: 0;
-    padding: 0 8.5rem;
+    // padding: 0 8.5rem;
     font-size: clamp(2rem, 5vw, 2.5rem);
     text-align: center;
     height: 150px;
@@ -13,12 +13,13 @@
     align-items: center;
     position: relative;
     width: 100%;
+
     .titre-conteneur {
-        z-index: 1;
+        z-index: 3;
         border-bottom: 1px solid white;
         color: white;
     }
     @media screen and (min-width: $layout-tablette) {
-        font-size: 2.5rem;
+        font-size: 3.5rem;
     }
 }
