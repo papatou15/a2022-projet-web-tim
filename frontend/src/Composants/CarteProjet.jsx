@@ -1,11 +1,10 @@
 import './CarteProjet.scss';
-import { useContext, useState, useEffect, useRef } from 'react';
+import {useState, useEffect, useRef } from 'react';
 import Carrousel from '../Navigation/Carrousel';
 import ExpanderButton from '../Navigation/ExpanderButton';
 import ExpanderSection from '../Navigation/ExpanderSection';
-import useCliqueExterieur from '../Hooks/useCliqueExterieur';
 
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 
 export default function CarteProjet({id, projet, titre, type, cours, auteurs, image, carteOpenState, setCarteOpenState, setDetailsOpen, detailCoursOpen, setCarteAgrandie}){
@@ -26,12 +25,9 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
         {
             setExpanderState(false);
         }
-    }, [carteOpenState])
+    }, [carteOpenState, expanderState, id])
 
     const infoRef = useRef(null);
-    const carteProjetRef = useRef(null)
-
-    //useCliqueExterieur(infoRef, () => {setExpanderState(false); setDetailsOpen(false)}, carteProjetRef);
 
     const curLocation = useLocation();
     
@@ -43,14 +39,14 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <div className="curve2"></div>
                     <div className="containerImgProjet">
                         <div className="bgImage" style={{backgroundImage: "url(" + image[0] + ")"}}></div>
-                        <img src={image[0]} alt="Image du projet" className="imgProjet"/>
+                        <img src={image[0]} alt={"Image de " + titre} className="imgProjet"/>
                     </div>
                     <div className="titreProjet">
                         <h4>{titre}</h4>
                     </div>
                     <div className="descProjet">
                         <p className='type-projet'><b>Type - </b><span>{type}</span></p>
-                        <p className='cours'><b>Cours - </b>{cours != "Personnel" ? cours.map(unCours => {return(<span key={unCours.ID} className="simpleCours">{unCours}</span>)}) : "N/A"}</p>
+                        <p className='cours'><b>Cours - </b>{cours !== "Personnel" ? cours.map(unCours => {return(<span key={unCours} className="simpleCours">{unCours}</span>)}) : "N/A"}</p>
                     </div>
                     <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span key={unAuteur}>{unAuteur}</span>)})}</p>
                 </div>

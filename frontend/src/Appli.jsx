@@ -2,15 +2,9 @@ import './Appli.scss';
 
 //Hooks
 import { Routes, Route } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState} from 'react';
 
 //Pages
-import PageAccueil from './Pages/PageAccueil';
-import PageCours from './Pages/PageCours'
-import PageSocial from './Pages/PageSocial';
-import PageProjets from './Pages/PageProjets';
-import PageAvenir from './Pages/PageAvenir';
-import PageEnseignants from './Pages/PageEnseignants';
 import Loading from './Pages/Loading';
 import useChargerSite from './Hooks/useChargerSite';
 import { DataContext } from './Context/DataContext';
@@ -18,7 +12,6 @@ import Menu from './Navigation/Menu';
 import Footer from './Composants/Footer';
 
 import { checkURLHorL } from './utils/checkURL';
-import useIsOnScreen from './Hooks/useIsOnScreen';
 import PageCustom from './Pages/PageCustom';
 import { FooterContext } from './Context/FooterContext';
 
@@ -43,19 +36,10 @@ export default function Appli() {
   useChargerSite(setData, isLoaded, setIsLoaded);
 
   const getPage = (page) => {
-    if (!pages[page.pageSlug]) {
+      if (page.pageSlug === "accueil") {
+        return {component: PageCustom, path: "/"};
+      }
       return {component: PageCustom, path: page.pageSlug};
-    }
-    return pages[page.pageSlug];
-  }
-
-  const pages = {
-    "accueil" :  {component: PageAccueil, path: ""},
-    "galerie-des-cours" : {component: PageCours, path: "galerie-des-cours"},
-    "le-social" : {component: PageSocial, path: "le-social"},
-    "avenir" : {component: PageAvenir, path: "avenir"},
-    "galerie-des-projets" : {component: PageProjets, path: "galerie-des-projets"},
-    "les-enseignants" : {component: PageEnseignants, path: "les-enseignants"}
   }
 
   // Visibilité du footer
@@ -78,7 +62,8 @@ export default function Appli() {
                       page => {
                         
                         const Page = getPage(page);
-                        return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<Page.component id={page.pageID}/*ref={(page.pageSlug == "") ? ref : ""}*//>}></Route>
+                        const PageComponent = Page.component;
+                        return <Route key={page.ID} path={checkURLHorL()+Page.path} element={<PageComponent id={page.pageID}/>}></Route>
                       }
                     )
                     :

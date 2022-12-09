@@ -8,8 +8,6 @@ export default function PageCustom({id}){
     const {pages} = useContext(DataContext);
     const pageCustom = pages.filter((page) => page.id === id)[0];
 
-    console.log(pageCustom);
-
     return (
         <main className="PageCustom">
             {
