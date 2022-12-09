@@ -20,7 +20,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
     const showVideo = (isVisible) ? "visible" : "hidden";
 
     const styleCustom1 = {
-        backgroundColor: couleurBanniere,
+        // backgroundColor: couleurBanniere,
     }
 
     const styleCustom2 = {
@@ -36,6 +36,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
                 <h1>{titre}</h1>
                 <h3>{slogan}</h3>
             </div>
+            <div className='scroll-invite'></div>
             <div style={styleCustom2} className="clipPath"></div>
         </section>
     );

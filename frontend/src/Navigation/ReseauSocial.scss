@@ -1,5 +1,8 @@
 .ReseauSocial {
-    img {
-        width: 50px;
+    a{
+        img{
+            width: 50px;
+            filter: invert(100%);
+        }
     }
 }

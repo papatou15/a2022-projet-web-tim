@@ -1,4 +1,5 @@
 @import "../../../Variables/Couleurs.scss";
+@import "../../../Variables/Layout.scss";
 
 .SocialAccueil {
     display: flex;
@@ -31,10 +32,13 @@
                     justify-content: space-between;
                     align-items: center;
                     flex-direction: row;
-                    padding: 0 5% 0 5%;
                     h3{
+                        margin: 0 5%;
                         z-index: 4;
                         font-size: 1.2em;
+                    }
+                    .Bouton {
+                        margin: 0 5%;
                     }
                 }
                 &:nth-of-type(2){
@@ -46,35 +50,41 @@
             }
             .Event{
                 position: relative;
-                .clipPath{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    clip-path: polygon(0 0, 65% 0, 55% 100%, 0 100%);
-                    background: $off-white;
-                    z-index: 2;
+                @media screen and (min-width: $layout-tablette) {
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 65% 0, 55% 100%, 0 100%);
+                        background: $off-white;
+                        z-index: 2;
+                    } 
                 }
             }
             .Communaute{
                 position: relative;
-                .clipPath{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
-                    background: $off-white;
-                    z-index: 2;
+                @media screen and (min-width: $layout-tablette) {
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(55% 0, 100% 0, 100% 100%, 45% 100%);
+                        background: $off-white;
+                        z-index: 2;
+                    }
                 }
             }
             .Maisonneuve{
                 position: relative;
-                .clipPath{
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    clip-path: polygon(0 0, 45% 0, 35% 100%, 0 100%);
-                    background: $off-white;
-                    z-index: 2;
+                @media screen and (min-width: $layout-tablette) {
+                    .clipPath{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        clip-path: polygon(0 0, 45% 0, 35% 100%, 0 100%);
+                        background: $off-white;
+                        z-index: 2;
+                    }
                 }
             }
         }
