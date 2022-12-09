@@ -113,7 +113,6 @@ export default function ProjetsSection({backgroundColor="white"}){
                     <></>
                 }
             </CarteGlissante> 
-            {console.log(carteAgrandie)}
             <Dialog isActive={dialogOpen} onOutsideClick={() => setDialogOpen(false)} exceptionRef={carteGlissanteRef}>
                 {
                     carteAgrandie ?
@@ -131,7 +130,7 @@ export default function ProjetsSection({backgroundColor="white"}){
                             }
                             <div className='auteursProjets'>
                                 <b>Fait par: </b>
-                                {carteAgrandie.auteurs.map(unAuteur => {return(<NavLink to="" className="unAuteur">{unAuteur}</NavLink>)})}
+                                {carteAgrandie.auteurs.map(unAuteur => {return(<NavLink key={unAuteur} to="" className="unAuteur">{unAuteur}</NavLink>)})}
                             </div>
                         </div>
                         <div className="sectionInfos">
@@ -140,7 +139,7 @@ export default function ProjetsSection({backgroundColor="white"}){
                                 <h4>Cours reliés</h4>
                                 <div className='listeCoursRelies'>
                                     {
-                                        carteAgrandie.cours != "Personnel" ? carteAgrandie.cours.map(unCours => {return(<NavLink to="../galerie-des-cours" className="coursProjetLien">{unCours}</NavLink>)}) : "Personnel"
+                                        carteAgrandie.cours != "Personnel" ? carteAgrandie.cours.map(unCours => {return(<NavLink key={unCours} to="../galerie-des-cours" className="coursProjetLien">{unCours}</NavLink>)}) : "Personnel"
                                     }
                                 </div>
                             </div>
