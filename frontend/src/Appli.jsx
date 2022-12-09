@@ -1,19 +1,18 @@
 import './Appli.scss';
 
-//Hooks
 import { Routes, Route } from 'react-router-dom';
 import { useState} from 'react';
 
-//Pages
+import { DataContext } from './Context/DataContext';
+import { checkURLHorL } from './utils/checkURL';
+import { FooterContext } from './Context/FooterContext';
+
 import Loading from './Pages/Loading';
 import useChargerSite from './Hooks/useChargerSite';
-import { DataContext } from './Context/DataContext';
 import Menu from './Navigation/Menu';
 import Footer from './Composants/Footer';
-
-import { checkURLHorL } from './utils/checkURL';
 import PageCustom from './Pages/PageCustom';
-import { FooterContext } from './Context/FooterContext';
+
 
 export default function Appli() { 
 
