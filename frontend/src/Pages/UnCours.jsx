@@ -29,12 +29,13 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
         {
             setExpanderState(false);
         }
-    }, [carteOpenState])
+    }, [carteOpenState, expanderState, numero_du_cours])
 
     return (
         <div className="UnCours" expanderstate={expanderState ? "true" : "false"} ref={refCarte}>
             <ExpanderButton onClick={() => {toggleDetails(); setCarteOpenState(numero_du_cours); setCarteAgrandie({titre, description, images, numero_du_cours})}}>
                 <div className="carte" expanderstate={expanderState ? "true" : "false"}>
+                    <div className="curve1"></div>
                     <div className='header'>
                         <h2>{titre}</h2>
                         <h3>{numero_du_cours}</h3>
@@ -42,13 +43,10 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
                     <div className='image-container'>
                     {
                         (images) ? 
-                        <img src={images[0].guid}/>
+                        <img src={images[0].guid} alt={titre}/>
                         :
                         <div/>
                     }  
-                    </div>
-                    <div className='description'>
-                        <p>{cutString(description, 200)}</p>
                     </div>
                 </div>
             </ExpanderButton>

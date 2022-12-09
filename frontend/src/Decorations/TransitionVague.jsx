@@ -26,13 +26,12 @@ export default function TransitionVague({couleurBackgroundTransition,
         bottom: bottom,
     }
     useEffect(() => {
-        console.log(isTransparent);
         if (isTransparent === "1") {
             setTransparent(true);
         } else if (isTransparent === true) {
             setTransparent(true);
         }
-    }, [])
+    }, [isTransparent])
 
     const styleCurve = {
         maxHeight: minHeight,

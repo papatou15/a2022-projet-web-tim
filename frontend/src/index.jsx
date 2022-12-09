@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 import 'normalize.css';
 import Appli from './Appli';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 const eltRacine = ReactDOM.createRoot(document.getElementById('racine'));
 eltRacine.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <HashRouter>
       <Appli />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
