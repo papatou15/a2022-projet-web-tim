@@ -33,7 +33,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
     
     return(
         <div className="groupeCarteProjet" expanderstate={expanderState ? "true" : "false"}>
-            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets") ? toggleDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
+            <ExpanderButton onClick={() => {(curLocation.pathname === "/galerie-des-projets" || curLocation.pathname === "/frontend/galerie-des-projets") ? toggleDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
                 <div className="carteProjet">
                     <div className="curve1"></div>
                     <div className="curve2"></div>
@@ -51,38 +51,38 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
                     <p className='auteur'><b>Auteur - </b>{auteurs.map(unAuteur => {return(<span key={unAuteur}>{unAuteur}</span>)})}</p>
                 </div>
             </ExpanderButton>
-            
+            {console.log("Current location: " + curLocation.pathname)}
             {
                 // Vérifie si le browser est dans la page des projets.
                 // Affiche la section d'information si oui, sinon renvoie vers la page de projet.
-                (curLocation.pathname === "/galerie-des-projets") ?
+                (curLocation.pathname === "/galerie-des-projets" || curLocation.pathname === "/frontend/galerie-des-projets") ?
 
                 <ExpanderSection expanderState={expanderState}>
                     <div ref={infoRef} className="conteneur" expanderstate={expanderState ? "true" : "false"}>
-                    <div className="infoProjet"  >
-                        <div className="carouselProjet">
-                            <Carrousel images={projet.images}></Carrousel>
-                        </div>
-                        <div className="rightSection">
-                            <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
-                            <div className="coursReliesProjet">
-                                <h4>Cours reliés</h4>
-                                {
-                                    cours !== "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
-                                }
+                        <div className="infoProjet"  >
+                            <div className="carouselProjet">
+                                <Carrousel images={projet.images}></Carrousel>
+                            </div>
+                            <div className="rightSection">
+                                <p><b>Description du projet:</b><br /><br /><span>{projet.description}</span></p>
+                                <div className="coursReliesProjet">
+                                    <h4>Cours reliés</h4>
+                                    {
+                                        cours != "Personnel" ? cours.map(unCours => {return(<a href="#" className="coursProjetLien">{unCours}</a>)}) : "Personnel"
+                                    }
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="fermerSection" onClick={() => {closeDetails()}}>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                        <div className="bar"></div>
-                    </div>
+                        <div className="fermerSection" onClick={() => {closeDetails()}}>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                            <div className="bar"></div>
+                        </div>
                     </div>
                     
                 </ExpanderSection>
                 :
-                <></>
+                <ExpanderSection />
             }
             
         </div>
