@@ -11,9 +11,9 @@
     font-size: 2.5rem;
     color: white;
         p {
-            margin: 0;
+            margin: 0 1rem; 
             a {
-                margin: 0.5rem 2rem;
+                margin: 0.5rem;
                 transition: 0.5s;
                 background: linear-gradient(to right, transparent 0%, transparent 50%, transparent 50%, transparent 100%), linear-gradient(to right, white 0%, white 50%, transparent 50%, transparent 100%);
                 background-size: 200% 10%;
