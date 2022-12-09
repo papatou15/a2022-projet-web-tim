@@ -1,9 +1,10 @@
 @import "../../../Variables/Couleurs.scss";
 @import "../../../Variables/Polices.scss";
+@import "../../../Variables/Layout.scss";
 
 .EvenementsSection {
     background-color: $couleur-secondaire;
-
+    
     & > div
     {
         display: flex;
@@ -13,18 +14,20 @@
     div.contenuEvents
     {
         width: 95%;
-        height: 95%;
+        height: 90%;
         margin: 0 5%;
         display: flex;
         flex-direction: column;
         align-items: center;
         z-index: 3;
-
+    
+        @media screen and (min-width: $layout-tablette)
+        {
+            flex-direction: row;
+        }
 
         .descEvents
         {
-            width: 75%;
-            height: 95%;
             margin: 1%;
             padding: 1%;
             line-height: 150%;
@@ -33,14 +36,13 @@
             text-align: center;
             align-items: center;
             font-size: $font-size-social-events;
-            //font-size: 1.5rem;
             color: $off-white;
+            height: 100%;
         }
 
         div.sideEvents
         {
             width: 100%;
-            height: 95%;
             padding: 1%;
             margin-left: 1%;
             margin-right: 1%;
@@ -49,6 +51,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
 
             & > div
             {
@@ -63,15 +66,11 @@
                 & > img
                 {
                     width: 100%;
-                    height: 100%;
+                    padding: 0.05rem;
+                    background-color: $off-white;
+                    border-radius: 1rem;
                     background-position-x: center;
                     background-position-y: center;
-                    max-width: 400px;
-                    max-height: 200px;
-                    min-height: 200px;
-                    background-color: #999999;
-                    // width: clamp(8rem 2vw 16rem);
-                    // height: clamp(4.5rem 2vh 9rem);
                 }
 
                 & > p
@@ -79,7 +78,7 @@
                     text-align: center;
                     font-size: $font-size-social-side-events;
                     color: $off-white;
-                    margin-top: 0.5rem;
+                    margin-top: 1rem;
                 }
             }
         }

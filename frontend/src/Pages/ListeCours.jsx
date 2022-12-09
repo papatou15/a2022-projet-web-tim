@@ -21,9 +21,9 @@ export default function ListeCours({id, sessionTitre, lesCours, carteOpenState, 
                     <ExpanderButton onClick={() => {setExpanderState(!expanderState);}}>
                         {
                             (expanderState) ?
-                            <p>Collapse</p>
+                            <p>Fermer</p>
                             :
-                            <p>Expand</p>
+                            <p>Ouvrir</p>
                         }
                     </ExpanderButton>
                 </div>
