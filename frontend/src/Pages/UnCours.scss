@@ -10,47 +10,53 @@
   min-width: 300px;
   max-width: 300px;
   transition: all 0.2s ease-in-out;
-  color: $off-white;
-  text-shadow: 0 0 4px black;
+  color: black;
   
   .carte
   {
+    overflow: hidden;
     border-radius: $coin-ronds;
     transition: all 0.15s ease-in-out;
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: stretch;
     position: relative;
-    background-color: $couleur-primaire;
+    background-color: $couleur-quinaire;
     width: 100%;
-    height: 500px;
+    height: 300px;
 
     .header
     {
+      
       width: 100%;
-      height: 20%;
+      height: 25%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      
     }
 
     h2
     {
+      z-index: 1;
       font-size: 1.25em;
-      margin: auto;
+      margin: 1rem 0 0 0;
     }
 
     h3
     {
+      z-index: 1;
       font-size: 1em;
-      margin: auto;
+      margin: 0 0 1rem 0;
     }
 
     .image-container
     {
-        height: 50%;
+      z-index: 1;
+        height: 75%;
         width: 100%;
         background-color: $off-white;
 
@@ -62,28 +68,20 @@
         }
     }
 
-    div.description
-    {
-      height: 45%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-
-      p
-      {
-        text-align: center;
-        margin: 0;
-        font-size: $font-size-cours-desc;
-        // padding: 0.5em;
-      }
-    }
-
     &:hover
     {
-      // outline: $hover-border;
-      // border-radius: 20px;
       transform: scale(1.02);
     }
+    .curve1 {
+      z-index: 1;
+      position: absolute;
+      width:200%;
+      height: 20%;
+      background-color: $couleur-primaire;
+      transform: translateY(70%) translateX(-30%) rotateX(180deg);
+      clip-path: polygon(100% 0%, 0% 0% , 0% 95.00%, 1% 94.98%, 2% 94.90%, 3% 94.78%, 4% 94.60%, 5% 94.38%, 6% 94.11%, 7% 93.79%, 8% 93.42%, 9% 93.01%, 10% 92.55%, 11% 92.05%, 12% 91.51%, 13% 90.92%, 14% 90.30%, 15% 89.63%, 16% 88.93%, 17% 88.20%, 18% 87.43%, 19% 86.63%, 20% 85.81%, 21% 84.95%, 22% 84.07%, 23% 83.17%, 24% 82.25%, 25% 81.31%, 26% 80.35%, 27% 79.38%, 28% 78.40%, 29% 77.41%, 30% 76.41%, 31% 75.42%, 32% 74.42%, 33% 73.42%, 34% 72.42%, 35% 71.44%, 36% 70.46%, 37% 69.49%, 38% 68.53%, 39% 67.60%, 40% 66.68%, 41% 65.78%, 42% 64.90%, 43% 64.05%, 44% 63.23%, 45% 62.44%, 46% 61.67%, 47% 60.95%, 48% 60.25%, 49% 59.60%, 50% 58.98%, 51% 58.40%, 52% 57.86%, 53% 57.37%, 54% 56.92%, 55% 56.51%, 56% 56.16%, 57% 55.84%, 58% 55.58%, 59% 55.37%, 60% 55.20%, 61% 55.08%, 62% 55.02%, 63% 55.00%, 64% 55.03%, 65% 55.12%, 66% 55.25%, 67% 55.43%, 68% 55.66%, 69% 55.94%, 70% 56.27%, 71% 56.64%, 72% 57.06%, 73% 57.53%, 74% 58.04%, 75% 58.59%, 76% 59.18%, 77% 59.81%, 78% 60.48%, 79% 61.19%, 80% 61.93%, 81% 62.70%, 82% 63.50%, 83% 64.34%, 84% 65.19%, 85% 66.08%, 86% 66.98%, 87% 67.91%, 88% 68.85%, 89% 69.81%, 90% 70.78%, 91% 71.77%, 92% 72.76%, 93% 73.75%, 94% 74.75%, 95% 75.75%, 96% 76.75%, 97% 77.74%, 98% 78.73%, 99% 79.71%, 100% 80.67%);
+    }
+
   }
 
   .ExpanderSection
@@ -224,21 +222,6 @@
   &[expanderstate="true"]
   {
     z-index: 1;
-    
-    // .carte::after
-    // {
-    //   content: "";
-    //   opacity: 1;
-    //   display: block;
-    //   height: 0;
-    //   width: 0;
-    //   position: absolute;
-    //   top: calc(100% + 1rem + 2px);
-    //   left: calc(50% - 15px);
-    //   border-left: 15px solid transparent;
-    //   border-right: 15px solid transparent;
-    //   border-bottom: 15px solid #ffb700;
-    // }
   }
 
   &[expanderstate="false"]
