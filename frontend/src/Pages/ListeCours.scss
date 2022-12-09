@@ -2,9 +2,14 @@
 
 .ListeCours
 {
-    margin: 1rem;
+    margin: 1rem 0rem;
     .sessionTitre
     {
+        padding: 0 1rem;
+        @media screen and (min-width: $layout-tablette) {
+            padding: 0 3rem;  
+
+        }
         display: flex;
         flex-flow: row;
         align-items: center;
@@ -19,14 +24,18 @@
 
     .lesCours
     {
-        gap: $gap-grille-cours;
+        padding: 0 1rem;
+        gap: 1rem;
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
-        padding: 0 50px;
-        height: 600px;
+        height: 300px;
         overflow-x: scroll;
         scroll-behavior: smooth;
+        @media screen and (min-width: $layout-desktop) {
+            padding: 0 3rem;
+            gap: $gap-grille-cours;
+        }
         &::-webkit-scrollbar{
             display: none
         }

@@ -16,11 +16,15 @@ footer{
         width: 100%;
         position: fixed;
         bottom: 0;
-        .footerLeft{
-            h4{
-                margin: 7px;
+        h4{
+            margin: 0.5rem 1rem 0.5rem 0;
+            font-size: 1.5rem;
+            @media screen and (min-width: $layout-tablette) {
                 font-size: 2rem;
             }
+        }
+        .footerLeft{
+           
             width: 50%;
             display: flex;
             flex-direction: column;
@@ -29,8 +33,8 @@ footer{
 
             .PageLinks{
                 p{
-                    font-size: 1.35rem;
-                    margin: 10px;
+                    font-size: 1.3rem;
+                    margin: 10px 0;
                     text-transform: lowercase;
                 }
             }
@@ -52,22 +56,12 @@ footer{
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
-                h4{
-                    margin: 7px;
-                    font-size: 2rem;
-                }
                 .Contacts{
-                    position: initial;
+                    display: flex;
+                    position:unset;
                     flex-direction: column;
                     margin-top: 12px;
-                    .ReseauSocial{
-                        
-                        a{
-                            img{
-                                filter: invert(100%);
-                            }
-                        }
-                    }
+                    transform: unset;
                 }
             }
         }

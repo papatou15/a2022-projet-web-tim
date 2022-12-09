@@ -33,7 +33,7 @@ export default function Filtre({options, filtre, setFiltre, placeholder='Filtre'
     } 
 
     const removeFiltre = (id) => {
-        setFiltre(filtre.filter(item => item[0] != id));
+        setFiltre(filtre.filter(item => item[0] !== id));
     }
 
     const isOptionSelected = (id) => {
