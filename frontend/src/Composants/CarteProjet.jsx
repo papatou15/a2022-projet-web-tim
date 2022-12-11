@@ -21,7 +21,7 @@ export default function CarteProjet({id, projet, titre, type, cours, auteurs, im
     
     return(
         <div className="groupeCarteProjet" expanderstate={carteOpenState === id ? "true" : "false"}>
-            <ExpanderButton onClick={() => {(curLocation.pathname === "/projets-2" || curLocation.pathname === "/frontend/projets-2") ? openDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
+            <ExpanderButton onClick={() => {(curLocation.pathname === "/projets" || curLocation.pathname === "/frontend/projets") ? openDetails(): closeDetails(); setCarteOpenState(id); setCarteAgrandie({titre, cours, auteurs, image, type, projet})}}>
                 <div className="carteProjet">
                     <div className="curve1"></div>
                     <div className="curve2"></div>

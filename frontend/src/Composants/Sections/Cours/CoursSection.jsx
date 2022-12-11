@@ -5,16 +5,21 @@ import Filtre from '../../Filtre';
 import ListeSessions from '../../../Pages/ListeSessions';
 import Carrousel from '../../../Navigation/Carrousel';
 import { CarteGlissante } from '../../CarteGlissante';
+import Dialog from '../../Dialog';
 
 import './CoursSection.scss';
 
 
 export default function CoursSection({couleurTitreSession="white", backgroundColor="white"}){
 
-    const {sessions, type_cours} = useContext(DataContext);
+    const {sessions, type_cours, projets} = useContext(DataContext);
+    const data = useContext(DataContext);
     const [itemFiltre, setItemFiltre] = useState([]);
 
     const [carteAgrandie, setCarteAgrandie] = useState(null);
+
+    const [dialogOpen, setDialogOpen] = useState(null);
+
 
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
     const [detailCoursOpen, setDetailCoursOpen] = useState(false);
@@ -24,6 +29,7 @@ export default function CoursSection({couleurTitreSession="white", backgroundCol
     const setDetailsOpen = (isOpen) => {
         setDetailCoursOpen(isOpen);
         setCarteGlissanteOpen(isOpen);
+        setDialogOpen(isOpen);
     }
 
     const styleCustom = {
@@ -75,6 +81,31 @@ export default function CoursSection({couleurTitreSession="white", backgroundCol
                     <></>
                 }
             </CarteGlissante> 
+            <Dialog isActive={dialogOpen} onOutsideClick={() => setDialogOpen(false)} exceptionRef={carteGlissanteRef}>
+                {
+                    carteAgrandie ?
+                    <div className='dialogCours'>
+                        <div className="cours-details">
+                            <div className="cours-carrousel">
+                            {
+                                (carteAgrandie.images) ?
+                                <Carrousel images={carteAgrandie.images}/>
+                                :
+                                <></>
+                            }
+                            </div>
+                            <div className="cours-description">
+                                <h3>{carteAgrandie.titre}</h3>
+                                <h3>Description</h3>
+                                <p>{carteAgrandie.description}</p>
+                            </div>
+                        </div>
+                    </div>
+                    :
+                    <></>
+                }
+                
+            </Dialog>
         </div>
     );
 }
