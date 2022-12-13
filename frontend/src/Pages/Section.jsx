@@ -98,9 +98,9 @@ export default function Section({section}){
         "sectionAccueilAvenir": <AvenirAccueil
                                     carte1Texte={section.carte1_texte_accueil_avenir}
                                     carte1Titre={section.carte1_titre_accueil_avenir}
-                                    carte2Texte={section.carte1_texte_accueil_avenir}
+                                    carte2Texte={section.carte2_texte_accueil_avenir}
                                     carte2Titre={section.carte2_titre_accueil_avenir}
-                                    carte3Texte={section.carte1_texte_accueil_avenir}
+                                    carte3Texte={section.carte3_texte_accueil_avenir}
                                     carte3Titre={section.carte3_titre_accueil_avenir}
                                     boutonTexte={section.bouton_texte_accueil_avenir}
                                 />,
