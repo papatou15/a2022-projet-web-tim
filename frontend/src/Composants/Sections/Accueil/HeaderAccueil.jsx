@@ -21,7 +21,6 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
 
     const scrollDown = () => {
         window.scroll(0, window.scrollY + 600);
-
     }
 
     const styleCustom1 = {
