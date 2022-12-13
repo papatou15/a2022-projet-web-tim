@@ -1,4 +1,5 @@
 @import "../../../Variables/Layout.scss";
+@import "../../../Variables/Polices.scss";
 
 .TexteSection {
     position: relative;
@@ -17,8 +18,10 @@
     
     p {
         margin: 0;
-        font-size: clamp(1.2rem, 5vw, 1.3rem);
+        font-size: $font-size-texte-section;
         width: 75%;
         max-width: 1000px;
+        line-height: 1.75rem;
+        margin-bottom: 2rem;
     }
 }

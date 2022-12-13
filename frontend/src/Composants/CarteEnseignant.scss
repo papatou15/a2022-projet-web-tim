@@ -1,5 +1,6 @@
 @import "../Variables/Couleurs.scss";
 @import "../Variables/Layout.scss";
+@import "../Variables/Polices.scss";
 
 .CarteEnseignant {
     .curve {
@@ -20,7 +21,7 @@
     transition: all 0.5s ease-in-out;  
     .enseignant {
         &-nom {
-            font-size: 1.25rem;
+            font-size: $font-size-nom-enseignant;
             margin: 1rem;
             position: absolute;
             bottom: 0;

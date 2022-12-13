@@ -1,4 +1,5 @@
 @import "../../../Variables/Layout.scss";
+@import "../../../Variables/Polices.scss";
 
 .AvenirAccueil {
     display: flex;
@@ -67,6 +68,8 @@
                         margin: 1rem;
                         font-size: 1.5rem;
                         padding: 5px;
+                        font-size: $font-size-accueil-Avenir-content;
+                        text-align: center;
                     }
                     &:hover{
                         transform: translateY(5px);
