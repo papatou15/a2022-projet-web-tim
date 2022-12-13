@@ -1,8 +1,10 @@
 import './CommunauteSection.scss';
 import FlechesCarousel from '../../FlechesCarousel';
 import { scrollButtons } from '../../../utils/scrollButtons';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import useOnResize from '../../../Hooks/useOnResize';
+import { useLocation } from 'react-router-dom';
+import useScrollToByHash from '../../../Hooks/useScrollToByHash';
 
 export default function CommunauteSection({backgroundColor, carte1Titre, carte2Titre, carte3Titre, carte1Texte, carte2Texte, carte3Texte}){
 
@@ -13,8 +15,12 @@ export default function CommunauteSection({backgroundColor, carte1Titre, carte2T
         backgroundColor: backgroundColor
     }
 
+    const communauteRef = useRef(null);
+
+    useScrollToByHash(communauteRef, "#communaute");
+
     return (
-        <div style={styleCustom} className="CommunauteSection">
+        <div ref={communauteRef} style={styleCustom} className="CommunauteSection">
             <div className="contenuCommunaute" id="wrapperCartesCommunaute" >
                 <div className="carteCommunaute" ref={carteCommunaute}>
                     <div className="carteBG">

@@ -19,6 +19,11 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
     
     const showVideo = (isVisible) ? "visible" : "hidden";
 
+    const scrollDown = () => {
+        window.scroll(0, window.scrollY + 600);
+
+    }
+
     const styleCustom1 = {
         // backgroundColor: couleurBanniere,
     }
@@ -36,7 +41,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
                 <h1>{titre}</h1>
                 <h3>{slogan}</h3>
             </div>
-            <div className='scroll-invite'></div>
+            <div onClick={scrollDown} className='scroll-invite'></div>
             <div style={styleCustom2} className="clipPath"></div>
         </section>
     );
