@@ -50,31 +50,6 @@ export default function UnCours({id, carteOpenState, setCarteOpenState, carteAgr
                     </div>
                 </div>
             </ExpanderButton>
-            <ExpanderSection expanderState={expanderState}>
-                <div className="cours-details" expanderstate={expanderState ? "true" : "false"}>
-                    <div className="cours-carrousel">
-                    {
-                        (images) ?
-                        <Carrousel images={images}/>
-                        :
-                        <></>
-                    }
-                    </div>
-                    <div className="cours-description">
-                        <h3>{titre}</h3>
-                        <h3>Description</h3>
-                        <p>{description}</p>
-                    </div>
-                    <div className="cours-projets-relies">
-
-                    </div>
-                </div>
-                <div className="fermerSection" onClick={() => {closeDetails()}}>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                </div>
-            </ExpanderSection>
         </div>
     );
 }

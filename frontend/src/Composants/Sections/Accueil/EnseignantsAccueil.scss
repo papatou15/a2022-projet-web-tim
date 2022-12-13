@@ -33,8 +33,7 @@
         }
         .FlechesCarousel {
             @media screen and (min-width: $layout-desktop) {
-                // display: flex;
-                display: none;
+                display: flex;
             }
         }
         .Bouton {
