@@ -32,7 +32,7 @@ export default function EnseignantsAccueil({boutonTexte}){
                     onClickLeft={() => scrollButtons("scrollCartes", -widthCarte)}
                     onClickRight={() => scrollButtons("scrollCartes", widthCarte)}
                 />
-                <Bouton href={"les-enseignants"}>{boutonTexte}</Bouton>
+                <Bouton href={"enseignants"}>{boutonTexte}</Bouton>
             </div>
         </section>
     );
