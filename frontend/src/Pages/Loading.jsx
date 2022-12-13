@@ -6,7 +6,7 @@ export default function Loading({isLoading}){
         <main loadingvalue={isLoading.toString()} className="Loading">
             <Ronds/>
                 <div className="point"></div>
-                <img src="../images/LogoTIMREmpli.png"/>
+                <img src="images/LogoTIMRempli.png"/>
             <Ronds/>
         </main>
     );
