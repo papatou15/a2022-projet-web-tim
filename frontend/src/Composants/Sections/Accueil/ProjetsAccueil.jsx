@@ -27,7 +27,7 @@ export default function ProjetsAccueil({boutonTexte}){
                     onClickLeft={() => scrollButtons("cartesProjets", -400)}
                     onClickRight={() => scrollButtons("cartesProjets", 400)}
             />
-            <Bouton href={"galerie-des-projets"}>{boutonTexte}</Bouton>
+            <Bouton href={"projets"}>{boutonTexte}</Bouton>
         </section>
     );
 }

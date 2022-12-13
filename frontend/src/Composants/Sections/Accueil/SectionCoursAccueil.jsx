@@ -29,7 +29,7 @@ export default function SectionCoursAccueil({backgroundColor, boutonTexte}){
                     onClickLeft={() => scrollButtons("wrapperCartesSessions", -300)}
                     onClickRight={() => scrollButtons("wrapperCartesSessions", 300)}
                 />
-                <Bouton href={"galerie-des-cours"}>{boutonTexte}</Bouton>
+                <Bouton href={"cours"}>{boutonTexte}</Bouton>
             </div>
         </section> 
     );
