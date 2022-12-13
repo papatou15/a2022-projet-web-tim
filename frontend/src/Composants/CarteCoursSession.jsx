@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './CarteCoursSession.scss';
 
 export default function CarteCoursSession({cours, titre}){
@@ -9,7 +10,7 @@ export default function CarteCoursSession({cours, titre}){
             <div className="listeCours">
                 {
                     cours.map(
-                        unCours => <a key={unCours.ID} href="#" className="cours"><p>{unCours.titre} </p></a>
+                        unCours => <NavLink key={unCours.titre} className={"cours"} to={'/cours'}><p>{unCours.titre} </p></NavLink>
                     )
                 }
             </div>
