@@ -2,7 +2,6 @@
 @import "../Variables/Layout.scss";
 
 .CarteEnseignant {
-    
     .curve {
         width: 100%;
         height: 100%;
@@ -21,6 +20,7 @@
     transition: all 0.5s ease-in-out;  
     .enseignant {
         &-nom {
+            font-size: 1.25rem;
             margin: 1rem;
             position: absolute;
             bottom: 0;

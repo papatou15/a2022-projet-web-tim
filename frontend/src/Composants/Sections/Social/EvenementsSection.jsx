@@ -1,8 +1,15 @@
+import { useRef } from 'react';
+import useScrollToByHash from '../../../Hooks/useScrollToByHash';
 import './EvenementsSection.scss';
 
 export default function EvenementsSection({texte1, texte2, img1, img2, alt1, alt2}){
+
+    const evenementsRef = useRef(null);
+
+    useScrollToByHash(evenementsRef, "#evenements");
+
     return (
-        <div className="EvenementsSection">
+        <div ref={evenementsRef} className="EvenementsSection">
             <div className="sectionSocial" id='evenements'>
                 <div className="contenuEvents">
                     <div className="descEvents">
