@@ -3,16 +3,20 @@ $base-typo-family: 'Inter', Arial , sans-serif;
 // Page Accueil
 $font-size-accueil-titre:           clamp(3.5rem, 4vw, 8rem);
 $font-size-accueil-sousTitre:       clamp(2rem, 3vw, 4rem);
-
+$font-size-accueil-Avenir-content:  clamp(1.5rem, 1.5vw, 1.75rem);
+$font-size-nom-enseignant:          clamp(1.4rem, 1.5vw, 1.4rem);
 // Titres généraux
-$font-size-titre-page:              clamp(2.25rem, 4vw, 4rem);
+$font-size-titre-page:              clamp(2.25rem, 4vw, 2.75rem);
 
 // Page Cours
 $font-size-cours-desc:              clamp(1rem, 1.5vw, 1.25rem);
 
+// Page Avenir
+$font-size-texte-section:           clamp(1.2rem,5vw,1.7rem);
+
 // Page Social
-$font-size-social-events:           clamp(0.75rem, 2vw, 2.25rem);
-$font-size-social-side-events:      clamp(0.75rem, 2vw, 3.1rem);
+$font-size-social-events:           clamp(1.5rem, 2vw, 2.25rem);
+$font-size-social-side-events:      clamp(1.75rem, 2vw, 3.1rem);
 $font-size-social-communaute:       clamp(1.5rem, 2vw, 1.75rem);
 $font-size-social-communaute-titre: clamp(2rem, 3vw, 2.5rem);
 $font-size-social-maisonneuve:      clamp(1rem, 2vw, 2rem);
