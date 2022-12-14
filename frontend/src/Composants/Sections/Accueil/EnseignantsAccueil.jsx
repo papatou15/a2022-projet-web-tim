@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react';
 import { DataContext } from '../../../Context/DataContext';
-import CarteEnseignant from '../../CarteEnseignant';
+import {CarteEnseignant} from '../../CarteEnseignant';
 import FlechesCarousel from '../../FlechesCarousel';
 import Bouton from '../../../Bouton';
 import { scrollButtons } from '../../../utils/scrollButtons';
@@ -25,7 +25,7 @@ export default function EnseignantsAccueil({boutonTexte}){
                     {
                         enseignants.map(
                             unEnseignant => <CarteEnseignant key={unEnseignant.id} ref={carteProfs} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
-                        )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
+                        )
                     }
                 </div>
                 <FlechesCarousel
