@@ -12,6 +12,7 @@ export default function Footer({menu, footerView}){
         <footer id="footer" style={{display: footerDisplay}}>
             <div className="footerContent">
                 <div className="footerLeft">
+                    <h4>Pages</h4>
                     <PageLinks menu={menu} />
                 </div>
                 <div className="separationLine"></div>
