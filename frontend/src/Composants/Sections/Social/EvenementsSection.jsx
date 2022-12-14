@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import useFooter from '../../../Hooks/useFooter';
 import useScrollToByHash from '../../../Hooks/useScrollToByHash';
 import './EvenementsSection.scss';
 
@@ -7,6 +8,8 @@ export default function EvenementsSection({texte1, texte2, img1, img2, alt1, alt
     const evenementsRef = useRef(null);
 
     useScrollToByHash(evenementsRef, "#evenements");
+
+    useFooter(false);
 
     return (
         <div ref={evenementsRef} className="EvenementsSection">
