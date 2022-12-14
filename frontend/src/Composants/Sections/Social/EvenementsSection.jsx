@@ -9,7 +9,7 @@ export default function EvenementsSection({texte1, texte2, img1, img2, alt1, alt
 
     useScrollToByHash(evenementsRef, "#evenements");
 
-    useFooter(true);
+    useFooter(false);
 
     return (
         <div ref={evenementsRef} className="EvenementsSection">

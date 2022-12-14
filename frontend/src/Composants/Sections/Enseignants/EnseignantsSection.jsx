@@ -11,7 +11,7 @@ export default function EnseignantsSection({backgroundColor}){
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 
-    useFooter(true);
+    useFooter(false);
 
     const carteGlissanteRef= useRef(null);
 
