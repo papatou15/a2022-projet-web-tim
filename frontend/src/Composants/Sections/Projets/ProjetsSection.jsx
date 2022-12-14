@@ -8,12 +8,15 @@ import Carrousel from '../../../Navigation/Carrousel';
 import { CarteGlissante } from '../../CarteGlissante';
 import Dialog from '../../Dialog';
 import { NavLink } from 'react-router-dom';
+import useFooter from '../../../Hooks/useFooter';
 
 export default function ProjetsSection({backgroundColor="white"}){
 
     const {projets, type_cours} = useContext(DataContext);
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
+
+    useFooter(false);
 
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 

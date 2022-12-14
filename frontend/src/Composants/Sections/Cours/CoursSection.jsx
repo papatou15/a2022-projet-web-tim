@@ -1,6 +1,5 @@
-import { useContext } from 'react';
 import { DataContext } from '../../../Context/DataContext';
-import { useState, useRef } from 'react';
+import { useState, useRef, useContext } from 'react';
 import Filtre from '../../Filtre';
 import ListeSessions from '../../../Pages/ListeSessions';
 import Carrousel from '../../../Navigation/Carrousel';
@@ -8,6 +7,7 @@ import { CarteGlissante } from '../../CarteGlissante';
 import Dialog from '../../Dialog';
 
 import './CoursSection.scss';
+import useFooter from '../../../Hooks/useFooter';
 
 
 export default function CoursSection({couleurTitreSession="white", backgroundColor="white"}){
@@ -20,6 +20,7 @@ export default function CoursSection({couleurTitreSession="white", backgroundCol
 
     const [dialogOpen, setDialogOpen] = useState(null);
 
+    useFooter(false);
 
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
     const [detailCoursOpen, setDetailCoursOpen] = useState(false);
