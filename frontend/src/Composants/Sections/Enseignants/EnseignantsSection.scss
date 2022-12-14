@@ -35,10 +35,10 @@
                         display: flex;
                         justify-content: center;
                         align-items: center;
-                        min-width: 200px;
-                        max-width: 200px;
-                        height: 200px;
-                        border-radius: 100px;
+                        min-width: 300px;
+                        max-width: 300px;
+                        height: 300px;
+                        border-radius: 50%;
                         background-color: $couleur-secondaire;
                         img {
                             clip-path: ellipse(38% 50% at 50% 34%);
@@ -55,12 +55,14 @@
                     }
                     .enseignant-nom {
                         font-weight: bold;
-                        font-size: 2rem;
+                        font-size: 4rem;
                     }
                     .enseignant-experience {
+                        font-size: 1.5rem;
                         margin-bottom: 2rem;
                     }
                     .enseignant-description {
+                        font-size: 1.2rem;
                         quotes: "« " " »";
                         margin-bottom: 2rem;
                     }
@@ -71,7 +73,7 @@
                         content: close-quote;
                     }
                     .enseignant-cours {
-
+                        font-size: 1.2rem;
                     }
                 }
             }
