@@ -15,6 +15,7 @@ export default function ProjetsSection({backgroundColor="white"}){
     const {projets, type_cours} = useContext(DataContext);
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
+    const data = useContext(DataContext);
 
     useFooter(false);
 
@@ -151,7 +152,6 @@ export default function ProjetsSection({backgroundColor="white"}){
                     :
                     <></>
                 }
-                
             </Dialog>
         </div>
     );

@@ -4,9 +4,9 @@ import './CarteEnseignant.scss';
 export const CarteEnseignant = forwardRef(({id, prenom, nom, image, description, temps, cours, etudes, onClick, randomHeight}, ref) => {
 
     const nomComplet = prenom + " " + nom;
-
+    //const ref = useRef(0);
     return (
-        <a onClick={onClick} ref={ref} className="CarteEnseignant" style={{top: randomHeight + "%"}}>
+        <a onClick={onClick} ref={refCarte} className="CarteEnseignant" style={{top: randomHeight + "%"}}>
             <div className='curve'></div>
             <div className="enseignant-image">
                 <div className="img-container">

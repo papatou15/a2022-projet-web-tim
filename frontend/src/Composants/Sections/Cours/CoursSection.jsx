@@ -87,6 +87,7 @@ export default function CoursSection({couleurTitreSession="white", backgroundCol
                     carteAgrandie ?
                     <div className='dialogCours'>
                         <div className="cours-details">
+                            <div className="cours-titre">
                             <div className="curve1"></div>
                             <div className="cours-carrousel">
                             {
@@ -98,8 +99,20 @@ export default function CoursSection({couleurTitreSession="white", backgroundCol
                             </div>
                             <div className="cours-description">
                                 <h3>{carteAgrandie.titre}</h3>
-                                <h3>Description</h3>
-                                <p>{carteAgrandie.description}</p>
+                            </div>
+                            <div className="cours-content">
+                                <div className="cours-carrousel">
+                                {
+                                    (carteAgrandie.images) ?
+                                    <Carrousel images={carteAgrandie.images}/>
+                                    :
+                                    <></>
+                                }
+                                </div>
+                                <div className="cours-description">
+                                    <h3>Description</h3>
+                                    <p>{carteAgrandie.description}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
