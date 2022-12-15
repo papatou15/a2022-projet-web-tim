@@ -16,7 +16,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
     const showVideo = (isVisible) ? "visible" : "hidden";
 
     const scrollDown = () => {
-        window.scroll(0, window.scrollY + 600);
+        window.scroll(0, document.querySelector("h2").scrollHeight + 600);
     }
 
     const styleCustom1 = {
