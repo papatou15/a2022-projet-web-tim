@@ -131,8 +131,9 @@ export default function ProjetsSection({backgroundColor="white"}){
                             }
                             <div className='auteursProjets'>
                                 <b>Fait par: </b>
-                                {console.log(carteAgrandie.projet.url_portfolio)}
-                                {carteAgrandie.auteurs.map(unAuteur => {return(<a href={(carteAgrandie.projet.url_portfolio != null) ? carteAgrandie.projet.url_portfolio : "https://www.twitch.tv"} target="_blank" className="unAuteur">{unAuteur}</a>)})}
+                                {
+                                    carteAgrandie.auteurs.map(unAuteur => {return(<a href={(carteAgrandie.projet.url_portfolio != "") ? carteAgrandie.projet.url_portfolio : "https://www.twitch.tv"} target="_blank" className="unAuteur">{unAuteur}</a>)})
+                                }
                             </div>
                         </div>
                         <div className="sectionInfos">
