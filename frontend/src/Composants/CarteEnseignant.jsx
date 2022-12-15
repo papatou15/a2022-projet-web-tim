@@ -1,7 +1,7 @@
-import { useRef } from 'react';
+import { forwardRef, useRef } from 'react';
 import './CarteEnseignant.scss';
 
-export default function CarteEnseignant({id, refCarte, prenom, nom, image, description, temps, cours, etudes, onClick, randomHeight}){
+export const CarteEnseignant = forwardRef(({id, prenom, nom, image, description, temps, cours, etudes, onClick, randomHeight}, ref) => {
 
     const nomComplet = prenom + " " + nom;
     //const ref = useRef(0);
@@ -16,4 +16,4 @@ export default function CarteEnseignant({id, refCarte, prenom, nom, image, descr
             <p className='enseignant-nom'>{nomComplet}</p>
         </a>
     );
-}
+})

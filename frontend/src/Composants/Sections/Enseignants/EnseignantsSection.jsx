@@ -1,8 +1,9 @@
 import './EnseignantsSection.scss';
-import { useState, useRef } from 'react';
+import { useState, useRef} from 'react';
 import ListeEnseignants from '../../ListeEnseignants';
 import { CarteGlissante } from '../../CarteGlissante';
 import Dialog from '../../Dialog';
+import useFooter from '../../../Hooks/useFooter';
 
 export default function EnseignantsSection({backgroundColor}){
 
@@ -10,6 +11,7 @@ export default function EnseignantsSection({backgroundColor}){
     const [carteGlissanteOpen, setCarteGlissanteOpen] = useState(false);
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 
+    useFooter(false);
 
     const carteGlissanteRef= useRef(null);
 

@@ -8,6 +8,7 @@ import Carrousel from '../../../Navigation/Carrousel';
 import { CarteGlissante } from '../../CarteGlissante';
 import Dialog from '../../Dialog';
 import { NavLink } from 'react-router-dom';
+import useFooter from '../../../Hooks/useFooter';
 
 export default function ProjetsSection({backgroundColor="white"}){
 
@@ -15,6 +16,8 @@ export default function ProjetsSection({backgroundColor="white"}){
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
     const data = useContext(DataContext);
+
+    useFooter(false);
 
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 
@@ -119,8 +122,8 @@ export default function ProjetsSection({backgroundColor="white"}){
                     carteAgrandie ?
                     
                     <div className="infoProjet">
+                        <div className="curve1"></div>
                         <h2>{carteAgrandie.titre}</h2>
-                        {/* <p><b>Fait par: </b>{carteAgrandie.auteurs}</p> */}
                         <div className="upperSection">
                             
                             {
@@ -131,9 +134,7 @@ export default function ProjetsSection({backgroundColor="white"}){
                             }
                             <div className='auteursProjets'>
                                 <b>Fait par: </b>
-                                {
-                                    carteAgrandie.auteurs.map(unAuteur => {return(<a href={(carteAgrandie.projet.url_portfolio != "") ? carteAgrandie.projet.url_portfolio : "https://www.twitch.tv"} target="_blank" className="unAuteur">{unAuteur}</a>)})
-                                }
+                                <p>{carteAgrandie.auteurs}</p>
                             </div>
                         </div>
                         <div className="sectionInfos">

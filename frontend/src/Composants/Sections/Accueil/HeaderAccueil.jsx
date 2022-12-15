@@ -1,5 +1,5 @@
-import { useContext, useEffect, useRef } from 'react';
-import { FooterContext } from '../../../Context/FooterContext';
+import { useRef } from 'react';
+import useFooter from '../../../Hooks/useFooter';
 import useIsOnScreen from '../../../Hooks/useIsOnScreen';
 import './HeaderAccueil.scss';
 
@@ -11,11 +11,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
     const ref = useRef();
     const isVisible = useIsOnScreen(ref);
 
-    const [footerView, setFooterView] = useContext(FooterContext);
-
-    useEffect(() => {
-        setFooterView(isVisible);
-    });
+    useFooter(isVisible);
     
     const showVideo = (isVisible) ? "visible" : "hidden";
 

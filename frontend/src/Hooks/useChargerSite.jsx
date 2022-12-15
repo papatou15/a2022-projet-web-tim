@@ -10,7 +10,7 @@ export default function useChargerSite(setSiteData, isLoaded, setIsLoaded){
                 fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/enseignant?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/backend/wp-json/tim/v1/settings/logo').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/projet?per_page=100').then(resp => resp.json()),
-                fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/pages?per_page=100').then(resp => resp.json()),
+                fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/pages').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/emplois?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/programmesuniversita?per_page=100').then(resp => resp.json()),
                 fetch('https://timm184.sg-host.com/backend/wp-json/wp/v2/typecours?per_page=100').then(resp => resp.json()),

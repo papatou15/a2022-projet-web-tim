@@ -1,12 +1,11 @@
 import { useContext } from 'react';
 import { DataContext } from '../Context/DataContext';
-import CarteEnseignant from './CarteEnseignant';
+import {CarteEnseignant} from './CarteEnseignant';
 import './ListeEnseignants.scss';
 
 export default function ListeEnseignants({carteAgrandie, setCarteAgrandie, setDetailsOpen}){
 
     const {enseignants} = useContext(DataContext);
-    console.log(enseignants);
     return (
         <div className="ListeEnseignants">
             {
