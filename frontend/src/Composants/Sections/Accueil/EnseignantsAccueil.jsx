@@ -13,8 +13,9 @@ export default function EnseignantsAccueil({boutonTexte}){
 
     const {enseignants} = useContext(DataContext);
 
-    const carteProfs = useRef(null);
+    const carteProfs = useRef(0);
     const widthCarte = useOnResize(carteProfs);
+    console.log("Width carte enseignant accueil: " + widthCarte);
 
     const sliceNumberProfs = randomArraySlice(enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
 
@@ -24,11 +25,12 @@ export default function EnseignantsAccueil({boutonTexte}){
                 <div className="sectionCartesRandom" id="scrollCartes">
                     {
                         enseignants.map(
-                            unEnseignant => <CarteEnseignant key={unEnseignant.id} ref={carteProfs} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
+                            unEnseignant => <CarteEnseignant key={unEnseignant.id} refCarte={carteProfs} nom={unEnseignant.nom} prenom={unEnseignant.prenom} image={unEnseignant.image.guid} description={unEnseignant.description} randomHeight={Math.floor(Math.random() * 5) * 10}/>
                         )/*.slice(sliceNumberProfs, sliceNumberProfs + 5)*/
                     }
                 </div>
                 <FlechesCarousel
+                    
                     onClickLeft={() => scrollButtons("scrollCartes", -widthCarte)}
                     onClickRight={() => scrollButtons("scrollCartes", widthCarte)}
                 />

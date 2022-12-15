@@ -14,6 +14,7 @@ export default function ProjetsSection({backgroundColor="white"}){
     const {projets, type_cours} = useContext(DataContext);
     const [carteOpenState, setCarteOpenState] = useState('');
     const [filtre, setFiltre] = useState([]);
+    const data = useContext(DataContext);
 
     const [carteAgrandie, setCarteAgrandie] = useState(null);
 
@@ -130,7 +131,8 @@ export default function ProjetsSection({backgroundColor="white"}){
                             }
                             <div className='auteursProjets'>
                                 <b>Fait par: </b>
-                                {carteAgrandie.auteurs.map(unAuteur => {return(<NavLink key={unAuteur} to="" className="unAuteur">{unAuteur}</NavLink>)})}
+                                {console.log(carteAgrandie.projet.url_portfolio)}
+                                {carteAgrandie.auteurs.map(unAuteur => {return(<a href={(carteAgrandie.projet.url_portfolio != null) ? carteAgrandie.projet.url_portfolio : "https://www.twitch.tv"} target="_blank" className="unAuteur">{unAuteur}</a>)})}
                             </div>
                         </div>
                         <div className="sectionInfos">
@@ -148,7 +150,6 @@ export default function ProjetsSection({backgroundColor="white"}){
                     :
                     <></>
                 }
-                
             </Dialog>
         </div>
     );

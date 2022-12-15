@@ -116,7 +116,7 @@
                     align-items: center;
                     padding: 10px;
                     .Carrousel{
-                        width: 675px;
+                        min-width: 675;
                         height: 100%;
                     }
 
@@ -179,8 +179,8 @@
                             margin: 0.5em;
                         }
                         .coursProjetLien{
-                            height: 50px;
-                            width: 150px;
+                            height: clamp(50px, 5vh, 100px);
+                            width: clamp(150px, 10vw, 300px);
                             padding: 0.5rem;
                             background-color: $couleur-secondaire;
                             border-radius: $coin-ronds;

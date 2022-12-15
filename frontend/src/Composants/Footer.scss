@@ -34,13 +34,13 @@ footer{
 
             .PageLinks{
                 p{
-                    font-size: 1.3rem;
+                    font-size: 1.5rem;
                     margin: 10px 0;
                 }
             }
         }
         .separationLine{
-            width: 5px;
+            width: 4px;
             max-height: 500px;
             min-height: 300px;
             background-color: white;
@@ -55,11 +55,12 @@ footer{
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: center;
                 width: 100%;
                 .Contacts{
                     display: flex;
-                    position:unset;
-                    flex-direction: column;
+                    position: unset;
+                    flex-flow: row wrap;
                     margin-top: 12px;
                     transform: unset;
                 }

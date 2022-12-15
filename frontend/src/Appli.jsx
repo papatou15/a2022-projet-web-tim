@@ -42,7 +42,7 @@ export default function Appli() {
   }
 
   // Visibilité du footer
-  const footerViewState = useState(false);
+  const footerViewState = useState(true);
 
   return (
     <FooterContext.Provider value={footerViewState}>

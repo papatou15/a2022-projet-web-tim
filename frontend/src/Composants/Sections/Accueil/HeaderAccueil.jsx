@@ -33,7 +33,7 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
 
     return (
         <section className="HeaderAccueil" ref={ref} style={{visibility: showVideo}}>
-            <video autoPlay muted loop id="accueilBGVideo" height="110%" object-fit="contain">
+            <video autoPlay muted loop id="accueilBGVideo" height="120%" object-fit="contain">
                 <source src={videoSource} type="video/mp4"/>
             </video>
             <div style={styleCustom1} className="mainTitle">
