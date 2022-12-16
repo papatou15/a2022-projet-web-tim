@@ -45,13 +45,20 @@
         overflow: hidden;
         box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: 0.2);
         border-top: 1px solid rgba($color: #000000, $alpha: 0.1);
-        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);;
+        border-left: 1px solid rgba($color: #000000, $alpha: 0.1);
+        background-size: cover;
+        background-repeat: repeat-x;
+        background-position: -75%;
         .Slide {
             height: 100%;
             div {
                 height: 100%;
                 display: flex;
                 justify-content: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                backdrop-filter: blur(10px);
+                filter: drop-shadow(0 0 50px black);
                 img {
                     height: 100%;
                     width: auto;

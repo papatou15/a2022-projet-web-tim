@@ -28,6 +28,9 @@ export default function ProjetsAccueil({boutonTexte}){
                     onClickRight={() => scrollButtons("cartesProjets", 400)}
             />
             <Bouton href={"projets"}>{boutonTexte}</Bouton>
+            <div className="mascotteProjetsAccueil">
+                <img src="http://timm184.sg-host.com/backend/wp-content/uploads/2022/12/persofinal-corde.png" alt="" />
+            </div>
         </section>
     );
 }
