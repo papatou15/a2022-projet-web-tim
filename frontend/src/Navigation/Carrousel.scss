@@ -59,6 +59,7 @@
                 background-size: contain;
                 background-repeat: no-repeat;
                 backdrop-filter: blur(10px);
+                filter: drop-shadow(0 0 50px black);
                 img {
                     height: 100%;
                     width: auto;
