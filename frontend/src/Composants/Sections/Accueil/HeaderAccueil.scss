@@ -27,6 +27,7 @@
         height: 400px;
         text-align: center;
         color: white;
+        text-shadow: 0 0 40px black;
         h1{
             font-size: $font-size-accueil-titre;
             margin: 0;
@@ -102,6 +103,23 @@
             
         }
     }
+    .mascotteAccueil{
+        position: absolute;
+        bottom: 5px;
+        left: clamp(10px, 10%, 450px);
+        height: 300px;
+        width: 300px;
+        @media screen and(max-width: $layout-tablette) {
+            left: 2%;
+            height: 200px;
+            width: 200px;
+        }
+        img{
+            height: 100%;
+            width: auto;
+        }
+    }
+
     .clipPath{
         z-index: -1;
         width: 150%;

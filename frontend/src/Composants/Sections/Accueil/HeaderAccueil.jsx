@@ -37,6 +37,9 @@ export default function HeaderAccueil({titre, slogan, videoSource, couleurBannie
                 <h3>{slogan}</h3>
             </div>
             <div onClick={scrollDown} className='scroll-invite'></div>
+            <div className="mascotteAccueil">
+                <img src="http://timm184.sg-host.com/backend/wp-content/uploads/2022/12/perso-tired.png" alt="" />
+            </div>
             <div style={styleCustom2} className="clipPath"></div>
         </section>
     );
