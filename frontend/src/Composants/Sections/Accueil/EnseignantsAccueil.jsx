@@ -15,7 +15,6 @@ export default function EnseignantsAccueil({boutonTexte}){
 
     const carteProfs = useRef(0);
     const widthCarte = useOnResize(carteProfs);
-    console.log("Width carte enseignant accueil: " + widthCarte);
 
     const sliceNumberProfs = randomArraySlice(enseignants, 5); //Nombre renvoyé pour le nombre de carte dans la section des enseignants
 
@@ -31,8 +30,8 @@ export default function EnseignantsAccueil({boutonTexte}){
                 </div>
                 <FlechesCarousel
                     
-                    onClickLeft={() => scrollButtons("scrollCartes", -widthCarte)}
-                    onClickRight={() => scrollButtons("scrollCartes", widthCarte)}
+                    onClickLeft={() => scrollButtons("scrollCartes", (widthCarte != 0) ? -widthCarte - 30 : -430)}
+                    onClickRight={() => scrollButtons("scrollCartes", (widthCarte != 0) ? widthCarte + 30 : 430)}
                 />
                 <Bouton href={"enseignants"}>{boutonTexte}</Bouton>
             </div>

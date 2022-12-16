@@ -123,9 +123,8 @@ export default function ProjetsSection({backgroundColor="white"}){
                     
                     <div className="infoProjet">
                         <div className="curve1"></div>
-                        <h2>{carteAgrandie.titre}</h2>
+                            <h2>{carteAgrandie.titre}</h2>
                         <div className="upperSection">
-                            
                             {
                                 (carteAgrandie.projet.images) ?
                                 <Carrousel images={carteAgrandie.projet.images}/>
@@ -134,7 +133,7 @@ export default function ProjetsSection({backgroundColor="white"}){
                             }
                             <div className='auteursProjets'>
                                 <b>Fait par: </b>
-                                <p>{carteAgrandie.auteurs}</p>
+                                {carteAgrandie.auteurs.map(unAuteur => {return(<a key={unAuteur} href={(carteAgrandie.projet.url_portfolio != "") ? carteAgrandie.projet.url_portfolio : ""} target="_blank" className="unAuteur">{unAuteur}</a>)})}
                             </div>
                         </div>
                         <div className="sectionInfos">
